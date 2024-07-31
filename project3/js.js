@@ -109,7 +109,7 @@ $(document).ready(function () {
 
 
 
-  }, 1000)
+  }, 100)
 
 
 
@@ -370,6 +370,8 @@ $(document).ready(function () {
     // 해제해야 다른 노래들을 재생 가능
 
     $('.main .record_box .music_box>ul>li').click(function () {
+
+      clearInterval(play_start);
 
       clearInterval(zero_time);
 
