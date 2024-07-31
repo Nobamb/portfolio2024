@@ -4098,6 +4098,7 @@ section.wrap article.blind {
 
 .photo_buttons {
 
+  z-index: 2000;
   position: absolute;
   width: 700px;
   height: 65px;
