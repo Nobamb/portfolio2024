@@ -976,14 +976,6 @@ $(document).ready(function () {
 
 
 
-  setInterval(() => {
-
-    console.log(music_index)
-
-  }, 1000);
-
-
-
 
 
   $('.main .record_box .music_box>ul>li').click(function () {
