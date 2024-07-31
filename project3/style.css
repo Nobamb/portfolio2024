@@ -1,0 +1,4975 @@
+/* 언어설정 */
+
+
+@charset 'utf-8';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 기본설정 */
+
+
+
+* {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+
+ul {
+
+  list-style: none;
+
+}
+
+
+
+a {
+
+  text-decoration: none;
+  color: #fff;
+
+}
+
+
+img {
+
+  vertical-align: bottom;
+
+}
+
+/* 글꼴 설정 */
+
+/* 프로필에서는 nanum pen 사용 */
+
+
+body {
+
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+
+
+
+
+
+
+
+/* 전체 설정 */
+
+
+
+
+
+
+
+/* inner 기본설정 */
+
+
+.inner {
+
+  width: calc(100% -160px);
+  height: 100%;
+  margin: 0 80px;
+
+}
+
+
+
+
+/* 인트로 설정 */
+
+section.intro {
+
+  z-index: 9999;
+
+  width: 100%;
+
+
+  height: 100%;
+
+}
+
+
+
+/* 로고 및 메뉴 설정 */
+
+
+
+
+
+
+
+
+h1,nav {
+  position: fixed;
+
+  top: 0;
+  height: 150px;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+
+
+
+/* 로고 */
+
+h1 {
+
+
+  width: 80px;
+  opacity: 0.5;
+  left: 0;
+  transition: all 0.7s;
+}
+
+
+
+h1>span {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 0.7s;
+}
+
+
+
+
+
+h1>span.off {
+
+  box-shadow: none;
+
+}
+
+h1>span>img {
+
+  width: 60%;
+
+}
+
+
+
+h1 .time {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -400px;
+  z-index: -1;
+  transition: all 0.7s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+
+
+
+
+h1:hover {
+
+  opacity: 1;
+
+}
+
+
+
+h1:hover .time {
+
+  left: 0;
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
+/* 메뉴창 */
+
+nav {
+  opacity: 0.5;
+  right: -80px;
+  width: 140px;
+  justify-content: space-between;
+  transition: all 0.5s;
+
+}
+
+
+
+
+
+
+nav.on {
+
+  opacity: 1;
+  right: 0px;
+
+}
+
+
+
+nav>span {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 60px;
+  height: 120px;
+  background-color: #E4E4E6;
+  position: absolute;
+  left:0px;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+
+  border-bottom-left-radius: 20px;
+
+  /* 화살표 회전 */
+  perspective: 900px;
+
+}
+
+
+
+
+nav>span>i {
+  color: #606060;
+  font-size: 64px;
+  transform: rotateY(0deg);
+  transition: all 0.5s;
+
+}
+
+
+
+nav.on>span>i {
+
+  transform: rotateY(180deg);
+
+}
+
+
+
+nav>.menu_bar {
+  background-color: #606060;
+  height: 100vh;
+  width: 80px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+nav ul {
+
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+nav ul>li {
+
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+
+}
+
+
+
+
+nav ul>li>.menu_txt {
+
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 0px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  /* 메뉴창이 닫혔을때 */
+  opacity: 0;
+
+}
+
+/* 메뉴창이 열려있고, 리스트에 호버했을 때 투명도 해제 */
+
+nav.on ul>li:hover>.menu_txt {
+  width: 160px;
+  opacity: 1;
+
+
+}
+
+
+
+
+
+/* 메뉴창이 열려있고, 현재 리스트일때 투명도 해제 */
+
+nav.on ul>li.on>.menu_txt {
+
+
+  width: 160px;
+  opacity: 1;
+
+}
+
+
+
+
+
+nav ul>li .effect{
+
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: #606060;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  z-index: -1;
+  animation: effect 1s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+
+
+nav ul>li .effect i{
+
+  color: #fff;
+  font-size: 20px;
+
+}
+
+
+
+
+
+
+@keyframes effect{
+
+  0%{
+
+
+    transform: scale(2);
+    left: 100%;
+    opacity: 1;
+
+  }
+
+
+
+  100%{
+
+    transform: scale(2);
+    left: 0;
+    opacity: 0;
+
+  }
+
+
+}
+
+
+
+
+
+
+
+nav ul>li>.menu_txt>span {
+
+  color: #fff;
+  font-size: 20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* section 설정 */
+
+
+
+
+
+/* 인트로 */
+
+section.intro {
+  background-color: #E4E4E6;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+/* 인트로 배경 */
+
+section.intro .intro_area {
+
+  position: absolute;
+  background-image: url('img/roading/roading_bg.png');
+  background-size: cover;
+  background-position: center center;
+  width: 1440px;
+  height: 1024px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* 시그니쳐 사운드(인트로 동안에 올라오는 연출) */
+section.intro .signiture {
+
+  width: 100%;
+  height: 20%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+}
+
+
+/* 각 시그니쳐 사운드들 목록 */
+section.intro .signiture li {
+
+  position: absolute;
+  top: -100%;
+  height: 100%;
+  width: 100%;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+section.intro .signiture li:nth-child(1) {
+
+  top: 0;
+
+}
+
+
+
+section.intro .signiture li img {
+  display: block;
+  height: 100%;
+
+}
+
+
+
+
+
+section.intro .intro_area span {
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 32px;
+
+}
+
+
+/* 로딩이 100 이상이 될 시에 */
+
+section.intro .intro_area span.off {
+
+  color: red;
+
+}
+
+
+
+
+
+
+
+/* 인트로의 바늘 */
+
+section.intro .niddle {
+  z-index: 10;
+  height: 10%;
+  position: absolute;
+  right: 50%;
+  top: 30%;
+  animation: 1s ani1 linear;
+  transform-origin: right bottom;
+  transform: rotate(0deg);
+}
+
+
+
+/* 자르는 연출 */
+
+section.intro .slush {
+
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #606060;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+
+
+/* 자르는 연출시에(그전까지는 none처리) */
+
+
+section.intro .slush.on {
+
+  display: block;
+
+}
+
+
+
+section.intro .slush>img {
+
+
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+}
+
+
+section.intro .slush>img:nth-child(1) {
+
+  left: 40%;
+  top: 40%;
+
+}
+
+
+section.intro .slush>img:nth-child(2) {
+
+  left: 40%;
+  top: 50%;
+
+
+}
+
+
+
+
+
+
+/* 인트로 파괴 연출 */
+
+
+section.intro .intro_break {
+
+  position: absolute;
+  width: 1440px;
+  height: 1024px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  perspective: 2300px;
+
+}
+
+
+
+section.intro .intro_break img {
+
+  transform: translateZ(0);
+  /* transform: scale(1); */
+  opacity: 1;
+}
+
+
+section.intro .intro_break.on img.on {
+  transform: translateZ(8000px);
+  /* transform: scale(10); */
+  opacity: 0;
+
+}
+
+
+
+
+section.intro .intro_break img:nth-child(1) {
+
+  width: 1126px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+
+}
+
+
+
+
+
+
+
+
+section.intro .intro_break img:nth-child(2) {
+
+  height: 1024px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 1s 0.2s;
+
+}
+
+
+section.intro .intro_break img:nth-child(3) {
+
+  width: 842px;
+  position: absolute;
+  bottom: 0;
+  left: 382px;
+  transition: all 1s 0.4s;
+
+}
+
+section.intro .intro_break img:nth-child(4) {
+
+  height: 920px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 1s 0.6s;
+
+}
+
+
+section.intro .intro_break.on {
+
+
+  display: block;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 프로필 */
+
+
+
+
+
+
+/* 왼쪽의 로고 클릭전 */
+
+
+
+
+
+section.profile {
+  font-family: "Nanum Pen Script";
+  position: fixed;
+  left: -100%;
+  top: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 100%;
+  background-color: #E4E4E6;
+  transition: all 1s;
+  transform-origin: left center;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+/* 클릭후 */
+
+section.profile.on {
+  opacity: 1;
+  left: 0;
+}
+
+
+/* 프로필 양옆 간격 설정 */
+
+section.profile>.profile_inner {
+  width: calc(100% - 160px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+/* 종이 배경 부분 */
+
+
+section.profile .paper_bg {
+
+
+  width: 1065px;
+
+
+  height: 100%;
+
+  max-height: 1024px;
+
+  background-image: url('img/paper.jpg');
+
+  background-size: cover;
+  background-position: center center;
+
+  position: relative;
+
+}
+
+
+
+/* 사진 테두리 전체설정 */
+
+
+section.profile .paper_bg .picture {
+  position: absolute;
+
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+
+
+
+
+section.profile .paper_bg .picture:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/* 첫번째 사진 설정 */
+
+
+section.profile .paper_bg .picture1 {
+
+
+  top: 30px;
+
+  left: 0;
+
+  width: 200px;
+
+  height: 250px;
+
+
+
+  transform: rotate(-15deg);
+
+
+
+
+}
+
+
+
+
+/* 첫번째 사진 내부 설정 */
+
+
+section.profile .paper_bg .picture1_box {
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/history6.png');
+  background-size: cover;
+  background-position: center center;
+
+}
+
+
+/* 한요한에 관한 글 영역 */
+
+section.profile .paper_bg .about {
+
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+section.profile .paper_bg .about h3 {
+
+  font-weight: 400;
+  font-size: 24px;
+  padding-bottom: 10px;
+
+}
+
+
+section.profile .paper_bg .about p {
+
+  line-height: 1.5em;
+  font-size: 16px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메모지 설정 */
+
+
+section.profile .paper_bg .memo {
+
+  z-index: 100;
+  position: absolute;
+
+  top: 250px;
+  left: 0;
+
+  width: 250px;
+  height: 200px;
+
+  background-image: url('img/memo.png');
+  background-size: cover;
+
+}
+
+
+
+/* 메모지 글 */
+
+
+section.profile .paper_bg .memo .memo_write {
+
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+
+
+section.profile .paper_bg .memo .memo_write h4 {
+
+  font-weight: 400;
+  font-size: 24px;
+
+
+}
+
+
+section.profile .paper_bg .memo .memo_write span {
+
+
+  font-size: 16px;
+
+  padding-top: 15px;
+
+
+}
+
+
+
+
+
+
+/* 싸인 부분 */
+
+section.profile .paper_bg .sign {
+
+
+  width: 240px;
+  height: 230px;
+  position: absolute;
+  left: 300px;
+  top: 250px;
+  background-image: url('img/sign.png');
+  background-size: cover;
+  background-position: center center;
+  transform: rotate(30deg);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 두번째 사진 외부*/
+
+
+section.profile .paper_bg .picture2 {
+
+
+  top: 400px;
+
+  left: 0;
+
+  width: 350px;
+
+  height: 300px;
+
+
+
+  transform: rotate(15deg);
+
+
+
+}
+
+
+/* 두번째 사진 내부*/
+
+
+section.profile .paper_bg .picture2_box {
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/profile_hanyohan.png');
+  background-size: cover;
+  background-position: center center;
+
+}
+
+
+
+
+
+/* 세번째 사진 외부*/
+
+
+
+
+section.profile .paper_bg .picture3 {
+
+
+  top: 250px;
+
+  right: 150px;
+
+  width: 150px;
+
+  height: 205px;
+
+
+
+  transform: rotate(0);
+
+
+
+}
+
+/* 세번째 사진 내부*/
+
+
+section.profile .paper_bg .picture3_box {
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/active/activity1.jpg');
+  background-size: cover;
+  background-position: center center;
+
+}
+
+
+
+
+
+
+
+
+
+/* 네번째 사진 외부*/
+
+
+
+
+
+
+section.profile .paper_bg .picture4 {
+
+
+  top: 250px;
+
+  right: 0px;
+
+  width: 150px;
+
+  height: 205px;
+
+
+
+  transform: rotate(15deg);
+
+
+
+}
+
+
+
+
+
+
+/* 네번째 사진 내부*/
+
+
+section.profile .paper_bg .picture4_box {
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/hanyohan0.png');
+  background-size: cover;
+  background-position: center center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* tmi 글 */
+
+
+
+section.profile .paper_bg .tmi {
+
+  position: absolute;
+  bottom: 30px;
+  right: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+section.profile .paper_bg .tmi h3 {
+
+  font-weight: 400;
+  font-size: 24px;
+  padding-bottom: 10px;
+
+}
+
+
+section.profile .paper_bg .tmi p {
+
+  line-height: 1.5em;
+  font-size: 16px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 본문영역 */
+
+
+
+
+
+section.wrap {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 600vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+
+
+
+section.wrap article {
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E4E4E6;
+  transition: all 1s;
+  position: relative;
+  left: 0;
+}
+
+
+
+
+
+
+
+
+
+/* 로고 클릭시에 프로필이 앞으로 오면서 각 아티클들은 투명해짐 */
+
+section.wrap article.blind {
+
+  left: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메인화면 영역 */
+
+.main {
+
+  position: relative;
+
+
+}
+
+
+
+
+.main .audio{
+
+  position: absolute;
+  width: 800px;
+  height: 800px;
+
+  left: -9999px;
+  top: 0;
+
+  /* 임시값 */
+  /* background-color: red;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+
+.main .audio li{
+
+  width: 100%;
+  height: 10%;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 레코드 영역 */
+
+.main .record_box {
+
+  display: block;
+  width: 300px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  transform: translateX(0);
+  transition: all 0.5s;
+  z-index: 800;
+
+}
+
+/* 움직이는 연출(인트로 연출 후에 발생) */
+
+
+.main .record_box.on {
+
+  transform: translateX(-50%);
+
+
+}
+
+
+/* 레코드 내의 전체 음악 영역
+(음표부분이랑 숨겨진 음악 리스트로 이루어짐) */
+
+
+.main .record_box .music {
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+
+  transition: all 1s;
+
+}
+
+
+
+/* 음표 영역 */
+
+
+.main .record_box .music_box {
+
+  background-color: #fff;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 9999px;
+  transition: all 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+
+}
+
+
+
+/* 레코드 호버시 */
+
+
+.main .record_box .music_box.on {
+
+
+  width: 530px;
+
+
+
+}
+
+
+
+/* 음악 리스트 영역
+(레코드 호버시 등장) */
+
+.main .record_box .music_box>ul {
+
+
+  position: absolute;
+  left: -200px;
+  top: 0;
+  width: 215px;
+  height: 100%;
+  transition: left 0.7s;
+  opacity: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+
+.main .record_box .music_box.on>ul {
+
+  opacity: 1;
+  left: 210px;
+
+}
+
+
+
+.main .record_box .music_box>ul>li {
+
+
+  width: 50%;
+  height: 33.3333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  color: #606060;
+  opacity: 0.5;
+  font-weight: 400;
+  transition: all 0.5s;
+}
+
+
+
+.main .record_box .music_box>ul>li.on {
+  font-weight: bold;
+  opacity: 1;
+}
+
+
+.main .record_box .music_box>ul>li:hover {
+  font-weight: bold;
+  opacity: 1;
+}
+
+
+
+.main .record_box .music_box i {
+
+  color: #606060;
+  font-size: 48px;
+  position: relative;
+  right: 50%;
+  transform: translate(50%);
+  transition: all 0.7s;
+}
+
+
+
+
+
+
+
+
+
+.main .record_box .music_box.on i {
+
+
+  right: 60px;
+
+
+}
+
+
+
+
+
+
+/* 레코드 애니메이션
+(평소에는 돌아가는 연출을 하고,
+재생을 멈출땐 돌아가는 연출이 멈춤) */
+
+
+
+
+.main .record_box .record {
+
+
+  width: 100%;
+
+  animation: record 20s linear infinite;
+}
+
+
+
+/* 레코드 돌아가는 애니메이션 */
+
+
+@keyframes record {
+
+  0% {
+
+    transform: rotate(0deg);
+
+  }
+
+
+  50% {
+
+
+    transform: rotate(180deg);
+
+
+  }
+
+
+  100% {
+
+
+    transform: rotate(360deg);
+
+
+  }
+
+}
+
+
+
+/* 레코드 하단의 플레이어 박스 */
+
+
+.main .record_box .player {
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 530px;
+  height: 40px;
+  background-color: #fff;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+
+
+
+.main .record_box .player span {
+  color: #606060;
+  padding-right: 30px;
+}
+
+
+
+
+
+
+.main .record_box .player>.play {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1/1;
+
+  cursor: pointer;
+
+}
+
+
+
+
+
+.main .record_box .player>.play i {
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+}
+
+
+.main .record_box .player>.play i.on {
+
+  opacity: 1;
+
+}
+
+
+
+
+
+/* 메인의 그림자 영역
+(시간대에 따라 이 그림자 배경이 달라짐) */
+
+
+
+
+
+
+
+
+.main #time_shadow {
+  mix-blend-mode: color-burn;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 2s;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(32, 32, 32, 1) 100%);
+}
+
+
+
+
+
+
+
+/* 메인 배경색 변경(on클래스) */
+
+
+/* 06~11, 18~23 */
+
+.main #time_shadow.shadowMiddle {
+  opacity: 0.5;
+
+}
+
+/* 12~17 */
+.main #time_shadow.shadowLow {
+
+  opacity: 0;
+
+}
+
+/* 00~05 */
+
+.main #time_shadow.shadowHigh {
+  opacity: 1;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메인 페이지 글 */
+
+
+.main .main_txt {
+
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  left: 187px;
+
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 110px;
+
+}
+
+
+
+
+
+.main .main_txt h2 {
+
+  color: #606060;
+
+  font-size: 64px;
+}
+
+
+
+
+
+.main .main_txt p {
+
+  line-height: 3;
+  font-size: 16px;
+  color: #606060;
+
+}
+
+
+
+
+
+.main .white {
+
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+
+}
+
+
+.main .main_picture {
+
+
+  width: 420px;
+  height: 560px;
+  background-image: url('img/hanyohan_main.png');
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sns 영역 */
+
+
+
+
+
+
+/* sns 나열한 부분 */
+
+
+
+
+.sns_inner {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+
+}
+
+
+.sns_line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 600px;
+  background-color: #606060;
+  opacity: 0.6;
+
+}
+
+
+
+.sns .sns_all {
+
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* 각 sns */
+
+.sns .sns_all li {
+
+  position: relative;
+  width: 30%;
+  height: 100%;
+  perspective: 2400px;
+}
+
+
+
+.sns .sns_all li a {
+  border-radius: 10px;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+
+/* sns 상징 이미지 */
+
+
+
+
+.sns .sns_all li a .img {
+  transform: scale(1);
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.5;
+
+}
+
+
+
+/* 호버하면 투명도가 바뀌면서 사진이 확대됨 */
+
+.sns .sns_all li a:hover .img {
+
+
+  opacity: 1;
+  transform: scale(1.2);
+
+}
+
+
+
+
+/* 사진 영역에 들어갈 사진들 */
+
+
+
+.sns .sns_all li:nth-child(1) .img {
+
+  background-image: url('img/sns1.png');
+
+}
+
+
+.sns .sns_all li:nth-child(2) .img {
+
+  background-image: url('img/sns2.png');
+
+}
+
+
+.sns .sns_all li:nth-child(3) .img {
+
+  background-image: url('img/sns3.png');
+
+}
+
+
+
+
+
+
+
+
+
+
+.sns .sns_all li .sns_app {
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%) rotateY(0deg);
+  transform-origin: center center;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+
+
+.sns .sns_all li .sns_app.on {
+
+  transform: translate(-50%, 50%) rotateY(360deg);
+
+}
+
+
+
+
+
+.sns .sns_all li .sns_app.youtube {
+
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.sns .sns_all li .sns_app.youtube i {
+
+  color: #ff0000;
+  font-size: 64px;
+}
+
+
+
+
+
+
+.sns .sns_all li .sns_app.instagram {
+
+  background: linear-gradient(180deg, rgba(131, 58, 180, 1) 0%, rgba(225, 48, 108, 1) 50%, rgba(255, 220, 128, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.sns .sns_all li .sns_app.instagram i {
+
+  color: #fff;
+  font-size: 64px;
+}
+
+
+
+
+
+
+.sns .sns_all li .sns_app.facebook {
+
+  background-color: #1877F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.sns .sns_all li .sns_app.facebook i {
+
+  color: #fff;
+  font-size: 64px;
+}
+
+
+
+
+
+
+
+.sns .sns_all li .sns_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+.sns .sns_all li a .sns_txt h3 {
+
+  transition: all 0.3s;
+  font-size: 24px;
+  color: #fff;
+
+}
+
+
+.sns .sns_all li a:hover .sns_youtube_txt h3 {
+
+  color: #ff0000;
+
+}
+
+
+.sns .sns_all li a:hover .sns_instagram_txt h3 {
+
+  color: #E1306C;
+
+}
+
+.sns .sns_all li a:hover .sns_facebook_txt h3 {
+
+  color: #1877F2;
+
+}
+
+
+
+.sns .sns_all li a .sns_txt p {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+
+.sns .sns_all li a:hover .sns_txt p {
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #606060;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 히스토리 */
+
+
+.history {
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+}
+
+
+
+
+/* 메뉴바 */
+
+
+.history_bar {
+
+  width: 70%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 800;
+
+}
+
+
+
+.history_bar li {
+
+  width: 8%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(47, 47, 47, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+
+
+
+.history_bar li.on {
+
+  opacity: 1;
+
+}
+
+
+
+.history_bar li:hover {
+
+  opacity: 1;
+
+}
+
+
+
+
+
+
+/* 2015~2024년도 전체영역 */
+
+
+.history_inner {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+/* 각 연도별 영역 */
+
+.history_zone {
+
+
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+
+
+
+/* .history_zone .inner {
+  height: 50%;
+  width: calc(100% - 160px);
+  margin: 0 auto;
+} */
+
+
+/* year의 너비를 감싸줌(바꿔야 될땐 주석으로 감춘 부분 풀기) */
+
+
+.history_zone .inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100vw - 160px);
+  margin: 0 auto;
+}
+
+
+
+
+
+
+/* 연도 영역 */
+
+.history_zone .years {
+
+  width: 100%;
+  /* height: 100%; */
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+
+.history_zone .years .years_info {
+
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+/* 시그니쳐 사운드 */
+
+.history_zone .years .years_info .signiture_deco {
+
+  height: 100%;
+  width: 47%;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+
+/* 첫 시그니쳐 사운드 */
+
+.history_zone .years .years_info .signiture_deco.sign1 {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* 맨 앞에 정렬 */
+  text-align: left;
+
+}
+
+
+/* 마지막 시그니쳐 사운드 */
+
+.history_zone .years .years_info .signiture_deco.sign2 {
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* 맨 뒤에 정렬 */
+  text-align: right;
+  transform: translateX(-80px);
+  transition: all 0.5s;
+}
+
+
+
+/* nav 버튼 클릭시 움직임(시야 가림 방지) */
+
+.history_zone .years .years_info .signiture_deco.sign2.move {
+
+  transform: translateX(0);
+
+}
+
+
+
+/* 연도부분의 숫자 영역 */
+
+
+
+.history_zone .years .years_info .years_number {
+  position: relative;
+  height: 100%;
+  width: 6%;
+
+}
+
+
+
+
+/* 숫자를 감싸는 마름모형 */
+
+
+.history_zone .years .years_info .years_number .diamond {
+  z-index: 40;
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-radius: 5px;
+  transform: translateY(-50%) rotate(45deg);
+  background-color: #fff;
+
+
+}
+
+
+
+/* 숫자 */
+
+
+
+.history_zone .years .years_info .years_number .years_number_txt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: bold;
+  color: #E4E4E6;
+  z-index: 50;
+}
+
+
+
+
+
+/* 라인 영역 */
+
+
+.history_zone .years .years_info .years_line_left,
+.history_zone .years .years_info .years_line_right {
+  height: 100%;
+  width: 47%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+/* 라인 추가선(화면 끝까지 이어지게 하기 위함) */
+
+
+.history_zone .years .years_info .years_line_right>.line_plus {
+
+  position: absolute;
+  height: 10px;
+  width: 80px;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  background-color: #fff;
+
+}
+
+
+
+
+
+.history_zone .years .years_info .years_line_left>.line_plus {
+
+  position: absolute;
+  height: 10px;
+  width: 80px;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  background-color: #fff;
+
+}
+
+
+
+
+
+
+/* 라인 */
+
+
+
+.history_zone .years .years_info .years_line_left>.years_line,
+.history_zone .years .years_info .years_line_right>.years_line {
+  height: 10px;
+  width: 100%;
+  background-color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 연도 관련 텍스트 */
+
+
+
+.history_zone .years .years_txt {
+
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+
+/* 제목 및 내용 */
+
+
+.history_zone .years .years_txt p,
+.history_zone .years .years_txt h3 {
+
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+}
+
+
+/* 제목 글씨크기 */
+
+.history_zone .years .years_txt h3 {
+
+  font-size: 32px;
+
+}
+
+
+/* 내용 글씨크기 */
+
+.history_zone .years .years_txt p {
+
+  font-size: 16px;
+
+}
+
+
+
+/* 제목과 내용 사이의 구분선 */
+
+.history_zone .years .years_txt span {
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 60%;
+  z-index: 100;
+  background-color: #fff;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 연도별 한요한의 앨범 */
+
+.history_zone .history_about {
+
+  display: flex;
+  width: 100vw;
+  height: 50%;
+}
+
+
+/* 각 사진 속성 */
+.history_zone .history_about li {
+
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  transition: all 1s;
+  position: relative;
+  bottom: 0;
+
+}
+
+
+
+/* 각 사진 속성 */
+.history_zone .history_about li:hover{
+
+  height: 200%;
+  bottom: 100%;
+
+}
+
+
+
+
+/* 앨범 클릭시 링크 이동*/
+
+.history_zone .history_about li a {
+
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+
+}
+
+/* 앨범이름 배경 */
+
+.history_zone .history_about li p {
+  backdrop-filter: blur(10px);
+  transform: scale(1);
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s;
+
+}
+
+/* 리스트 호버시 색깔이 진해지고 사진과 같이 크기가 커짐 */
+
+.history_zone .history_about li:hover p {
+
+  transform: scale(1.2);
+  background-color: #fff;
+
+}
+
+
+
+/* 앨범이름 */
+
+.history_zone .history_about li span {
+
+  color: #606060;
+
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+
+}
+
+
+
+
+
+
+
+/* 앨범 사진 속성 */
+
+.history_zone .history_about li div {
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1);
+  transition: all 0.7s;
+  opacity: 0.6;
+}
+
+/* 리스트 호버시 앨범 사진 크기도 증가 */
+
+
+.history_zone .history_about li:hover div {
+
+  transform: scale(1.2);
+  opacity: 1;
+
+}
+
+
+
+
+
+
+/* 각 앨범 사진 추출 */
+
+.history_zone .history_about li .history_img_man1 {
+  background-image: url('img/history1.png');
+}
+
+
+.history_zone .history_about li .history_img_album1 {
+  background-image: url('img/album/history_album_2015.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man2 {
+  background-image: url('img/history2.png');
+}
+
+
+.history_zone .history_about li .history_img_album2 {
+  background-image: url('img/album/history_album_2016.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man3 {
+  background-image: url('img/history3.png');
+}
+
+
+.history_zone .history_about li .history_img_album3 {
+  background-image: url('img/album/history_album_2017.png');
+}
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man4 {
+  background-image: url('img/history4.png');
+}
+
+
+.history_zone .history_about li .history_img_album4 {
+  background-image: url('img/album/history_album_2018.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man5 {
+  background-image: url('img/history5.png');
+}
+
+
+.history_zone .history_about li .history_img_album5 {
+  background-image: url('img/album/history_album_2019.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man6 {
+  background-image: url('img/history6.png');
+}
+
+
+.history_zone .history_about li .history_img_album6 {
+  background-image: url('img/album/history_album_2020.jpg');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man7 {
+  background-position: center top;
+  background-image: url('img/history7.png');
+}
+
+
+.history_zone .history_about li .history_img_album7 {
+  background-image: url('img/album/history_album_2021.png');
+}
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man8 {
+  background-image: url('img/history8.png');
+}
+
+
+.history_zone .history_about li .history_img_album8 {
+  background-image: url('img/album/history_album_2022.webp');
+}
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man9 {
+  background-image: url('img/history9.png');
+}
+
+
+.history_zone .history_about li .history_img_album9 {
+  background-image: url('img/album/history_album_2023.webp');
+}
+
+
+
+
+
+
+
+
+
+
+
+.history_zone .history_about li .history_img_man10 {
+  background-image: url('img/history2024.png');
+}
+
+
+.history_zone .history_about li .history_img_album10 {
+  background-image: url('img/album/history_album_2024.jpg');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* album 내부영역 */
+
+
+.album_inner {
+
+  position: relative;
+
+  /* 동영상 나타날 때 translateZ사용 */
+  perspective: 1000px;
+
+  /* z값 변경시 가로 스크롤 숨김 */
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 비디오 영역 */
+
+.album_vid{
+
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 400px;
+  transform: translateZ(0) translate(-50%, -50%);
+  z-index: 1000;
+  transform-origin: center center;
+  transition: all 1s;
+
+}
+
+
+.album_vid.hidden{
+
+  transform: translateZ(3000px) translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+
+}
+
+
+.album_vid li{
+
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);  
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+.album_vid li.on{
+
+  display: flex;
+
+}
+
+
+
+
+
+
+.album_vid li video{
+
+  height: 100%;
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 앨범 리스트(제목) */
+
+
+
+.album_click {
+
+  position: absolute;
+  width: 200px;
+  height: 220px;
+  top: 55px;
+  left: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 100;
+}
+
+
+
+
+
+.album_click li {
+
+  transition: all 1s;
+  position: relative;
+  height: 20%;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+.album_click li:hover {
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.album_click li.on {
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+/* 앨범 재생 버튼*/
+
+
+.album_click li .play {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+
+
+.album_click li.on .play {
+  display: block;
+}
+
+
+.album_click li .play i {
+
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #fff;
+}
+
+.album_click li .play i.on {
+  opacity: 1;
+}
+
+
+
+/* 앨범 제목 하단 선 */
+
+
+.album_click li .play_line {
+
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 1s;
+}
+
+
+.album_click li:hover .play_line {
+
+  opacity: 1;
+
+}
+
+
+.album_click li.on .play_line {
+
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 앨범 리스트 영역 */
+
+
+.album_inner .album_list {
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: all 1s;
+  transform: translate(-50%, -50%) translateZ(0);
+  overflow: hidden;
+  z-index: 10;
+}
+
+
+
+
+.album_inner .album_list.hidden {
+
+  transform: translate(-50%, -50%) translateZ(-3000px);
+  z-index: -1;
+}
+
+
+
+
+/* 앨범 리스트(메인앨범) */
+
+
+
+
+
+
+
+
+
+.album_list ul {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 166.6666%;
+
+
+}
+
+
+
+
+.album_list ul li {
+  cursor: pointer;
+  width: 20%;
+  height: 400px;
+  opacity: 0.6;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.album_list ul li.on {
+  opacity: 1;
+}
+
+
+
+
+
+/* 앨범 표지(원) */
+
+.album_list ul li .album_circle {
+
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+
+.album_list ul li.on .album_circle {
+
+  width: 400px;
+  height: 400px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 각 앨범들 서식 */
+
+
+
+
+
+
+
+
+
+
+
+.album_list ul li .album_circle1 {
+
+  background-image: url('img/album/album4-2.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+
+
+.album_list ul li .album_circle1 img {
+
+  width: 100%;
+  transform: scale(0) translate(0,0);
+
+
+}
+
+
+.album_list ul li.on .album_circle1 img {
+
+  transform: scale(1) translate(-15%,-15%);
+  animation: album1-1 0.5s;
+
+}
+
+
+
+@keyframes album1-1{
+
+
+
+  0%{
+
+    transform: scale(0) translate(0,0);;
+
+
+  }
+
+
+  100%{
+
+    transform: scale(1) translate(-15%,-15%);
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.album_list ul li .album_circle2 {
+
+  background-image: url('img/album/album5-2.png');
+  overflow: hidden;
+  position: relative;
+}
+
+
+.album_list ul li .album_circle2 img {
+
+
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+
+}
+
+
+.album_list ul li.on .album_circle2 img {
+
+  bottom: 20%;
+  animation: album2-1 0.5s;
+
+}
+
+
+
+
+@keyframes album2-1{
+
+  0%{
+
+    bottom: 5%;
+
+  }
+
+
+
+  100%{
+
+
+    bottom: 20%;
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.album_list ul li .album_circle3 {
+
+  background-image: url('img/album/history_album_2019.png');
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+.album_list ul li .album_circle3 img:nth-child(1) {
+
+  width: 20%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+
+.album_list ul li.on .album_circle3 img:nth-child(1) {
+
+  left: -20%;
+  animation: album3-1 linear 0.5s;
+
+}
+
+.album_list ul li .album_circle3 img:nth-child(2) {
+
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+}
+
+
+
+
+
+@keyframes album3-1 {
+
+    0%{
+
+      left: 100%;
+
+    }
+
+
+    100%{
+
+      left: -20%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.album_list ul li .album_circle4 {
+
+  background-image: url('img/album/history_album_2021.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+
+.album_list ul li.on .album_circle4 {
+
+  animation: album4-2 1s linear;
+
+}
+
+
+
+.album_list ul li .album_circle4 img {
+
+
+  width: 120%;
+  border-radius: 50%;
+  transform: scale(0);
+
+}
+
+
+
+
+.album_list ul li.on .album_circle4 img {
+
+  animation: album4-1 1s linear;
+
+
+
+}
+
+
+
+
+@keyframes album4-1 {
+
+  0% {
+
+    transform: scale(0);
+    opacity: 0;
+
+  }
+
+  25% {
+
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+
+    transform: scale(0);
+    opacity: 0;
+
+  }
+
+  75% {
+
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+
+  100% {
+
+    transform: scale(0);
+    opacity: 0;
+  }
+
+}
+
+
+
+@keyframes album4-2 {
+
+  0% {
+
+    opacity: 0.5;
+
+  }
+
+  25% {
+
+    opacity: 0.8;
+  }
+
+  50% {
+
+    opacity: 0.5;
+
+  }
+
+  75% {
+
+    opacity: 0.8;
+  }
+
+
+  100% {
+
+    opacity: 0.5;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.album_list ul li .album_circle5 {
+
+  background-image: url('img/album/album3-1.png');
+
+}
+
+
+
+
+
+.album_list ul li.on .album_circle5 {
+
+  background-image: url('img/album/album3.png');
+
+  animation: album5-1 0.7s;
+
+
+}
+
+
+
+
+
+
+
+@keyframes album5-1{
+
+
+
+  0%{
+
+    background-image: url('img/album/album3-1.png');
+
+  }
+
+
+
+  100%{
+
+
+    background-image: url('img/album/album3.png');
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 앨범 플레이 관련 영역 */
+
+
+
+.album_play {
+  z-index: 1000;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.album_play .play_bar {
+  width: 60%;
+  height: 20px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.album_play .play_bar_this {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  background-color: #999;
+}
+
+.album_play .play_bar_ball {
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #999;
+}
+
+.album_play .play_bar_this .play_ball {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #606060;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 시간 표시 */
+
+.album_play .play_time {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+.album_play .play_time p {
+  font-size: 20px;
+  padding: 0 5px;
+
+}
+
+
+.album_play .play_time span {
+
+  font-size: 20px;
+
+}
+
+
+
+
+
+
+
+
+/* 플레이 관련 버튼 영역*/
+
+
+.album_play .play_buttons {
+
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+.album_play .play_buttons li {
+
+  cursor: pointer;
+  width: 15%;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+
+}
+
+
+.album_play .play_buttons li i {
+
+  color: #606060;
+
+}
+
+
+
+
+/* 버튼 호버 및 on클래스 */
+
+.album_play .play_buttons li:hover,
+.album_play .play_buttons li.on {
+
+  background-color: #606060;
+  
+
+}
+
+.album_play .play_buttons li:hover i,
+.album_play .play_buttons li.on i{
+
+  color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* 다음버튼을 이전버튼으로 만들기위해 180도 뒤집음 */
+
+.album_play .play_buttons li:nth-child(3) {
+
+  transform: rotate(180deg);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 플레이 앱 */
+
+.album_play .play_app {
+
+  width: 150px;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+
+.album_play .play_app li {
+
+  height: 60px;
+  aspect-ratio: 1/1;
+
+}
+
+
+.album_play .play_app li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.album_play .play_app li:nth-child(1) a {
+
+  background-color: #ff0000;
+
+
+}
+
+.album_play .play_app li:nth-child(1) a i {
+
+  font-size: 32px;
+
+}
+
+
+.album_play .play_app li:nth-child(2) a i {
+
+  font-size: 60px;
+  color: #1ed760;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 포토 영역 */
+
+
+.photo{
+
+  position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
+/* 리스트들이 모두 화면에 꽉차게 보여져야하기에 100%적용 */
+
+.photo_inner.inner {
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  z-index: 100;
+}
+
+
+
+
+.photo_buttons {
+
+  position: absolute;
+  width: 700px;
+  height: 65px;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+
+
+
+
+.photo_buttons li {
+
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1877F2;
+  border-radius: 9999px;
+  font-size: 20px;
+  background-color: #fff;
+  color: #606060;
+  cursor: pointer;
+  transition: all 0.5s;
+
+}
+
+
+.photo_buttons li:hover {
+
+
+  background-color: #606060;
+  color: #fff;
+
+
+}
+
+
+.photo_buttons li.on {
+
+
+  background-color: #606060;
+  color: #fff;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 뒤의 시그니쳐 */
+
+
+
+
+.back_signiture{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: calc(50% - 250px);
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+
+}
+
+
+
+.back_signiture>li{
+
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+
+
+
+
+
+.back_signiture>li:nth-child(1){
+
+  left: 0;
+  animation: back_infinite1 linear 20s infinite;
+}
+
+.back_signiture>li:nth-child(2){
+
+  left: 2801px;
+  animation: back_infinite2 linear 20s infinite;
+}
+
+
+
+
+
+
+
+
+/* 뒤의 시그니쳐 전용 애니메이션 */
+
+
+@keyframes back_infinite1{
+
+  0%{
+
+    left: 0;
+
+  }
+
+
+  49.9999%{
+
+    left: -2801.55px;
+
+  }
+
+
+
+  50%{
+
+    left: 2801.55px;
+
+  }
+
+
+
+  100%{
+
+    left: 0;
+
+
+  }
+
+
+}
+
+
+
+
+
+
+@keyframes back_infinite2{
+
+  0%{
+
+    left: 2801.55px;
+
+  }
+
+
+  49.9999%{
+
+    left: 0px;
+
+  }
+
+
+
+  100%{
+
+    left: -2801.55px;
+
+
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.back_signiture>li ul{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.back_signiture>li ul li{
+  height: 100%;
+  margin: 0 40px;
+}
+
+
+
+.back_signiture>li ul li img{
+
+
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 앞의 시그니쳐 */
+
+
+
+
+
+
+
+
+.front_signiture{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: calc(50% - 250px);
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+
+}
+
+
+
+.front_signiture>li{
+
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.front_signiture>li:nth-child(1){
+
+  left: 0;
+  animation: front_infinite1 linear 20s infinite;
+}
+
+.front_signiture>li:nth-child(2){
+
+  left: 1814.38px;
+  animation: front_infinite2 linear 20s infinite;
+}
+
+
+
+
+
+
+
+/* 뒤의 시그니쳐 전용 애니메이션 */
+
+
+@keyframes front_infinite1{
+
+  0%{
+
+    left: 0;
+
+  }
+
+
+  49.9999%{
+
+    left: -1814.38px;
+
+  }
+
+
+
+  50%{
+
+    left: 1814.38px;
+
+  }
+
+
+
+  100%{
+
+    left: 0;
+
+
+  }
+
+
+}
+
+
+
+
+
+
+@keyframes front_infinite2{
+
+  0%{
+
+    left: 1814.38px;
+
+  }
+
+
+  49.9999%{
+
+    left: 0px;
+
+  }
+
+
+
+  100%{
+    left: -1814.38px;
+
+
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.front_signiture>li ul{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.front_signiture>li ul li{
+  height: 100%;
+  margin: 0 20px;
+}
+
+
+
+.front_signiture>li ul li img{
+
+
+  height: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 포토 리스트 영역 */
+
+
+
+
+
+
+.all_photo_list {
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2240px;
+  /* width: 1000px; */
+  height: 400px;
+  overflow: hidden;
+  z-index: 100;
+
+}
+
+
+
+.all_photo_list .photo_list {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+}
+
+
+.all_photo_list .photo_list.on {
+
+  display: block;
+
+}
+
+
+
+
+
+/* 주제 내에서 보여줄 리스트 */
+
+
+.all_photo_list .photo_list>ul {
+
+
+  position: absolute;
+
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* 첫번째 보여줄 리스트 */
+
+.all_photo_list .photo_list>ul:nth-child(1) {
+  left: 0;
+  animation: infinite1 60s infinite linear;
+}
+
+
+
+
+
+/* 두번째 보여줄 리스트 */
+
+.all_photo_list .photo_list>ul:nth-child(2) {
+  left: 100%;
+  animation: infinite2 60s infinite linear;
+}
+
+
+
+/* 리스트 하나당 설정 */
+
+
+.all_photo_list .photo_list>ul li{
+
+
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+
+  background-size: cover;
+  background-position: center center;
+
+  transition: all 0.5s;
+
+  opacity: 1;
+  filter: blur(0);
+  cursor: pointer;
+
+}
+
+
+
+.all_photo_list .photo_list>ul li.blur{
+
+  opacity: 0.5;
+  filter: blur(10px);
+
+}
+
+
+
+
+
+/* 간격 설정 */
+
+.all_photo_list .photo_list>ul li:first-child{
+
+  margin-left: 10px;
+
+}
+
+
+.all_photo_list .photo_list>ul li:last-child{
+
+  margin-right: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 무한 재생 */
+
+
+
+/* 처음부터 보여주고 중간즘에 다보여주었다가 바로 다음에 맨뒤로 보냄 */
+/* 그후에 애니메이션이 끝날때 원점으로 되돌아옴 */
+
+
+@keyframes infinite1 {
+
+  0% {
+
+    left: 0;
+
+  }
+
+
+  49.9999% {
+
+    left: -100%;
+
+  }
+  
+  
+  50% {
+
+    left: 100%;
+
+  }
+
+
+  100% {
+
+    left: 0;
+
+
+  }
+
+
+}
+
+
+
+
+
+/* 두번째(첫번째 바로뒤에서 시작해서 중간쯤엔 영역 맨 끝에 닿고)
+ 그 이후로는 애니메이션이 끝날때까지 계속 보여줌)*/
+
+
+
+@keyframes infinite2 {
+
+  0% {
+
+    left: 100%;
+
+  }
+
+
+
+  49.9999%{
+
+    left: 0%;
+
+  }
+
+
+
+  100% {
+
+    left: -100%;
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 포토 클릭시 발생 */
+
+
+
+.photo_focus{
+
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(96,96,96,0.7);
+  z-index: 3000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  perspective: 1000px;
+
+}
+
+
+.photo_focus.off{
+
+  opacity: 0;
+  z-index: -1;
+
+}
+
+
+
+/* 강조시킬 확대버전 사진 */
+
+.big_photo{
+
+  width: 500px;
+  height: 700px;
+  border-radius: 20px;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+
+
+/* 빛 효과 */
+
+.big_photo .light{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(139deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.3) 75%, rgba(255,255,255,0) 100%);
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  filter: brightness(1.3);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 설정 */
+
+
+@media(min-width:1281px) {
+
+  .inner {
+    width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+
+
+}

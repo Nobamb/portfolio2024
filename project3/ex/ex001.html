@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로젝트3_ex001</title>
+
+
+  <!-- 제이쿼리 cdn연결 -->
+
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+  <script>
+
+
+    $(document).ready(function () {
+
+
+
+      // nav에 li를 클릭했을 때
+
+      // 1. 순번찾기
+
+      // 2. 클릭한 순번에 맞춰 article에게 class값 주기
+
+      for (let i = 0; i < 5; i++) {
+
+        $('nav li').eq(i).click(function () {
+
+          $('section>article').removeClass();
+
+          $('section>article').eq(i).addClass('on');
+
+        })
+
+      }
+
+
+      $(document).keydown(function (e) {
+
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'C')) {
+
+          $('section>article').css({ 'color': '#fff' });
+
+        }
+
+
+
+        if (e.ctrlKey && (e.key === 'v' || e.key === 'V')) {
+
+          $('section>article').css({ 'color': '#000' });
+
+        }
+
+      })
+
+
+
+    })
+
+
+
+  </script>
+
+
+
+  <style>
+    * {
+
+      margin: 0;
+      padding: 0;
+
+    }
+
+    ul {
+
+      list-style: none;
+
+    }
+
+
+    header {
+
+      position: fixed;
+      width: 100%;
+      height: 100px;
+      bottom: 0;
+      left: 0;
+      background-color: gray;
+      display: flex;
+      align-items: center;
+      z-index: 99;
+
+    }
+
+
+    header h1 {
+
+      width: 10%;
+      display: flex;
+      justify-content: center;
+    }
+
+
+
+    header nav {
+
+      width: 90%;
+    }
+
+    header nav>ul {
+      display: flex;
+
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    header nav>ul>li {
+
+      padding: 20px;
+      cursor: pointer;
+      color: #fff;
+
+    }
+
+    header nav>ul>li:hover {
+
+
+      text-decoration: underline;
+
+    }
+
+    section {
+
+
+      width: 100%;
+      height: calc(100vh - 100px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: #ccc;
+    }
+
+
+    section>article {
+
+      /* 세부내용을 정리하기 위해 flex해놓고 정리한다. */
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+
+      font-size: 160px;
+      transition: all 1.8s;
+
+    }
+
+    section>article:nth-child(1) {
+
+      top: -100%;
+      left: -100%;
+      background-color: red;
+
+    }
+
+    section>article:nth-child(2) {
+
+      top: -100%;
+      left: 100%;
+      background-color: blue;
+
+
+    }
+
+
+    section>article:nth-child(3) {
+
+
+      top: 100%;
+      left: -100%;
+
+      background-color: yellow;
+
+
+
+    }
+
+
+    section>article:nth-child(4) {
+
+
+
+      top: 100%;
+      left: 100%;
+      background-color: purple;
+
+
+    }
+
+
+    section>article.on {
+
+      left: 0;
+      top: 0;
+
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+  <header>
+    <h1>로고</h1>
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>profile</li>
+        <li>gallery</li>
+        <li>자유주제</li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section>
+    <article class="on">menu1</article>
+    <article>menu2</article>
+    <article>menu3</article>
+    <article>menu4</article>
+  </section>
+
+
+</body>
+
+
+
+
+</html>
