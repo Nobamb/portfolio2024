@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+
+      margin: 0;
+      padding: 0;
+
+
+    }
+
+    ul {
+
+      list-style: none;
+
+    }
+
+    a {
+
+      color: #000;
+      text-decoration: none;
+
+    }
+
+    img {
+
+      vertical-align: bottom;
+
+    }
+
+
+
+    header {
+
+      background-color: lightgreen;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding: 20px;
+      box-sizing: border-box;
+
+    }
+
+
+    header nav ul {
+
+      display: flex;
+
+
+    }
+
+
+    header nav li a {
+
+      display: block;
+      padding: 20px;
+
+    }
+
+    header nav li a:hover {
+
+      color: blanchedalmond;
+
+    }
+
+
+
+
+    header .util ul {
+
+      display: flex;
+
+
+    }
+
+
+
+
+
+    header .util ul li a {
+
+      display: block;
+      padding: 10px;
+      position: relative;
+
+    }
+
+
+
+
+    header .util ul li span {
+
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      background-color: red;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 1.8;
+      color: #fff;
+      top: 0px;
+      right: -5px;
+
+    }
+
+
+
+
+    .wrap {
+
+      padding: 20px;
+
+    }
+
+
+
+
+    section {
+
+      background-color: #eee;
+      padding: 30px 0;
+
+    }
+
+
+
+    section h1 {}
+
+
+    article {}
+
+
+    article ul {
+
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+
+    }
+
+
+    article li {
+
+      width: 20%;
+      height: 250px;
+      background-color: #fff;
+
+    }
+
+
+
+    article li a {
+
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+    }
+
+
+
+
+    article li p {
+
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    article li p img {
+
+      width: 100%;
+      transform: translateY(-100px);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    article li span {
+
+      position: absolute;
+      z-index: 3;
+      right: 10px;
+      bottom: 10px;
+      background-color: pink;
+      border-radius: 5px;
+      padding: 10px;
+      color: #fff;
+    }
+
+
+
+    article li .price {
+
+
+      position: absolute;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      bottom: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-weight: bold;
+
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+
+      // 장바구니를 클릭하면 shop이 보여라
+
+
+
+
+      let count = 0;
+
+
+      $('.shopcart').click(function (e) {
+
+        e.preventDefault();
+
+        $('.shop').css({ 'display': 'flex' });
+
+      })
+
+
+      // 되돌아가기를 클릭하면 shop이 사라져라
+      // shop의 list를 비워라
+
+
+      $('.reset').click(function () {
+
+
+        $('.shop').hide();
+
+        $('.shop .list').find('div').empty();
+
+      })
+
+
+      // empty를 클릭했을 때 장바구니의 숫자가 0이 되어라
+
+
+      $('.empty').click(function () {
+
+        count = 0;
+
+        $('.shopcart').find('span').text(count);
+
+        $('.product').find('span').text(count);
+
+      })
+
+
+
+
+      // 카트를 클릭했을 때 숫자(변수)가 증가하게 만들고
+      // 그 숫자를 shopcart의 span에 출력해라
+
+
+      $('.cart').click(function (e) {
+
+        e.preventDefault();
+
+        count++;
+
+        $('.shopcart').find('span').text(count);
+
+        $('.product').find('span').text(count);
+
+
+
+        // 나의 부모 안에서 price를 찾아서 금액을 출력해라
+
+        // 나의 부모 안에서 p안에 있는 img 태그를 출력해라
+
+        let txt = $(this).parents('a').find('.price').text();
+
+
+
+
+        let timg = $(this).parents('a').find('p').html();
+
+
+        $('.shop').find('.list').append(`<div>${timg + txt}</div>`);
+
+
+        console.log(`${txt}${timg}`)
+
+
+      })
+
+    })
+
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <h1>로고</h1>
+    <nav>
+      <ul>
+        <li><a href="">menu1</a></li>
+        <li><a href="">menu2</a></li>
+        <li><a href="">menu3</a></li>
+        <li><a href="">menu4</a></li>
+      </ul>
+    </nav>
+    <div class="util">
+      <ul>
+        <li class="shopcart"><a href="">장바구니 <span>0</span></a></li>
+        <li><a href="">로그인</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <div class="wrap">
+
+
+
+    <section class="product1">
+
+      <h1>title</h1>
+
+      <article>
+
+        <ul>
+          <li><a href="">
+              <p><img src="https://picsum.photos/id/30/200/300" alt=""></p>
+              <span class="cart">담기</span>
+              <div class="price">10,000원</div>
+            </a></li>
+
+          <li><a href="">
+              <p><img src="https://picsum.photos/id/0/200/300" alt=""></p>
+              <span class="cart">담기</span>
+              <div class="price">20,000원</div>
+            </a></li>
+          <li><a href="">
+              <p><img src="https://picsum.photos/id/48/200/300" alt=""></p>
+              <span class="cart">담기</span>
+              <div class="price">30,000원</div>
+            </a></li>
+
+          <li><a href="">
+              <p><img src="https://picsum.photos/id/146/200/300" alt=""></p>
+              <span class="cart">담기</span>
+              <div class="price">40,000원</div>
+            </a></li>
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <div class="shop">
+      <div class="product">
+        <h2>제품리스트</h2>
+        <div class="list">
+
+
+
+        </div>
+        <p>장바구니 개수 : <span>00</span></p>
+
+
+      </div>
+
+
+
+      <div class="btn">
+
+        <button class="login"><a href="login.html">결제하기</a></button>
+        <button class="reset">되돌아가기</button>
+        <button class="empty">장바구니 비우기</button>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <style>
+    .shop {
+
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.3);
+      left: 0;
+      top: 0;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 999;
+      display: none;
+
+    }
+
+
+
+    .product {
+
+      width: 500px;
+      height: 300px;
+      background-color: palevioletred;
+      overflow-y: auto;
+
+    }
+
+
+    .product .list div {
+
+      color: #fff;
+
+
+    }
+
+
+
+    .product .list div img{
+
+      width: 50px;
+      height: 50px;
+
+    }
+
+
+    .btn {
+
+      margin-top: 20px;
+
+
+    }
+
+    .btn button {
+
+
+      padding: 10px 20px;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+
+    }
+  </style>
+
+
+
+</body>
+
+</html>

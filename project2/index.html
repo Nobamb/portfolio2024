@@ -1,0 +1,3597 @@
+<!DOCTYPE HTML
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/css; 
+charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포켓몬스터</title>
+  <!-- 약 44시간 진행 -->
+  <!-- css연결 -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/rating_simple.css" rel="stylesheet" type="text/css">
+
+
+  <!-- 깃허브및 서버연결용 버전정보입력하기 -->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <!-- 제이쿼리 cdn 연결 -->
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+
+
+  <!-- 제이쿼리 내부의 있는 스타일 정보를 가져오기 -->
+  <script src="js/jquery-ui.min.js"></script>
+  <!-- 이펙트 효과 연결하기 -->
+  <script src="js/jquery.easing.1.3.js"></script>
+  <!-- 마우스휠 효과 CDN 연결하기 -->
+  <script src="js/jquery.mousewheel.min.js"></script>
+  <!-- 자바스크립트 연결 -->
+  <script src="js/js.js"></script>
+
+  <script type="text/javascript" src="js/rating_simple.js"></script>
+
+  <!-- 폰트어썸 설정 -->
+  <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+
+
+
+  <div class="pocketMouse">
+  </div>
+
+
+
+
+
+  <!-- header 이벤트 킬땐 class on -->
+  <!-- <header class="on"> -->
+  <header>
+    <div class="header_inner">
+      <h1><a href=""><img src="img/logo.png" alt=""></a></h1>
+      <nav>
+        <ul>
+
+
+
+          <li><a href="">게임</a>
+            <ul class="game">
+              <li><a href="">포켓몬스터 시리즈</a></li>
+              <li><a href="">그 외 시리즈</a></li>
+              <li><a href="">모바일 게임</a></li>
+              <li class="gameImg sumbnail"></li>
+            </ul>
+          </li>
+
+
+
+          <li><a href="">상품</a>
+            <ul class="product">
+              <li><a href="">완구</a></li>
+              <li><a href="">잡화</a></li>
+              <li><a href="">이벤트</a></li>
+              <li class="productImg sumbnail"></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <ul class="util">
+        <li class="search">
+          <form action="">
+            <input type="search" placeholder="검색어를 입력하세요">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </li>
+        <li class="shopMain">
+          <a href="">
+            장바구니<i class="fa-solid fa-cart-shopping but">
+              <div class="shop_number"></div>
+            </i>
+
+          </a>
+        </li>
+        <li class="login">
+          <!-- <a href="ex.html"> -->
+          <a href="login.html">
+            <span>로그인</span><i class="fa-solid fa-right-to-bracket but"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 전체 영역 -->
+
+  <!-- wrap 스크롤 이벤트는 scrollevent,
+  안보이게 할땐 off 클래스 주기 -->
+  <!-- <div id="wrap" class="off"> -->
+  <div id="wrap" class="scrollevent">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 히어로 영역 -->
+
+    <div class="box1 heroBox">
+      <section class="hero">
+        <!-- 히어로 사진 -->
+        <ul class="listBox">
+          <li class="list0 on">
+
+          </li>
+          <li class="list1">
+
+          </li>
+          <li class="list2">
+
+          </li>
+          <li class="list3">
+
+          </li>
+          <li class="list4">
+
+          </li>
+        </ul>
+
+        <!-- 히어로 슬라이드 -->
+        <div class="slideZone">
+          <ul class="slidebar">
+            <li class="slide1"></li>
+            <li class="slide2"></li>
+            <li class="slide3"></li>
+            <li class="slide4"></li>
+            <li class="slide5"></li>
+            <li class="slide"></li>
+          </ul>
+        </div>
+
+        <!-- 히어로 버튼 구역 -->
+        <div class="buttonZone">
+          <div class="prev off">
+
+            <div class="red"></div>
+            <div class="arrowZone">
+              <i class="fa-solid fa-caret-left"></i>
+            </div>
+          </div>
+
+
+
+          <div class="next">
+            <div class="red">
+            </div>
+            <div class="arrowZone">
+              <i class="fa-solid fa-caret-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="mouseZone">
+          <i class="fa-solid fa-computer-mouse mouse"></i>
+          <i class="fa-solid fa-caret-down down1"></i>
+          <i class="fa-solid fa-caret-down down2"></i>
+          <span>scroll</span>
+          <span>down</span>
+        </div>
+
+
+      </section>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 제품 영역 -->
+    <div class="box2 goodsBox">
+
+
+      <section class="goods">
+
+
+        <!-- 제품 영역 제목 -->
+        <h2 class="intro">
+          <ul>
+            <li class="on">
+
+            </li>
+            <li> </li>
+          </ul>
+        </h2>
+
+
+
+        <!-- 제품 영역 본문 -->
+        <div class="gZone">
+
+
+
+
+
+          <!-- 메뉴창 영역(왼쪽) -->
+          <div class="gMenu">
+
+
+            <!-- 메뉴 영역 -->
+            <div class="menu">
+              <!-- 메뉴버튼 영역 -->
+              <div class="mButtonzone">
+                <ul class="mButton">
+                  <li class="on">게임</li>
+                  <li>상품</li>
+                </ul>
+                <!-- 버튼 클릭하면 180도 뒤집힘 -->
+                <div class="mButtonArrow"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+
+
+
+              <!-- 메뉴 리스트 영역 -->
+              <div class="mList">
+                <!-- opacity 0일땐 li가 클릭 안되게 -->
+                <div class="mList_hide"></div>
+                <h4>제품종류</h4>
+                <ul>
+                  <li>게임</li>
+                  <li>상품</li>
+                </ul>
+              </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- 포켓몬들 영역 -->
+            <ul class="char">
+
+
+              <li class="on">
+                <h3>게임 <br>
+                  GAME</h3>
+                <div class="charZone">
+                  <img src="img/char_picka.png" alt="">
+                </div>
+              </li>
+
+
+
+
+              <li>
+                <h3>상품 <br>
+                  PRODUCT</h3>
+                <div class="charZone">
+                  <img src="img/char_eve.png" alt="">
+                </div>
+              </li>
+
+
+
+            </ul>
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- 리스트 영역 -->
+          <div class="gList">
+
+            <!-- 게임, 상품 리스트 영역 -->
+            <ul class='listZone'>
+              <!-- 게임 -->
+              <li class="gameList on">
+
+
+                <!-- 무한스크롤 구현을 위해 같은 리스트를 두개 구현 -->
+
+
+                <ul class="game_list1">
+
+                  <!-- 스칼렛 바이올렛 -->
+                  <li>
+                    <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb1"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 <br>
+                          스칼렛・바이올렛 1세트
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">129600원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a>
+                  </li>
+
+
+
+                  <!-- 레전드 아르세우스 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb2"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          Pokémon <br>
+                          LEGENDS 아르세우스
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">69800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                  <!-- 제로의 비보 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb3"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          스칼렛・바이올렛 DLC<br>
+                          제로의 비보
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">34800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+
+
+
+                  <!-- 돌아온 명탐정 피카츄 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb4"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 돌아온<br>
+                          명탐정 피카츄
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">64800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+                  <!-- 소드 실드 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb5"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 <br>
+                          소드・실드 1세트
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">129600원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                </ul>
+
+
+
+                <ul class="game_list2">
+
+                  <!-- 스칼렛 바이올렛 -->
+                  <li>
+                    <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb1"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 <br>
+                          스칼렛・바이올렛 1세트
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">129600원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a>
+                  </li>
+
+
+
+                  <!-- 레전드 아르세우스 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb2"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          Pokémon <br>
+                          LEGENDS 아르세우스
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">69800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                  <!-- 제로의 비보 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb3"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          스칼렛・바이올렛 DLC<br>
+                          제로의 비보
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">34800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+
+
+
+                  <!-- 돌아온 명탐정 피카츄 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb4"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 돌아온<br>
+                          명탐정 피카츄
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">64800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+                  <!-- 소드 실드 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb5"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 <br>
+                          소드・실드 1세트
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">129600원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                </ul>
+
+
+              </li>
+
+
+
+
+              <!-- 상품 -->
+              <li class="proList">
+
+                <ul class="pro_list1">
+
+
+
+                  <li>
+                    <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb1"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          얼려먹는 야쿠르트 납작복숭아
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a>
+                  </li>
+
+
+
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb2"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬 콤푸차
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">9800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb3"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬빵 픽셀 1세트
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">5400원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb4"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓피스 하우스
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">37400원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb5"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                        </div>
+
+                        <p>
+                          포켓몬 퍼펙트휩
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">25000원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                </ul>
+
+
+                <ul class="pro_list2">
+
+
+
+                  <li>
+                    <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb1"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          얼려먹는 야쿠르트 납작복숭아
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a>
+                  </li>
+
+
+
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb2"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬 콤푸차
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">9800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb3"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬빵 픽셀
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">5400원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb4"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓피스 하우스
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">37400원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb5"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                        </div>
+
+                        <p>
+                          포켓몬 퍼펙트휩
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">25000원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                </ul>
+
+              </li>
+
+
+
+            </ul>
+
+
+            <div class="arrows">
+              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 연혁 영역 -->
+
+    <!-- 자바스크립트로 yearzone 부분
+    내릴수록 포켓몬들 페이드 인 아웃되면서
+   포켓몬 볼이 여닫히는 연출과 열릴때는 소개 대화창이 열리고
+  볼이 닫힐때는 대화창이 닫히는 효과 구현해보기 -->
+    <div class="box3 yearsBox">
+
+
+
+      <section class="years">
+
+        <h2>
+        </h2>
+
+        <!-- 연혁 본문 -->
+        <div class="yearsZone">
+
+
+
+          <!-- 세대 -->
+          <div class="gene">
+            <ul>
+              <li><img src="img/gene1.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene2.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene3.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene4.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene5.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene6.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene7.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene8.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+              <li><img src="img/gene9.png" alt="">
+                <div class="effect1"></div>
+                <div class="effect2"></div>
+              </li>
+            </ul>
+          </div>
+
+
+
+          <!-- 역사 -->
+          <div class="history">
+            <ul>
+              <li>
+                <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years1.png" alt="" class="img2">
+                <div class="txt">
+                  <p>1996년 2월 27일 포켓몬스터 레드/그린 발매
+                  </p>
+                  <div class="textHide textHide1"></div>
+                  <p>1998년 7월 18일 극장판 뮤츠의 역습 상영 시작
+                  </p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years2.png" alt="" class="img2">
+                <div class="txt">
+                  <p>1999년 11월 21일 포켓몬스터 금/은 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2000년 7월 8일 극장판 결정탑의 제왕 엔테이 상영 시작</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years3.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2002년 11월 21일 포켓몬스터 루비/사파이어 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2004년 9월 16일 포켓몬스터 에메랄드 발매</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years4.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2006년 9월 28일 다이아몬드/펄 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2008년 9월 13일 확장판 포켓몬스터 플라티나 발매</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years5.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2010년 9월 18일 포켓몬스터 블랙 화이트 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2012년 6월 23일 후속작 블랙2/화이트2 발매</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years6.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2013년 10월 12일 포켓몬스터 X/Y 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2014년 11월 21일 포켓몬스터 오메가루비/알파사파이어 발매</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years7.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2016년 11월 18일 포켓몬스터 썬/문 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>한국 기준 2017년 1월 24일 Pokémon GO 출시</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years8.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2019년 11월 15일 포켓몬스터 소드/실드 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2022년 1월 28일 Pokémon LEGENDS 아르세우스 발매</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+              <li> <img src="img/pocket_closed.png" alt="" class="img1 on">
+                <img src="img/years9.png" alt="" class="img2">
+                <div class="txt">
+                  <p>2022년 11월 18일 포켓몬스터 스칼렛/바이올렛 발매</p>
+                  <div class="textHide textHide1"></div>
+                  <p>2025년 Pokémon LEGENDS Z-A 발매 예정</p>
+                  <div class="textHide textHide2"></div>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 이벤트/공지사항 영역 -->
+    <div class="box4 noticeBox">
+
+      <section class="notices">
+        <h2></h2>
+        <!-- 메인영역 -->
+        <div class="noticesZone">
+
+          <!-- 이벤트 영역(위) -->
+          <div class="event">
+            <span class="left off"><i class="fa-solid fa-chevron-left"></i>
+            </span>
+            <div class="listZone">
+              <ul>
+                <li>
+                  <a href="">
+                    <div class="pic">
+                      <div class="pic_main1"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[이벤트] 포켓몬 월드챔피언십<br>
+                        2024의 개최일이 결정!</h4>
+                      <p>올해의 개최 장소는 미국 하와이.<br>
+                        현지 시간 8월 16일(금)~18일(일)...</p>
+                      <span>2024년 4월 26일</span>
+                    </div>
+                  </a>
+                </li>
+                <li> <a href="">
+                    <div class="pic">
+                      <div class="pic_main2"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[이벤트]포켓몬 온라인<br>
+                        팝업스토어</h4>
+                      <p>포켓몬 팬들의 사랑에 힘입어<br>
+                        온라인 팝업스토어를 만들었습니다</p>
+                      <span>2024년 2월 24일</span>
+                    </div>
+                  </a></li>
+                <li> <a href="">
+                    <div class="pic">
+                      <div class="pic_main3"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[이벤트]포켓몬 WCS2023<br>
+                        라이브 중계 안내</h4>
+                      <p>>전 세계에서 모인 포켓몬<br>
+                        트레이너들의 박진감 넘치는...</p>
+                      <span>2023년 8월 8일</span>
+                    </div>
+                  </a></li>
+                <li> <a href="">
+                    <div class="pic">
+                      <div class="pic_main4"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[이벤트]포켓몬 팝업스토어<br>
+                        in 제주</h4>
+                      <p>포켓몬 오프라인 팝업스토어가 <br>
+                        이번엔 제주도에서 열렸습니다!</p>
+                      <span>2023년 7월 12일</span>
+                    </div>
+                  </a></li>
+                <li> <a href="">
+                    <div class="pic">
+                      <div class="pic_main5"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[이벤트] 포켓몬 월드챔피언십<br>
+                        2024의 개최일이 결정!</h4>
+                      <p>올해의 개최 장소는 미국 하와이.<br>
+                        현지 시간 8월 16일(금)~18일(일)...</p>
+                      <span>2024년 4월 26일</span>
+                    </div>
+                  </a></li>
+              </ul>
+            </div>
+            <span class="right"><i class="fa-solid fa-angle-right"></i></span>
+          </div>
+
+
+
+
+
+          <!-- 공지사항 영역(아래) -->
+          <div class="notified">
+            <span class="left off"><i class="fa-solid fa-chevron-left"></i></span>
+            <div class="listZone">
+              <ul>
+                <li>
+                  <a href="">
+                    <div class="pic">
+                      <div class="pic_main1"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[공지] 엔터테인먼트 사업<br>
+                        PokéPark KANTO에 대해</h4>
+                      <p>YOMIURI LAND에서 <br>
+                        엔터테인먼트사업 PokéPark KANTO...</p>
+                      <span>2023년 12월 12일</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div class="pic">
+                      <div class="pic_main2"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[공지]2월 27일은<br>
+                        Pokémon Day!</h4>
+                      <p>곧 다가오는 2월 27일을 맞이하여<br>
+                        포켓몬 presents를 공개합니다!</p>
+                      <span>2023년 2월 21일</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div class="pic">
+                      <div class="pic_main3"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[공지]“포켓몬”과 K-POP<br>
+                        ITZY의 초대형 타이업 결정!</h4>
+                      <p>이번에 “포켓몬”과 K-POP 아티스트<br>
+                        “ITZY”와 타이업하게 되었습니다.</p>
+                      <span>2022년 1월 27일</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div class="pic">
+                      <div class="pic_main4"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[공지]포켓몬 월드챔피언십<br>
+                        2021 개최 취소 안내</h4>
+                      <p>런던에서 개최 예정이었던 포켓몬<br>
+                        월드챔피언십 2021의 취소가...</p>
+                      <span>2022년 1월 27일</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div class="pic">
+                      <div class="pic_main1"></div>
+                    </div>
+                    <div class="txt">
+                      <h4>[이벤트] 포켓몬 월드챔피언십<br>
+                        2024의 개최일이 결정!</h4>
+                      <p>올해의 개최 장소는 미국 하와이.<br>
+                        현지 시간 8월 16일(금)~18일(일)...</p>
+                      <span>2024년 4월 26일</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <span class="right"><i class="fa-solid fa-angle-right"></i></span>
+          </div>
+          <!-- 피카츄 -->
+          <div class="picka_circle">
+            <div class="picka"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 리뷰영역 -->
+    <div class="box5 reviewBox">
+
+
+      <section class="review">
+
+
+        <h2></h2>
+
+
+        <div class="review_main">
+
+          <!-- 왼쪽 제품들 리스트 -->
+          <div class="intro_list">
+
+            <span class="left button off"><i class="fa-solid fa-chevron-left"></i></span>
+
+            <!-- 메뉴 영역 -->
+            <div class="menu">
+              <!-- 메뉴버튼 영역 -->
+              <div class="mButtonzone">
+                <ul class="mButton">
+                  <li class="on">게임</li>
+                  <li>상품</li>
+                </ul>
+                <!-- 버튼 클릭하면 180도 뒤집힘 -->
+                <div class="mButtonArrow"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+
+
+
+
+
+              <!-- 메뉴 리스트 영역 -->
+              <div class="mList">
+                <div class="mList_hide"></div>
+                <h4>제품종류</h4>
+                <ul>
+                  <li>게임</li>
+                  <li>상품</li>
+                </ul>
+              </div>
+            </div>
+
+
+            <!-- 제품들 목록 -->
+            <div class="goods_zone">
+
+              <ul class="game on">
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬스터 스칼렛/바이올렛</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬스터 레전드 아르세우스</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>스칼렛/바이올렛 DLC 제로의 비보</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬스터 돌아온 명탐정 피카츄</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬스터 소드/실드</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+
+              <ul class="product">
+                <li>
+                  <div class="txt">
+                    <h4>얼려먹는 야쿠르트 납작복숭아</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬 콤푸차</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬빵 픽셀</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                        <div class="point">4/5</div>
+                      </div>
+                    </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓피스</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="txt">
+                    <h4>포켓몬 퍼펙트휩</h4>
+                    <div class="txt_total">
+                      <div class="star">
+                        <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                          src="img/sth.gif" alt=""> <img src="img/nst.gif" alt="">
+                      </div>
+                      <div class="point">4/5</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <span class="right button"><i class="fa-solid fa-angle-right"></i></span>
+          </div>
+
+
+
+
+          <!-- 오른쪽 리뷰 리스트 -->
+          <div class="review_list">
+
+
+
+
+
+
+            <!-- 댓글리스트 -->
+            <div class="review_all">
+
+
+
+              <!-- 스칼렛 바이올렛 -->
+              <ul class="game_01 on">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+              <!-- 레전드 오브 아르세우스 -->
+              <ul class="game_02">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+
+              <!-- 제로의 비보 -->
+              <ul class="game_03">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+
+
+              <!-- 명탐점 피카츄 -->
+              <ul class="game_04">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+
+
+              <!-- 포켓몬스터 소드/실드 -->
+              <ul class="game_05">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+
+
+
+
+              <!-- 제품 리뷰 -->
+
+
+
+
+
+              <!-- 스칼렛 바이올렛 -->
+              <ul class="product_01">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+              <!-- 레전드 오브 아르세우스 -->
+              <ul class="product_02">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+
+              <!-- 제로의 비보 -->
+              <ul class="product_03">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+              <!-- 명탐점 피카츄 -->
+              <ul class="product_04">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                        alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+
+
+
+
+
+
+
+              <!-- 포켓몬스터 소드/실드 -->
+              <ul class="product_05">
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="profile">
+                    <div class="pic">
+                      <img src="img/피카츄.jpg" alt="">
+                    </div>
+                    <div class="name">
+                      홍길동
+                    </div>
+                  </div>
+                  <div class="about">
+                    <div class="star"> <img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img
+                        src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                    <div class="txt">정말 재미있었어요! <br>
+                      포켓몬스터 화이팅!</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+
+            <!-- 로그인 및 댓글달기 영역 -->
+
+            <div class="write">
+
+              <div class="login on">
+                <div class="sad"><img src="img/sad.png" alt=""></div>
+                <div class="go_login">
+                  <p>로그인 후에 이용하실 수 있습니다.</p>
+                  <a href="login.html" class="login_btn">
+                    로그인<i class="fa-solid fa-right-to-bracket but"></i></a>
+                </div>
+              </div>
+
+
+
+
+              <div class="review_write">
+                <div class="profile_zone">
+                  <div class="profile"><img src="img/gene6.png" alt=""></div>
+                </div>
+                <div class="write_zone">
+                  <div class="infor">
+                    <span class="name">홍길동</span>
+
+                    <span class="star"><input name="my_input" value="5" id="rating_simple2" type="hidden"></sp>
+                  </div>
+                  <div class="write_this">
+
+                    <form>
+                      <div class="typing">
+                        <input type="text" placeholder="후기를 작성해주세요">
+                      </div>
+
+                      <button class="submit"><i class="fa-regular fa-paper-plane"></i></button>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+    </div>
+
+    </section>
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 서브페이지 보고싶을땐 on -->
+  <div id="sub_main">
+    <!-- <div id="sub_main" class="on"> -->
+    <section class="sub">
+
+      <!-- 소개 및 관련정보 영역 -->
+      <div class="intro">
+        <div class="introBg"></div>
+
+        <!-- 소개 정보(왼쪽 박스) -->
+        <div class="txt">
+        </div>
+
+
+
+        <!-- 관련 정보(오른쪽 박스) -->
+        <div class="infor">
+
+          <!-- 이름 공간 -->
+          <div class="name_infor">
+            <div class="sumb"></div>
+            <div class="name">
+              <div class="state">
+                <span class="popul">인기</span>
+                <span class="new">new</span>
+              </div>
+              <h4>No.1 포켓몬스터<br>
+                스칼렛・바이올렛</h4>
+            </div>
+          </div>
+
+
+          <!-- 상세정보 -->
+          <div class="about_infor">
+            <ul>
+              <li>
+                <div class="date">출시일</div>
+                <p></p>
+              </li>
+              <li>
+                <div class="device">발매처</div>
+                <p></p>
+              </li>
+              <li>
+                <div class="genre">카테고리</div>
+                <p></p>
+              </li>
+              <li>
+                <div class="price">가격</div>
+                <p></p>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+          <!-- 구매관련 -->
+          <div class="purchase">
+            <div class="purchase_zone">
+
+              <div class="choice">
+
+
+                <div class="choice_goods">
+                  <div class="select"><i class="fa-solid fa-caret-down"></i></div>
+                  <ul>
+                    <!-- <li>포켓몬스터 스칼렛・바이올렛 2종</li>
+                    <li>포켓몬스터 스칼렛</li>
+                    <li>포켓몬스터 바이올렛</li> -->
+                  </ul>
+                </div>
+
+
+                <div class="get_number">
+                  <div class="minus"><i class="fa-solid fa-minus"></i></div>
+                  <div class="number">
+                    <span></span>
+                  </div>
+                  <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                </div>
+
+
+                <span class="price">129000원</span>
+              </div>
+
+
+              <div class="purchase_button">
+                <ul>
+                  <li>
+                    <a href="login.html" class="purchase_complete">
+                      <i class="fa-regular fa-credit-card"></i>
+                      <span>구매하기</span>
+                    </a>
+                  </li>
+                  <li class="shop">
+                    <i class="fa-solid fa-cart-shopping">
+
+                    </i>
+                    <span>장바구니</span>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- 리뷰리스트 -->
+      <div class="reviews">
+
+        <!-- 총 별점 영역 -->
+        <div class="starmain">
+          <div class="star_area"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+              alt=""><img src="img/sth.gif" alt=""><img src="img/nst.gif" alt=""></div>
+          <span>4.0/5.0(10)</span>
+        </div>
+
+
+
+        <!-- 리뷰리스트 -->
+        <div class="review_list">
+
+
+
+
+          <!-- 왼쪽 버튼 -->
+          <span class="left off"><i class="fa-solid fa-chevron-left"></i>
+          </span>
+
+
+
+
+
+
+          <div class="review_box">
+            <ul class="review_zone">
+              <li>
+                <div class="profile">
+                  <div class="pic">
+                    <img src="img/피카츄.jpg" alt="">
+                  </div>
+                  <div class="name">
+                    홍길동
+                  </div>
+                </div>
+                <div class="about">
+                  <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                      alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                  <div class="txt">정말 재미있었어요! <br>
+                    포켓몬스터 화이팅!</div>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div class="pic">
+                    <img src="img/피카츄.jpg" alt="">
+                  </div>
+                  <div class="name">
+                    홍길동
+                  </div>
+                </div>
+                <div class="about">
+                  <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                      alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                  <div class="txt">정말 재미있었어요! <br>
+                    포켓몬스터 화이팅!</div>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div class="pic">
+                    <img src="img/피카츄.jpg" alt="">
+                  </div>
+                  <div class="name">
+                    홍길동
+                  </div>
+                </div>
+                <div class="about">
+                  <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                      alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                  <div class="txt">정말 재미있었어요! <br>
+                    포켓몬스터 화이팅!</div>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div class="pic">
+                    <img src="img/피카츄.jpg" alt="">
+                  </div>
+                  <div class="name">
+                    홍길동
+                  </div>
+                </div>
+                <div class="about">
+                  <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                      alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                  <div class="txt">정말 재미있었어요! <br>
+                    포켓몬스터 화이팅!</div>
+                </div>
+              </li>
+              <li>
+                <div class="profile">
+                  <div class="pic">
+                    <img src="img/피카츄.jpg" alt="">
+                  </div>
+                  <div class="name">
+                    홍길동
+                  </div>
+                </div>
+                <div class="about">
+                  <div class="star"><img src="img/sth.gif" alt=""><img src="img/sth.gif" alt=""><img src="img/sth.gif"
+                      alt=""><img src="img/sth.gif" alt=""> <img src="img/nst.gif" alt=""></div>
+                  <div class="txt">정말 재미있었어요! <br>
+                    포켓몬스터 화이팅!</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+          <!-- 오른쪽 버튼 -->
+          <span class="right"><i class="fa-solid fa-angle-right"></i></span>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- 로그인/리뷰쓰기 -->
+        <div class="write">
+
+          <div class="login on">
+            <div class="sad"><img src="img/sad.png" alt=""></div>
+            <div class="go_login">
+              <p>로그인 후에 이용하실 수 있습니다.</p>
+              <a href="login.html" class="login_btn">
+                로그인<i class="fa-solid fa-right-to-bracket but"></i></a>
+            </div>
+          </div>
+
+
+
+
+          <div class="review_write">
+            <div class="profile_zone">
+              <div class="profile"><img src="img/years6.png" alt=""></div>
+            </div>
+            <div class="write_zone">
+              <div class="infor">
+                <span class="name">홍길동</span>
+                <span class="star"> <input name="my_input" value="5" id="rating_simple2" type="hidden"></span>
+              </div>
+              <div class="write_this">
+
+                <form>
+                  <div class="typing">
+                    <input type="text" placeholder="후기를 작성해주세요">
+                  </div>
+
+                  <button class="submit"><i class="fa-regular fa-paper-plane"></i></button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="others">
+        <div class="txt">
+          <p>혹시, 비슷한 제품을 찾고있나요? 아래 리스트를 확인해주세요</p>
+        </div>
+        <div class="others_list">
+          <span class="left off"><i class="fa-solid fa-chevron-left"></i>
+          </span>
+
+          <ul class='listZone'>
+            <!-- 게임 -->
+            <li class="gameList on">
+
+
+              <ul>
+
+                <li>
+                  <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb1"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        포켓몬스터 <br>
+                        스칼렛・바이올렛
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">69800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a>
+                </li>
+
+
+
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb2"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        No.2 Pokémon <br>
+                        LEGENDS 아르세우스
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">69800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+
+
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb3"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        No.3 스칼렛・바이올렛 DLC<br>
+                        제로의 비보
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">34800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb4"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        No.4 포켓몬스터 돌아온<br>
+                        명탐정 피카츄
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">64800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb5"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        No.5 포켓몬스터 <br>
+                        소드・실드 1세트
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">129600원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+
+
+              </ul>
+
+
+            </li>
+
+
+
+
+            <!-- 상품 -->
+            <li class="proList">
+
+              <ul>
+
+
+
+                <li>
+                  <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb1"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        얼려먹는 야쿠르트 납작복숭아
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a>
+                </li>
+
+
+
+
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb2"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        포켓몬 콤푸차
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">9800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+
+
+
+
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb3"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        포켓몬빵 픽셀
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">5400원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb4"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        포켓피스 하우스
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">37400원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+                <li> <a href="">
+                    <div class="sumbnail_area">
+                      <div class="sumbnail sumb5"></div>
+                    </div>
+                    <div class="txt">
+
+                      <div class="upzone">
+                        <span class="popul up">인기</span>
+                        <span class="new up">new</span>
+                      </div>
+
+                      <p>
+                        포켓몬 퍼펙트휩
+                      </p>
+
+
+                      <div class="downzone">
+                        <span class="price down">25800원</span>
+                        <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                      </div>
+
+
+                    </div>
+                  </a></li>
+
+
+
+              </ul>
+
+            </li>
+
+
+
+          </ul>
+
+
+
+          <!-- 오른쪽 버튼 -->
+          <span class="right"><i class="fa-solid fa-angle-right"></i></span>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+    <footer></footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer></footer>
+
+
+
+
+
+  <div class="popUp_main">
+
+
+    <div class="popUp">
+      <div class="popUp_bg">
+
+        <ul>
+          <li class="on"><img src="img/shop_no.png" alt=""></li>
+          <li><img src="img/shop_little.png" alt=""></li>
+          <li><img src="img/shop_full.png" alt=""></li>
+        </ul>
+
+        <div class="payment_box">
+
+          <div class="goods_all">
+
+          </div>
+
+
+
+          <div class="total_pay">
+
+            <p class="total_txt">
+
+              <span class="txt">
+                총 합계금액
+              </span>
+
+              <span class="pay">
+
+                0원
+
+              </span>
+
+            </p>
+
+
+
+            <a href="login.html" class="purchase_complete">
+              <i class="fa-regular fa-credit-card"></i>
+              <span>구매하기</span>
+            </a>
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+
+      <span class="closed">
+        <i class="fa-solid fa-x"></i>
+      </span>
+
+    </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <div class="shopping_popUp">
+
+    <p>장바구니에 담았습니다.</p>
+
+  </div>
+
+
+
+  <script language="javascript" type="text/javascript">
+    function test(value) {
+      alert("This rating's value is " + value);
+    }
+    $(function () {
+      $("#rating_simple1").webwidget_rating_simple({
+        rating_star_length: '5',
+        rating_initial_value: '',
+        rating_function_name: '',//this is function name for click
+        directory: '/'
+      });
+      $("#rating_simple2").webwidget_rating_simple({
+        rating_star_length: '5',
+        rating_initial_value: '',
+        rating_function_name: '',//this is function name for click
+        directory: './'
+      });
+      $("#rating_simple3").webwidget_rating_simple({
+        rating_star_length: '10',
+        rating_initial_value: '4',
+        rating_function_name: 'test',//this is function name for click
+        directory: '/'
+      });
+    });
+
+
+
+
+
+
+
+
+    // 로그인 완료 이벤트
+
+
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+
+
+    // // highlight 파라미터가 없는 경우 기본값으로 설정
+    if (!window.location.search.includes('highlight')) {
+      window.location.search = '?highlight=false';
+    }
+
+
+    // highlight 파라미터 확인 및 클래스 추가
+    if (getUrlParameter('highlight') === 'true') {
+
+
+      // 로그인 창이 안뜸
+      $('.write .login').removeClass('on');
+
+      // 리뷰쓰기 가능
+      $('.write .review_write').addClass('on');
+
+
+      // 기존 헤더의 로그인 부분은 개인 프로필로 변경
+      $('header .util .login a span').text('홍길동님');
+
+
+      $('header .util .login a i').css({ 'background-image': 'url(img/gene6.png)', 'color': 'transparent', 'background-color': 'transparent' });
+
+
+
+      $('header .util .login a').attr('href', '#');
+
+
+      $('.purchase_complete').attr('href', '#');
+    }
+
+
+
+
+
+    // 새로고침 했을 땐 로그인 정보 초기화
+
+    const entries = performance.getEntriesByType("navigation")[0];
+    if (entries.type === "reload" && getUrlParameter('highlight') === 'true') {
+
+      // // 홈화면으로 이동
+      window.location.href = 'index.html?highlight=false';
+
+
+    }
+
+
+
+
+
+
+
+
+    // 서브페이지로 갈때 헤더 포지션 설정
+
+
+    // setInterval(function(){
+
+    //   if($('#sub_main').hasClass('on')){
+
+    //     $('header').css({'position':'sticky'});
+
+    //   }
+
+    //   else{
+
+    //     $('header').css({'position':'fixed'});
+
+    //   }
+
+
+    // })
+
+
+
+
+  </script>
+
+</body>
+
+</html>

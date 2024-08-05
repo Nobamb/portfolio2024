@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포켓몬스터 로그인 페이지</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/rating_simple.css" rel="stylesheet" type="text/css">
+
+
+  <!-- 깃허브및 서버연결용 버전정보입력하기 -->
+  <script src="js/jquery-2.1.1.min.js"></script>
+
+  <!-- 제이쿼리 cdn 연결 -->
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+  charset="utf-8"></script>
+
+
+
+
+  <!-- 제이쿼리 내부의 있는 스타일 정보를 가져오기 -->
+  <script src="js/jquery-ui.min.js"></script>
+  <!-- 이펙트 효과 연결하기 -->
+  <script src="js/jquery.easing.1.3.js"></script>
+  <!-- 마우스휠 효과 CDN 연결하기 -->
+  <script src="js/jquery.mousewheel.min.js"></script>
+  <!-- 자바스크립트 연결 -->
+  <script src="js/js.js"></script>
+
+  <script type="text/javascript" src="js/rating_simple.js"></script>
+
+  <!-- 폰트어썸 설정 -->
+  <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- 마우스 -->
+  <div class="pocketMouse">
+  </div>
+
+
+  <!-- header 이벤트 킬땐 class on -->
+  <!-- <header class="on"> -->
+  <header class="on">
+    <div class="header_inner">
+      <h1><a href="index.html"><img src="img/logo.png" alt=""></a></h1>
+      <nav>
+        <ul>
+
+
+
+          <li><a href="">게임</a>
+            <ul class="game">
+              <li><a href="">포켓몬스터 시리즈</a></li>
+              <li><a href="">그 외 시리즈</a></li>
+              <li><a href="">모바일 게임</a></li>
+              <li class="gameImg sumbnail"></li>
+            </ul>
+          </li>
+
+
+
+          <li><a href="">상품</a>
+            <ul class="product">
+              <li><a href="">완구</a></li>
+              <li><a href="">잡화</a></li>
+              <li><a href="">이벤트</a></li>
+              <li class="productImg sumbnail"></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <ul class="util">
+        <li class="search">
+          <form action="">
+            <input type="search" placeholder="검색어를 입력하세요">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </li>
+        <li class="shopMain">
+          <a href="">
+            장바구니<i class="fa-solid fa-cart-shopping but">
+              <div class="shop_number"></div>
+            </i>
+
+          </a>
+        </li>
+        <li class="login">
+          <a href="">
+            로그인<i class="fa-solid fa-right-to-bracket but"></i></a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+
+
+
+  <!-- 로그인 창 이동시 on클래스를 부여하여
+  화면상에 보이게 하기 -->
+
+  <div id="login_main" class="on">
+
+
+
+    <section class="login_inner">
+
+
+      <!-- 회원가입 영역 -->
+      <div class="join_zone">
+        <div class="this_join">
+          <span>회원가입 <i class="fa-solid fa-chevron-left"></i></span>
+        </div>
+      </div>
+
+
+
+
+      <div class="login_zone">
+        <div class="login_bg"></div>
+        <div class="login_this">
+
+
+          <h2>로그인</h2>
+
+
+          <form id="login_infor">
+
+
+            <div class="id">
+              <i class="fa-regular fa-user"></i>
+              <input type="email" placeholder="이메일을 입력하세요">
+            </div>
+
+
+
+            <div class="password">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="비밀번호를 입력하세요" autocomplete="on">
+            </div>
+
+
+            <div class="login_button">
+              <button type="submit">
+                로그인
+              </button>
+            </div class="login_button">
+
+
+
+            <div id="naver_id_login">
+
+                <img src="img/naver.png" alt="">
+                네이버 로그인
+            </div>
+
+
+
+          </form>
+
+
+
+          <div class="find">
+            <ul>
+              <li><a href="">아이디 찾기</a></li>
+              <li><a href="">비밀번호 찾기</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </section>
+
+
+    <footer></footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="popUp_main">
+
+
+    <div class="popUp">
+      <div class="popUp_bg">
+
+        <ul>
+          <li class="on"><img src="img/shop_no.png" alt=""></li>
+          <li><img src="img/shop_little.png" alt=""></li>
+          <li><img src="img/shop_full.png" alt=""></li>
+        </ul>
+
+        <div class="payment_box">
+
+          <div class="goods_all">
+
+          </div>
+
+
+
+          <div class="total_pay">
+
+            <p class="total_txt">
+
+              <span class="txt">
+                총 합계금액
+              </span>
+
+              <span class="pay">
+
+                0원
+
+              </span>
+
+            </p>
+
+
+
+            <div class="purchase_complete">
+              <i class="fa-regular fa-credit-card"></i>
+              <span>구매하기</span>
+            </div>
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+
+      <span class="closed">
+        <i class="fa-solid fa-x"></i>
+      </span>
+
+    </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+  <script type="text/javascript">
+    var naver_id_login = new naver_id_login("tNRxhBlEa8fOWrzVdywB", "http://website2024.dothome.co.kr");
+    var state = naver_id_login.getUniqState();
+    naver_id_login.setButton("white", 10, 40);
+    naver_id_login.setDomain("YOUR_SERVICE_URL");
+    naver_id_login.setState(state);
+    naver_id_login.setPopup();
+    naver_id_login.init_naver_id_login();
+
+
+    // // 로그인 환경에서는 sticky로 변경
+    // $('header').css({'position':'sticky'});
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>
