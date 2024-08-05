@@ -627,20 +627,20 @@ $(document).ready(function () {
     e.preventDefault();
 
 
-    if($('header nav>ul>li:nth-child(1)>a').hasClass('on')){
+    if ($('header nav>ul>li:nth-child(1)>a').hasClass('on')) {
 
       $('.goods .gList .listZone>.gameList ul li:nth-child(1)').trigger('click');
 
 
     }
 
-   
-    if($('header nav>ul>li:nth-child(2)>a').hasClass('on')){
+
+    if ($('header nav>ul>li:nth-child(2)>a').hasClass('on')) {
       $('.goods .gList .listZone>.proList ul li:nth-child(1)').trigger('click');
 
     }
 
-    
+
 
   })
 
@@ -650,20 +650,20 @@ $(document).ready(function () {
     e.preventDefault();
 
 
-    if($('header nav>ul>li:nth-child(1)>a').hasClass('on')){
+    if ($('header nav>ul>li:nth-child(1)>a').hasClass('on')) {
 
       $('.goods .gList .listZone>.gameList ul li:nth-child(1)').trigger('click');
 
 
     }
 
-   
-    if($('header nav>ul>li:nth-child(2)>a').hasClass('on')){
+
+    if ($('header nav>ul>li:nth-child(2)>a').hasClass('on')) {
       $('.goods .gList .listZone>.proList ul li:nth-child(1)').trigger('click');
 
     }
 
-    
+
 
   })
 
@@ -2350,145 +2350,132 @@ $(document).ready(function () {
 
 
 
-  // 현재 페이지 경로 확인
-  var pathname = window.location.pathname;
 
-  // 특정 페이지에서만 실행
-  if (pathname === '/index.html') {
 
 
 
-    window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function () {
 
-      // 시작점
-      let topYear = $('.years .yearsZone .gene').offset().top;
+    // 시작점
+    let topYear = $('.years .yearsZone .gene').offset().top;
 
-      // 끝나는 지점
-      let bottomYear = $('.box4').offset().top;
+    // 끝나는 지점
+    let bottomYear = $('.box4').offset().top;
 
-      // 총길이
-      let fullYear = bottomYear - topYear;
+    // 총길이
+    let fullYear = bottomYear - topYear;
 
 
-      // 각 구간별 높이(윈도우 크기에 맞춰 설정)
 
-      $('.years .yearsZone .gene ul li').height(winH);
 
 
-      const yearsNum = $('.years .yearsZone .gene ul li').length;
+    // 각 구간별 높이(윈도우 크기에 맞춰 설정)
 
+    $('.years .yearsZone .gene ul li').height(winH);
 
-      // 개당 높이값
 
-      let piece = fullYear / yearsNum;
+    const yearsNum = $('.years .yearsZone .gene ul li').length;
 
 
+    // 개당 높이값
 
+    let piece = fullYear / yearsNum;
 
 
-      // 스크롤 값(히스토리 영역부터 시작)
 
-      let scroll = $(window).scrollTop() - topYear + 100;
 
-      // 높이값이 h일때
-      // 스크롤값이 0~h면 나머지 다 꺼지고 0번째 켜짐
 
+    // 스크롤 값(히스토리 영역부터 시작)
 
+    let scroll = $(window).scrollTop() - topYear + 100;
 
+    // 높이값이 h일때
+    // 스크롤값이 0~h면 나머지 다 꺼지고 0번째 켜짐
 
 
-      for (let scIndex = 0; scIndex < yearsNum; scIndex++) {
 
-        if (scroll > ((0 + scIndex) * piece) && scroll <= ((1 + scIndex) * piece)) {
 
 
+    for (let scIndex = 0; scIndex < yearsNum; scIndex++) {
 
-          // 왼쪽 세대 이벤트
+      if (scroll > ((0 + scIndex) * piece) && scroll <= ((1 + scIndex) * piece)) {
 
 
 
+        // 왼쪽 세대 이벤트
 
 
-          // 나머지는 다 안보이게
-          $('.years .yearsZone .gene li').removeClass('on');
 
-          // 지금꺼는 보이게
-          $('.years .yearsZone .gene li').eq(scIndex).addClass('on');
 
 
+        // 나머지는 다 안보이게
+        $('.years .yearsZone .gene li').removeClass('on');
 
+        // 지금꺼는 보이게
+        $('.years .yearsZone .gene li').eq(scIndex).addClass('on');
 
 
 
 
 
-          // 오른쪽 역사 이벤트
 
 
 
+        // 오른쪽 역사 이벤트
 
-          // 전체 인덱스 설정
 
-          // 닫힌 모습의 img1은 보이게
-          $('.years .yearsZone .history li .img1').stop().animate({ 'opacity': 1 }, 300);
 
-          // 열린 모습의 img2는 안보이게
-          $('.years .yearsZone .history li .img2').stop().animate({ 'opacity': 0 }, 300, function () {
 
-            $('.years .yearsZone .history li .txt').removeClass('on');
+        // 전체 인덱스 설정
 
+        // 닫힌 모습의 img1은 보이게
+        $('.years .yearsZone .history li .img1').stop().animate({ 'opacity': 1 }, 300);
 
-          });
+        // 열린 모습의 img2는 안보이게
+        $('.years .yearsZone .history li .img2').stop().animate({ 'opacity': 0 }, 300, function () {
 
-          // 타이핑 효과 초기화
+          $('.years .yearsZone .history li .txt').removeClass('on');
 
-          $('.years .yearsZone .history li .txt .textHide').removeClass('off');
 
+        });
 
+        // 타이핑 효과 초기화
 
-          // 지정 인덱스 설정
+        $('.years .yearsZone .history li .txt .textHide').removeClass('off');
 
 
-          $('.years .yearsZone .history li').eq(scIndex).find('.img1').stop().animate({ 'opacity': 0 }, 300);
-          // 열린 모습의 img2는 보이게
-          $('.years .yearsZone .history li').eq(scIndex).find('.img2').stop().animate({ 'opacity': 1 }, 300, function () {
 
+        // 지정 인덱스 설정
 
-            // 텍스트창 표시
 
+        $('.years .yearsZone .history li').eq(scIndex).find('.img1').stop().animate({ 'opacity': 0 }, 300);
+        // 열린 모습의 img2는 보이게
+        $('.years .yearsZone .history li').eq(scIndex).find('.img2').stop().animate({ 'opacity': 1 }, 300, function () {
 
-            $('.years .yearsZone .history li').eq(scIndex).find('.txt').addClass('on');
 
+          // 텍스트창 표시
 
 
-            // 타이핑 효과
+          $('.years .yearsZone .history li').eq(scIndex).find('.txt').addClass('on');
 
 
-            $('.years .yearsZone .history li').eq(scIndex).find('.txt .textHide1').addClass('off');
 
+          // 타이핑 효과
 
 
-            setTimeout(function () {
+          $('.years .yearsZone .history li').eq(scIndex).find('.txt .textHide1').addClass('off');
 
-              $('.years .yearsZone .history li').eq(scIndex).find('.txt .textHide2').addClass('off');
 
-            }, 300)
 
+          setTimeout(function () {
 
+            $('.years .yearsZone .history li').eq(scIndex).find('.txt .textHide2').addClass('off');
 
-          })
+          }, 300)
 
 
 
-
-        }
-
-
-
-
-
-
-
+        })
 
 
 
@@ -2504,7 +2491,8 @@ $(document).ready(function () {
 
 
 
-    })
+
+    }
 
 
 
@@ -2515,7 +2503,18 @@ $(document).ready(function () {
 
 
 
-  }
+  })
+
+
+
+
+
+
+
+
+
+
+
 
 
 

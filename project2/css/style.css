@@ -5872,8 +5872,8 @@ footer {
 
 
 .popUp {
-  width: 60%;
-  height: 60%;
+  width: 1000px;
+  height: 600px;
   display: none;
   background-color: #fff;
   position: fixed;
@@ -5985,7 +5985,7 @@ footer {
 .popUp .popUp_bg .payment_box .goods_all p {
 
   padding: 20px 0;
-  width: 70%;
+  width: 85%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6205,7 +6205,7 @@ footer {
   transform: skew(30deg) translateX(0);
   position: relative;
   color: #fff;
-  font-size: 48px;
+  font-size: 32px;
   transition: all 0.4s;
 }
 
