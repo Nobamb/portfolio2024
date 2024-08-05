@@ -723,12 +723,11 @@ $(document).ready(function () {
     // 서브페이지로 가게 될땐 scrollevent 제거
     if ($('#wrap').hasClass('scrollevent')) {
 
-      let winW2 = $(window).width();
 
 
 
       // 데스크톱 환경일 때 적용
-      if (winW2 > desktop) {
+      if (winW > desktop) {
 
 
         let scroll = $(this).scrollTop();
@@ -749,7 +748,6 @@ $(document).ready(function () {
         }
 
       }
-
 
     }
 

@@ -1979,7 +1979,7 @@ header .util li.shopMain a i .shop_number {
 .years h2 {
   background-image: url('../img/years_title.png');
   background-position: center center;
-  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 700px;
 
@@ -2475,7 +2475,7 @@ header .util li.shopMain a i .shop_number {
   background-image: url('../img/event_title.png');
   height: 500px;
   width: 100%;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center center;
 }
 
@@ -2894,7 +2894,7 @@ header .util li.shopMain a i .shop_number {
   background-image: url('../img/review_title.png');
   width: 100%;
   height: 400px;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 }
@@ -6317,6 +6317,15 @@ footer {
 
 @media(max-width:768px) {
 
+
+  .pocketMouse {
+
+    display: none;
+
+
+  }
+
+
   /* 전체 inner 설정 */
   .header_inner,
   .goods,
@@ -6330,7 +6339,17 @@ footer {
 
 
 
-  /* header 설정 */
+
+  /* 메뉴 영역 */
+  header nav,
+  header .util {
+
+    display: none;
+
+  }
+
+
+
 
 
 
@@ -6344,9 +6363,10 @@ footer {
 
 
   header h1 {
-
+    height: 60px;
+    width: 165px;
     top: 0;
-    left: 0;
+    left: 20px;
     transform: translateX(0);
 
   }
@@ -6371,6 +6391,10 @@ footer {
 
 
 
+
+
+
+
   /* hero 설정 */
 
   .hero .mouseZone {
@@ -6386,33 +6410,223 @@ footer {
 
 
 
+  /* 슬라이드 버튼 부분 */
+  .hero .buttonZone {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    top: 75%;
+    right: 50%;
+
+    transform: translate(50%, 50%);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* 제품 헤더 설정 */
 
 
-  .goods h2 {
-
-    height: 400px;
-    background-position: left center;
-  }
-
-
-
-
-
-  /*나머지 헤더 설정*/
-
-
+  .goods h2,
   .years h2,
   .notices h2,
   .review h2 {
 
-
-    height: 400px;
+    height: 150px;
     background-position: left center;
+  }
+
+
+
+
+  .review h2 {
+
+    background-attachment: local;
 
   }
 
+
+
+
+
+  /* 제품 영역 본문 */
+  .goods .gZone {
+
+    flex-direction: column;
+
+  }
+
+  /* 왼쪽 메뉴 영역 */
+  .goods .gZone .gMenu {
+    width: 100%;
+    height: 100px;
+
+  }
+
+
+
+  .goods .gZone .gMenu .char li .charZone img {
+    display: none;
+  }
+
+
+
+  /* 메뉴창 영역 */
+  .goods .gMenu .menu {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  /* 메뉴 버튼 */
+  .goods .gMenu .menu .mButtonzone {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    padding: 0;
+    width: 120px;
+    height: 40px;
+  }
+
+
+
+  .goods .gMenu .menu .mButton {
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+
+
+
+  .goods .gMenu .menu .mButtonzone .mButtonArrow {
+    margin-right: 10px;
+  }
+
+
+
+
+
+  /* 메뉴 목록창 */
+  .goods .gMenu .menu .mList {
+    z-index: 10;
+    width: 120px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    position: absolute;
+    right: 10px;
+    top: 75px;
+    margin: 0;
+  }
+
+
+
+  .goods .gMenu .menu .mList h4 {
+    font-weight: normal;
+    font-size: 12px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    color: #58585B;
+  }
+
+  .goods .gMenu .menu .mList ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    gap: 5px;
+  }
+
+  .goods .gMenu .menu .mList ul li {
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    color: #58585B;
+  }
+
+
+
+
+
+
+
+
+
+  .goods .gZone .gMenu .char li {
+
+    justify-content: center;
+    transition: all 0.5s;
+  }
+
+
+
+  .goods .gZone .gMenu .char li h3 {
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 0;
+    color: #fff;
+    font-size: 32px;
+
+  }
+
+
+
+
+  /* 메뉴 목록창 */
+  .goods .gMenu .menu .mList {
+    margin: 0;
+
+    padding: 0;
+    height: 100%;
+
+  }
+
+
+
+  .goods .gList {
+
+    width: 100%;
+    height: 700px;
+
+  }
 
 
   /* 연혁 설정 */
@@ -6838,6 +7052,14 @@ footer {
 @media (min-width:769px) and (max-width:1280px) {
 
 
+  .pocketMouse {
+
+    display: none;
+
+
+  }
+
+
 
   /* 전체 inner 설정 */
   .header_inner,
@@ -6868,7 +7090,7 @@ footer {
   header h1 {
 
     top: 0;
-    left: 0;
+    left: 20px;
     transform: translateX(0);
 
   }
@@ -6909,29 +7131,23 @@ footer {
 
 
 
-  /* 제품 헤더 설정 */
+  /* 헤더 이미지 설정 */
 
-
-  .goods h2 {
-
-    height: 400px;
-    background-position: left center;
-  }
-
-
-
-
-
-  /*나머지 헤더 설정*/
-
-
+  .goods h2,
   .years h2,
   .notices h2,
   .review h2 {
 
 
     height: 400px;
-    background-position: left center;
+    background-position: center center;
+
+  }
+
+
+  .review h2 {
+
+    background-attachment: local;
 
   }
 
