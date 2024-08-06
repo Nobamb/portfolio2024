@@ -2992,7 +2992,6 @@ header .util li.shopMain a i .shop_number {
   background-image: url('../img/review_title.png');
   width: 100%;
   height: 400px;
-  background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 }
@@ -6560,7 +6559,7 @@ footer {
 
 
   .review h2 {
-
+    background-size: cover;
     background-attachment: local;
 
   }
@@ -7453,6 +7452,7 @@ footer {
 
   .review h2 {
 
+    background-size: cover;
     background-attachment: local;
 
   }
