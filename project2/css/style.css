@@ -5953,13 +5953,174 @@ header .util li.shopMain a i .shop_number {
 
 
 
+
+
+
+
+
+
+
+
+
+/* 푸터 */
+
+
 footer {
 
-  height: 100px;
+  height: 200px;
   width: 100%;
   background-color: #58585B;
   position: absolute;
   top: 100%;
+
+}
+
+
+footer .footer_up {
+
+  height: 150px;
+  background-color: #E83E34;
+
+}
+
+
+footer .footer_up .footer_inner {
+
+  height: 100%;
+  background-color: #E83E34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+
+
+/* 가이드 */
+
+
+footer .footer_up .guide {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer .footer_up .guide li {}
+
+footer .footer_up .guide li a {
+
+  color: #fff;
+  font-size: 12px;
+  display: block;
+}
+
+
+
+
+
+/* 주소 */
+
+
+footer .footer_up .footer_inner>p {
+
+  color: #fff;
+  font-size: 11px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+
+
+/* sns */
+
+
+footer .footer_up .sns {
+
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* sns */
+
+
+footer .footer_up .sns li {
+
+  height: 100%;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+
+}
+
+
+/* sns */
+
+
+footer .footer_up .sns li a{
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+
+/* 전화 */
+
+
+footer .footer_up .call {
+
+  height: 100%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+footer .footer_up .call li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+
+  height: 50%;
+
+}
+
+footer .footer_up .call li h4 {
+
+  font-weight: normal;
+  color: #fff;
+  font-size: 20px;
+
+}
+
+
+footer .footer_up .call li span {
+
+  color: #fff;
+  font-size: 12px;
 
 }
 
@@ -5969,6 +6130,36 @@ footer {
 
 
 
+
+
+
+
+
+footer .footer_down {
+  height: 50px;
+  background-color: #fff;
+
+}
+
+
+footer .footer_down .footer_inner {
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+
+footer .footer_down .footer_inner p {
+
+  font-size: 16px;
+  color: #58585B;
+
+}
 
 
 
@@ -8283,7 +8474,8 @@ footer {
   .notices,
   .review,
   .sub,
-  .login_inner {
+  .login_inner,
+  .footer_inner {
     width: 1280px;
     margin: 0 auto;
   }

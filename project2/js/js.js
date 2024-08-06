@@ -317,6 +317,8 @@ $(document).ready(function () {
     $('#login_main').removeClass('on');
     $('#sub_main').removeClass('on');
 
+    $('body>footer').show();
+
   }
 
 
@@ -1621,7 +1623,7 @@ $(document).ready(function () {
     $('html,body').scrollTop(0);
 
 
-
+    $('body>footer').hide();
 
     // wrap의 off클래스 부여(display none)
     // 서브페이지에 on클래스 부여(display block)
