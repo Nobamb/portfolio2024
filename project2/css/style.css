@@ -603,7 +603,7 @@ header .util li.shopMain a i .shop_number {
 
 
 
-.mobile_util{
+.mobile_util {
 
   width: 100%;
   height: 80px;
@@ -613,9 +613,10 @@ header .util li.shopMain a i .shop_number {
   display: flex;
   background-color: #fff;
   z-index: 9999;
+  opacity: 0.6;
 }
 
-.mobile_util.off{
+.mobile_util.off {
 
   display: none;
 
@@ -623,7 +624,7 @@ header .util li.shopMain a i .shop_number {
 
 
 
-.mobile_util li{
+.mobile_util li {
   position: relative;
   width: 25%;
   height: 100%;
@@ -632,14 +633,14 @@ header .util li.shopMain a i .shop_number {
   align-items: center;
 }
 
-.mobile_util li .listInner{
+.mobile_util li .listInner {
   display: flex;
   gap: 5px;
   flex-direction: column;
   align-items: center;
 }
 
-.mobile_util li a{
+.mobile_util li a {
   display: flex;
   gap: 5px;
   flex-direction: column;
@@ -648,26 +649,26 @@ header .util li.shopMain a i .shop_number {
 
 
 
-.mobile_util li i{
+.mobile_util li i {
   vertical-align: bottom;
   font-size: 24px;
   color: #58585B;
 }
 
 
-.mobile_util li span{
+.mobile_util li span {
   color: #58585B;
 }
 
 
-.mobile_util li:active i{
+.mobile_util li:active i {
 
   color: #e83e34;
 
 }
 
 
-.mobile_util li:active span{
+.mobile_util li:active span {
   color: #e83e34;
 }
 
@@ -676,7 +677,7 @@ header .util li.shopMain a i .shop_number {
 
 
 
-.mobile_util li .shop_number{
+.mobile_util li .shop_number {
 
   bottom: 3%;
   right: 0;
@@ -2624,7 +2625,7 @@ header .util li.shopMain a i .shop_number {
 
 
 .notices .noticesZone>div span.off {
-  cursor: auto;
+  cursor: none;
   opacity: 0.6;
 
 }
@@ -3052,7 +3053,7 @@ header .util li.shopMain a i .shop_number {
 .review .intro_list .button.off {
 
   opacity: 0.6;
-  cursor: auto;
+  cursor: none;
 }
 
 .review .intro_list .button.off:hover {
@@ -4102,7 +4103,6 @@ header .util li.shopMain a i .shop_number {
   align-items: center;
   height: 80%;
   width: 60%;
-
 }
 
 
@@ -4748,8 +4748,9 @@ header .util li.shopMain a i .shop_number {
   width: 100%;
   background-color: #F5D022;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 
@@ -4757,6 +4758,7 @@ header .util li.shopMain a i .shop_number {
 /* 버튼 */
 
 .sub .reviews .review_list>span {
+  position: absolute;
   margin: 20px;
   background-color: #fff;
   border-radius: 50%;
@@ -4770,7 +4772,21 @@ header .util li.shopMain a i .shop_number {
   opacity: 1;
   transition: all 0.3s;
   color: #58585B;
+  z-index: 300;
 }
+
+
+.sub .reviews .review_list>span.left {
+  left: 0;
+}
+
+
+
+
+.sub .reviews .review_list>span {
+  right: 0;
+}
+
 
 
 .sub .reviews .review_list>span:hover {
@@ -4783,7 +4799,7 @@ header .util li.shopMain a i .shop_number {
 
 
 .sub .reviews .review_list>span.off {
-  cursor: auto;
+  cursor: none;
   opacity: 0.6;
 
 }
@@ -5207,13 +5223,17 @@ header .util li.shopMain a i .shop_number {
 
 
 
-.sub .others .others_list {
 
+
+
+
+.sub .others .others_list {
+  position: relative;
   height: 500px;
   width: 100%;
   background-color: #F5D022;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -5223,7 +5243,7 @@ header .util li.shopMain a i .shop_number {
 
 
 .sub .others .others_list>span {
-
+  position: absolute;
   margin: 20px;
   background-color: #fff;
   border-radius: 50%;
@@ -5237,7 +5257,20 @@ header .util li.shopMain a i .shop_number {
   opacity: 1;
   transition: all 0.3s;
   color: #58585B;
+  z-index: 300;
 }
+
+
+.sub .others .others_list>span.left {
+  left: 0;
+}
+
+
+
+.sub .others .others_list>span.right {
+  right: 0;
+}
+
 
 
 
@@ -5251,7 +5284,7 @@ header .util li.shopMain a i .shop_number {
 
 
 .sub .others .others_list>span.off {
-  cursor: auto;
+  cursor: none;
   opacity: 0.6;
 
 }
@@ -5274,6 +5307,7 @@ header .util li.shopMain a i .shop_number {
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
 
 }
@@ -5849,7 +5883,6 @@ header .util li.shopMain a i .shop_number {
   align-items: center;
   justify-content: center;
   gap: 20px;
-
 }
 
 
@@ -6911,7 +6944,7 @@ footer {
 
 
 
-  .review .goods_zone ul li .txt .txt_total .star img{
+  .review .goods_zone ul li .txt .txt_total .star img {
     width: 30px;
   }
 
@@ -7272,21 +7305,22 @@ footer {
 
 
   .login_inner .login_zone .login_this {
+    padding: 10px 0;
     height: 200px;
   }
-  
+
   .login_inner .login_zone .login_this h2 {
     margin-bottom: 10px;
     font-size: 24px;
-  
+
   }
-  
+
   .login_inner .login_zone .login_this #login_infor {
 
     gap: 8px;
-  
+
   }
-  
+
   .login_inner .login_zone .login_this #login_infor>div {
     width: 80%;
     height: 20px;
@@ -7313,7 +7347,7 @@ footer {
   }
 
 
-  .login_inner .login_zone .login_this .find ul{
+  .login_inner .login_zone .login_this .find ul {
 
     margin-top: 10px;
   }
@@ -7322,6 +7356,327 @@ footer {
 
     font-size: 10px;
   }
+
+
+
+  .login_inner .login_zone .login_this #login_infor>#naver_id_login {
+    height: 25px;
+  }
+
+
+
+
+
+
+
+
+
+  /* 장바구니 창 */
+
+  .popUp {
+
+    width: 300px;
+    height: 200px;
+  }
+
+
+  .popUp .popUp_bg {
+
+    justify-content: center;
+
+  }
+
+
+
+  .popUp .popUp_bg>ul {
+
+    display: none;
+  }
+
+
+
+  /* 구매창 */
+
+  .popUp .popUp_bg .payment_box {
+
+    height: 80%;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popUp .popUp_bg .payment_box .goods_all p {
+
+    width: 90%;
+    padding: 10px 0;
+  }
+
+
+  .popUp .popUp_bg .payment_box .goods_all p span.ch_goods {
+    width: 50%;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  .popUp .popUp_bg .payment_box .goods_all p span.number {
+    width: 5%;
+    color: #58585B;
+    font-size: 12px;
+
+  }
+
+
+  .popUp .popUp_bg .payment_box .goods_all p span.price {
+
+    color: #E83E34;
+    font-size: 12px;
+
+  }
+
+
+  .popUp .popUp_bg .payment_box .goods_all p span.cancel {
+
+    width: 14px;
+
+  }
+
+
+
+
+  .popUp .total_pay {
+
+    justify-content: center;
+    gap: 5px;
+
+  }
+
+
+  .popUp .total_pay .total_txt {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+  .popUp .total_pay .txt {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+
+
+
+  .popUp .total_pay .pay {
+    padding: 0 5px;
+    font-size: 16px;
+
+  }
+
+
+
+
+  .popUp .total_pay .purchase_complete {
+    padding: 0 10px;
+    width: 40%;
+  }
+
+
+
+  .popUp .total_pay .purchase_complete i {
+    color: #fff;
+    font-size: 12px;
+
+  }
+
+
+  .popUp .total_pay .purchase_complete span {
+    color: #fff;
+    font-size: 12px;
+
+  }
+
+
+
+
+
+
+
+
+  /* 닫기버튼 */
+
+  .popUp .closed {
+    left: calc(100% - 10px);
+    width: 40px;
+    height: 20px;
+  }
+
+
+  .popUp .closed:hover {
+    width: 40px;
+  }
+
+
+
+  .popUp .closed i {
+    transform: skew(30deg) translateX(5px);
+    font-size: 12px;
+  }
+
+
+  .popUp .closed:hover i {
+    transform: skew(30deg) translateX(5px);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 장바구니 팝업 */
+
+
+  .shopping_popUp {
+    width: 70%;
+  }
+
+
+
+
+
+
+
+  /* 제품 설명 및 정보 */
+  .sub .intro {
+    flex-direction: column;
+    height: 1000px;
+  }
+
+
+
+
+
+  /* 제품 설명 */
+  .sub .intro .txt {
+
+    width: 90%;
+    height: 45%;
+  }
+
+
+
+
+  .sub .intro .txt h3 {
+    font-size: 16px;
+  }
+
+
+  .sub .intro .txt p {
+
+    font-size: 12px;
+  }
+
+
+
+
+
+
+  /* 제품 정보 */
+  .sub .intro .infor {
+
+    width: 90%;
+    height: 45%;
+  }
+
+
+
+  .sub .intro .infor .about_infor ul li>div {
+
+    font-size: 14px;
+  }
+
+
+
+  .sub .intro .infor .about_infor ul li>p {
+
+    font-size: 14px;
+  }
+
+
+
+
+
+  .sub .reviews .review_list .review_zone {
+
+    width: 500%;
+
+  }
+
+
+
+
+  /* 댓글 */
+  .sub .reviews .review_list .review_zone li {
+    width: 100%;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .sub .others .txt p {
+    color: #fff;
+    font-size: 16px;
+  }
+
+
+
+  .sub .others .others_list .listZone>li ul {
+    width: 400%;
+  }
+
+
+
+  /* 제품 리스트 */
+
+
+  .sub .others .others_list .listZone>li ul li {
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
 
 
 

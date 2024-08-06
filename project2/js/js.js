@@ -946,9 +946,9 @@ $(document).ready(function () {
         break;
 
 
-      
+
       // 장바구니
-      case 2: 
+      case 2:
 
         $('header .util li.shopMain').trigger('click');
 
@@ -5520,46 +5520,92 @@ $(document).ready(function () {
   // 서브페이지 리뷰 오른쪽버튼 클릭시에
   $('.sub .reviews .review_list .right').click(function () {
 
-    // count가 4가될때까지만 1씩 더함(최댓값 부여)
-    if (subReviewC < 3) {
 
-      subReviewC++;
+    if (winW > 728) {
+      // count가 4가될때까지만 1씩 더함(최댓값 부여)
+      if (subReviewC < 3) {
 
-    }
+        subReviewC++;
 
-
-    // 오른쪽 끝일때
-    if (subReviewC >= 3) {
-
-      // 왼쪽으로는 갈수 있음   
-      $('.sub .reviews .review_list .left').removeClass('off');
+      }
 
 
-      // 오른쪽으로 더 못감   
-      $(this).addClass('off');
+      // 오른쪽 끝일때
+      if (subReviewC >= 3) {
+
+        // 왼쪽으로는 갈수 있음   
+        $('.sub .reviews .review_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).addClass('off');
+
+      }
+
+
+      else {
+        $('.sub .reviews .review_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).removeClass('off');
+
+
+      }
+
+
+
+
+      $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -50}%` }, 300);
 
     }
 
 
     else {
-      $('.sub .reviews .review_list .left').removeClass('off');
 
 
-      // 오른쪽으로 더 못감   
-      $(this).removeClass('off');
+      // count가 4가될때까지만 1씩 더함(최댓값 부여)
+      if (subReviewC < 4) {
 
+        subReviewC++;
+
+      }
+
+
+      // 오른쪽 끝일때
+      if (subReviewC >= 4) {
+
+        // 왼쪽으로는 갈수 있음   
+        $('.sub .reviews .review_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).addClass('off');
+
+      }
+
+
+      else {
+        $('.sub .reviews .review_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).removeClass('off');
+
+
+      }
+
+
+
+
+      $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -100}%` }, 300);
 
     }
 
 
 
-
-    $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -50}%` }, 300);
-
-
-
-
   }
+
 
   )
 
@@ -5601,10 +5647,14 @@ $(document).ready(function () {
     }
 
 
+    if (winW > 728) {
+      $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -50}%` }, 300);
+    }
+    else {
 
-    $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -50}%` }, 300);
+      $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -100}%` }, 300);
 
-
+    }
 
 
 
@@ -5633,42 +5683,91 @@ $(document).ready(function () {
 
   $('.sub .others .others_list .right').click(function () {
 
-    // count가 4가될때까지만 1씩 더함(최댓값 부여)
-    if (subOtherC < 2) {
 
-      subOtherC++;
+
+
+    if (winW > 728) {
+      // count가 4가될때까지만 1씩 더함(최댓값 부여)
+      if (subOtherC < 2) {
+
+        subOtherC++;
+
+      }
+
+
+      // 오른쪽 끝일때
+      if (subOtherC >= 2) {
+
+        // 왼쪽으로는 갈수 있음   
+        $('.sub .others .others_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).addClass('off');
+
+      }
+
+
+      else {
+        $('.sub .others .others_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).removeClass('off');
+
+
+      }
+
+
+
+      $('.sub .others .others_list .listZone>li ul').stop().animate({ 'left': `${subOtherC * -50}%` }, 300);
+
 
     }
-
-
-    // 오른쪽 끝일때
-    if (subOtherC >= 2) {
-
-      // 왼쪽으로는 갈수 있음   
-      $('.sub .others .others_list .left').removeClass('off');
-
-
-      // 오른쪽으로 더 못감   
-      $(this).addClass('off');
-
-    }
-
 
     else {
-      $('.sub .others .others_list .left').removeClass('off');
+      // count가 4가될때까지만 1씩 더함(최댓값 부여)
+      if (subOtherC < 3) {
+
+        subOtherC++;
+
+      }
 
 
-      // 오른쪽으로 더 못감   
-      $(this).removeClass('off');
+      // 오른쪽 끝일때
+      if (subOtherC >= 3) {
+
+        // 왼쪽으로는 갈수 있음   
+        $('.sub .others .others_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).addClass('off');
+
+      }
+
+
+      else {
+        $('.sub .others .others_list .left').removeClass('off');
+
+
+        // 오른쪽으로 더 못감   
+        $(this).removeClass('off');
+
+
+      }
+
+
+
+      $('.sub .others .others_list .listZone>li ul').stop().animate({ 'left': `${subOtherC * -100}%` }, 300);
+
+
+
+
+
 
 
     }
-
-
-
-    $('.sub .others .others_list .listZone>li ul').stop().animate({ 'left': `${subOtherC * -50}%` }, 300);
-
-
   }
 
   )
@@ -5711,9 +5810,12 @@ $(document).ready(function () {
     }
 
 
-
-    $('.sub .others .others_list .listZone>li ul').stop().animate({ 'left': `${subOtherC * -50}%` }, 300);
-
+    if (winW > 728) {
+      $('.sub .others .others_list .listZone>li ul').stop().animate({ 'left': `${subOtherC * -50}%` }, 300);
+    }
+    else {
+      $('.sub .others .others_list .listZone>li ul').stop().animate({ 'left': `${subOtherC * -100}%` }, 300);
+    }
 
 
 
