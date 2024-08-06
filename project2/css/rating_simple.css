@@ -1,9 +1,10 @@
-.webwidget_rating_simple{
+.webwidget_rating_simple {
     padding: 0px;
     margin: 0px;
     float: left;
 }
-.webwidget_rating_simple li{
+
+.webwidget_rating_simple li {
     line-height: 0px;
     width: 40px;
     height: 40px;
@@ -16,6 +17,36 @@
     background-position: center center;
     background-size: cover;
 }
-.webwidget_rating_simple li span{
+
+.webwidget_rating_simple li span {
     display: none;
+}
+
+
+
+
+@media (max-width:768px) {
+
+
+    .webwidget_rating_simple li {
+
+        width: 25px;
+        height: 25px;
+
+    }
+
+}
+
+
+
+@media (min-width:769px) and (max-width:1280px) {
+
+
+    .webwidget_rating_simple li {
+
+        width: 30px;
+        height: 30px;
+
+    }
+
 }

@@ -147,6 +147,28 @@ $(document).ready(function () {
     // $('hero.on .listBox li').height(760 + 'px');
 
 
+    // 모바일 환경일 경우
+
+    if (winW <= 768) {
+
+      // 모바일 nav를 보이게 함
+
+      $('.mobile_util').removeClass('off');
+
+    }
+
+
+    // 아닐경우엔 안보이게 함
+
+
+    else {
+
+      $('.mobile_util').addClass('off');
+
+    }
+
+
+
   }
 
 
@@ -236,13 +258,28 @@ $(document).ready(function () {
 
   function heroResizeOff() {
 
+
+
     $('.hero').stop().animate({ 'height': winH, 'width': winW, 'margin': 'none', 'border-radius': '0' }, 1000);
 
     $('.hero .listBox li').stop().animate({ 'height': winH, 'width': winW, 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
-    $('.mouseZone').fadeIn();
+
+    // 데스크탑 너비일 때만 작동
+
+    if (winW > desktop) {
+
+      $('.mouseZone').fadeIn();
+
+    }
+
+
 
     $('header').removeClass('on');
+
+
+
+
 
 
   }
@@ -622,23 +659,54 @@ $(document).ready(function () {
   // nav 영역 클릭시 그에 해당하는 서브페이지 이동
 
 
+
+  // 1뎁스 클릭시 상세페이지 이동
+
+
   $('header nav>ul>li>a').click(function (e) {
 
     e.preventDefault();
 
 
-    if ($('header nav>ul>li:nth-child(1)>a').hasClass('on')) {
+    let navI = $(this).parents('li').index();
 
-      $('.goods .gList .listZone>.gameList ul li:nth-child(1)').trigger('click');
+
+    switch (navI) {
+
+
+      case 0:
+        $(`.goods .gList .listZone>li`).removeClass('on');
+
+        $(`.goods .gList .listZone>.gameList`).addClass('on');
+
+        $('.goods .gList .listZone>.gameList ul li').eq(0).trigger('click');
+
+        selectNum = 1;
+
+        changeNum();
+
+        changePrice();
+        break;
+
+      case 1:
+
+        $(`.goods .gList .listZone>li`).removeClass('on');
+
+        $(`.goods .gList .listZone>.proList`).addClass('on');
+
+        $('.goods .gList .listZone>.proList ul li').eq(0).trigger('click');
+
+        selectNum = 1;
+
+        changeNum();
+
+        changePrice();
+
+        break;
 
 
     }
 
-
-    if ($('header nav>ul>li:nth-child(2)>a').hasClass('on')) {
-      $('.goods .gList .listZone>.proList ul li:nth-child(1)').trigger('click');
-
-    }
 
 
 
@@ -646,22 +714,54 @@ $(document).ready(function () {
 
 
 
-  $('header nav>ul ul li a').click(function (e) {
+
+
+  // 2뎁스 클릭시 상세페이지 이동
+
+  $('header nav>ul>li>a').click(function (e) {
+
     e.preventDefault();
 
 
-    if ($('header nav>ul>li:nth-child(1)>a').hasClass('on')) {
+    let navI = $(this).parents('li').index();
 
-      $('.goods .gList .listZone>.gameList ul li:nth-child(1)').trigger('click');
+
+    switch (navI) {
+
+
+      case 0:
+        $(`.goods .gList .listZone>li`).removeClass('on');
+
+        $(`.goods .gList .listZone>.gameList`).addClass('on');
+
+        $('.goods .gList .listZone>.gameList ul li').eq(0).trigger('click');
+
+        selectNum = 1;
+
+        changeNum();
+
+        changePrice();
+        break;
+
+      case 1:
+
+        $(`.goods .gList .listZone>li`).removeClass('on');
+
+        $(`.goods .gList .listZone>.proList`).addClass('on');
+
+        $('.goods .gList .listZone>.proList ul li').eq(0).trigger('click');
+
+        selectNum = 1;
+
+        changeNum();
+
+        changePrice();
+
+        break;
 
 
     }
 
-
-    if ($('header nav>ul>li:nth-child(2)>a').hasClass('on')) {
-      $('.goods .gList .listZone>.proList ul li:nth-child(1)').trigger('click');
-
-    }
 
 
 
@@ -672,6 +772,55 @@ $(document).ready(function () {
 
 
 
+
+  $('header nav>ul>li ul li>a').click(function (e) {
+
+    e.preventDefault();
+
+
+    let navI = $(this).parents('nav>ul>li').index();
+
+
+    switch (navI) {
+
+
+      case 0:
+        $(`.goods .gList .listZone>li`).removeClass('on');
+
+        $(`.goods .gList .listZone>.gameList`).addClass('on');
+
+        $('.goods .gList .listZone>.gameList ul li').eq(0).trigger('click');
+
+        selectNum = 1;
+
+        changeNum();
+
+        changePrice();
+        break;
+
+      case 1:
+
+        $(`.goods .gList .listZone>li`).removeClass('on');
+
+        $(`.goods .gList .listZone>.proList`).addClass('on');
+
+        $('.goods .gList .listZone>.proList ul li').eq(0).trigger('click');
+
+        selectNum = 1;
+
+        changeNum();
+
+        changePrice();
+
+        break;
+
+
+    }
+
+
+
+
+  })
 
 
 
@@ -760,6 +909,99 @@ $(document).ready(function () {
 
 
   })
+
+
+
+
+
+
+
+
+
+
+  // 모바일 nav
+
+
+
+
+
+  $('.mobile_util li').click(function () {
+
+    let mnI = $(this).index();
+
+    switch (mnI) {
+
+      // 홈 버튼
+      case 0:
+
+
+        home();
+        break;
+
+
+
+      // 로그인
+      case 1:
+
+        break;
+
+
+      
+      // 장바구니
+      case 2: 
+
+        $('header .util li.shopMain').trigger('click');
+
+        break;
+
+
+
+
+    }
+
+
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1612,8 +1854,9 @@ $(document).ready(function () {
     if (shop >= 1) {
 
 
-      $('header .util li.shopMain a i .shop_number').css({ 'display': 'flex' })
+      $('header .util li.shopMain a i .shop_number').css({ 'display': 'flex' });
 
+      $('.mobile_util li .shop_number').css({ 'display': 'flex' });
 
     }
 
@@ -1622,6 +1865,8 @@ $(document).ready(function () {
 
     // 장바구니쪽에 표시된 숫자도 변수 shop의 숫자를 반영하여 1씩 증가 
     $('header .util li.shopMain a i .shop_number').text(shop);
+
+    $('.mobile_util li .shop_number').text(shop);
 
 
   }
@@ -2216,10 +2461,13 @@ $(document).ready(function () {
     // 장바구니 개수 표시 변경
     $('header .util li.shopMain a i .shop_number').text(shop);
 
+    $('.mobile_util li .shop_number').text(shop);
+
 
 
     if (shop <= 0) {
-      $('header .util li.shopMain a i .shop_number').css({ 'display': 'none' })
+      $('header .util li.shopMain a i .shop_number').css({ 'display': 'none' });
+      $('.mobile_util li .shop_number').css({ 'display': 'none' });
     }
 
 
@@ -2355,7 +2603,7 @@ $(document).ready(function () {
   window.addEventListener('scroll', function () {
 
     // 시작점
-    let topYear = $('.years .yearsZone .gene').offset().top;
+    let topYear = $('.years .yearsZone .history').offset().top;
 
     // 끝나는 지점
     let bottomYear = $('.box4').offset().top;
@@ -2369,10 +2617,10 @@ $(document).ready(function () {
 
     // 각 구간별 높이(윈도우 크기에 맞춰 설정)
 
-    $('.years .yearsZone .gene ul li').height(winH);
+    $('.years .yearsZone .history ul li').height(winH);
 
 
-    const yearsNum = $('.years .yearsZone .gene ul li').length;
+    const yearsNum = $('.years .yearsZone .history ul li').length;
 
 
     // 개당 높이값
@@ -2612,33 +2860,73 @@ $(document).ready(function () {
 
 
 
+    else {
+
+
+      // 3보다 작을때만 더할수있음(최댓값 설정)
+      if (eventCount < 4) {
+        eventCount++;
+      }
+
+
+
+      // 오른쪽 끝일때
+      if (eventCount >= 4) {
+
+        // 오른쪽으로 더 못감
+        $('.notices .noticesZone .event .left').removeClass('off');
+
+
+        // 왼쪽으로 갈수 있음
+        $('.notices .noticesZone .event .right').addClass('off');
+
+      }
+
+
+
+      // noticecount가 3 미만일땐 갈수잇음(최대 갈수있는 조건)
+
+      $('.notices .noticesZone .event .listZone ul').stop().animate({ 'left': `${eventCount * -100}%` }, 300);
+
+    }
+
+
+
+
+
+
   })
+
+
+
+
+
 
 
   // 왼쪽 버튼 클릭시 왼쪽으로 이동
   $('.notices .noticesZone .event .left').click(function () {
 
+    // 0보다 클때만 뺄수 있음
+    if (eventCount > 0) {
+
+      eventCount--;
+
+    }
+
+
+
+    // 왼쪽 끝일때
+    if (eventCount <= 0) {
+
+      $('.notices .noticesZone .event .left').addClass('off');
+
+      $('.notices .noticesZone .event .right').removeClass('off');
+
+    }
 
 
     // 반응형에 따른 이동값 변경
     if (winW > 1280) {
-      // 0보다 클때만 뺄수 있음
-      if (eventCount > 0) {
-
-        eventCount--;
-
-      }
-
-
-
-      // 왼쪽 끝일때
-      if (eventCount <= 0) {
-
-        $('.notices .noticesZone .event .left').addClass('off');
-
-        $('.notices .noticesZone .event .right').removeClass('off');
-
-      }
 
 
 
@@ -2652,32 +2940,14 @@ $(document).ready(function () {
     else if (winW >= 769 && winW <= 1280) {
 
 
-
-
-
-      // 0보다 클때만 뺄수 있음
-      if (eventCount > 0) {
-
-        eventCount--;
-
-      }
-
-
-
-      // 왼쪽 끝일때
-      if (eventCount <= 0) {
-
-        $('.notices .noticesZone .event .left').addClass('off');
-
-        $('.notices .noticesZone .event .right').removeClass('off');
-
-      }
-
-
-
-
-
       $('.notices .noticesZone .event .listZone ul').stop().animate({ 'left': `${eventCount * -50}%` }, 300);
+
+    }
+
+
+    else {
+
+      $('.notices .noticesZone .event .listZone ul').stop().animate({ 'left': `${eventCount * -100}%` }, 300);
 
     }
 
@@ -2761,32 +3031,69 @@ $(document).ready(function () {
 
 
 
+
+    else {
+
+
+      // 1보다 작을때만 더할수있음(최댓값 설정)
+      if (notifiedCount < 4) {
+        notifiedCount++;
+      }
+
+
+
+      // 오른쪽 끝일때
+      if (notifiedCount >= 4) {
+
+        // 오른쪽으로 더 못감
+        $('.notices .noticesZone .notified .left').removeClass('off');
+
+
+        // 왼쪽으로 갈수 있음
+        $('.notices .noticesZone .notified .right').addClass('off');
+
+      }
+
+
+
+      // noticecount가 1 미만일땐 갈수잇음(최대 갈수있는 조건)
+
+      $('.notices .noticesZone .notified .listZone ul').stop().animate({ 'left': `${notifiedCount * -100}%` }, 300);
+
+
+
+    }
+
+
+
   })
 
 
   // 왼쪽 버튼 클릭시 왼쪽으로 이동
   $('.notices .noticesZone .notified .left').click(function () {
 
+    // 0보다 클때만 뺄수 있음
+    if (notifiedCount > 0) {
+
+      notifiedCount--;
+
+    }
+
+
+
+    // 왼쪽 끝일때
+    if (notifiedCount <= 0) {
+
+      $('.notices .noticesZone .notified .left').addClass('off');
+
+      $('.notices .noticesZone .notified .right').removeClass('off');
+
+    }
+
 
 
     if (winW > 1280) {
-      // 0보다 클때만 뺄수 있음
-      if (notifiedCount > 0) {
 
-        notifiedCount--;
-
-      }
-
-
-
-      // 왼쪽 끝일때
-      if (notifiedCount <= 0) {
-
-        $('.notices .noticesZone .notified .left').addClass('off');
-
-        $('.notices .noticesZone .notified .right').removeClass('off');
-
-      }
 
       $('.notices .noticesZone .notified .listZone ul').stop().animate({ 'left': `${notifiedCount * -25}%` }, 300);
 
@@ -2797,30 +3104,19 @@ $(document).ready(function () {
     // 반응형에 따른 이동값 변경
     else if (winW >= 769 && winW <= 1280) {
 
-      // 0보다 클때만 뺄수 있음
-      if (notifiedCount > 0) {
-
-        notifiedCount--;
-
-      }
-
-
-
-      // 왼쪽 끝일때
-      if (notifiedCount <= 0) {
-
-        $('.notices .noticesZone .notified .left').addClass('off');
-
-        $('.notices .noticesZone .notified .right').removeClass('off');
-
-      }
-
-
       // noticecount가 1 미만일땐 갈수잇음(최대 갈수있는 조건)
 
       $('.notices .noticesZone .notified .listZone ul').stop().animate({ 'left': `${notifiedCount * -50}%` }, 300);
 
     }
+
+
+    else {
+
+      $('.notices .noticesZone .notified .listZone ul').stop().animate({ 'left': `${notifiedCount * -100}%` }, 300);
+
+    }
+
 
 
 
@@ -3543,21 +3839,6 @@ $(document).ready(function () {
 
 
         home();
-
-
-        // 만약에 스크롤을 내리면 다시 풀림
-        $(window).scroll(function () {
-
-
-
-
-          if ($(window).scrollTop() > 0) {
-
-            clearInterval(inter);
-
-          }
-
-        })
 
 
 

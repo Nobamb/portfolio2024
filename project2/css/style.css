@@ -603,18 +603,94 @@ header .util li.shopMain a i .shop_number {
 
 
 
+.mobile_util{
+
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+.mobile_util.off{
+
+  display: none;
+
+}
+
+
+
+.mobile_util li{
+  position: relative;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile_util li .listInner{
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile_util li a{
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.mobile_util li i{
+  vertical-align: bottom;
+  font-size: 24px;
+  color: #58585B;
+}
+
+
+.mobile_util li span{
+  color: #58585B;
+}
+
+
+.mobile_util li:active i{
+
+  color: #e83e34;
+
+}
+
+
+.mobile_util li:active span{
+  color: #e83e34;
+}
 
 
 
 
 
 
+.mobile_util li .shop_number{
 
-
-
-
-
-
+  bottom: 3%;
+  right: 0;
+  height: 30%;
+  aspect-ratio: 1/1;
+  background-color: #F5D022;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+}
 
 
 
@@ -2493,17 +2569,18 @@ header .util li.shopMain a i .shop_number {
 
 .notices .noticesZone>div {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 800px;
+  position: relative;
 }
 
 
 /* 버튼 */
 .notices .noticesZone>div>span {
-
-  margin: 40px;
+  position: absolute;
+  margin: 20px;
   background-color: #fff;
   border-radius: 50%;
   border: 1px solid #58585B;
@@ -2515,7 +2592,28 @@ header .util li.shopMain a i .shop_number {
   cursor: pointer;
   opacity: 1;
   transition: all 0.3s;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+
+
+
+/* 버튼 */
+.notices .noticesZone>div>span.left {
+
+  left: 0;
+
+}
+
+
+.notices .noticesZone>div>span.right {
+
+  right: 0;
+
+}
+
+
 
 .notices .noticesZone>div>span:hover {
 
@@ -2553,7 +2651,7 @@ header .util li.shopMain a i .shop_number {
   height: 350px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
   position: relative;
 }
@@ -2974,7 +3072,6 @@ header .util li.shopMain a i .shop_number {
 /* 메뉴창 영역 */
 .review .intro_list .menu {
   z-index: 10;
-
   position: absolute;
   width: 100%;
   height: 100%;
@@ -3279,6 +3376,9 @@ header .util li.shopMain a i .shop_number {
 .review .goods_zone ul li .txt .txt_total .point {
   font-weight: normal;
   font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -3358,7 +3458,7 @@ header .util li.shopMain a i .shop_number {
   width: 100%;
   height: 80%;
   background-color: #F5D022;
-  overflow: scroll;
+  overflow: auto;
   display: flex;
 }
 
@@ -3500,8 +3600,6 @@ header .util li.shopMain a i .shop_number {
 
 
 
-
-
 /* 로그인, 댓글달기 영역 */
 .review .review_list .write {
 
@@ -3622,8 +3720,8 @@ header .util li.shopMain a i .shop_number {
 
 .review .review_list .review_write .profile_zone .profile {
 
-  width: 60%;
-  aspect-ratio: 1/1;
+  width: 120px;
+  height: 120px;
   background-color: #fff;
   border-radius: 50%;
   overflow: hidden;
@@ -5685,7 +5783,7 @@ header .util li.shopMain a i .shop_number {
   display: flex;
   align-items: center;
   height: 40px;
-  width: 70%;
+  width: 80%;
   background-color: #fff;
   border: none;
   border-radius: 9999px;
@@ -5832,6 +5930,7 @@ footer {
   top: 100%;
 
 }
+
 
 
 
@@ -6453,7 +6552,7 @@ footer {
   .notices h2,
   .review h2 {
 
-    height: 150px;
+    height: 250px;
     background-position: left center;
   }
 
@@ -6472,15 +6571,15 @@ footer {
 
   /* 제품 영역 본문 */
   .goods .gZone {
-
+    height: 1000px;
     flex-direction: column;
 
   }
 
-  /* 왼쪽 메뉴 영역 */
+  /* 위쪽 메뉴 영역 */
   .goods .gZone .gMenu {
     width: 100%;
-    height: 100px;
+    height: 200px;
 
   }
 
@@ -6508,79 +6607,19 @@ footer {
   /* 메뉴 버튼 */
   .goods .gMenu .menu .mButtonzone {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-top: 0;
-    padding: 0;
-    width: 120px;
-    height: 40px;
+    z-index: 40;
+    bottom: 20px;
   }
-
-
-
-  .goods .gMenu .menu .mButton {
-    margin-left: 10px;
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-
-
-
-  .goods .gMenu .menu .mButtonzone .mButtonArrow {
-    margin-right: 10px;
-  }
-
 
 
 
 
   /* 메뉴 목록창 */
   .goods .gMenu .menu .mList {
-    z-index: 10;
-    width: 120px;
-    height: 45px;
-    background-color: #fff;
-    border-radius: 8px;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 0;
-    opacity: 0;
-    transition: all 0.3s;
     position: absolute;
-    right: 10px;
-    top: 75px;
-    margin: 0;
+    top: 180px;
   }
 
-
-
-  .goods .gMenu .menu .mList h4 {
-    font-weight: normal;
-    font-size: 12px;
-    padding-bottom: 20px;
-    padding-left: 5px;
-    padding-top: 10px;
-    letter-spacing: 1px;
-    color: #58585B;
-  }
-
-  .goods .gMenu .menu .mList ul {
-    display: flex;
-    flex-direction: column;
-    padding-left: 5px;
-    gap: 5px;
-  }
-
-  .goods .gMenu .menu .mList ul li {
-    cursor: pointer;
-    font-size: 18px;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-    color: #58585B;
-  }
 
 
 
@@ -6592,7 +6631,7 @@ footer {
 
   .goods .gZone .gMenu .char li {
 
-    justify-content: center;
+    justify-content: flex-start;
     transition: all 0.5s;
   }
 
@@ -6601,7 +6640,7 @@ footer {
   .goods .gZone .gMenu .char li h3 {
     letter-spacing: 3px;
     text-align: center;
-    padding-top: 0;
+    padding-top: 20px;
     color: #fff;
     font-size: 32px;
 
@@ -6610,32 +6649,100 @@ footer {
 
 
 
-  /* 메뉴 목록창 */
-  .goods .gMenu .menu .mList {
-    margin: 0;
-
-    padding: 0;
-    height: 100%;
-
-  }
-
 
 
   .goods .gList {
 
     width: 100%;
-    height: 700px;
+    height: 800px;
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* 연혁 설정 */
 
 
+
+
+
+
+
+
+
+
+
+  .years .yearsZone .gene {
+
+    display: none;
+  }
+
+
+
+
+
+  .years .yearsZone .history {
+
+    width: 100%;
+  }
+
+
+
+
   .years .yearsZone .history li .txt p {
     color: #58585B;
-    font-size: 14px;
+    font-size: 12px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6664,17 +6771,26 @@ footer {
 
   }
 
+  .notices .noticesZone>div {
+    height: 500px;
+  }
 
+
+  .notices .noticesZone>div .listZone {
+
+    width: 70%;
+
+  }
 
 
   .notices .noticesZone>div .listZone ul {
-    width: 250%;
+    width: 500%;
   }
 
   /* 리스트 크기 변경*/
   .notices .noticesZone>div .listZone ul li {
 
-    width: 50%;
+    width: 100%;
 
   }
 
@@ -6701,15 +6817,46 @@ footer {
 
   .review .review_main .intro_list {
     width: 100%;
-    height: 50%;
+    height: 30%;
   }
 
   .review .review_main .review_list {
 
     width: 100%;
-    height: 50%;
+    height: 70%;
 
   }
+
+
+
+
+
+  .review .review_list .review_all {
+
+    height: 75%;
+
+
+  }
+
+
+
+
+  /* 로그인, 댓글달기 영역 */
+  .review .review_list .write {
+
+    height: 25%;
+  }
+
+
+
+
+
+  /* 메뉴 버튼 */
+  .review .menu .mButtonzone {
+
+    margin-top: 45px;
+  }
+
 
 
 
@@ -6729,7 +6876,50 @@ footer {
 
   /* 댓글 */
   .review .review_list .review_all ul li {
+    flex-direction: column;
+
+  }
+
+
+
+  /* 제품 이름 및 평점들 */
+  .review .goods_zone ul li .txt {
+
+    height: 100px;
+
+  }
+
+
+  .review .goods_zone ul li .txt h4 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .review .goods_zone ul li .txt .txt_total {
+    display: flex;
+    width: 100%;
     justify-content: center;
+    gap: 20px;
+
+  }
+
+  .review .goods_zone ul li .txt .txt_total .star {
+    font-size: 28px;
+    display: flex;
+    padding-bottom: 5px;
+  }
+
+
+
+  .review .goods_zone ul li .txt .txt_total .star img{
+    width: 30px;
+  }
+
+
+  .review .goods_zone ul li .txt .txt_total .point {
+    font-weight: normal;
+    font-size: 20px;
   }
 
 
@@ -6737,19 +6927,27 @@ footer {
 
 
 
+
+  /* 별점 및 리뷰 */
+
+  .review .review_list .review_all .about {
+
+    width: 100%;
+  }
 
 
 
   .review .review_list .review_all li .profile {
-    width: 20%;
+    width: 100%;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
   }
 
   .review .review_list .review_all .profile .pic {
     overflow: hidden;
-    width: 40%;
-    aspect-ratio: 1/1;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: #58585B;
 
@@ -6795,6 +6993,45 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+
+
+
+
+
+
+
+  .review .review_list .review_write .write_zone .infor {
+
+    flex-direction: column;
+    gap: 5px;
+  }
+
+
+
+  .review .review_list .write_this form .typing input {
+    font-size: 12px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7007,16 +7244,85 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 로그인 영역 */
+
+
+
   #login_main {
 
-    height: 800px;
+    height: 340px;
 
   }
 
 
 
 
+  .login_inner .login_zone .login_this {
+    height: 200px;
+  }
+  
+  .login_inner .login_zone .login_this h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  
+  }
+  
+  .login_inner .login_zone .login_this #login_infor {
 
+    gap: 8px;
+  
+  }
+  
+  .login_inner .login_zone .login_this #login_infor>div {
+    width: 80%;
+    height: 20px;
+  }
+
+  .login_inner .login_zone .login_this #login_infor>div i {
+    padding-left: 5%;
+    font-size: 12px;
+    z-index: 10;
+    color: #58585B;
+  }
+
+  .login_inner .login_zone .login_this #login_infor>div input {
+    font-size: 10px;
+  }
+
+
+
+
+
+
+  .login_inner .login_zone .login_this .find {
+    width: 100%;
+  }
+
+
+  .login_inner .login_zone .login_this .find ul{
+
+    margin-top: 10px;
+  }
+
+  .login_inner .login_zone .login_this .find ul li a {
+
+    font-size: 10px;
+  }
 
 
 
@@ -7169,6 +7475,19 @@ footer {
 
 
 
+  .notices .noticesZone>div {
+    height: 500px;
+  }
+
+
+
+  .notices .noticesZone>div .listZone {
+
+    width: 80%;
+
+  }
+
+
   .notices .noticesZone>div .listZone ul li .txt h4 {
 
     font-size: 18px;
@@ -7187,6 +7506,7 @@ footer {
 
 
   }
+
 
 
 
@@ -7219,8 +7539,12 @@ footer {
   .review .review_main {
 
     width: 100%;
+    height: 1500px;
     flex-direction: column;
   }
+
+
+
 
 
   .review .review_main .intro_list {
@@ -7319,6 +7643,36 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+
+
+
+
+
+  .review .review_list .review_write .profile_zone .profile {
+
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+
+
+
+
+  .review .review_list .review_all .about .star img {}
+
+
+
+
+
+
+
+
+
+
 
 
 

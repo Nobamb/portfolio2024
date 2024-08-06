@@ -19,7 +19,7 @@
 
 
   <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-  charset="utf-8"></script>
+    charset="utf-8"></script>
 
 
 
@@ -100,6 +100,38 @@
     </div>
   </header>
 
+  <ul class="mobile_util">
+    <li class="home">
+      <div class="listInner">
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span>홈</span>
+        </a>
+      </div>
+    </li>
+    <li class="login">
+      <div class="listInner">
+        <a href="login.html">
+          <i class="fa-solid fa-right-to-bracket but"></i>
+          <span>로그인</span>
+        </a>
+      </div>
+    </li>
+    <li class="shopping">
+      <div class="listInner">
+        <i class="fa-solid fa-cart-shopping but"></i>
+        <span>장바구니</span>
+      </div>
+      <div class="shop_number">
+      </div>
+    </li>
+    <li class="allMenu">
+      <div class="listInner">
+        <i class="fa-solid fa-bars"></i>
+        <span>전체메뉴</span>
+      </div>
+    </li>
+  </ul>
 
 
 
@@ -157,9 +189,6 @@
 
 
             <div id="naver_id_login">
-
-                <img src="img/naver.png" alt="">
-                네이버 로그인
             </div>
 
 
@@ -289,8 +318,17 @@
     naver_id_login.init_naver_id_login();
 
 
-    // // 로그인 환경에서는 sticky로 변경
-    // $('header').css({'position':'sticky'});
+    let naverW = $(window).width();
+
+
+    if(naverW<=768){
+
+      naver_id_login.setButton("white", 10, 20);
+
+    }
+
+
+
 
 
 
