@@ -6551,7 +6551,7 @@ footer {
   .notices h2,
   .review h2 {
 
-    height: 250px;
+    height: 160px;
     background-position: left center;
   }
 
@@ -6876,7 +6876,7 @@ footer {
   /* 댓글 */
   .review .review_list .review_all ul li {
     flex-direction: column;
-
+    margin-top: 100px;
   }
 
 
@@ -7444,7 +7444,7 @@ footer {
   .review h2 {
 
 
-    height: 400px;
+    height: 300px;
     background-position: center center;
 
   }
@@ -7577,6 +7577,7 @@ footer {
 
   /* 댓글 */
   .review .review_list .review_all ul li {
+
     justify-content: center;
   }
 
