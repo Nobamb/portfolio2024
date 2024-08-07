@@ -2376,21 +2376,15 @@ $(document).ready(function () {
 
     if (category1 === 'game' && arrClass3) {
 
-      let spI = sp;
-
-      if (sp === -1) {
-        spI = sp + 1;
-      }
-
 
       // 기본 리스트 외의 것을 먼저 누른 뒤에
       // 제거를 진행하면 gameSpPrice의 배열값이 undifind로 해석함(이유는 모르겠음->확인해보기)
 
-      fullPrice -= gameSpPrice[(gI - 1)][spI];
+      fullPrice -= gameSpPrice[(gI - 1)][arrClass3];
 
-      gameSp[(gI - 1)][spI] = 0;
+      gameSp[(gI - 1)][arrClass3] = 0;
 
-      gameSpPrice[(gI - 1)][spI] = 0;
+      gameSpPrice[(gI - 1)][arrClass3] = 0;
 
 
     }
@@ -2422,22 +2416,15 @@ $(document).ready(function () {
 
     if (category1 === 'product' && arrClass3) {
 
-      let spI = sp;
-
-      if (sp === -1) {
-        spI = sp + 1;
-      }
-
-      console.log(productSpPrice[(gI - 6)][spI])
 
 
       // pp배열에서 해당 가격을 가져옴
 
-      fullPrice -= productSpPrice[(gI - 6)][spI];
+      fullPrice -= productSpPrice[(gI - 6)][arrClass3];
 
-      productSp[(gI - 6)][sp] = 0;
+      productSp[(gI - 6)][arrClass3] = 0;
 
-      productSpPrice[(gI - 6)][spI] = 0;
+      productSpPrice[(gI - 6)][arrClass3] = 0;
 
 
     }
