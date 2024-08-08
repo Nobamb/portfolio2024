@@ -2995,6 +2995,7 @@ header .util li.shopMain a i .shop_number {
   height: 400px;
   background-position: center center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 
