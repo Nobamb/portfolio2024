@@ -2324,11 +2324,15 @@ $(document).ready(function () {
     let arrClass2 = spClass[1];
 
 
-    // 기존 리스트 외의 리스트번호
 
+    // 기존 리스트 외의 리스트번호
     let arrClass3 = spClass[2];
 
 
+
+
+
+    
     // arrClass1에서 제품명을 확인, game일 경우 game 배열과 gp배열, 
     // product일 경우 product 배열과 pp배열,
     // 바로 뒤의 숫자로 해당 카테고리의 몇번째 제품인지 확인
@@ -2344,8 +2348,6 @@ $(document).ready(function () {
 
     // 제품 순서
     let category2 = category[1];
-
-
 
 
     // game일 경우 
@@ -2388,11 +2390,6 @@ $(document).ready(function () {
 
 
     }
-
-
-
-
-
 
 
 
@@ -5400,6 +5397,8 @@ $(document).ready(function () {
       changePrice();
 
     }
+
+    $('.sub .intro .infor .purchase_zone .choice .choice_goods ul li').eq(0).trigger('click');
 
 
     // 리뷰 초기 위치값 지정
