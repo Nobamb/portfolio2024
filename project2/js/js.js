@@ -858,11 +858,10 @@ $(document).ready(function () {
 
 
 
-
-
-
-
   $(window).scroll(function () {
+
+
+
 
 
 
@@ -2316,13 +2315,13 @@ $(document).ready(function () {
     // 각각 나눈 문자열들을 지정
 
 
+
     // 카테고리명 및 종류
     let arrClass1 = spClass[0];
 
 
     // 개수
     let arrClass2 = spClass[1];
-
 
 
     // 기존 리스트 외의 리스트번호
@@ -2332,7 +2331,6 @@ $(document).ready(function () {
 
 
 
-    
     // arrClass1에서 제품명을 확인, game일 경우 game 배열과 gp배열, 
     // product일 경우 product 배열과 pp배열,
     // 바로 뒤의 숫자로 해당 카테고리의 몇번째 제품인지 확인
@@ -2348,6 +2346,11 @@ $(document).ready(function () {
 
     // 제품 순서
     let category2 = category[1];
+
+
+
+
+
 
 
     // game일 경우 
@@ -2407,13 +2410,12 @@ $(document).ready(function () {
 
       pp[category2 - 6] = 0;
 
+
     }
 
 
 
     if (category1 === 'product' && arrClass3) {
-
-
 
       // pp배열에서 해당 가격을 가져옴
 
@@ -2423,8 +2425,9 @@ $(document).ready(function () {
 
       productSpPrice[(gI - 6)][arrClass3] = 0;
 
-
     }
+
+
 
 
 
@@ -2432,6 +2435,8 @@ $(document).ready(function () {
 
     // 금액 변경 및 태그 삭제
     $('.popUp .total_pay .pay').text(`${fullPrice}원`);
+
+
 
 
     $(`.${pClass}`).remove();

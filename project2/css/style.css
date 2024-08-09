@@ -7697,7 +7697,7 @@ footer .footer_down .footer_inner p {
   .popUp .total_pay {
 
     justify-content: center;
-    gap: 5px;
+    gap: 15px;
 
   }
 
@@ -7729,7 +7729,7 @@ footer .footer_down .footer_inner p {
 
   .popUp .total_pay .purchase_complete {
     padding: 0 10px;
-    width: 40%;
+    width:35%;
   }
 
 
@@ -8580,8 +8580,83 @@ footer .footer_down .footer_inner p {
 
 
 
+  .popUp {
+    width: 600px;
+    height: 400px;
+  }
+
+  .popUp .total_pay .txt {
+    padding: 0 10px;
+    font-size: 16px;
+  
+  }
+  
+  
+  
+  .popUp .total_pay .pay {
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+  
+  }
+  
 
 
+  .popUp .total_pay .purchase_complete {
+    
+    width: 30%;
+
+  }
+  
+  .popUp .total_pay .purchase_complete i {
+    color: #fff;
+    font-size: 16px;
+  
+  }
+  
+  
+  
+  
+  
+  
+  .popUp .total_pay .purchase_complete span {
+    color: #fff;
+    font-size: 12px;
+  
+  }
+
+
+
+
+
+
+    /* 닫기버튼 */
+
+    .popUp .closed {
+      left: calc(100% - 10px);
+      width: 80px;
+      height: 40px;
+    }
+  
+  
+    .popUp .closed:hover {
+      width: 80px;
+    }
+  
+  
+  
+    .popUp .closed i {
+      transform: skew(30deg) translateX(5px);
+      font-size: 20px;
+    }
+  
+  
+    .popUp .closed:hover i {
+      transform: skew(30deg) translateX(5px);
+    }
+  
+  
+  
 
 
 
