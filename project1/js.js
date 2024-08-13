@@ -1,6 +1,20 @@
 $(document).ready(function () {
 
 
+
+
+  $('.mobileMenu').click(function(){
+
+    $(this).find('li').toggleClass('on');
+
+    $('.mobileMenuList').toggleClass('on');
+
+  })
+
+
+
+
+
   // 히어로 위치 선정
 
 

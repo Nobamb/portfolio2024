@@ -322,6 +322,34 @@ header .util {
 }
 
 
+
+
+/* 모바일 환경 전용 메뉴 */
+
+.mobileMenu {
+
+  display: none;
+
+
+}
+
+
+.mobileMenuList {
+
+  display: none;
+
+
+}
+
+
+
+
+
+
+
+
+
+
 /* header를 제외한 전체 영역 */
 .wrap {
   width: 100%;
@@ -428,6 +456,21 @@ header .util {
   right: 0;
   bottom: 0;
   backdrop-filter: blur(30px);
+}
+
+
+
+.herotxtBg{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ffdede;
+  opacity: 0.5;
+  z-index: -1;
+
 }
 
 
@@ -3100,8 +3143,16 @@ footer {
     position: relative;
     width: 100%;
     height: 100%;
-
+    opacity: 1;
   }
+
+  .notice a:hover {
+
+    
+    transform: scale(1);
+    opacity: 1;
+  }
+
 
 
   .notice li .noticeImg {
@@ -3864,9 +3915,9 @@ api 부분 여기다 집어넣기 */
   .map_inner .mainMap .moreMap li a {
 
     font-size: 14px;
-  
+
   }
-  
+
 
 
   .maparea .mapInfor {
@@ -4124,6 +4175,218 @@ api 부분 여기다 집어넣기 */
 
 
 
+  /* 모바일 환경 전용 메뉴 */
+
+  .mobileMenu {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+  }
+
+
+  /* 모바일 환경 전용 메뉴 */
+
+  .mobileMenu ul {
+
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 60%;
+    justify-content: space-between;
+    perspective: 1000px;
+  }
+
+
+  .mobileMenu ul li {
+
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    transition: all 0.5s;
+
+  }
+
+
+
+  .mobileMenu ul li.on {
+
+    background-color: #666666;
+
+  }
+
+
+  .mobileMenu ul li:nth-child(1).on {
+
+    transform: rotateZ(45deg);
+    transform-origin: left top;
+    width: 127%;
+
+  }
+
+  .mobileMenu ul li:nth-child(2).on {
+
+    transform: rotateX(90deg);
+
+  }
+
+
+
+  .mobileMenu ul li:nth-child(3).on {
+    transform: rotateZ(-45deg);
+    transform-origin: left;
+    width: 127%;
+
+
+  }
+
+
+
+
+
+  /* 모바일 환경에서의 메뉴 리스트 */
+
+
+
+  .mobileMenuList {
+
+    width: 250px;
+    height: 100vh;
+    transition: all 0.5s;
+    position: absolute;
+    right: -250px;
+    top: 0;
+    z-index: 100;
+    background-color: #dd8282;
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+
+  .mobileMenuList.on {
+
+    right: 0;
+  }
+
+
+
+
+
+  .mobileMenuList .depth {
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+
+
+
+  .mobileMenuList .depth li {
+
+    background-color: #ffdede;
+    height: 14%;
+    width: 100%;
+    border-radius: 10px;
+
+  }
+
+
+
+  .mobileMenuList .depth li a {
+
+    border-radius: 20px;
+    color: #dd8282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+
+  }
+
+
+
+  .mobileMenuList .mobileLogin {
+
+
+    width: 100%;
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+
+  }
+
+
+  .mobileMenuList .mobileLogin li a {
+
+
+    color: #fff;
+  }
+
+
+
+  .mobileMenuList .mobileSearch{
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+
+  .mobileMenuList .mobileSearch input{
+
+    width: 85%;
+    padding-left: 10px;
+    border: none;
+    height: 30px;
+  
+  }
+
+  .mobileMenuList .mobileSearch button{
+
+    background-color: #ffdede;
+    width: 15%;
+    border: none;
+    height: 30px;
+  
+  }
+
+  .mobileMenuList .mobileSearch button i{
+
+    font-size: 16px;
+    color: #fff;
+  
+  }
+
+
+
+
+
+
 
 
 
@@ -4244,8 +4507,16 @@ api 부분 여기다 집어넣기 */
     position: relative;
     width: 100%;
     height: 100%;
-
+    opacity: 1;
   }
+
+  .notice a:hover {
+
+    
+    transform: scale(1);
+    opacity: 1;
+  }
+
 
 
   .notice li .noticeImg {
@@ -4535,11 +4806,11 @@ api 부분 여기다 집어넣기 */
 
 
   /* 프로그램 목록 영역 */
-.programBox .listTitle {
+  .programBox .listTitle {
 
-  width: 100%;
-  height: 60px;
-}
+    width: 100%;
+    height: 60px;
+  }
 
 
   /* 기본값 */
@@ -5085,17 +5356,17 @@ api 부분 여기다 집어넣기 */
   .map_inner .mainMap .moreMap li a {
 
     font-size: 10px;
-  
+
   }
-  
 
 
 
-  
-.map_inner .mainMap .moreMap li a img {
 
-  display: none;
-}
+
+  .map_inner .mainMap .moreMap li a img {
+
+    display: none;
+  }
 
 
 
