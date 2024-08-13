@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무궁화전시박물관</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 폰트어썸 설정 -->
+  <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
+</head>
+
+
+<!-- 사진 대체로 고해상도로 변경 및 로고 변경(로고는 크기 조금만 더 줄이기)
+너비 다 풀로 늘리고 inner로 -->
+
+
+
+<!-- 작업시간 약 30시간 -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js.js"></script>
+
+<script>
+
+  $(document).ready(function () {
+
+
+    // 무궁화 전시관 리스트들을 올려둘시
+    $('.hallarea .titleBox li').mouseenter(function () {
+
+      // 현재 있는 title이란 변수를 선언,
+      var title = $(this).index();
+
+
+      // 리스트들 모두 on class 제거 후 
+      $('.hallarea .titleBox li').removeClass('on');
+
+      // 현재 올려둔 리스트에 on class 부여
+      $('.hallarea .titleBox li').eq(title).addClass('on');
+
+
+
+
+      // 이 상태에서 마우스를 뗄시에 
+      $('.hallarea .titleBox li').mouseleave(function () {
+
+        // 현재 on class가 지정된 리스트에 변수 titleAgain 선언
+        var titleAgain = $('.hallarea .listBox .listimg.on').index();
+
+        // 모든 on클래스를 지운 후
+        $('.hallarea .titleBox li').removeClass('on');
+
+        // on class가 지정되었던 리스트에 다시 on class 부여
+        $('.hallarea .titleBox li').eq(titleAgain).addClass('on');
+
+      })
+
+    })
+
+    // 무궁화 전시관의 각 목록들을 클릭시
+    $('.hallarea .titleBox li').click(function () {
+
+      // i를 통해 각각의 list 번수를 지정후,
+      var i = $(this).index();
+
+      // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
+      // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
+      // 그 외의 페이지일 땐 on이 꺼지게 함
+      if (i <= 0) {
+
+        $('.hallarea .listBox .left').addClass('on');
+        $('.hallarea .listBox .right').removeClass('on');
+
+      }
+      else if (i >= 4) {
+        $('.hallarea .listBox .right').addClass('on');
+        $('.hallarea .listBox .left').removeClass('on');
+
+      }
+
+      else {
+
+        $('.hallarea .listBox .left').removeClass('on');
+        $('.hallarea .listBox .right').removeClass('on');
+
+      }
+
+
+      // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
+      $('.hallarea .listBox .listimg').removeClass('on');
+
+      // 지정한 이미지에 on class를 부여하여 fadein시킴
+      $('.hallarea .listBox .listimg').eq(i).addClass('on');
+
+    })
+
+
+
+
+
+
+
+    // 무궁화 전시관의 왼쪽버튼 클릭시
+    $('.hallarea .listBox .left').click(function () {
+
+
+      // next를 통해 현재 켜져있는 리스트번호에 -1을 하여(이전화면으로 넘어가기 위함)
+      // 왼쪽 버튼의 변수를 지정후,
+      var prev = $('.listBox .listimg.on').index() - 1;
+
+      // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
+      // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
+      // 그 외의 페이지일 땐 on이 꺼지게 함
+      if (prev <= 0) {
+
+        $('.hallarea .listBox .left').addClass('on');
+        $('.hallarea .listBox .right').removeClass('on');
+
+
+      }
+      else if (prev >= 4) {
+        $('.hallarea .listBox .right').addClass('on');
+        $('.hallarea .listBox .left').removeClass('on');
+
+      }
+
+      else {
+
+        $('.hallarea .listBox .left').removeClass('on');
+        $('.hallarea .listBox .right').removeClass('on');
+
+
+      }
+
+
+      // prev가 0 이상일 때(첫번째 페이지 이후일때 작동)
+      if (prev >= 0) {
+        // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
+        $('.hallarea .listBox .listimg').removeClass('on');
+
+        // 지정한 이미지에 on class를 부여하여 fadein시킴
+        $('.hallarea .listBox .listimg').eq(prev).addClass('on');
+
+        $('.hallarea .titleBox li').removeClass('on');
+        $('.hallarea .titleBox li').eq(prev).addClass('on');
+      }
+
+
+    })
+
+
+
+
+    // 무궁화 전시관의 오른쪽버튼 클릭시
+    $('.hallarea .listBox .right').click(function () {
+
+      // next를 통해 현재 켜져있는 리스트번호에 +1을 하여(다음화면으로 넘어가기 위함)
+      // 오른쪽 버튼의 변수를 지정후,
+      var next = $('.listBox .listimg.on').index() + 1;
+
+      // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
+      // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
+      // 그 외의 페이지일 땐 on이 꺼지게 함
+      if (next <= 0) {
+
+        $('.hallarea .listBox .left').addClass('on');
+        $('.hallarea .listBox .right').removeClass('on');
+
+      }
+      else if (next >= 4) {
+
+        $('.hallarea .listBox .right').addClass('on');
+        $('.hallarea .listBox .left').removeClass('on');
+
+      }
+      else {
+
+        $('.hallarea .listBox .left').removeClass('on');
+        $('.hallarea .listBox .right').removeClass('on');
+
+
+      }
+
+      if (next <= 4) {
+        // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
+        $('.hallarea .listBox .listimg').removeClass('on');
+
+        // 지정한 이미지에 on class를 부여하여 fadein시킴
+        $('.hallarea .listBox .listimg').eq(next).addClass('on');
+
+        $('.hallarea .titleBox li').removeClass('on');
+        $('.hallarea .titleBox li').eq(next).addClass('on');
+
+      }
+
+
+
+
+
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // // 프로그램에서 각 프로그램 버튼들을 마우스에 올려둘시
+    // $('.programBox .listTitle li').mouseenter(function () {
+
+    //   // 올려둔 버튼이 활성화(on class)되고, 나머지 버튼들은 비활성화됨
+    //   var a = $(this).index();
+
+    //   $('.programBox .listTitle li').removeClass('on');
+
+    //   $('.programBox .listTitle li').eq(a).addClass('on');
+
+
+    //   // 올려둔 상태에서 마우스를 뗄 시에
+    //   $('.programBox .listTitle li').mouseleave(function () {
+
+    //     // leave 변수 제작(현재 위치해있는 직은 프로그램 사진(on 클래스)의 순번을 기준으로 회귀)
+    //     // form 부분으로 하거나 하단의 사진 영역을 기준으로 해도 괜찮음
+    //     var leave = $('.programimg .imgBox li.on').index();
+
+    //     $('.programBox .listTitle li').removeClass('on');
+
+    //     $('.programBox .listTitle li').eq(leave).addClass('on');
+
+
+    //   })
+
+
+
+    let onIndex = 0;
+
+
+    // 리스트 버튼 클릭시
+    $('.programBox .listTitle li').click(function () {
+
+
+
+
+
+      // 해당 순번에 맞는 사진들이 뜨고 다른 사진들은 사라짐
+      let b = $(this).index();
+
+
+
+
+      // 왼쪽 이미지
+      $('.programimg .imgBox li').removeClass('on');
+
+      // 하단 이미지
+      $('.programBox .gallery .imgBox li').removeClass('on');
+
+      // 폼 본문 영역
+      $('.form .formtxt li').removeClass('on');
+
+      // 제목영역
+      $('.txtBox .form li').removeClass('on');
+
+
+      // 오른쪽의 리스트
+
+      $('.programBox .listTitle li').removeClass('on');
+
+
+
+      $('.programimg .imgBox li').eq(b).addClass('on');
+
+      $('.programBox .gallery .imgBox li').eq(b).addClass('on');
+
+      $('.form .formtxt li').eq(b).addClass('on');
+
+      $('.txtBox .form li').eq(b).addClass('on');
+
+
+
+      $(this).addClass('on');
+
+
+
+
+
+      // 첫번째 페이지일때
+      if (b === 0) {
+        $('.programBox .gallery .btn.left').addClass('on');
+        $('.programBox .gallery .btn.right').removeClass('on');
+
+
+      }
+
+      // 마지막페이지일때
+      else if (b === 2) {
+
+        $('.programBox .gallery .btn.right').addClass('on');
+        $('.programBox .gallery .btn.left').removeClass('on');
+
+
+      }
+
+      // 그 외의 페이지일때
+      else {
+        $('.programBox .gallery .btn.right').removeClass('on');
+        $('.programBox .gallery .btn.left').removeClass('on');
+
+      }
+
+    })
+    // })
+
+
+
+
+    // 프로그램 하단 이미지 쪽의 왼쪽버튼 클릭시
+    $('.programBox .gallery .btn.left').click(function () {
+
+      // left 변수 생성
+      // on되어있는 부분(다른데다 해도 되지만 일단 기준을 왼쪽의 작은 이미지를 기준으로 함)
+      var left = $('.programimg .imgBox li.on').index() - 1;
+
+      // left가 0보다 작을 때(첫번째 페이지일때)
+      // left에 on class를 부여
+      if (left <= 0) {
+
+        $('.programBox .gallery .btn.left').addClass('on');
+        $('.programBox .gallery .btn.right').removeClass('on');
+
+      }
+
+      // left가 2보다 클때(마지막 페이지일때)
+      else if (left >= 2) {
+
+        $('.programBox .gallery .btn.right').addClass('on');
+        $('.programBox .gallery .btn.left').removeClass('on');
+
+      }
+
+      else {
+
+        $('.programBox .gallery .btn.right').removeClass('on');
+        $('.programBox .gallery .btn.left').removeClass('on');
+
+
+      }
+
+
+      if (left >= 0) {
+
+        // 왼쪽 이미지
+        $('.programimg .imgBox li').removeClass('on');
+
+        // 하단 이미지
+        $('.programBox .gallery .imgBox li').removeClass('on');
+
+        // 폼 본문 영역
+        $('.form .formtxt li').removeClass('on');
+
+        // 제목영역
+        $('.txtBox .form li').removeClass('on');
+
+
+        $('.programimg .imgBox li').eq(left).addClass('on');
+
+        $('.programBox .gallery .imgBox li').eq(left).addClass('on');
+
+        $('.form .formtxt li').eq(left).addClass('on');
+
+        $('.txtBox .form li').eq(left).addClass('on');
+
+
+        // 기존에 해당하던 리스트들도 변경됨
+        $('.programBox .listTitle li').removeClass('on');
+
+        $('.programBox .listTitle li').eq(left).addClass('on');
+      }
+
+
+    })
+
+
+
+    // 프로그램 하단 이미지 쪽의 오른쪽버튼 클릭시
+    $('.programBox .gallery .btn.right').click(function () {
+
+      // left 변수 생성
+      // on되어있는 부분(다른데다 해도 되지만 일단 기준을 왼쪽의 작은 이미지를 기준으로 함)
+      var left = $('.programimg .imgBox li.on').index() + 1;
+
+      // left가 0보다 작을 때(첫번째 페이지일때)
+      // left에 on class를 부여
+      if (left <= 0) {
+
+        $('.programBox .gallery .btn.left').addClass('on');
+        $('.programBox .gallery .btn.right').removeClass('on');
+
+      }
+
+      // left가 2보다 클때(마지막 페이지일때)
+      else if (left >= 2) {
+
+        $('.programBox .gallery .btn.right').addClass('on');
+        $('.programBox .gallery .btn.left').removeClass('on');
+
+      }
+
+      else {
+
+        $('.programBox .gallery .btn.right').removeClass('on');
+        $('.programBox .gallery .btn.left').removeClass('on');
+
+
+      }
+
+
+      if (left <= 2) {
+
+        // 왼쪽 이미지
+        $('.programimg .imgBox li').removeClass('on');
+
+        // 하단 이미지
+        $('.programBox .gallery .imgBox li').removeClass('on');
+
+        // 폼 본문 영역
+        $('.form .formtxt li').removeClass('on');
+
+        // 제목영역
+        $('.txtBox .form li').removeClass('on');
+
+
+        $('.programimg .imgBox li').eq(left).addClass('on');
+
+        $('.programBox .gallery .imgBox li').eq(left).addClass('on');
+
+        $('.form .formtxt li').eq(left).addClass('on');
+
+        $('.txtBox .form li').eq(left).addClass('on');
+
+        // 기존에 해당하던 리스트들도 변경됨
+        $('.programBox .listTitle li').removeClass('on');
+
+        $('.programBox .listTitle li').eq(left).addClass('on');
+
+      }
+
+
+    })
+
+
+
+    // 시설안내의 리스트를 클릭시
+    $('.guide .menuBox .menu li').click(function () {
+      // guide 변수 생성
+      var guide = $(this).index();
+
+      $('.guide .menuBox .menu li').removeClass('on');
+
+      $('.guide .menuBox .menu li').eq(guide).addClass('on');
+
+      $('.guide .menuTxt>li').removeClass('on');
+
+      $('.guide .menuTxt>li').eq(guide).addClass('on');
+
+
+    })
+
+
+
+  })
+
+</script>
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+  <!-- 헤더영역(sticky로 상단 고정시킬거라 wrap 밖으로 뺌) -->
+  <header>
+    <div class="header_inner">
+      <!-- 로고 -->
+      <h1><a href><img src="img/logo2.png" alt="로고"></a>무궁화전시박물관</h1>
+      <!-- 메뉴 -->
+
+      <nav>
+        <ul>
+          <li><a href="">시설안내</a></li>
+          <li><a href="">공지사항</a></li>
+          <li><a href="">무궁화전시관</a></li>
+          <li><a href="">프로그램</a></li>
+          <li><a href="">신청예약</a></li>
+          <li><a href="">홍보갤러리</a></li>
+        </ul>
+      </nav>
+      <!-- 검색창/유틸리티(로그인창, 글씨크기, 음성 버튼) -->
+      <div class="util">
+
+        <!-- 버튼영역 -->
+        <div class="btnarea">
+
+          <a href="" class="btn1">
+            <div class="personcircle"><i class="fa-solid fa-person"></i></div>
+
+            <div class="txt">로그인 / 회원가입</div>
+
+          </a>
+
+          <a href="" class="btn2">
+
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            <div class="txt">글씨 확대</div>
+
+          </a>
+
+
+          <a href="" class="btn3">
+            <i class="fa-solid fa-bullhorn"></i>
+            <div class="txt">읽어주기</div>
+          </a>
+        </div>
+
+        <!-- 검색영역 -->
+        <form action="" class="searcharea">
+
+          <input type="search" class="search" placeholder="검색창을 입력해주세요">
+          <a href="" class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+        </form>
+
+
+      </div>
+    </div>
+
+
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 전체 묶음 -->
+  <div class="wrap">
+
+
+
+
+
+
+
+    <!-- 히어로페이지 -->
+    <section class="heroarea">
+
+      <div class="hero_inner">
+
+        <ul class="heroList">
+          <li>
+            <div class="hero_bg bg1"></div>
+ 
+            <div class="herotxt">
+              <p><span>무궁화 전시박물관</span>은 도심 속</p>
+              <p><span>무궁화 테마 공간</span>으로</p>
+              <p><span>모든 연령층</span>이 함께 즐길 수 있고</p>
+              <p><span>무궁화에 대한 모든 것</span>을 제공</p>
+            </div>
+          </li>
+          <li>
+            <div class="hero_bg bg2"></div>
+
+            <div class="herotxt">
+              <p><span>무궁화 전시박물관</span>은 도심 속</p>
+              <p><span>무궁화 테마 공간</span>으로</p>
+              <p><span>모든 연령층</span>이 함께 즐길 수 있고</p>
+              <p><span>무궁화에 대한 모든 것</span>을 제공</p>
+            </div>
+          </li>
+          <li>
+            <div class="hero_bg bg3"></div>
+
+            <div class="herotxt">
+              <p><span>무궁화 전시박물관</span>은 도심 속</p>
+              <p><span>무궁화 테마 공간</span>으로</p>
+              <p><span>모든 연령층</span>이 함께 즐길 수 있고</p>
+              <p><span>무궁화에 대한 모든 것</span>을 제공</p>
+            </div>
+          </li>
+        </ul>
+
+
+        <ul class="heroButton">
+          <li class="on"></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- 공지사항 -->
+    <section class="noticearea">
+      <div class="notice_inner">
+        <div class="title">
+          <h1>공지사항</h1>
+          <div class="border"></div>
+        </div>
+        <!-- 여기 호버하면 천천히 크기 커지는거 한번 구현해보기 -->
+        <ul class="notice">
+          <li>
+            <a href="">
+              <div class="noticeImg"></div>
+              <h2>무궁화 특별초대전 신청</h2>
+
+              <div class="txt">
+                <h4 class="bold">기간: 2020.11.23~12.22</h4>
+                <p><span class="bold"> 신청:</span> 소속된 기관, 단체를 통해 예약</p>
+              </div>
+
+
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="noticeImg"></div>
+              <h2>무궁화 특별초대전 행사</h2>
+
+
+              <div class="txt">
+                <h4 class="bold">무궁화문화교육프로그램</h4>
+                <p>소외계층/아동대상 무궁화교육</p>
+              </div>
+
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="noticeImg"></div>
+              <h2>개관안내</h2>
+
+              <div class="txt">
+                <h4>개관일: 2020.10.31(토)</h4>
+                <p>무궁화 전시박물관 개관을 합니다.</p>
+              </div>
+
+
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 무궁화 전시관 -->
+    <section class="hallarea">
+      <div class="hall_inner">
+        <div class="title">
+          <h1>무궁화 전시관</h1>
+          <div class="border"></div>
+        </div>
+
+
+
+        <!-- 목록 -->
+        <!-- 호버시 해당 리스트만 강조 -->
+        <!-- 클릭시엔 순서 변경될 예정 -->
+        <ul class="titleBox">
+          <li class="on">1전시관</li>
+          <li>2전시관</li>
+          <li>3전시관</li>
+          <li>무궁화 유물관</li>
+          <li>테마관</li>
+        </ul>
+
+
+
+        <!-- 무궁화 전시관 설명 영역 -->
+        <div class="listBox">
+          <!-- 왼쪽 버튼 -->
+          <!-- 첫번째 페이지이기에 on class를 추가하여
+          이전 페이지로 갈 수 없음을 표시함 -->
+          <span class="left btn on"><i class="fa-solid fa-chevron-left"></i></span>
+
+          <!-- 사진 및 설명 영역 
+                  화면을 넘길시 fadein/out으로 변경-->
+          <div class="list">
+
+
+
+            <!-- 사진, 글영역 -->
+
+
+
+            <!-- 1영역 -->
+            <ul class="listimg on">
+
+
+              <!-- 사진/글영역1 -->
+              <li><a href="">
+                  <div>
+                    <h3>1전시관</h3>
+                    다양한 품종의 무궁화가 모여 <br>
+                    무궁화 정원이 되었습니다.
+                  </div>
+                </a></li>
+
+
+              <!-- 사진/글영역2 -->
+              <li><a href="">
+
+                  <div>
+                    <h3>무궁화,내 마음의 정원</h3>
+                    무궁화 정원을 보며<br>
+                    내 마음에도 무궁화가 피어나길 바랍니다.
+                  </div>
+                </a></li>
+
+
+            </ul>
+
+
+
+            <!-- 2영역 -->
+            <ul class="listimg">
+
+
+              <!-- 사진/글영역1 -->
+              <li><a href="">
+                  <div>
+                    <h3>2전시관</h3>
+                    한지 무궁화가 거울에 반사되어 <br>
+                    끝없이 펼쳐진 무궁화길이 새로운 풍경을 만듭니다.
+                  </div>
+                </a></li>
+
+
+              <!-- 사진/글영역2 -->
+              <li><a href="">
+                  <div>
+                    <h3>무궁화, 빛으로 가득한 순간</h3>
+                    은은한 LED조명이 분홍색 무궁화 꽃잎을<br>
+                    연상시키며 무궁화빛으로 가득 채워집니다.
+                  </div>
+                </a></li>
+
+
+            </ul>
+
+
+
+            <!-- 3영역 -->
+            <ul class="listimg">
+
+
+              <!-- 사진/글영역1 -->
+              <li><a href="">
+
+                  <div>
+                    <h3>3전시관</h3>
+                    다전 세계적으로 300여종이 넘는 무궁화는<br>
+                    여섯 색깔로 분류합니다.
+                  </div>
+                </a></li>
+
+
+              <!-- 사진/글영역2 -->
+              <li><a href="">
+                  <div>
+                    <h3>무궁화, 여섯 색을 품은 花</h3>
+                    찬연하게 만발한 무궁화 길을 걸으며<br>
+                    다양한 품종의 무궁화를 감상할 수 있습니다.
+                  </div>
+                </a></li>
+
+
+            </ul>
+
+
+
+            <!-- 4영역 -->
+            <ul class="listimg">
+
+
+              <!-- 사진/글영역1 -->
+              <li><a href="">
+
+                  <div>
+                    <h3>무궁화 유물관</h3>
+                    국가상징물 및 무궁화 문양이 담겨있는<br>
+                    각종 유물이 전시되어 있습니다.
+                  </div>
+                </a></li>
+
+
+              <!-- 사진/글영역2 -->
+              <li><a href="">
+                  <div>
+                    <h3>잠들어 있던 무궁화, 빛을 보다</h3>
+                    무궁화 정원을 보며 우리나라 역사와 함께한 <br>
+                    무궁화의 다양한 예술작품이 전시되어 있습니다.
+                  </div>
+                </a></li>
+
+
+            </ul>
+
+            <!-- 5영역 -->
+            <ul class="listimg">
+
+
+              <!-- 사진/글영역1 -->
+              <li><a href="">
+                  <div>
+                    <h3>테마관</h3>
+                    무궁화 관련 테마들에 참여하여<br>
+                    무궁화에 더 친숙히 다가설 수 있습니다.
+                  </div>
+                </a></li>
+
+
+              <!-- 사진/글영역2 -->
+              <li><a href="">
+                  <div>
+                    <h3>포토존 '삼일유가'</h3>
+                    앵삼과 어사화를 착용하여<br>
+                    과거에 급제한 선비가 되어 보세요.
+                  </div>
+                </a></li>
+
+
+            </ul>
+
+
+
+
+          </div>
+          <!-- 오른쪽 버튼 -->
+          <span class="right btn"><i class="fa-solid fa-chevron-right"></i></span>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 프로그램 -->
+    <section class="proarea">
+      <div class="pro_inner">
+        <div class="title">
+          <h1>프로그램</h1>
+          <div class="border"></div>
+        </div>
+
+
+
+
+        <!-- 프로그램 내 전체 영역 -->
+        <div class="programBox">
+
+
+
+
+          <!-- 내용 영역 -->
+          <div class="txtBox">
+
+
+            <!-- 상단 프로그램 설명영역 -->
+            <div class="programimg">
+              <!-- 프로그램 이미지(좌측 작은 이미지) -->
+              <ul class="imgBox">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+              </ul>
+
+              <!-- 신청안내 내용 및 버튼 -->
+              <div class="form">
+                <ul class="formTitle">
+                  <li class="on">
+                    <h2>식재관리프로그램<br>
+                      <span>Planting management program</span>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2>체험프로그램<br>
+                      <span>Experience Program</span>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2>교육프로그램<br>
+                      <span>Education Program</span>
+                    </h2>
+                  </li>
+                </ul>
+                <!-- 신청안내 버튼 -->
+                <form action="" class="formtxt">
+                  <ul>
+                    <li class="on">
+                      <p>무궁화 전문 지도사를 양성합니다.</p>
+                      <p>무궁화식재를 홍보 및 식수를 보급, 관리교육을 제공합니다.</p>
+                      <a href="">신청안내</a>
+                    </li>
+                    <li>
+                      <p>다양한 종류의 무궁화를 주제로 한</p>
+                      <p>만들기 체험 프로그램입니다.</p>
+                      <a href="">신청안내</a>
+                    </li>
+                    <li>
+                      <p>무궁화에 대한 이해와 관심을 높이는 </p>
+                      <p>교육 프로그램입니다.</p>
+                      <a href="">신청안내</a>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+
+
+
+
+
+
+            <!-- 하단 갤러리 영역 -->
+            <div class="gallery">
+
+
+
+              <!-- 왼쪽버튼 -->
+              <span class="left btn on"><i class="fa-solid fa-arrow-left"></i></span>
+
+
+
+              <ul class="imgBox">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+              </ul>
+
+
+
+              <!-- 오른쪽 버튼 -->
+              <span class="right btn"><i class="fa-solid fa-arrow-right"></i></span>
+
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <!-- 오른쪽의 list버튼 -->
+          <div class="listTitle">
+            <ul>
+              <li class="on">
+                <div class="icon"><i class="fa-solid fa-tree"></i></div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-palette"></i></div>
+              </li>
+              <li>
+                <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+    </section>
+
+
+
+
+    <!-- 홍보갤러리 -->
+    <section class="galleryarea">
+      <div class="gallery_main">
+        <div class="gallery_inner">
+          <div class="title">
+            <h1>홍보갤러리</h1>
+            <div class="border"></div>
+          </div>
+        </div>
+
+        <!-- 자동으로 사진들이 넘어가게 해줌 -->
+        <div class="map">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 시설안내 -->
+
+
+
+    <section class="guide">
+      <div class="guide_inner">
+        <div class="title">
+          <h1>시설안내</h1>
+          <div class="border"></div>
+        </div>
+
+
+        <!-- 꾸미기용 사진 -->
+        <!-- 스크롤시 옆에서 오는 효과 부여1 -->
+        <div class="guide_main">
+          <div class="imgEffect">
+            <div class="effectImg"></div>
+            <div class="effect"></div>
+          </div>
+
+
+
+          <!-- 관람료 및 관람시간 영역 -->
+          <!-- 스크롤시 옆에서 오는 효과 부여2 -->
+          <div class="menuBox">
+            <ul class="menu">
+              <li class="on">관람시간</li>
+              <li>관람료</li>
+            </ul>
+
+            <ul class="menuTxt">
+
+
+
+              <li class="menu1 on">
+                <ul>
+                  <li>
+                    <div class="img1 Box"></div>
+                    <div class="txt">
+                      <h2>관람시간</h2>
+                      <p>
+                        평일 08:00~18:00 <br>
+                        내부 사정으로 현재 휴관중
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="img2 Box"></div>
+                    <div class="txt">
+                      <h2>단축관람시간</h2>
+                      <p>
+                        주말 2~4번째 토요일 <br>
+                        10:00~14:00
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="img3 Box"></div>
+                    <div class="txt">
+                      <h2>휴관시간</h2>
+                      <p>
+                        주말, 공휴일<br>
+                        박물관 창립일(08.20)
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+
+              <li class="menu2">
+                <ul>
+                  <li>
+                    <div class="icon1 Box"><i class="fa-solid fa-user"></i></div>
+                    <div class="txt">
+                      <!-- pay부분은 가로정렬 -->
+                      <div class="pay">
+                        <h2>일반</h2>
+                        <span>3000원</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="icon2 Box"><i class="fa-solid fa-person-cane"></i></div>
+                    <div class="txt">
+                      <div class="pay">
+                        <h2>할인</h2>
+                        <span>2000원</span>
+                      </div>
+                      <p>단체(20인 이상).만65세이상,<br>
+                        군인,경찰,장애인.국가유공자</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="icon3 Box"><i class="fa-solid fa-baby"></i></div>
+                    <div class="txt">
+                      <div class="pay">
+                        <h2>무료</h2>
+                        <span>36개월 이하</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 찾아오시는 길 -->
+    <section class="maparea">
+
+
+      <div class="map_inner">
+
+        <div class="effect">
+          <div class="title">
+            <h1>찾아보시는 길</h1>
+            <div class="border"></div>
+          </div>
+
+
+          <div class="mainMap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.155853029075!2d126.98309977585983!3d37.26773117211751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b43750dc8d8d9%3A0x52fde12069757aa7!2z66y06raB7ZmUIOyghOyLnCDrsJXrrLzqtIA!5e0!3m2!1sko!2skr!4v1723439246992!5m2!1sko!2skr"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="moreMap">
+              <p>경기도 수원시 권선구 서호로 89, 서울대학교 6동 교육관, 무궁화전시박물관</p>
+              <p>문의 031) 295 -0001</p>
+              <ul>
+                <li class="naver"><a href=""><img src="img/찾아오시는 길/2-1.png" alt="">네이버지도</a></li>
+                <li class="google"><a href=""><img src="img/찾아오시는 길/2-2.png" alt="">구글지도</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mapInfor">
+
+            <div class="mapIconBorder">
+              <div class="mapIcon">
+                <i class="fa-solid fa-bus"></i>
+              </div>
+            </div>
+            <div class="mapTxt">
+              <p class="mapTxtup">13-5, 88, 88-1, 92, 720-2 수원역 길건너 버스정류장</p>
+              <p class="mapTxtdown">수원역 승차 ->서호중학교(3정거장)하차-> <br>
+                서울대학교 정문 진입 후 오른쪽 두번째 진입로(무궁화전시박물관 전용)</p>
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+    </section>
+
+    <!-- 신청예약(위의 프로그램과 겹치기때문에 안넣어도 됨) -->
+
+    <!-- <section>
+            <h1>신청안내</h1> -->
+
+    <!-- 신청안내 전체영역 -->
+    <!-- <div class="sectionBox">
+                <div class="bigBox">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="listBox">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form">
+                <form action=""></form>
+            </div>
+        </section> -->
+
+
+
+
+    <!-- 시설안내랑 찾아오시는 길은 수정할 수 있으면 
+        수정해보기 -->
+
+    <!-- 시설안내 -->
+    <!-- <section>
+            <div class="title">
+                <h1>시설안내 </h1>
+                <div class="border"></div>
+            </div> -->
+    <!-- 시설안내 전체 영역 -->
+    <!-- <div class="sectionBox">
+
+            </div>
+        </section> -->
+
+
+    <!-- 찾아오시는 길 -->
+    <!-- <section>
+           <div class="title">
+                <h1>찾아오시는길 </h1>
+                <div class="border"></div>
+           </div> -->
+    <!-- 찾아오시는 길 전체 영역 -->
+    <!-- <div class="mapBox">
+
+                <div class="img"></div> -->
+    <!-- 구글 맵 영역  -->
+    <!-- <div class="map"> -->
+
+    <!-- 설명 영역 -->
+    <!-- <div class="txt"></div>
+                </div>
+            </div>
+        </section> -->
+
+
+    <!-- footer -->
+    <footer>
+
+
+      <div class="footer1">
+        <div class="footer1_inner">
+          <a href=""><img src="img/logo1.png" alt=""></a>
+
+          <div class="footerInfor">
+            <span>무궁화전시박물관</span>
+            <span>전화번호 : 031-295-0001 </span>
+            <span>이메일: mugunghwadeu@naver.com </span>
+            <span>신고하기</span>
+          </div>
+
+          <div class="sns">
+            <a href="" class="insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="footer2">
+        <div class="footer2_inner">
+          <p>CopyRight © </p>
+        </div>
+      </div>
+
+
+    </footer>
+
+  </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,5300 @@
+/* 언어설정 */
+
+@charset 'utf-8';
+
+/* 폰트 설정 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* 기본설정 */
+body {
+
+  font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+
+}
+
+/* 사용컬러는 
+#666666, #fff, #dd8282, #ffdede, #a3cbd8 #4797b1 */
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+ul {
+
+  list-style: none;
+
+}
+
+a {
+
+  color: #000;
+  text-decoration: none;
+
+}
+
+img {
+
+  vertical-align: bottom;
+
+}
+
+/* 전체 설정 */
+
+.body {
+
+
+  position: relative;
+
+}
+
+
+
+
+
+
+header {
+  background-color: #ffdede;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* header 전체영역 */
+header .header_inner {
+  /* z-index없으면 뒤에 묻히게 됨 */
+  position: relative;
+  background-color: #ffdede;
+  justify-content: space-between;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+
+
+
+
+
+/* 로고영역 */
+header h1 {
+  text-indent: -9999px;
+  height: 80px;
+  align-items: center;
+  display: flex;
+
+}
+
+header h1 a {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  display: block;
+  height: 60%;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* 메뉴 */
+header nav {
+  display: flex;
+  background-color: #ffdede;
+  height: 70px;
+  width: 100%;
+  z-index: 100;
+
+}
+
+header nav ul {
+  align-items: center;
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+}
+
+header nav ul li {
+
+  width: 16.6666%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul a {
+
+  transition: all 0.3s;
+  color: #dd8282;
+  width: 100%;
+  font-size: 16px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #fff;
+}
+
+header nav ul a:hover {
+  text-decoration: underline 0.2px #fff;
+  background-color: #dd8282;
+  color: #fff;
+
+}
+
+
+
+
+
+
+/* 유틸리티 영역 */
+header .util {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1280px;
+  height: 140px;
+
+}
+
+
+/* 유틸리티 버튼영역 */
+.util .btnarea {
+  width: 25%;
+  display: flex;
+  height: 150px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/* 로그인/회원가입 */
+.btnarea .btn1 {
+  border-radius: 9999px;
+  align-items: center;
+  background-color: #dd8282;
+  width: 180px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 사람아이콘 배경(작은 원) */
+.btnarea .btn1 .personcircle {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #ffdede;
+  border-radius: 50%;
+}
+
+/* 아이콘 모두 기본 하얀색*/
+.btnarea i,
+.searchbtn {
+  color: #fff;
+}
+
+.btnarea .txt {
+  color: #fff;
+  font-size: 10px;
+}
+
+
+
+
+
+/* 글씨 확대 */
+
+.btnarea .btn2 {
+  border-radius: 9px;
+  width: 50px;
+  height: 50px;
+  background-color: #dd8282;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+
+}
+
+/* 음성 */
+.util .btnarea .btn3 {
+  border-radius: 9px;
+  width: 50px;
+  height: 50px;
+  background-color: #dd8282;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+/* 버튼에 그림자넣기 */
+
+.btn1,
+.btn2,
+.btn3,
+.searchbtn {
+
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 25%);
+
+}
+
+
+
+
+/* 유틸리티 검색영역 */
+.util .searcharea {
+  width: 25%;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  z-index: 1000;
+}
+
+
+
+/* 검색창 */
+.util .searcharea .search {
+
+  padding-left: 10px;
+  border: 0.2px #000 solid;
+  display: flex;
+  height: 40px;
+  width: 80%;
+  font-size: 16px;
+}
+
+
+/* 검색 버튼 */
+.util .searcharea .searchbtn {
+  font-size: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0.2px #000 solid;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #dd8282;
+
+}
+
+.util .searcharea .searchbtn:active {
+
+  background-color: #ffdede;
+
+}
+
+
+/* header를 제외한 전체 영역 */
+.wrap {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* 히어로 영역 */
+.heroarea {
+  width: 100%;
+  height: 750px;
+  background-color: #ffdede;
+}
+
+.heroarea .hero_inner {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.heroarea .hero_inner .heroList {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+}
+
+
+
+.heroarea .hero_inner .heroList li {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+}
+
+
+
+
+.heroarea .hero_inner .hero_bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.heroarea .hero_inner .hero_bg.bg1 {
+
+  background-image: url('img/hero/hero1.png');
+
+}
+
+
+.heroarea .hero_inner .hero_bg.bg2 {
+
+  background-image: url('img/hero/hero2.png');
+
+}
+
+
+
+
+.heroarea .hero_inner .hero_bg.bg3 {
+
+  background-image: url('img/hero/hero3.png');
+  background-position: top center;
+}
+
+
+
+
+
+
+
+.heroarea .herotxt {
+
+
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  max-width: 580px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(30px);
+}
+
+
+.herotxt p {
+  font-size: 24px;
+
+  color: #fff;
+  padding-bottom: 25px;
+
+}
+
+.herotxt p:nth-child(odd) span {
+  color: #dd8282;
+
+}
+
+.herotxt p:nth-child(even) span {
+  color: #4797b1;
+}
+
+
+
+.heroarea .hero_inner .heroButton {
+
+  width: 110px;
+  height: 30px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+.heroarea .hero_inner .heroButton li {
+
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s;
+
+}
+
+
+.heroarea .hero_inner .heroButton li.on {
+
+  background-color: #ffdede;
+
+}
+
+
+
+
+
+
+
+
+
+/* section 내의 모든 제목들은 동일한 규격을 지님 */
+section {}
+
+
+section .title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+  margin-bottom: 50px;
+}
+
+
+section h1 {
+
+
+  padding-left: 80px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 36px;
+
+}
+
+section .border {
+  width: 65%;
+  max-width: 950px;
+  margin-right: 80px;
+  height: 0;
+  border-bottom: 1px solid #fff;
+
+}
+
+
+
+
+
+
+
+
+
+/* 공지사항 영역 */
+
+.noticearea {
+
+  width: 100%;
+  height: 1060px;
+  background-color: #4797b1;
+
+}
+
+
+.notice {
+  justify-content: space-between;
+  display: flex;
+  margin: 0 80px;
+}
+
+
+.notice li {
+
+  width: 32%;
+
+}
+
+.notice a {
+
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+  transform: scale(1);
+  transition: all 0.7s;
+
+}
+
+/* 
+@keyframes notice {
+
+  0% {
+
+    transform: scale(1);
+    opacity: 0.8;
+
+  }
+
+  100% {
+
+    transform: scale(1.05);
+    opacity: 1;
+
+  }
+
+} */
+
+.notice a:hover {
+
+  transform: scale(1.1);
+  opacity: 1;
+
+}
+
+.notice li .noticeImg {
+
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+.notice li:nth-child(1) .noticeImg {
+
+  background-image: url('img/공지사항/공지1.png');
+
+}
+
+.notice li:nth-child(2) .noticeImg {
+
+  background-image: url('img/공지사항/공지2.png');
+
+}
+
+.notice li:nth-child(3) .noticeImg {
+
+  background-image: url('img/공지사항/공지3.png');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.notice h2 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 28px;
+  font-weight: bold;
+  width: 100%;
+  height: 60px;
+  background-color: #ffdede;
+  color: #fff;
+}
+
+
+
+.notice .txt {
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: #fff;
+  height: 165px;
+  width: 100%;
+  border-bottom: 18px solid #ffdede;
+}
+
+.notice p {
+
+  font-size: 16px;
+
+
+}
+
+.notice .txt .bold {
+
+  font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 무궁화 전시관 영역 */
+
+.hallarea {
+  height: 980px;
+  width: 100%;
+  background-color: #ffdede;
+}
+
+
+
+
+
+
+
+/* 무궁화전시관 메뉴버튼 */
+
+.hallarea .titleBox {
+  /* z-index값을 주어야 모든 리스트들이 클릭이 가능
+  (없으면 사진들의 너비에 가려져 동작이 안됨) */
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: absolute;
+  top: 200px;
+  right: 80px;
+  align-items: flex-end;
+}
+
+
+
+.hallarea .titleBox li {
+  transition: 1s all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 310px;
+  height: 45px;
+  background-color: #4797b1;
+  text-align: center;
+  color: #ffdede;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.hallarea .titleBox li.on {
+  font-weight: bold;
+  font-size: 28px;
+  background-color: #a3cbd8;
+
+  width: 420px;
+  height: 70px;
+  box-shadow: 1px 4px 4px #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 무궁화전시관 사진 및 좌우버튼들 */
+.hallarea .listBox {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  position: absolute;
+  bottom: 160px;
+}
+
+
+
+
+
+/* 무궁화전시관 좌우버튼 */
+.hallarea .listBox .btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #4797b1;
+  z-index: 800;
+}
+
+.hallarea .listBox .btn.on {
+
+  background-color: #a3cbd8;
+
+}
+
+
+.hallarea .listBox .btn i {
+
+  color: #ffdede;
+  font-size: 32px;
+
+}
+
+.hallarea .listBox .left {
+
+  margin-left: 80px;
+}
+
+.hallarea .listBox .right {
+
+  margin-right: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1~5의 전시관 */
+/* 페이드 인/아웃 해도 버튼이 움직이지 않게 가로 세로값 지정 */
+
+.hallarea .listBox .list {
+
+  position: relative;
+  width: 70%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+/* 전시관 마다의 사진들 영역 */
+
+/* 전시관들 모두 .list안에 고정되어있으며 리스트 버튼 클릭시
+페이드 인/아웃이 진행되면서 각각의 사진들이 변경됨 */
+.hallarea .listBox .listimg {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  opacity: 0;
+  transition: all 2s;
+  position: absolute;
+  bottom: -100px;
+  z-index: 1;
+  width: 100%;
+}
+
+
+.hallarea .listBox .listimg.on {
+  margin-top: 0;
+  opacity: 1;
+  z-index: 10;
+  bottom: 0;
+
+}
+
+
+/* li부분은 사진1~2영역 */
+.hallarea .listimg li {}
+
+.hallarea .listimg a {
+  transform: scale(1);
+  transition: all 0.5s;
+  display: block;
+  filter: brightness(1.2);
+  box-shadow: 20px 8px 10px 4px rgba(0, 0, 0, 25%);
+
+}
+
+
+.hallarea .listimg a:hover {
+
+  transform: scale(1.07);
+
+}
+
+.hallarea .listimg img {
+  display: block;
+  box-shadow: 20px 8px 10px 4px rgba(0, 0, 0, 25%);
+  width: 100%;
+
+}
+
+/* 사진1영역 */
+.hallarea .listimg li:nth-child(1) {
+  width: 53.5%;
+  position: relative;
+  bottom: 140px;
+  height: 400px;
+}
+
+.hallarea .listimg li:nth-child(1) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
+
+
+
+.hallarea .listimg li div {
+  padding-left: 10%;
+}
+
+
+/* 사진2영역 */
+/* 사진2의 경우 아래로 위치해야되기에 margin-top으로 아래로 내림 */
+.hallarea .listBox .listimg li:nth-child(2) {
+  width: 43.6%;
+  height: 300px;
+  position: relative;
+  margin-top: 175px;
+
+}
+
+
+
+.hallarea .listimg li:nth-child(2) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
+
+/* 이미지값 */
+
+
+
+.hallarea .listimg:nth-child(1) li:nth-child(1) a {
+  background-image: url('img/무궁화전시관/1-1.jpeg');
+}
+
+.hallarea .listimg:nth-child(2) li:nth-child(1) a {
+  background-image: url('img/무궁화전시관/2-1.jpeg');
+}
+
+.hallarea .listimg:nth-child(3) li:nth-child(1) a {
+  background-image: url('img/무궁화전시관/3-1.jpeg');
+}
+
+
+.hallarea .listimg:nth-child(4) li:nth-child(1) a {
+  background-image: url('img/무궁화전시관/4-1.jpeg');
+}
+
+
+.hallarea .listimg:nth-child(5) li:nth-child(1) a {
+  background-image: url('img/무궁화전시관/5-1.jpeg');
+}
+
+
+
+
+
+
+.hallarea .listimg:nth-child(1) li:nth-child(2) a {
+  background-image: url('img/무궁화전시관/1-2.jpeg');
+
+}
+
+.hallarea .listimg:nth-child(2) li:nth-child(2) a {
+  background-image: url('img/무궁화전시관/2-2.jpeg');
+}
+
+.hallarea .listimg:nth-child(3) li:nth-child(2) a {
+  background-image: url('img/무궁화전시관/3-2.jpeg');
+}
+
+
+.hallarea .listimg:nth-child(4) li:nth-child(2) a {
+  background-image: url('img/무궁화전시관/4-2.jpeg');
+}
+
+
+.hallarea .listimg:nth-child(5) li:nth-child(2) a {
+  background-image: url('img/무궁화전시관/5-2.jpeg');
+}
+
+
+
+
+
+
+
+
+.hallarea .listimg li div {
+
+  flex-direction: column;
+
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #dd828280;
+  width: 100%;
+  color: #fff;
+  backdrop-filter: blur(0px);
+  transition: all 0.5s;
+  gap: 10px;
+
+}
+
+
+
+.hallarea .listimg li:nth-child(1) div {
+  font-size: 16px;
+  height: 140px;
+}
+
+
+
+
+.hallarea .listimg li:nth-child(2) div {
+
+  font-size: 14px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+.hallarea .listimg li a:hover div {
+  backdrop-filter: blur(10px);
+
+}
+
+
+
+
+
+.hallarea .listimg li:nth-child(1) div h3 {
+
+  font-size: 28px;
+
+}
+
+
+.hallarea .listimg li:nth-child(2) div h3 {
+
+  font-size: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 프로그램 영역 */
+
+
+.proarea {
+
+  width: 100%;
+  height: 1320px;
+
+  background-color: #4797b1;
+
+}
+
+
+
+/* 프로그램 내 전체내용영역 */
+.programBox {
+
+  display: flex;
+  width: 88.8888%;
+  max-width: 1280px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+
+/* 내용영역 */
+.programBox .txtBox {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+}
+
+
+/* 내용영역 내의 상단 이미지 영역 */
+.txtBox .programimg {
+  display: flex;
+  height: 400px;
+  background-color: #4797b1;
+  width: 100%;
+}
+
+.programimg .imgBox {
+  position: relative;
+  width: 27.3%;
+  max-width: 320px;
+  height: 100%;
+}
+
+.programimg .imgBox li {
+  transition: all 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.programimg .imgBox li:nth-child(1) {
+  background-image: url('img/프로그램/1-1.png');
+}
+
+.programimg .imgBox li:nth-child(2) {
+  background-image: url('img/프로그램/2-1.png');
+}
+
+.programimg .imgBox li:nth-child(3) {
+  background-image: url('img/프로그램/3-1.png');
+}
+
+
+
+
+/* 폼 영역*/
+.txtBox .form {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  width: 72.7%;
+}
+
+
+
+/* 폼 제목 영역 */
+
+.txtBox .form .formTitle {
+  position: relative;
+  width: 100%;
+  height: 110px;
+}
+
+.txtBox .formTitle li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.txtBox .formTitle li.on {
+  opacity: 1;
+  z-index: 10;
+}
+
+
+
+
+
+.formTitle h2 {
+
+
+  text-align: center;
+  color: #fff;
+  letter-spacing: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  background-color: #a3cbd8;
+  font-size: 28px;
+}
+
+.formTitle h2 span {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+
+
+
+/* 폼 본문영역 */
+.form .formtxt {
+
+  width: 100%;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+
+}
+
+.form .formtxt ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+
+}
+
+.form .formtxt li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  z-index: 1;
+}
+
+.form .formtxt li.on {
+  opacity: 1;
+  z-index: 10;
+}
+
+
+
+.form .formtxt li p {
+
+  font-size: 16px;
+
+}
+
+.form .formtxt a {
+  transform: scale(1);
+  transition: all 1s;
+  display: block;
+  padding: 10px 45px;
+  border: none;
+  border-radius: 5px;
+  color: #4797b1;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+}
+
+.form .formtxt a:hover {
+
+  transform: scale(1.1);
+  background-color: #a3cbd8;
+
+}
+
+
+
+
+
+
+
+/* 하단 갤러리 이미지 */
+.programBox .gallery {
+  height: 600px;
+  position: relative;
+}
+
+
+.programBox .gallery .imgBox {}
+
+.programBox .gallery .imgBox li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.programBox .gallery .imgBox li:nth-child(1) {
+  background-image: url('img/프로그램/1-2.png');
+}
+
+.programBox .gallery .imgBox li:nth-child(2) {
+  background-image: url('img/프로그램/2-2.png');
+}
+
+
+.programBox .gallery .imgBox li:nth-child(3) {
+  background-image: url('img/프로그램/3-2.png');
+}
+
+/* 프로그램 하단 사진 안의 버튼들*/
+
+
+.programBox .gallery .btn {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #4797b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.programBox .gallery .btn:hover {
+
+  background-color: #fff;
+
+}
+
+
+
+/* on class활성화시 버튼의 성질 변경 */
+.programBox .gallery .btn.on {
+
+  border: 1px solid #a3cbd8;
+
+}
+
+.programBox .gallery .btn.on i {
+
+  color: #a3cbd8;
+
+}
+
+
+
+
+/* 왼쪽버튼 */
+.programBox .gallery .btn.left {
+  left: 20px;
+}
+
+/* 오른쪽버튼 */
+.programBox .gallery .btn.right {
+
+  right: 20px;
+
+}
+
+.programBox .gallery .btn i {
+  display: block;
+  color: #4797b1;
+  font-size: 20px;
+}
+
+
+/* 다른 프로그램으로 이동시 사진들이 변경됨 */
+.programimg .imgBox li.on,
+.gallery .imgBox li.on {
+
+  z-index: 10;
+  opacity: 1;
+}
+
+
+
+
+/* 프로그램 목록 영역 */
+.programBox .listTitle {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 0.6px;
+  position: relative;
+
+}
+
+/* 기본값 */
+.programBox .listTitle li {
+  width: 100%;
+  transition: all 1s;
+  cursor: pointer;
+  background-color: #a3cbd8;
+  height: 300px;
+  border-top: 0.2px solid #4797b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.programBox .listTitle li .icon {
+
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #4797b1;
+
+}
+
+.programBox .listTitle li i {
+
+  font-size: 24px;
+  vertical-align: top;
+  color: #a3cbd8;
+}
+
+
+
+/* 특정 프로그램을 호버했을 때 */
+.programBox .listTitle li:hover {
+  box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+}
+
+
+
+
+/* 특정 프로그램을 선택했을 때 */
+.programBox .listTitle li.on {
+  box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  height: 400px;
+
+}
+
+.programBox .listTitle li.on .icon {
+
+  width: 60px;
+  height: 60px;
+  border: 5px solid #a3cbd8;
+  background-color: #fff;
+
+}
+
+.programBox .listTitle li.on i {
+
+  color: #4797b1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 홍보갤러리 영역 */
+
+
+.galleryarea {
+  overflow: hidden;
+  width: 100%;
+  height: 870px;
+  background: linear-gradient(180deg, rgba(221, 130, 130, 1) 0%, rgba(255, 222, 222, 1) 50%, rgba(71, 151, 177, 1) 100%);
+}
+
+
+.galleryarea .map {
+
+
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+  background: linear-gradient(0deg, rgba(255, 222, 222, 0.4) 0%, rgba(71, 151, 177, 0.4) 100%);
+  height: 550px;
+  position: relative;
+  width: 2950px;
+}
+
+
+
+
+
+.galleryarea .map ul {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  perspective: 1000px;
+
+}
+
+
+
+.galleryarea .map ul:nth-child(1) {
+
+  animation: gallery1 120s infinite linear;
+
+}
+
+.galleryarea .map ul:nth-child(2) {
+  animation: gallery2 120s infinite linear;
+}
+
+
+
+@keyframes gallery1 {
+
+  0% {
+
+    left: 0;
+
+  }
+
+
+  49.9999% {
+
+    left: -100%;
+
+  }
+
+
+  50% {
+
+    left: 100%;
+
+  }
+
+
+
+  100% {
+
+    left: 0;
+
+  }
+
+
+}
+
+
+
+
+@keyframes gallery2 {
+
+  0% {
+
+    left: 100%;
+
+  }
+
+
+  49.9999% {
+
+    left: 0%;
+
+  }
+
+
+  100% {
+
+    left: -100%;
+
+  }
+
+
+}
+
+
+
+
+/* 사진들 */
+.galleryarea .map ul li {
+  border-radius: 5px;
+  width: 280px;
+  height: 370px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  transition: all 0.5s;
+  transform-origin: center center;
+
+
+}
+
+
+.galleryarea .map ul li.on {
+
+  transform: rotateY(360deg) scale(1.3);
+  z-index: 1000;
+
+}
+
+
+
+
+
+.galleryarea .map li:first-child {
+
+  margin-left: 7.5px;
+
+}
+
+
+.galleryarea .map li:last-child {
+
+  margin-right: 7.5px;
+
+}
+
+
+
+
+
+.galleryarea .map li:nth-child(1) {
+
+  background-image: url('img/홍보갤러리/1-1.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(2) {
+
+  background-image: url('img/홍보갤러리/1-2.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(3) {
+
+  background-image: url('img/홍보갤러리/1-3.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(4) {
+
+  background-image: url('img/홍보갤러리/1-4.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(5) {
+
+  background-image: url('img/홍보갤러리/1-5.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(6) {
+
+  background-image: url('img/홍보갤러리/1-6.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(7) {
+
+  background-image: url('img/홍보갤러리/1-7.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(8) {
+
+  background-image: url('img/홍보갤러리/1-8.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(9) {
+
+  background-image: url('img/홍보갤러리/1-9.jpeg');
+
+}
+
+.galleryarea .map li:nth-child(10) {
+
+  background-image: url('img/홍보갤러리/1-10.jpeg');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 시설안내 */
+
+
+
+.guide {
+  width: 100%;
+  height: 970px;
+  background-color: #ffdede;
+
+}
+
+
+
+
+
+/* 가이드 부분 너비설정 */
+
+.guide .guide_main {
+
+  max-width: 1280px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+/* 왼쪽 사진 영역 */
+.guide .imgEffect {
+
+  transform: translateX(-400px);
+  width: 70%;
+  position: relative;
+  transition: all 1s;
+  opacity: 0;
+}
+
+
+.guide .imgEffect.on {
+
+  opacity: 1;
+  transform: translateX(0);
+
+}
+
+
+.guide .imgEffect .effectImg {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-image: url('img/시설안내/1-1.png');
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.guide .imgEffect .effect {
+
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, #ffdede 100%);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 메뉴영역 */
+.guide .guide_main .menuBox {
+  top: 50px;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.guide .menuBox .menu {
+
+  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding-bottom: 20px;
+  transition: all 0.5s;
+
+}
+
+.guide .menuBox .menu li {
+  cursor: pointer;
+  color: #666;
+  font-size: 24px;
+  font-weight: 400;
+  transition: 0.5s all;
+
+}
+
+.guide .menuBox .menu li.on {
+
+  font-weight: bold;
+  color: #dd8282;
+  font-size: 28px;
+
+}
+
+.guide .menuBox .menu li:nth-child(1).on {
+
+  border-right: 1px solid #666;
+  padding-right: 15px;
+
+}
+
+.guide .menuBox .menu li:nth-child(2).on {
+
+  border-left: 1px solid #666;
+  padding-left: 15px;
+
+}
+
+.guide .menuTxt {
+
+  position: relative;
+
+  height: 600px;
+
+}
+
+
+/* 각각 관람시간 및 관람료 영역 */
+
+
+.guide .menuTxt>li {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.guide .menuTxt>li.on {
+
+  opacity: 1;
+  z-index: 100;
+
+}
+
+
+
+
+/* 각 영역별 하위 내용 */
+.guide .menuTxt>li ul {
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.guide .menuTxt>li li {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 190px;
+  background-color: #dd8282;
+  opacity: 0.8;
+  transition: all 0.3s;
+  transform: scale(1);
+  border-radius: 10px;
+}
+
+
+
+.guide .menuTxt>li li:hover {
+
+  transform: scale(1.1);
+  opacity: 1;
+
+}
+
+.guide .menuTxt>li li .Box {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 0 20px;
+
+}
+
+
+.guide .menuTxt>li li .txt {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.guide .menuTxt>li li .txt h2 {
+  font-weight: bold;
+  font-size: 24px;
+
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ffdede;
+  border-radius: 9999px;
+  color: #ffdede;
+}
+
+.guide .menuTxt>li li .txt p {
+
+  margin-top: 10px;
+  color: #fff;
+  font-size: 24px;
+
+}
+
+/* 요금 부분 */
+
+
+.guide .menuTxt>.menu2 li .pay {
+
+  display: flex;
+  align-items: center;
+
+}
+
+.guide .menuTxt>.menu2 li .pay h2 {
+
+  width: 100px;
+
+}
+
+.guide .menuTxt>.menu2 li .pay span {
+
+  display: inline-block;
+  padding-left: 15px;
+  font-size: 24px;
+  color: #fff;
+
+}
+
+/* 아이콘 또는 사진 */
+
+
+.guide .menuTxt>li li .img1 {
+  background-position: center center;
+  background-size: cover;
+  background-image: url('img/시설안내/2-1.png');
+
+}
+
+.guide .menuTxt>li li .img2 {
+  background-position: center center;
+  background-size: cover;
+  background-image: url('img/시설안내/2-2.png');
+}
+
+.guide .menuTxt>li li .img3 {
+
+  background-position: center center;
+  background-size: cover;
+  background-image: url('img/시설안내/2-3.png');
+}
+
+.guide .menuTxt>li li i {
+
+  color: #666;
+  font-size: 64px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 찾아오시는 길 */
+
+
+.maparea {
+
+  height: 1400px;
+  width: 100%;
+  background-color: #4797b1;
+}
+
+
+
+.map_inner {
+
+  background-image: url('img/찾아오시는 길/1-1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.map_inner .effect {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(71, 151, 177, 0.3) 0%, rgba(71, 151, 177, 0.6) 30%, rgba(71, 151, 177, 1) 50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+/* 지도 영역
+api 부분 여기다 집어넣기 */
+.map_inner .mainMap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 88.8888%;
+  max-width: 1280px;
+  height: 510px;
+  background-color: #fff;
+}
+
+
+.map_inner .mainMap iframe {
+
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+
+.map_inner .mainMap .moreMap {
+  bottom: -155px;
+  position: absolute;
+  width: 78.1%;
+  height: 225px;
+  background: linear-gradient(90deg, rgba(71, 151, 177, 1) 0%, rgba(163, 203, 216, 1) 100%);
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.map_inner .mainMap .moreMap p {
+  padding-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+
+}
+
+
+.map_inner .mainMap .moreMap ul {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+
+}
+
+.map_inner .mainMap .moreMap li {
+  width: 20%;
+  max-width: 200px;
+  height: 55px;
+}
+
+.map_inner .mainMap .moreMap li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff solid 2px;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.5s all;
+  font-size: 20px;
+
+}
+
+.map_inner .mainMap .moreMap li a:hover {
+
+  color: #4797b1;
+  background-color: #fff;
+
+}
+
+
+.map_inner .mainMap .moreMap li a img {
+
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+
+
+
+.maparea .mapInfor {
+  padding: 0 80px;
+  position: absolute;
+  bottom: 120px;
+  height: 380px;
+  width: 100%;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+
+}
+
+.maparea .mapInfor .mapIconBorder {
+
+  height: 80%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid #a3cbd8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.maparea .mapInfor .mapIconBorder .mapIcon {
+  width: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #a3cbd8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.maparea .mapInfor .mapIconBorder .mapIcon i {
+
+  color: #fff;
+  font-size: 72px;
+
+}
+
+
+
+.maparea .mapInfor .mapTxt {
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.maparea .mapInfor .mapTxt .mapTxtup {
+
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+
+
+.maparea .mapInfor .mapTxt .mapTxtdown {
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 푸터 */
+
+
+footer {
+
+  width: 100%;
+  height: 325px;
+
+}
+
+.footer1 {
+
+  background-color: #ffdede;
+}
+
+.footer1 .footer1_inner {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 250px;
+  background-color: #ffdede;
+
+}
+
+
+/* 아래의 sns도 a가 있기 때문에 >로 표시 */
+.footer1_inner>a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  height: 100px;
+}
+
+.footer1_inner>a img {
+  display: block;
+  height: 100%;
+
+}
+
+.footer1 .footerInfor {
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 40px;
+
+}
+
+.footer1 .footerInfor span {
+
+  font-weight: bold;
+  font-size: 16px;
+  color: #4797b1;
+
+}
+
+.footer1 .sns {
+  height: 35px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.footer1 .sns a {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+
+.footer1 .sns a:hover {
+
+  transform: scale(1.2);
+
+}
+
+
+
+.footer1 .sns a i {
+
+  color: #fff;
+  font-size: 20px;
+  vertical-align: top;
+
+}
+
+.footer1 .sns .insta {
+
+  background: rgb(255, 220, 128);
+  background: linear-gradient(49deg, rgba(255, 220, 128, 1) 0%, rgba(253, 29, 29, 1) 33%, rgba(131, 58, 180, 1) 66%, rgba(88, 81, 219, 1) 100%);
+
+}
+
+.footer1 .sns .twitter {
+
+  background-color: #1da1f2;
+
+}
+
+.footer1 .sns .youtube {
+
+  background-color: #ff0000;
+
+}
+
+.footer1 .sns .facebook {
+
+  background-color: #1877f2;
+
+}
+
+
+
+
+
+
+.footer2 {
+
+  height: 75px;
+  background-color: #4797b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.footer2 .footer2_inner {
+
+
+  height: 75px;
+  background-color: #4797b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.footer2 p {
+
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffdede;
+}
+
+
+
+/* 내용 너비 설정 */
+.header_inner,
+.hero_inner,
+.notice_inner,
+.hall_inner,
+.pro_inner,
+.gallery_inner,
+.guide_inner,
+.footer1_inner,
+.footer2_inner,
+.map_inner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 설정 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 데스크탑 inner */
+@media (min-width:1450px) {
+
+  /* 내용 너비 설정 */
+  .header_inner,
+  .hero_inner,
+  .notice_inner,
+  .hall_inner,
+  .pro_inner,
+  .gallery_inner,
+  .guide_inner,
+  .footer1_inner,
+  .footer2_inner,
+  .map_inner {
+
+    width: 1440px;
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 데스크탑 */
+@media (min-width: 769px) and (max-width:1279px) {
+
+  .util .searcharea .search {
+
+    padding-left: 10px;
+    border: 0.2px #000 solid;
+    display: flex;
+    height: 40px;
+    width: 40%;
+    font-size: 12px;
+  }
+
+
+  section h1 {
+
+    font-size: 28px;
+
+  }
+
+
+
+  section .border {
+    width: 55%;
+    max-width: 950px;
+    margin-right: 80px;
+    height: 10px;
+    border-bottom: 1px solid #fff;
+
+  }
+
+  /* 히어로 영역 */
+  .heroarea {
+    width: 100%;
+    height: 560px;
+
+  }
+
+
+
+  .herotxt p {
+
+    padding-bottom: 15px;
+    font-size: 16px;
+
+  }
+
+
+
+
+  .noticearea {
+
+    width: 100%;
+    height: 860px;
+    background-color: #4797b1;
+
+  }
+
+  .notice li .noticeImg {
+
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+  }
+
+  .notice h2 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    background-color: #ffdede;
+    color: #fff;
+  }
+
+
+
+
+
+  .notice p {
+    font-size: 12px;
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+  .hallarea {
+
+    height: 800px;
+
+  }
+
+
+
+  /* 무궁화전시관 메뉴버튼 */
+
+  .hallarea .titleBox {
+    /* z-index값을 주어야 모든 리스트들이 클릭이 가능
+  (없으면 사진들의 너비에 가려져 동작이 안됨) */
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    position: absolute;
+    top: 150px;
+    right: 80px;
+    align-items: flex-end;
+  }
+
+  .hallarea .titleBox li {
+    transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    background-color: #4797b1;
+    text-align: center;
+    color: #ffdede;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .hallarea .titleBox li.on {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #a3cbd8;
+
+    width: 250px;
+    height: 50px;
+    box-shadow: 1px 4px 4px #666;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 무궁화전시관 사진 및 좌우버튼들 */
+  .hallarea .listBox {
+    bottom: 100px;
+    gap: 10px;
+  }
+
+
+
+  /* 사진1영역 */
+  .hallarea .listimg li:nth-child(1) {
+    width: 53.5%;
+    position: relative;
+    bottom: 140px;
+    height: 240px;
+  }
+
+
+  /* 사진2영역 */
+  /* 사진2의 경우 아래로 위치해야되기에 margin-top으로 아래로 내림 */
+  .hallarea .listBox .listimg li:nth-child(2) {
+    width: 43.6%;
+    height: 170px;
+    position: relative;
+    bottom: 50px;
+  }
+
+
+  .hallarea .listimg li:nth-child(1) div h3 {
+
+    font-size: 20px;
+
+  }
+
+
+  .hallarea .listimg li:nth-child(2) div h3 {
+
+    font-size: 16px;
+
+  }
+
+
+
+  .hallarea .listimg li div {
+    padding-left: 10px;
+  }
+
+
+
+  .hallarea .listimg li:nth-child(1) div {
+    font-size: 12px;
+    height: 100px;
+  }
+
+
+
+
+  .hallarea .listimg li:nth-child(2) div {
+
+    font-size: 10px;
+    height: 80px;
+  }
+
+
+
+
+
+
+
+
+  /* 시설안내 */
+
+
+
+  .guide {
+    width: 100%;
+    height: 780px;
+    background-color: #ffdede;
+
+  }
+
+
+  /* 메뉴영역 */
+  .guide .guide_main .menuBox {
+    width: 400px;
+
+  }
+
+
+  .guide .menuTxt {
+
+    position: relative;
+
+    height: 450px;
+
+  }
+
+
+  .guide .menuTxt>li li {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    background-color: #dd8282;
+    opacity: 0.8;
+    transition: all 0.3s;
+    transform: scale(1);
+  }
+
+  .guide .menuTxt>li li .Box {
+
+    width: 100px;
+    height: 100px;
+
+  }
+
+
+  .guide .menuTxt>li li .txt h2 {
+    width: 130px;
+    font-size: 16px;
+  }
+
+  .guide .menuTxt>li li .txt p {
+
+    font-size: 12px;
+
+  }
+
+
+  .guide .menuTxt>.menu2 li .pay span {
+
+    font-size: 16px;
+
+  }
+
+
+
+
+
+  .map_inner .mainMap .moreMap li {
+    width: 35%;
+  }
+
+
+
+
+
+
+  .maparea .mapInfor {
+    padding: 0 80px;
+    position: absolute;
+    bottom: 120px;
+    height: 250px;
+    width: 100%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* 태블릿 */
+@media (min-width: 481px) and (max-width:768px) {
+
+
+  /* 로고영역 */
+  header h1 {
+    text-indent: -9999px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+
+  }
+
+
+
+  /* 유틸리티 영역 */
+  header .util {
+    display: none;
+
+  }
+
+  /* nav 영역 */
+
+  header nav {
+
+    height: 40px;
+
+  }
+
+  header nav ul {
+    width: 100%;
+  }
+
+  header nav ul a {
+
+    font-size: 12px;
+
+  }
+
+  section .title {
+    margin-bottom: 10px;
+  }
+
+
+
+  section h1 {
+
+
+    padding-left: 16px;
+    font-size: 28px;
+
+  }
+
+
+
+
+
+
+
+
+  section .border {
+    width: 55%;
+    margin-right: 16px;
+    border-bottom: 1px solid #fff;
+
+  }
+
+  /* 히어로 영역 */
+  .heroarea {
+    width: 100%;
+    height: 560px;
+
+  }
+
+
+
+  .herotxt p {
+
+    padding-bottom: 15px;
+    font-size: 12px;
+
+  }
+
+
+
+
+
+
+
+
+
+  .noticearea {
+
+    width: 100%;
+    height: 700px;
+    background-color: #4797b1;
+
+  }
+
+
+
+  .notice {
+
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 16px;
+
+  }
+
+  .notice li {
+
+    width: 100%;
+    height: 150px;
+  }
+
+
+  .notice a {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+  .notice li .noticeImg {
+
+    width: 30%;
+    height: 150px;
+  }
+
+
+  .notice h2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    width: 70%;
+  }
+
+
+  .notice .txt {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100px;
+    border-bottom: 5px solid #ffdede;
+  }
+
+
+
+
+
+  .hallarea {
+
+    height: 700px;
+
+  }
+
+
+
+  /* 무궁화전시관 메뉴버튼 */
+
+  .hallarea .titleBox {
+    /* z-index값을 주어야 모든 리스트들이 클릭이 가능
+  (없으면 사진들의 너비에 가려져 동작이 안됨) */
+    z-index: 50;
+    display: flex;
+    gap: 3px;
+    position: absolute;
+    top: 120px;
+    right: 16px;
+    align-items: flex-end;
+  }
+
+  .hallarea .titleBox li {
+    transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 30px;
+    background-color: #4797b1;
+    text-align: center;
+    color: #ffdede;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .hallarea .titleBox li.on {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #a3cbd8;
+
+    width: 160px;
+    height: 40px;
+    box-shadow: 1px 4px 4px #666;
+  }
+
+
+
+
+
+
+  .hallarea .listBox .left {
+
+    margin-left: 16px;
+  }
+
+  .hallarea .listBox .right {
+
+    margin-right: 16px;
+  }
+
+
+
+
+
+
+
+  /* 무궁화전시관 사진 및 좌우버튼들 */
+  .hallarea .listBox {
+    bottom: 100px;
+    gap: 10px;
+  }
+
+
+
+  /* 사진1영역 */
+  .hallarea .listimg li:nth-child(1) {
+    width: 100%;
+    position: relative;
+    bottom: 30px;
+    height: 240px;
+  }
+
+
+  /* 사진2영역 */
+  /* 사진2의 경우 아래로 위치해야되기에 margin-top으로 아래로 내림 */
+  .hallarea .listBox .listimg li:nth-child(2) {
+
+    display: none;
+  }
+
+
+  .hallarea .listimg li:nth-child(1) div h3 {
+
+    font-size: 20px;
+
+  }
+
+
+  .hallarea .listimg li:nth-child(2) div h3 {
+
+    font-size: 16px;
+
+  }
+
+
+
+  .hallarea .listimg li div {
+    padding-left: 10px;
+  }
+
+
+
+  .hallarea .listimg li:nth-child(1) div {
+    font-size: 12px;
+    height: 100px;
+  }
+
+
+
+
+  .hallarea .listimg li:nth-child(2) div {
+
+    font-size: 10px;
+    height: 80px;
+  }
+
+
+
+  .proarea {
+
+    width: 100%;
+    height: 920px;
+
+    background-color: #4797b1;
+
+  }
+
+
+  /* 프로그램 내 전체내용영역 */
+  .programBox {
+
+    display: flex;
+    width: calc(100% - 32px);
+    height: 700px;
+  }
+
+  /* 
+
+
+  내용영역
+  .programBox .txtBox {
+
+    width: 95%;
+
+  } */
+
+
+
+  .programimg .imgBox {
+
+    display: none;
+  }
+
+
+  /* 폼 영역*/
+  .txtBox .form {
+    width: 100%;
+  }
+
+
+  /* 폼 제목 영역 */
+
+  .txtBox .form .formTitle {
+    height: 80px;
+  }
+
+
+  .formTitle h2 {
+
+    font-size: 20px;
+
+  }
+
+  .formTitle h2 span {
+
+    font-size: 12px;
+  }
+
+
+
+
+  /* 폼 본문영역 */
+  .form .formtxt {
+
+    height: 220px;
+
+  }
+
+
+
+
+  .form .formtxt li p {
+
+    font-size: 14px;
+
+  }
+
+
+
+  .form .formtxt a {
+
+    padding: 10px 30px;
+  }
+
+
+
+
+
+
+
+  /* 기본값 */
+  .programBox .listTitle li {
+
+    height: 200px;
+  }
+
+
+
+
+
+
+
+
+
+  .programBox .listTitle li .icon {
+
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #4797b1;
+
+  }
+
+  .programBox .listTitle li i {
+
+    font-size: 16px;
+    vertical-align: top;
+    color: #a3cbd8;
+  }
+
+
+
+  /* 특정 프로그램을 호버했을 때 */
+  .programBox .listTitle li:hover {
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+  }
+
+
+
+
+  /* 특정 프로그램을 선택했을 때 */
+  .programBox .listTitle li.on {
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    height: 300px;
+
+  }
+
+  .programBox .listTitle li.on .icon {
+
+    width: 40px;
+    height: 40px;
+    border: 5px solid #a3cbd8;
+    background-color: #fff;
+
+  }
+
+  .programBox .listTitle li.on i {
+
+    color: #4797b1;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 홍보갤러리 영역 */
+
+
+  .galleryarea {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(180deg, rgba(221, 130, 130, 1) 0%, rgba(255, 222, 222, 1) 50%, rgba(71, 151, 177, 1) 100%);
+  }
+
+
+  .galleryarea .map {
+
+
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+    background: linear-gradient(0deg, rgba(255, 222, 222, 0.4) 0%, rgba(71, 151, 177, 0.4) 100%);
+    height: 300px;
+    position: relative;
+    width: 1750px;
+  }
+
+
+
+
+  .galleryarea .map ul:nth-child(1) {
+
+    animation: gallery1 120s infinite linear;
+
+  }
+
+  .galleryarea .map ul:nth-child(2) {
+    animation: gallery2 120s infinite linear;
+  }
+
+
+
+  @keyframes gallery1 {
+
+    0% {
+
+      left: 0;
+
+    }
+
+
+    49.9999% {
+
+      left: -100%;
+
+    }
+
+
+    50% {
+
+      left: 100%;
+
+    }
+
+
+
+    100% {
+
+      left: 0;
+
+    }
+
+
+  }
+
+
+
+
+  @keyframes gallery2 {
+
+    0% {
+
+      left: 100%;
+
+    }
+
+
+    49.9999% {
+
+      left: 0%;
+
+    }
+
+
+    100% {
+
+      left: -100%;
+
+    }
+
+
+  }
+
+
+
+
+  /* 사진들 */
+  .galleryarea .map ul li {
+    border-radius: 5px;
+    width: 160px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    transition: all 0.5s;
+    transform-origin: center center;
+
+
+  }
+
+
+  .galleryarea .map ul li.on {
+
+    transform: rotateY(360deg) scale(1.3);
+    z-index: 1000;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 시설안내 */
+
+
+
+  .guide {
+    width: 100%;
+    height: 500px;
+    background-color: #ffdede;
+
+  }
+
+
+
+
+  .guide .guide_main {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+  }
+
+  /* 왼쪽 사진 영역 */
+  .guide .imgEffect {
+
+    transform: translateX(-400px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s;
+    opacity: 0;
+  }
+
+
+
+  .guide .imgEffect .effectImg {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    height: calc(100% - 140px);
+    position: absolute;
+    bottom: 0;
+  }
+
+
+
+
+
+  .guide .imgEffect .effect {
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, #ffdede 100%);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 메뉴영역 */
+  .guide .guide_main .menuBox {
+    width: 400px;
+    height: 400px;
+    top: 140px;
+  }
+
+
+
+
+
+  .guide .menuBox .menu {
+
+    width: 100px;
+    padding-bottom: 10px;
+
+  }
+
+
+  .guide .menuBox .menu li {
+    cursor: pointer;
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    transition: 0.5s all;
+
+  }
+
+  .guide .menuBox .menu li.on {
+
+    font-weight: bold;
+    color: #dd8282;
+    font-size: 16px;
+
+  }
+
+
+  .guide .menuBox .menu li:nth-child(1).on {
+
+    border-right: 1px solid #666;
+    padding-right: 5px;
+
+  }
+
+  .guide .menuBox .menu li:nth-child(2).on {
+
+    border-left: 1px solid #666;
+    padding-left: 5px;
+
+  }
+
+
+
+
+
+  .guide .menuTxt {
+
+    position: relative;
+
+    height: 300px;
+
+  }
+
+
+  .guide .menuTxt>li li {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: #dd8282;
+    opacity: 0.8;
+    transition: all 0.3s;
+    transform: scale(1);
+  }
+
+  .guide .menuTxt>li li .Box {
+
+    width: 70px;
+    height: 70px;
+
+  }
+
+
+  .guide .menuTxt>li li .txt h2 {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .guide .menuTxt>li li .txt p {
+
+    margin-top: 5px;
+    font-size: 12px;
+
+  }
+
+  .guide .menuTxt>.menu2 li .txt h2 {
+
+    width: 80px;
+    font-size: 12px;
+
+  }
+
+
+
+
+  .guide .menuTxt>.menu2 li .pay span {
+
+    font-size: 12px;
+
+  }
+
+
+
+
+
+  .maparea {
+
+    height: 900px;
+    width: 100%;
+    background-color: #4797b1;
+  }
+
+
+
+
+
+
+
+  /* 지도 영역
+api 부분 여기다 집어넣기 */
+  .map_inner .mainMap {
+
+    height: 350px;
+    background-color: #fff;
+  }
+
+
+
+  .map_inner .mainMap .moreMap {
+
+    bottom: -100px;
+    height: 180px;
+    width: 85%;
+  }
+
+  .map_inner .mainMap .moreMap p {
+
+
+    font-size: 12px;
+    padding: 0 20px;
+    padding-bottom: 10px;
+  }
+
+
+  .map_inner .mainMap .moreMap li {
+    width: 40%;
+  }
+
+
+
+  .map_inner .mainMap .moreMap li a {
+
+    font-size: 14px;
+  
+  }
+  
+
+
+  .maparea .mapInfor {
+    padding: 0 16px;
+    position: absolute;
+    bottom: 60px;
+    height: 200px;
+    width: 100%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+  }
+
+
+  .maparea .mapInfor .mapTxt {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+  .maparea .mapInfor .mapTxt .mapTxtup {
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+
+
+  .maparea .mapInfor .mapTxt .mapTxtdown {
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+
+  }
+
+
+
+
+
+
+
+  footer {
+
+    width: 100%;
+    height: 200px;
+
+  }
+
+  .footer1 {
+
+    background-color: #ffdede;
+  }
+
+  .footer1 .footer1_inner {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    background-color: #ffdede;
+
+  }
+
+
+  /* 아래의 sns도 a가 있기 때문에 >로 표시 */
+  .footer1_inner>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+  .footer1_inner>a img {
+    display: block;
+    height: 100%;
+
+  }
+
+  .footer1 .footerInfor {
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+
+  }
+
+  .footer1 .footerInfor span {
+
+    font-weight: bold;
+    font-size: 10px;
+    color: #4797b1;
+
+  }
+
+  .footer1 .sns {
+    height: 25px;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer1 .sns a {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.5s;
+    transform: scale(1);
+  }
+
+  .footer1 .sns a:hover {
+
+    transform: scale(1.2);
+
+  }
+
+
+
+  .footer1 .sns a i {
+
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+
+  }
+
+  .footer1 .sns .insta {
+
+    background: rgb(255, 220, 128);
+    background: linear-gradient(49deg, rgba(255, 220, 128, 1) 0%, rgba(253, 29, 29, 1) 33%, rgba(131, 58, 180, 1) 66%, rgba(88, 81, 219, 1) 100%);
+
+  }
+
+  .footer1 .sns .twitter {
+
+    background-color: #1da1f2;
+
+  }
+
+  .footer1 .sns .youtube {
+
+    background-color: #ff0000;
+
+  }
+
+  .footer1 .sns .facebook {
+
+    background-color: #1877f2;
+
+  }
+
+
+
+
+
+
+  .footer2 {
+
+    height: 50px;
+    background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .footer2 .footer2_inner {
+
+
+    height: 100%;
+    background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .footer2 p {
+
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffdede;
+  }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* 모바일 */
+@media (max-width:480px) {
+
+
+  /* 로고영역 */
+  header h1 {
+    text-indent: -9999px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+
+  }
+
+
+
+  /* 유틸리티 영역 */
+  header .util {
+    display: none;
+
+  }
+
+  /* nav 영역 */
+
+  header nav {
+
+    display: none;
+
+  }
+
+  header nav ul {
+    width: 100%;
+  }
+
+  header nav ul a {
+
+    font-size: 12px;
+
+  }
+
+
+
+
+
+
+
+
+
+
+  section .title {
+    margin-bottom: 10px;
+  }
+
+
+
+  section h1 {
+
+
+    padding-left: 16px;
+    font-size: 20px;
+
+  }
+
+
+
+
+
+
+
+
+  section .border {
+    width: 55%;
+    margin-right: 16px;
+    border-bottom: 1px solid #fff;
+
+  }
+
+  /* 히어로 영역 */
+  .heroarea {
+    width: 100%;
+    height: 560px;
+
+  }
+
+
+
+  .herotxt p {
+
+    padding-bottom: 15px;
+    font-size: 12px;
+
+  }
+
+  .heroarea .herotxt {
+
+    width: 100%;
+    height: 200px;
+
+  }
+
+
+
+  .heroarea .hero_inner .heroButton {
+
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .heroarea .hero_inner .heroButton li {
+
+    width: 20px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+
+  }
+
+
+
+
+
+
+
+
+  .noticearea {
+
+    width: 100%;
+    height: 700px;
+    background-color: #4797b1;
+
+  }
+
+
+
+  .notice {
+
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 16px;
+
+  }
+
+  .notice li {
+
+    width: 100%;
+    height: 150px;
+  }
+
+
+  .notice a {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+  .notice li .noticeImg {
+
+    width: 30%;
+    height: 150px;
+  }
+
+
+  .notice h2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    width: 70%;
+    font-size: 16px;
+  }
+
+
+  .notice .txt {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100px;
+    border-bottom: 5px solid #ffdede;
+  }
+
+
+
+  .notice h4 {
+
+    font-size: 16px;
+
+  }
+
+
+
+  .notice p {
+
+    font-size: 12px;
+
+
+  }
+
+
+
+
+
+
+
+
+
+  .hallarea {
+
+    height: 700px;
+
+  }
+
+
+
+  /* 무궁화전시관 메뉴버튼 */
+
+  .hallarea .titleBox {
+    /* z-index값을 주어야 모든 리스트들이 클릭이 가능
+  (없으면 사진들의 너비에 가려져 동작이 안됨) */
+    z-index: 50;
+    display: flex;
+    gap: 3px;
+    position: absolute;
+    top: 120px;
+    right: 16px;
+    align-items: flex-end;
+  }
+
+  .hallarea .titleBox li {
+    transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 30px;
+    background-color: #4797b1;
+    text-align: center;
+    color: #ffdede;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .hallarea .titleBox li.on {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #a3cbd8;
+
+    width: 160px;
+    height: 40px;
+    box-shadow: 1px 4px 4px #666;
+  }
+
+
+
+
+
+
+  .hallarea .listBox .left {
+
+    margin-left: 16px;
+  }
+
+  .hallarea .listBox .right {
+
+    margin-right: 16px;
+  }
+
+
+
+
+
+
+
+  /* 무궁화전시관 사진 및 좌우버튼들 */
+  .hallarea .listBox {
+    bottom: 100px;
+    gap: 10px;
+  }
+
+
+
+  /* 사진1영역 */
+  .hallarea .listimg li:nth-child(1) {
+    width: 100%;
+    position: relative;
+    bottom: 30px;
+    height: 240px;
+  }
+
+
+  /* 사진2영역 */
+  /* 사진2의 경우 아래로 위치해야되기에 margin-top으로 아래로 내림 */
+  .hallarea .listBox .listimg li:nth-child(2) {
+
+    display: none;
+  }
+
+
+  .hallarea .listimg li:nth-child(1) div h3 {
+
+    font-size: 20px;
+
+  }
+
+
+  .hallarea .listimg li:nth-child(2) div h3 {
+
+    font-size: 16px;
+
+  }
+
+
+
+  .hallarea .listimg li div {
+    padding-left: 10px;
+  }
+
+
+
+  .hallarea .listimg li:nth-child(1) div {
+    font-size: 12px;
+    height: 100px;
+  }
+
+
+
+
+  .hallarea .listimg li:nth-child(2) div {
+
+    font-size: 10px;
+    height: 80px;
+  }
+
+
+
+  .proarea {
+
+    width: 100%;
+    height: 920px;
+
+    background-color: #4797b1;
+
+  }
+
+
+  /* 프로그램 내 전체내용영역 */
+  .programBox {
+
+    display: flex;
+    width: calc(100% - 32px);
+    height: 700px;
+    flex-direction: column;
+  }
+
+
+
+  /* 내용영역 */
+  .programBox .txtBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 640px;
+  }
+
+
+  .programimg .imgBox {
+
+    display: none;
+  }
+
+
+
+
+  /* 내용영역 내의 상단 이미지 영역 */
+  .txtBox .programimg {
+    display: flex;
+    height: 200px;
+    background-color: #4797b1;
+    width: 100%;
+  }
+
+
+  /* 폼 영역*/
+  .txtBox .form {
+    width: 100%;
+  }
+
+
+  /* 폼 제목 영역 */
+
+  .txtBox .form .formTitle {
+    height: 80px;
+  }
+
+
+  .formTitle h2 {
+
+    font-size: 16px;
+
+  }
+
+  .formTitle h2 span {
+
+    font-size: 12px;
+  }
+
+
+
+
+  /* 폼 본문영역 */
+  .form .formtxt {
+
+    height: 220px;
+
+  }
+
+  .form .formtxt li {
+
+    gap: 10px;
+
+  }
+
+
+
+  .form .formtxt li p {
+
+    font-size: 12px;
+
+  }
+
+
+
+  .form .formtxt a {
+
+    font-size: 12px;
+    padding: 7px 25px;
+  }
+
+
+
+
+  /* 프로그램 목록 영역 */
+.programBox .listTitle {
+
+  width: 100%;
+  height: 60px;
+}
+
+
+  /* 기본값 */
+  .programBox .listTitle ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+
+
+  /* 기본값 */
+  .programBox .listTitle li {
+    width: 30%;
+    height: 100%;
+  }
+
+
+
+
+
+
+
+
+
+  .programBox .listTitle li .icon {
+
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #4797b1;
+
+  }
+
+  .programBox .listTitle li i {
+
+    font-size: 16px;
+    vertical-align: top;
+    color: #a3cbd8;
+  }
+
+
+
+  /* 특정 프로그램을 호버했을 때 */
+  .programBox .listTitle li:hover {
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+  }
+
+
+
+
+  /* 특정 프로그램을 선택했을 때 */
+  .programBox .listTitle li.on {
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    height: 100%;
+    width: 40%;
+
+  }
+
+  .programBox .listTitle li.on .icon {
+
+    width: 40px;
+    height: 40px;
+    border: 5px solid #a3cbd8;
+    background-color: #fff;
+
+  }
+
+  .programBox .listTitle li.on i {
+
+    color: #4797b1;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 홍보갤러리 영역 */
+
+
+  .galleryarea {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(180deg, rgba(221, 130, 130, 1) 0%, rgba(255, 222, 222, 1) 50%, rgba(71, 151, 177, 1) 100%);
+  }
+
+
+  .galleryarea .map {
+
+
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+    background: linear-gradient(0deg, rgba(255, 222, 222, 0.4) 0%, rgba(71, 151, 177, 0.4) 100%);
+    height: 300px;
+    position: relative;
+    width: 1750px;
+  }
+
+
+
+
+  .galleryarea .map ul:nth-child(1) {
+
+    animation: gallery1 120s infinite linear;
+
+  }
+
+  .galleryarea .map ul:nth-child(2) {
+    animation: gallery2 120s infinite linear;
+  }
+
+
+
+  @keyframes gallery1 {
+
+    0% {
+
+      left: 0;
+
+    }
+
+
+    49.9999% {
+
+      left: -100%;
+
+    }
+
+
+    50% {
+
+      left: 100%;
+
+    }
+
+
+
+    100% {
+
+      left: 0;
+
+    }
+
+
+  }
+
+
+
+
+  @keyframes gallery2 {
+
+    0% {
+
+      left: 100%;
+
+    }
+
+
+    49.9999% {
+
+      left: 0%;
+
+    }
+
+
+    100% {
+
+      left: -100%;
+
+    }
+
+
+  }
+
+
+
+
+  /* 사진들 */
+  .galleryarea .map ul li {
+    border-radius: 5px;
+    width: 160px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    transition: all 0.5s;
+    transform-origin: center center;
+
+
+  }
+
+
+  .galleryarea .map ul li.on {
+
+    transform: rotateY(360deg) scale(1.3);
+    z-index: 1000;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 시설안내 */
+
+
+
+  .guide {
+    width: 100%;
+    height: 500px;
+    background-color: #ffdede;
+
+  }
+
+
+
+
+  .guide .guide_main {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+  }
+
+  /* 왼쪽 사진 영역 */
+  .guide .imgEffect {
+
+    transform: translateX(-400px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s;
+    opacity: 0;
+  }
+
+
+
+  .guide .imgEffect .effectImg {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    height: calc(100% - 140px);
+    position: absolute;
+    bottom: 0;
+  }
+
+
+
+
+
+  .guide .imgEffect .effect {
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, #ffdede 100%);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 메뉴영역 */
+  .guide .guide_main .menuBox {
+    width: 80%;
+    height: 300px;
+    top: 140px;
+  }
+
+
+
+
+
+  .guide .menuBox .menu {
+
+    width: 100px;
+    padding-bottom: 10px;
+
+  }
+
+
+  .guide .menuBox .menu li {
+    cursor: pointer;
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    transition: 0.5s all;
+
+  }
+
+  .guide .menuBox .menu li.on {
+
+    font-weight: bold;
+    color: #dd8282;
+    font-size: 16px;
+
+  }
+
+
+  .guide .menuBox .menu li:nth-child(1).on {
+
+    border-right: 1px solid #666;
+    padding-right: 5px;
+
+  }
+
+  .guide .menuBox .menu li:nth-child(2).on {
+
+    border-left: 1px solid #666;
+    padding-left: 5px;
+
+  }
+
+
+
+
+
+  .guide .menuTxt {
+
+    position: relative;
+
+    height: 300px;
+
+  }
+
+
+  .guide .menuTxt>li li {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: #dd8282;
+    opacity: 0.8;
+    transition: all 0.3s;
+    transform: scale(1);
+  }
+
+  .guide .menuTxt>li li .Box {
+
+    width: 70px;
+    height: 70px;
+
+  }
+
+
+  .guide .menuTxt>li li .txt h2 {
+    width: 80px;
+    font-size: 12px;
+    padding: 3px 5px;
+  }
+
+  .guide .menuTxt>li li .txt p {
+
+    margin-top: 5px;
+    font-size: 12px;
+
+
+  }
+
+  .guide .menuTxt>.menu2 li .txt h2 {
+
+    width: 80px;
+    font-size: 12px;
+
+  }
+
+
+
+
+  .guide .menuTxt>.menu2 li .pay span {
+
+    font-size: 12px;
+
+  }
+
+
+
+
+
+  .maparea {
+
+    height: 900px;
+    width: 100%;
+    background-color: #4797b1;
+  }
+
+
+
+
+
+
+
+  /* 지도 영역
+api 부분 여기다 집어넣기 */
+  .map_inner .mainMap {
+
+    height: 350px;
+    background-color: #fff;
+  }
+
+
+
+  .map_inner .mainMap .moreMap {
+
+    bottom: -100px;
+    height: 120px;
+    width: 85%;
+  }
+
+  .map_inner .mainMap .moreMap p {
+
+
+    font-size: 10px;
+    padding: 0 10px;
+    padding-bottom: 3px;
+  }
+
+
+
+
+
+  .maparea .mapInfor {
+    padding: 0 16px;
+    position: absolute;
+    bottom: 60px;
+    height: 200px;
+    width: 100%;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+
+
+  }
+
+
+  .map_inner .mainMap .moreMap li {
+    width: 40%;
+    height: 30px;
+  }
+
+
+
+  .map_inner .mainMap .moreMap li a {
+
+    font-size: 10px;
+  
+  }
+  
+
+
+
+  
+.map_inner .mainMap .moreMap li a img {
+
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+  .maparea .mapInfor .mapTxt {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+  .maparea .mapInfor .mapTxt .mapTxtup {
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+
+  }
+
+
+
+  .maparea .mapInfor .mapTxt .mapTxtdown {
+
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+
+  }
+
+
+
+
+
+
+
+  footer {
+
+    width: 100%;
+    height: 250px;
+
+  }
+
+  .footer1 {
+
+    background-color: #ffdede;
+  }
+
+  .footer1 .footer1_inner {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    background-color: #ffdede;
+
+  }
+
+
+  /* 아래의 sns도 a가 있기 때문에 >로 표시 */
+  .footer1_inner>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+  .footer1_inner>a img {
+    display: block;
+    height: 100%;
+
+  }
+
+  .footer1 .footerInfor {
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+
+
+
+
+  .footer1 .footerInfor span {
+    margin: 5px 0;
+    width: 45%;
+    font-weight: bold;
+    font-size: 10px;
+    color: #4797b1;
+
+  }
+
+  .footer1 .sns {
+    height: 25px;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer1 .sns a {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.5s;
+    transform: scale(1);
+  }
+
+  .footer1 .sns a:hover {
+
+    transform: scale(1.2);
+
+  }
+
+
+
+  .footer1 .sns a i {
+
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+
+  }
+
+  .footer1 .sns .insta {
+
+    background: rgb(255, 220, 128);
+    background: linear-gradient(49deg, rgba(255, 220, 128, 1) 0%, rgba(253, 29, 29, 1) 33%, rgba(131, 58, 180, 1) 66%, rgba(88, 81, 219, 1) 100%);
+
+  }
+
+  .footer1 .sns .twitter {
+
+    background-color: #1da1f2;
+
+  }
+
+  .footer1 .sns .youtube {
+
+    background-color: #ff0000;
+
+  }
+
+  .footer1 .sns .facebook {
+
+    background-color: #1877f2;
+
+  }
+
+
+
+
+
+
+  .footer2 {
+
+    height: 50px;
+    background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .footer2 .footer2_inner {
+
+
+    height: 100%;
+    background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .footer2 p {
+
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffdede;
+  }
+
+
+
+
+
+
+
+}
