@@ -7,13 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>무궁화전시박물관</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
   <!-- 폰트어썸 설정 -->
   <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
 </head>
 
 
-<!-- 사진 대체로 고해상도로 변경 및 로고 변경(로고는 크기 조금만 더 줄이기)
-너비 다 풀로 늘리고 inner로 -->
 
 
 
@@ -21,6 +20,8 @@
 
 <script src="jquery-3.7.1.min.js"></script>
 <script src="//code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+<script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
 <script src="js.js"></script>
 
 <script>
@@ -1438,11 +1439,171 @@
 
     </footer>
 
+
+
+
+
+
+
+
+    <!-- 예약 -->
+    <section class="reservearea">
+
+      <span class="closed">x</span>
+
+
+      <div class="reserve_inner">
+
+        <div class="title">
+          <h1>예약하기</h1>
+          <div class="border"></div>
+        </div>
+
+
+
+
+
+
+
+        <!-- 예약하기 메인 화면 -->
+
+        <div class="reserveMain">
+
+
+
+
+
+          <!-- 왼쪽의 예약 관련 사진 및
+          관련 정보 -->
+          <div class="reserveInfor">
+
+
+            <!-- 위의 사진 -->
+
+            <!-- 클릭한 프로그램의 이미지를 받아와서
+            그대로 사용 -->
+
+            <div class="photo"></div>
+
+
+
+
+            <!-- 아래의 예약 관련 정보 -->
+
+
+
+            <div class="reserveInforZone">
+
+
+              <ul class="inforBtn">
+                <li class="on">상세정보</li>
+                <li>후기</li>
+                <li>Q&A</li>
+              </ul>
+
+
+
+              <!-- 클릭한 프로그램의 정보들을 받아와서
+            그대로 사용 -->
+
+              <ul class="inforTxt">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+              </ul>
+
+
+            </div>
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <!-- 오른쪽의 예약 체크영역 -->
+
+          <div class="reserveCheck">
+
+            <!-- 클릭한 프로그램의 제목 그대로 받아오기 -->
+            <h2>asdfsafd</h2>
+
+            <div class="checkAll">
+              <div class="dateZone">
+                <div id="datepicker"></div>
+              </div>
+              <div class="checkMore">
+                <div class="people">
+                  <form action="">
+                    <input type="number" min = 1 max = 10 value="1">
+                    <label for="">예약 인원수 <br>
+                    최대 10명까지</label>
+                    <p>총 <span></span>명</p>
+                  </form>
+                </div>
+                <div class="total">
+                  <p>프로그램명 : <span></span></p>
+                  <p>예약날짜 : <span></span></p>
+                  <p>예약인원 : <span></span>명</p>
+                </div>
+                <ul class="reserveAboutBtn">
+                  <li>예약하기</li>
+                  <li>찜하기<img src="img/heart.png" alt=""></li>
+                </ul>
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+    </section>
+
+
+
+
+
   </div>
 
 
 
 
 </body>
+
+
+
+
+<script>
+
+
+  $(function () {
+    $("#datepicker").datepicker();
+  });
+
+</script>
+
 
 </html>

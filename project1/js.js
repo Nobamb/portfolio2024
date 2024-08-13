@@ -3,7 +3,12 @@ $(document).ready(function () {
 
 
 
-  $('.mobileMenu').click(function(){
+
+
+
+
+
+  $('.mobileMenu').click(function () {
 
     $(this).find('li').toggleClass('on');
 
@@ -144,7 +149,7 @@ $(document).ready(function () {
     $('.galleryarea .map ul:nth-child(2)').css({ 'animation': 'gallery2 120s infinite linear' })
 
     $('.galleryarea .map ul li').removeClass('on');
-    $('.galleryarea .map ul li').css({'filter': 'blur(0px)' });
+    $('.galleryarea .map ul li').css({ 'filter': 'blur(0px)' });
 
 
   })
@@ -154,22 +159,51 @@ $(document).ready(function () {
 
   $('.galleryarea .map ul li').click(function () {
 
-    $('.galleryarea .map ul').css({'z-index': 0});
+    $('.galleryarea .map ul').css({ 'z-index': 0 });
 
-    $(this).parents('ul').css({'z-index': 600});
+    $(this).parents('ul').css({ 'z-index': 600 });
 
     $('.galleryarea .map ul li').removeClass('on');
 
-    $('.galleryarea .map ul li').css({'filter': 'blur(3px)' });
+    $('.galleryarea .map ul li').css({ 'filter': 'blur(3px)' });
 
     $(this).addClass('on');
 
-    $(this).css({'filter': 'blur(0px)' });
+    $(this).css({ 'filter': 'blur(0px)' });
 
 
 
   })
 
+
+
+
+
+  // 예약하기 버튼 클릭시 버튼 스타일 및 내용 변경
+
+
+  $('.reserveMain .reserveInforZone .inforBtn li').click(function () {
+
+    let resI = $(this).index();
+
+    $('.reserveMain .reserveInforZone .inforBtn li').removeClass();
+
+    $(this).addClass('on');
+
+
+
+    $('.reserveMain .reserveInforZone .inforTxt li').removeClass();
+
+    $('.reserveMain .reserveInforZone .inforTxt li').eq(resI).addClass('on');
+
+
+  })
+
+
+
+  let tW = $('.reserveCheck .checkAll #datepicker .ui-datepicker-inline thead').width();
+
+  $('.reserveCheck .checkAll #datepicker .ui-datepicker-inline tbody').width(tW);
 
 
 

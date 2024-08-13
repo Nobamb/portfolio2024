@@ -141,6 +141,35 @@
     [data-scroll="out"] {
       opacity: 0;
     }
+
+
+
+    .reservation{
+
+
+      display: flex;
+      justify-content: space-around;
+
+
+    }
+
+
+    .reservation div{
+
+      margin: 20px;
+    }
+
+
+
+
+    .fixed{
+
+      display: none;
+
+    }
+
+
+    
   </style>
 </head>
 
@@ -166,7 +195,63 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
       <div class="reservation">
         <div id="datepicker"></div>
+        <div class="reservation_form">
+
+          <form action="GET">
+
+            <div>
+
+              <label for="">인원수</label>
+              <input type="number" min = "1" max="10" value="1" id="people">
+
+            </div>
+
+
+            <div>
+
+              <label for="">프로그램명</label>
+              <select name="" id="program">
+                <option value="">프로그램1</option>
+                <option value="">프로그램2</option>
+                <option value="">프로그램3</option>
+              </select>
+
+            </div>
+
+
+
+            <button>예약하기</button>
+
+          </form>
+
+        </div>
+
+
+
+
+
       </div>
+
+
+
+      
+      <div class="fixed">
+
+        <article>
+          <p>x</p>
+          <ul>
+            <li>예약날짜 : <span></span>일</li>
+            <li>예약인원 : <span></span>명</li>
+            <li>프로그램명 : <span></span></li>
+          </ul>
+          <div>예약이 완료되었습니다.</div>
+
+        </article>
+
+      </div>
+
+
+
     </section>
     <section data-scroll>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
@@ -204,7 +289,15 @@
 
   <script>
     $(function () {
-      $("#datepicker").datepicker();
+      $("#datepicker").datepicker({
+
+        onSelect: function(dateText, inst){
+
+          alert(`선택된날짜${dateText}`);
+
+        }
+
+      });
     });
 
 
@@ -220,6 +313,119 @@
     });
 
     
+
+
+
+
+
+    //  변수만들기
+
+
+    // 버튼을 클릭했을 시 변수로 지정한 내용을 저장하기
+
+
+    $('.reservation_form').find('button').click(function(e){
+
+
+
+
+      e.preventDefault();
+
+
+
+
+      // 날짜 찾아오기
+
+
+
+
+
+      let selectDate = $('#datepicker').datepicker('getDate');
+
+
+
+      let selectMon = selectDate.getMonth();
+
+
+      let selectDay = selectDate.getDate();
+
+
+      // 달은 0부터 시작
+
+
+      console.log(selectMon + 1)
+
+      console.log(selectDay)
+
+
+
+
+
+      // 인원수 불러오기
+
+
+      let people = $('#people').val();
+
+
+      if(people >=11){
+
+        people = 10;
+
+
+      }
+
+      console.log(people);
+
+
+
+
+
+
+
+      // 프로그램명 불러오기
+
+      let pro = $('#program option:selected').text();
+
+
+
+      console.log(pro);
+
+
+
+
+      $('.fixed').show();
+
+
+      $('.fixed li').eq(0).find('span').text(`${selectMon + 1}월 ${selectDay}`);
+
+      $('.fixed li').eq(1).find('span').text(people);
+
+      $('.fixed li').eq(2).find('span').text(pro);
+
+
+
+
+
+
+    })
+
+
+
+
+
+    $('.fixed p').click(function(){
+
+      
+      $('.fixed').hide();
+
+    })
+
+
+
+
+
+
+
   </script>
 </body>
 
