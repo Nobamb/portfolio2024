@@ -4260,7 +4260,7 @@ api 부분 여기다 집어넣기 */
     width: 250px;
     height: 100vh;
     transition: all 0.5s;
-    position: absolute;
+    position: fixed;
     right: -250px;
     top: 0;
     z-index: 100;
