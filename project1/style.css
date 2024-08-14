@@ -1223,7 +1223,7 @@ section .border {
 
 
 /* 폼 영역*/
-.txtBox .form {
+.txtBox .apply {
   display: flex;
   flex-direction: column;
   max-width: 850px;
@@ -1234,13 +1234,13 @@ section .border {
 
 /* 폼 제목 영역 */
 
-.txtBox .form .formTitle {
+.txtBox .apply .applyTitle {
   position: relative;
   width: 100%;
   height: 110px;
 }
 
-.txtBox .formTitle li {
+.txtBox .applyTitle li {
   position: absolute;
   top: 0;
   left: 0;
@@ -1250,7 +1250,7 @@ section .border {
   height: 100%;
 }
 
-.txtBox .formTitle li.on {
+.txtBox .applyTitle li.on {
   opacity: 1;
   z-index: 10;
 }
@@ -1259,7 +1259,7 @@ section .border {
 
 
 
-.formTitle h2 {
+.applyTitle h2 {
 
 
   text-align: center;
@@ -1277,7 +1277,7 @@ section .border {
   font-size: 28px;
 }
 
-.formTitle h2 span {
+.applyTitle h2 span {
   display: block;
   font-size: 14px;
   letter-spacing: 2px;
@@ -1287,7 +1287,7 @@ section .border {
 
 
 /* 폼 본문영역 */
-.form .formtxt {
+.apply .applytxt {
 
   width: 100%;
   height: 290px;
@@ -1301,7 +1301,7 @@ section .border {
 
 }
 
-.form .formtxt ul {
+.apply .applytxt ul {
   width: 100%;
   height: 100%;
   position: relative;
@@ -1310,7 +1310,7 @@ section .border {
 
 }
 
-.form .formtxt li {
+.apply .applytxt li {
   position: absolute;
   top: 0;
   left: 0;
@@ -1326,20 +1326,20 @@ section .border {
   z-index: 1;
 }
 
-.form .formtxt li.on {
+.apply .applytxt li.on {
   opacity: 1;
   z-index: 10;
 }
 
 
 
-.form .formtxt li p {
+.apply .applytxt li p {
 
   font-size: 16px;
 
 }
 
-.form .formtxt a {
+.apply .applytxt a {
   transform: scale(1);
   transition: all 1s;
   display: block;
@@ -1354,7 +1354,7 @@ section .border {
   margin-top: 10px;
 }
 
-.form .formtxt a:hover {
+.apply .applytxt a:hover {
 
   transform: scale(1.1);
   background-color: #a3cbd8;
@@ -2623,11 +2623,10 @@ footer {
 .reservearea{
 
   position: absolute;
-  top: 150px;
   z-index: 999;
   width: 100%;
   height: 1285px;
-  display: block;
+  display: none;
 
   background-color:#a3cbd8;
 
@@ -2638,17 +2637,44 @@ footer {
 
   position: absolute;
   right: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  top: 150px;
+  width: 200px;
+  height: 70px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  font-size: 48px;
-  color: #fff;
   z-index: 999;
+  transition: all 0.5s;
+  overflow: hidden;
+
+
+}
+
+
+
+.reservearea .closed:hover{
+
+  background-color: #4797b1;
+
+}
+
+
+
+
+.reservearea .closed span{
+  color:#4797b1;
+  font-weight: bold;
+  font-size: 24px;
+  transition: all 0.5s;
+
+}
+
+.reservearea .closed:hover span{
+  color: #fff;
 
 }
 
@@ -2700,6 +2726,22 @@ footer {
 
 
 
+.reserveMain .reserveInfor>.photo{
+
+
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  transition: all 1s;
+
+}
+
+
+
+
+
+
+
 .reserveMain .reserveInforZone{
 
   display: flex;
@@ -2737,6 +2779,14 @@ footer {
 
 }
 
+.reserveMain .reserveInforZone .inforBtn li:hover{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+
+}
+
 
 
 .reserveMain .reserveInforZone .inforBtn li.on{
@@ -2755,11 +2805,12 @@ footer {
   height: 80%;
   background-color: #fff;
   position: relative;
+
 }
 
 
 
-.reserveMain .reserveInforZone .inforTxt li{
+.reserveMain .reserveInforZone .inforTxt>li{
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2770,22 +2821,179 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt li.on{
+.reserveMain .reserveInforZone .inforTxt>li.on{
 
   display: flex;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt li:first-child{
-
-  color: #666666;
-  font-size: 16px;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+/* 상세정보 */
+.reserveMain .reserveInforZone .inforTxt>li:first-child{
+
+  gap: 10px;
 
 }
+
+
+.reserveMain .reserveInforZone .inforTxt>li:first-child p{
+
+
+  color: #666;
+  font-size: 20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* 후기 */
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
+
+
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
+
+  width: 100%;
+  height: 45%;
+  border-radius: 10px;
+  border: 1px dashed #dd8282;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
+
+  font-size: 16px;
+  color: #666666;
+  z-index: 100;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
+
+  font-size: 12px;
+  color: #666666;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
+
+  width: 100%;
+  height: 100%;
+  background-color: #a3cbd8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 0.5s;
+  z-index: 300;
+  color: #fff;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
+
+  left: 0;
+  padding: 10px;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
+
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 24px;
+  color: #4797b1;
+  animation: answer 0.6s infinite alternate;
+}
+
+
+
+@keyframes answer{
+
+
+
+  0%{
+
+    opacity: 0.6;
+
+  }
+
+
+  100%{
+
+    opacity: 0;
+
+  }
+
+
+
+}
+
+
 
 
 
@@ -2817,7 +3025,7 @@ footer {
 
 .reserveMain h2{
 
-  font-size: 48px;
+  font-size: 32px;
   font-weight: bold;
   color: #fff;
 
@@ -2926,6 +3134,7 @@ footer {
 .reserveCheck .checkAll .checkMore .total p{
 
   font-size: 20px;
+  color: #666;
 
 }
 
@@ -2953,7 +3162,7 @@ footer {
 
 
 .reserveCheck .checkAll .checkMore .people form input{
-  
+  color: #666;
   width: 100px;
   height: 30px;
   padding-left: 5px;
@@ -2964,8 +3173,18 @@ footer {
 .reserveCheck .checkAll .checkMore .people form label{
   
   text-align: center;
+  color: #666;
+}
+
+
+
+.reserveCheck .checkAll .checkMore .people form p{
+  
+  color: #666;
 
 }
+
+
 
 
 
@@ -2979,31 +3198,68 @@ footer {
   cursor: pointer;
   font-size: 24px;
   font-weight: bold;
+  border: 0.2px solid #4797b1;
 }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li:nth-child(1){
 
+
+/* 예약버튼 */
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+
+  opacity: 0.7;
   background-color: #4797b1;
   color: #fff;
+  transition: all 0.3s;
+}
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
+  opacity: 1;
 }
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li:nth-child(2){
+/* 찜하기 */
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
   gap: 10px;
   background-color: #fff;
   color: #4797b1;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
+  opacity: 1;
 }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li:nth-child(2) img{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
 
   width: 30px;
+  aspect-ratio: 1/1;
+  background-image: url('img/heart.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
 }
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
+
+  background-image: url('img/heart_after.png');
+
+}
+
+
 
 
 
@@ -3466,6 +3722,669 @@ footer {
 
 
 
+/* 예약창 */
+
+
+
+
+
+
+
+/* 예약하기 진행시
+나머지 섹션들은 모두 display none
+예약만 display block */
+
+.reservearea{
+
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 1285px;
+  display: none;
+
+  background-color:#a3cbd8;
+
+}
+
+
+.reservearea .closed{
+
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 150px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: all 0.5s;
+  overflow: hidden;
+
+
+}
+
+
+
+.reservearea .closed:hover{
+
+  background-color: #4797b1;
+
+}
+
+
+
+
+.reservearea .closed span{
+  color:#4797b1;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.5s;
+
+}
+
+.reservearea .closed:hover span{
+  color: #fff;
+
+}
+
+
+
+
+.reserveMain{
+
+  width: calc(100% - 160px);
+  margin: 0 80px;
+  height: 1000px;
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+
+
+.reserveMain>div{
+
+  width: 100%;
+  height: 47%;
+
+}
+
+
+
+
+.reserveMain .reserveInfor{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
+
+
+
+.reserveMain .reserveInfor>div{
+
+  height: 45%;
+  width: 100%;
+
+}
+
+
+
+.reserveMain .reserveInfor>.photo{
+
+
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  transition: all 1s;
+
+}
+
+
+
+
+
+
+
+.reserveMain .reserveInforZone{
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.reserveMain .reserveInforZone .inforBtn{
+
+  width: 100%;
+  height: 20%;
+  background-color: blue;
+  display: flex;
+
+}
+
+
+.reserveMain .reserveInforZone .inforBtn li{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3333%;
+  height: 100%;
+  background-color: #fff;
+  border: 0.2px solid #4797b1;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: normal;
+  color: #4797b1;
+  transition: all 0.5s;
+
+}
+
+.reserveMain .reserveInforZone .inforBtn li:hover{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforBtn li.on{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt{
+
+
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+  position: relative;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li.on{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+/* 상세정보 */
+.reserveMain .reserveInforZone .inforTxt>li:first-child{
+
+  gap: 10px;
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:first-child p{
+
+
+  color: #666;
+  font-size: 20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* 후기 */
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
+
+
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
+
+  width: 100%;
+  height: 45%;
+  border-radius: 10px;
+  border: 1px dashed #dd8282;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
+
+  font-size: 16px;
+  color: #666666;
+  z-index: 100;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
+
+  font-size: 12px;
+  color: #666666;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
+
+  width: 100%;
+  height: 100%;
+  background-color: #a3cbd8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 0.5s;
+  z-index: 300;
+  color: #fff;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
+
+  left: 0;
+  padding: 10px;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
+
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 16px;
+  color: #4797b1;
+  animation: answer 0.6s infinite alternate;
+}
+
+
+
+@keyframes answer{
+
+
+
+  0%{
+
+    opacity: 0.6;
+
+  }
+
+
+  100%{
+
+    opacity: 0;
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 선택 프로그램 예약 스타일*/
+
+
+.reserveCheck{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+/* 선택한 프로그램 제목 */
+
+.reserveMain h2{
+
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
+
+
+
+.reserveCheck .checkAll{
+
+
+  width: 100%;
+  height: 90%;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.reserveCheck .checkAll .dateZone{
+
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.reserveCheck .checkAll #datepicker{
+  transform: scale(1);
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+.reserveCheck .checkAll a.ui-state-active{
+
+
+  background-color: #4797b1;
+  color: #fff;
+  
+
+}
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+
+  background-color: #4797b1;
+
+}
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+
+  background-color: #4797b1;
+  border: none;
+
+}
+
+.ui-datepicker-title span{
+
+  color: #fff;
+
+}
+
+
+.reserveCheck .checkAll .checkMore{
+
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+
+}
+
+
+.reserveCheck .checkAll .checkMore .people{
+  height: 25%;
+  width: 100%;
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
+}
+
+.reserveCheck .checkAll .checkMore .total{
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.reserveCheck .checkAll .checkMore .total p{
+
+  font-size: 16px;
+
+}
+
+
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn{
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .people form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.reserveCheck .checkAll .checkMore .people form input{
+  
+  width: 80px;
+  height: 25px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+
+.reserveCheck .checkAll .checkMore .people form label{
+  
+  text-align: center;
+  font-size: 12px;
+
+}
+
+.reserveCheck .checkAll .checkMore .people form p{
+  
+  color: #666;
+  font-size: 12px;
+
+}
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
+
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  border: 0.2px solid #4797b1;
+}
+
+
+
+
+
+
+/* 예약버튼 */
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+
+  opacity: 0.7;
+  background-color: #4797b1;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
+  opacity: 1;
+}
+
+
+/* 찜하기 */
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
+  gap: 10px;
+  background-color: #fff;
+  color: #4797b1;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
+  opacity: 1;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
+
+  width: 30px;
+  aspect-ratio: 1/1;
+  background-image: url('img/heart.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
+
+  background-image: url('img/heart_after.png');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -3853,25 +4772,25 @@ footer {
 
 
   /* 폼 영역*/
-  .txtBox .form {
+  .txtBox .apply {
     width: 100%;
   }
 
 
   /* 폼 제목 영역 */
 
-  .txtBox .form .formTitle {
+  .txtBox .apply .applyTitle {
     height: 80px;
   }
 
 
-  .formTitle h2 {
+  .applyTitle h2 {
 
     font-size: 20px;
 
   }
 
-  .formTitle h2 span {
+  .applyTitle h2 span {
 
     font-size: 12px;
   }
@@ -3880,7 +4799,7 @@ footer {
 
 
   /* 폼 본문영역 */
-  .form .formtxt {
+  .apply .applytxt {
 
     height: 220px;
 
@@ -3889,7 +4808,7 @@ footer {
 
 
 
-  .form .formtxt li p {
+  .apply .applytxt li p {
 
     font-size: 14px;
 
@@ -3897,7 +4816,7 @@ footer {
 
 
 
-  .form .formtxt a {
+  .apply .applytxt a {
 
     padding: 10px 30px;
   }
@@ -4626,6 +5545,727 @@ api 부분 여기다 집어넣기 */
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 예약창 */
+
+
+
+
+
+
+
+/* 예약하기 진행시
+나머지 섹션들은 모두 display none
+예약만 display block */
+
+.reservearea{
+
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 1285px;
+  display: none;
+
+  background-color:#a3cbd8;
+
+}
+
+
+.reservearea .closed{
+
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 100px;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: all 0.5s;
+  overflow: hidden;
+
+
+}
+
+
+
+.reservearea .closed:hover{
+
+  background-color: #4797b1;
+
+}
+
+
+
+
+.reservearea .closed span{
+  color:#4797b1;
+  font-weight: bold;
+  font-size: 12px;
+  transition: all 0.5s;
+
+}
+
+.reservearea .closed:hover span{
+  color: #fff;
+
+}
+
+
+
+
+.reserveMain{
+
+  width: calc(100% - 36px);
+  margin: 0 18px;
+  height: 1000px;
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+
+
+.reserveMain>div{
+
+  width: 100%;
+  height: 47%;
+
+}
+
+
+
+
+.reserveMain .reserveInfor{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
+
+
+
+.reserveMain .reserveInfor>div{
+
+  height: 45%;
+  width: 100%;
+
+}
+
+
+
+.reserveMain .reserveInfor>.photo{
+
+
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  transition: all 1s;
+
+}
+
+
+
+
+
+
+
+.reserveMain .reserveInforZone{
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.reserveMain .reserveInforZone .inforBtn{
+
+  width: 100%;
+  height: 20%;
+  background-color: blue;
+  display: flex;
+
+}
+
+
+.reserveMain .reserveInforZone .inforBtn li{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3333%;
+  height: 100%;
+  background-color: #fff;
+  border: 0.2px solid #4797b1;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  color: #4797b1;
+  transition: all 0.5s;
+
+}
+
+.reserveMain .reserveInforZone .inforBtn li:hover{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforBtn li.on{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt{
+
+
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+  position: relative;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li.on{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+/* 상세정보 */
+.reserveMain .reserveInforZone .inforTxt>li:first-child{
+
+  gap: 10px;
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:first-child p{
+
+
+  color: #666;
+  font-size: 12px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* 후기 */
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
+
+
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
+
+  width: 100%;
+  height: 45%;
+  border-radius: 10px;
+  border: 1px dashed #dd8282;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
+
+  padding: 10px;
+  font-size: 12px;
+  color: #666666;
+  z-index: 100;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
+
+  font-size: 10px;
+  left: 10px;
+  top: 5px;
+}
+
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
+
+  width: 100%;
+  height: 100%;
+  background-color: #a3cbd8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 0.5s;
+  z-index: 300;
+  color: #fff;
+  font-size: 12px;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
+
+  left: 0;
+  padding: 10px;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
+
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 16px;
+  color: #4797b1;
+  animation: answer 0.6s infinite alternate;
+}
+
+
+
+@keyframes answer{
+
+
+
+  0%{
+
+    opacity: 0.6;
+
+  }
+
+
+  100%{
+
+    opacity: 0;
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 선택 프로그램 예약 스타일*/
+
+
+.reserveCheck{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+/* 선택한 프로그램 제목 */
+
+.reserveMain h2{
+
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
+
+
+
+.reserveCheck .checkAll{
+
+
+  width: 100%;
+  height: 90%;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.reserveCheck .checkAll .dateZone{
+
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.reserveCheck .checkAll #datepicker{
+  transform: scale(1);
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+.reserveCheck .checkAll a.ui-state-active{
+
+
+  background-color: #4797b1;
+  color: #fff;
+  
+
+}
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+
+  background-color: #4797b1;
+
+}
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+
+  background-color: #4797b1;
+  border: none;
+
+}
+
+.ui-datepicker-title span{
+
+  color: #fff;
+
+}
+
+
+.reserveCheck .checkAll .checkMore{
+
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+
+}
+
+
+.reserveCheck .checkAll .checkMore .people{
+  height: 25%;
+  width: 100%;
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
+}
+
+.reserveCheck .checkAll .checkMore .total{
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.reserveCheck .checkAll .checkMore .total p{
+
+  font-size: 16px;
+
+}
+
+
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn{
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .people form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.reserveCheck .checkAll .checkMore .people form input{
+  
+  width: 80px;
+  height: 25px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+
+.reserveCheck .checkAll .checkMore .people form label{
+  
+  text-align: center;
+  font-size: 12px;
+
+}
+
+.reserveCheck .checkAll .checkMore .people form p{
+  
+  color: #666;
+  font-size: 12px;
+
+}
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
+
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0.2px solid #4797b1;
+}
+
+
+
+
+
+
+/* 예약버튼 */
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+
+  opacity: 0.7;
+  background-color: #4797b1;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
+  opacity: 1;
+}
+
+
+/* 찜하기 */
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
+  gap: 10px;
+  background-color: #fff;
+  color: #4797b1;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
+  opacity: 1;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
+
+  width: 20px;
+  aspect-ratio: 1/1;
+  background-image: url('img/heart.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
+
+  background-image: url('img/heart_after.png');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -5267,25 +6907,25 @@ api 부분 여기다 집어넣기 */
 
 
   /* 폼 영역*/
-  .txtBox .form {
+  .txtBox .apply {
     width: 100%;
   }
 
 
   /* 폼 제목 영역 */
 
-  .txtBox .form .formTitle {
+  .txtBox .apply .applyTitle {
     height: 80px;
   }
 
 
-  .formTitle h2 {
+  .applyTitle h2 {
 
     font-size: 16px;
 
   }
 
-  .formTitle h2 span {
+  .applyTitle h2 span {
 
     font-size: 12px;
   }
@@ -5294,13 +6934,13 @@ api 부분 여기다 집어넣기 */
 
 
   /* 폼 본문영역 */
-  .form .formtxt {
+  .apply .applytxt {
 
     height: 220px;
 
   }
 
-  .form .formtxt li {
+  .apply .applytxt li {
 
     gap: 10px;
 
@@ -5308,7 +6948,7 @@ api 부분 여기다 집어넣기 */
 
 
 
-  .form .formtxt li p {
+  .apply .applytxt li p {
 
     font-size: 12px;
 
@@ -5316,7 +6956,7 @@ api 부분 여기다 집어넣기 */
 
 
 
-  .form .formtxt a {
+  .apply .applytxt a {
 
     font-size: 12px;
     padding: 7px 25px;
@@ -6081,6 +7721,676 @@ api 부분 여기다 집어넣기 */
     font-weight: bold;
     color: #ffdede;
   }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+/* 예약창 */
+
+
+
+
+
+
+
+/* 예약하기 진행시
+나머지 섹션들은 모두 display none
+예약만 display block */
+
+.reservearea{
+
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 1285px;
+  display: none;
+
+  background-color:#a3cbd8;
+
+}
+
+
+.reservearea .closed{
+
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 100px;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: all 0.5s;
+  overflow: hidden;
+
+
+}
+
+
+
+.reservearea .closed:hover{
+
+  background-color: #4797b1;
+
+}
+
+
+
+
+.reservearea .closed span{
+  color:#4797b1;
+  font-weight: bold;
+  font-size: 12px;
+  transition: all 0.5s;
+
+}
+
+.reservearea .closed:hover span{
+  color: #fff;
+
+}
+
+
+
+
+.reserveMain{
+
+  width: calc(100% - 36px);
+  margin: 0 18px;
+  height: 1000px;
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+
+
+.reserveMain>div{
+
+  width: 100%;
+  height: 47%;
+
+}
+
+
+
+
+.reserveMain .reserveInfor{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
+
+
+
+.reserveMain .reserveInfor>div{
+
+  height: 45%;
+  width: 100%;
+
+}
+
+
+
+.reserveMain .reserveInfor>.photo{
+
+
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  transition: all 1s;
+
+}
+
+
+
+
+
+
+
+.reserveMain .reserveInforZone{
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.reserveMain .reserveInforZone .inforBtn{
+
+  width: 100%;
+  height: 20%;
+  background-color: blue;
+  display: flex;
+
+}
+
+
+.reserveMain .reserveInforZone .inforBtn li{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3333%;
+  height: 100%;
+  background-color: #fff;
+  border: 0.2px solid #4797b1;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  color: #4797b1;
+  transition: all 0.5s;
+
+}
+
+.reserveMain .reserveInforZone .inforBtn li:hover{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforBtn li.on{
+
+  background-color: #4797b1;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt{
+
+
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+  position: relative;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li.on{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+/* 상세정보 */
+.reserveMain .reserveInforZone .inforTxt>li:first-child{
+
+  gap: 10px;
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:first-child p{
+
+
+  color: #666;
+  font-size: 10px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* 후기 */
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
+
+
+
+}
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
+
+  width: 100%;
+  height: 45%;
+  border-radius: 10px;
+  border: 1px dashed #dd8282;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
+
+  padding: 10px;
+  font-size: 10px;
+  color: #666666;
+  z-index: 100;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
+
+  font-size: 8px;
+  left: 5px;
+  top: 3px;
+}
+
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
+
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
+
+  width: 100%;
+  height: 100%;
+  background-color: #a3cbd8;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: all 0.5s;
+  z-index: 300;
+  color: #fff;
+  font-size: 10px;
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
+
+  left: 0;
+  padding: 10px;
+
+}
+
+
+
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
+
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 16px;
+  color: #4797b1;
+  animation: answer 0.6s infinite alternate;
+}
+
+
+
+@keyframes answer{
+
+
+
+  0%{
+
+    opacity: 0.6;
+
+  }
+
+
+  100%{
+
+    opacity: 0;
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 선택 프로그램 예약 스타일*/
+
+
+.reserveCheck{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+/* 선택한 프로그램 제목 */
+
+.reserveMain h2{
+
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+
+
+
+
+.reserveCheck .checkAll{
+
+
+  width: 100%;
+  height: 90%;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.reserveCheck .checkAll .dateZone{
+
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.reserveCheck .checkAll #datepicker{
+  transform: scale(1);
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+.reserveCheck .checkAll a.ui-state-active{
+
+
+  background-color: #4797b1;
+  color: #fff;
+  
+
+}
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+
+  background-color: #4797b1;
+
+}
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+
+  background-color: #4797b1;
+  border: none;
+
+}
+
+.ui-datepicker-title span{
+
+  color: #fff;
+
+}
+
+
+.reserveCheck .checkAll .checkMore{
+
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+
+}
+
+
+.reserveCheck .checkAll .checkMore .people{
+  height: 25%;
+  width: 100%;
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
+}
+
+.reserveCheck .checkAll .checkMore .total{
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.reserveCheck .checkAll .checkMore .total p{
+
+  font-size: 12px;
+
+}
+
+
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn{
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .people form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.reserveCheck .checkAll .checkMore .people form input{
+  
+  width: 60px;
+  height: 20px;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+
+.reserveCheck .checkAll .checkMore .people form label{
+  
+  text-align: center;
+  font-size: 10px;
+
+}
+
+.reserveCheck .checkAll .checkMore .people form p{
+  
+  color: #666;
+  font-size: 10px;
+
+}
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
+
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0.2px solid #4797b1;
+}
+
+
+
+
+
+
+/* 예약버튼 */
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+
+  opacity: 0.7;
+  background-color: #4797b1;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
+  opacity: 1;
+}
+
+
+/* 찜하기 */
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
+  gap: 10px;
+  background-color: #fff;
+  color: #4797b1;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
+  opacity: 1;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
+
+  width: 20px;
+  aspect-ratio: 1/1;
+  background-image: url('img/heart.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+
+
+
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
+
+  background-image: url('img/heart_after.png');
+
+}
+
+
+
+
+
+
+
+
 
 
 
