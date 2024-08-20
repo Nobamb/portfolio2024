@@ -450,6 +450,81 @@ section.intro {
 
 
 
+/* 인트로 시작 화면 */
+
+section.intro .playIntro{
+
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(96,96,96,0.8);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+
+
+
+/* 인트로 시작 화면 */
+
+section.intro .playIntro p{
+
+
+  position: absolute;
+
+  top: 50px;
+  font-size: 48px;
+  color: #fff;
+  animation: 1s introAni infinite alternate linear;
+
+}
+
+
+/* 인트로 시작 버튼 */
+
+section.intro .playIntro .playBtn{
+
+  width: 120px;
+  height: 120px;
+  background-color: #606060;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  animation: 1s introAni infinite alternate linear;
+
+}
+
+
+
+
+@keyframes introAni {
+
+  from{
+
+    transform: scale(1);
+
+  }
+
+
+  to{
+
+    transform: scale(1.2);
+
+  }
+  
+}
+
+
+
+
+
 
 
 
