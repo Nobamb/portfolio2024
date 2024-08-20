@@ -5,11 +5,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
   // 로고 클릭시에
   $('h1').click(function () {
 
@@ -108,8 +103,7 @@ $(document).ready(function () {
     }
 
 
-
-  }, 100)
+  }, 1000)
 
 
 
@@ -217,7 +211,7 @@ $(document).ready(function () {
 
 
 
-      
+
 
       $('.main .record_box .music_box>ul>li').removeClass('on');
       $('.main .record_box .player>.play_this').text('1 : 00');
@@ -1566,10 +1560,6 @@ $(document).ready(function () {
 
 
 
-
-  // 재생시간 표시하는거
-
-  // 이거 구현해보기
 
 
 

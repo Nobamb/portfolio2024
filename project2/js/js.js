@@ -2316,6 +2316,8 @@ $(document).ready(function () {
 
 
 
+
+
     // 카테고리명 및 종류
     let arrClass1 = spClass[0];
 
@@ -2385,11 +2387,11 @@ $(document).ready(function () {
       // 기본 리스트 외의 것을 먼저 누른 뒤에
       // 제거를 진행하면 gameSpPrice의 배열값이 undifind로 해석함(이유는 모르겠음->확인해보기)
 
-      fullPrice -= gameSpPrice[(gI - 1)][arrClass3];
+      fullPrice -= gameSpPrice[(category2 - 1)][arrClass3];
 
-      gameSp[(gI - 1)][arrClass3] = 0;
+      gameSp[(category2 - 1)][arrClass3] = 0;
 
-      gameSpPrice[(gI - 1)][arrClass3] = 0;
+      gameSpPrice[(category2 - 1)][arrClass3] = 0;
 
 
     }
@@ -2419,11 +2421,11 @@ $(document).ready(function () {
 
       // pp배열에서 해당 가격을 가져옴
 
-      fullPrice -= productSpPrice[(gI - 6)][arrClass3];
+      fullPrice -= productSpPrice[(category2 - 6)][arrClass3];
 
-      productSp[(gI - 6)][arrClass3] = 0;
+      productSp[(category2 - 6)][arrClass3] = 0;
 
-      productSpPrice[(gI - 6)][arrClass3] = 0;
+      productSpPrice[(category2 - 6)][arrClass3] = 0;
 
     }
 
