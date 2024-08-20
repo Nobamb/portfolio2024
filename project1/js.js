@@ -557,7 +557,7 @@ $(document).ready(function () {
       // 연도가 적거나, 연도는 같지만 월이 더 적거나, 월까지는 같지만 일에서 차이가 날때
 
 
-      if (todayY >= selectYear && ((todayY === selectYear) && (todayM >= selectMon)) && ((todayY === selectYear) && (todayM === selectMon) && (todayD >= selectDay))) {
+      if (todayY > selectYear || ((todayY === selectYear) && (todayM > selectMon)) || ((todayY === selectYear) && (todayM === selectMon) && (todayD >= selectDay))) {
 
         console.log(todayY >= selectYear);
         console.log(((todayY === selectYear) && (todayM >= selectMon)));
