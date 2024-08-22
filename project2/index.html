@@ -1,13 +1,11 @@
-<!DOCTYPE HTML
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
 
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Type" content="text/css; 
-charset=UTF-8">
+  <!-- <meta http-equiv="Content-Type" content="text/css; 
+charset=UTF-8"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>포켓몬스터</title>
   <!-- 약 44시간 진행 -->
@@ -33,7 +31,7 @@ charset=UTF-8">
   <!-- 자바스크립트 연결 -->
   <script src="js/js.js"></script>
 
-  <script type="text/javascript" src="js/rating_simple.js"></script>
+  <script src="js/rating_simple.js"></script>
 
   <!-- 폰트어썸 설정 -->
   <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
@@ -56,7 +54,7 @@ charset=UTF-8">
   <!-- <header class="on"> -->
   <header>
     <div class="header_inner">
-      <h1><a href=""><img src="img/logo.png" alt=""></a></h1>
+      <h1><a href=""><img src="img/logo.png" alt="로고"></a></h1>
       <nav>
         <ul>
 
@@ -85,17 +83,16 @@ charset=UTF-8">
       </nav>
       <ul class="util">
         <li class="search">
-          <form action="">
-            <input type="search" placeholder="검색어를 입력하세요">
+          <form action="https://pokemonkorea.co.kr/search" method="get">
+            <input name="sword" type="search" value="" placeholder="검색어를 입력하세요">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </li>
         <li class="shopMain">
-          <a href="">
+          <a href="#">
             장바구니<i class="fa-solid fa-cart-shopping but">
-              <div class="shop_number"></div>
             </i>
-
+            <div class="shop_number"></div>
           </a>
         </li>
         <li class="login">
@@ -178,6 +175,9 @@ charset=UTF-8">
 
     <div class="box1 heroBox">
       <section class="hero">
+
+
+        <h2>히어로페이지</h2>
         <!-- 히어로 사진 -->
         <ul class="listBox">
           <li class="list0 on">
@@ -268,14 +268,16 @@ charset=UTF-8">
 
 
         <!-- 제품 영역 제목 -->
-        <h2 class="intro">
-          <ul>
-            <li class="on">
 
-            </li>
-            <li> </li>
-          </ul>
-        </h2>
+        <ul class="intro">
+          <li class="on">
+            <h2>제품 리스트</h2>
+          </li>
+          <li>
+            <h2>상품 리스트</h2>
+          </li>
+        </ul>
+
 
 
 
@@ -1035,8 +1037,8 @@ charset=UTF-8">
 
     <!-- 자바스크립트로 yearzone 부분
     내릴수록 포켓몬들 페이드 인 아웃되면서
-   포켓몬 볼이 여닫히는 연출과 열릴때는 소개 대화창이 열리고
-  볼이 닫힐때는 대화창이 닫히는 효과 구현해보기 -->
+     포켓몬 볼이 여닫히는 연출과 열릴때는 소개 대화창이 열리고
+     볼이 닫힐때는 대화창이 닫히는 효과 구현해보기 -->
     <div class="box3 yearsBox">
 
 
@@ -1044,6 +1046,7 @@ charset=UTF-8">
       <section class="years">
 
         <h2>
+          연혁
         </h2>
 
         <!-- 연혁 본문 -->
@@ -1240,7 +1243,9 @@ charset=UTF-8">
     <div class="box4 noticeBox">
 
       <section class="notices">
-        <h2></h2>
+        <h2>
+          공지/이벤트
+        </h2>
         <!-- 메인영역 -->
         <div class="noticesZone">
 
@@ -1508,7 +1513,9 @@ charset=UTF-8">
       <section class="review">
 
 
-        <h2></h2>
+        <h2>
+          리뷰
+        </h2>
 
 
         <div class="review_main">
@@ -1648,6 +1655,7 @@ charset=UTF-8">
                         <div class="point">4/5</div>
                       </div>
                     </div>
+                  </div>
                 </li>
                 <li>
                   <div class="txt">
@@ -2625,7 +2633,7 @@ charset=UTF-8">
                   <div class="infor">
                     <span class="name">홍길동</span>
 
-                    <span class="star"><input name="my_input" value="5" id="rating_simple2" type="hidden"></sp>
+                    <span class="star"><input name="my_input" value="5" class="rating_simple2" type="hidden"></span>
                   </div>
                   <div class="write_this">
 
@@ -2646,55 +2654,53 @@ charset=UTF-8">
           </div>
 
         </div>
-
+      </section>
     </div>
 
-    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3001,7 +3007,7 @@ charset=UTF-8">
             <div class="write_zone">
               <div class="infor">
                 <span class="name">홍길동</span>
-                <span class="star"> <input name="my_input" value="5" id="rating_simple2" type="hidden"></span>
+                <span class="star"> <input name="my_input" value="5" class="rating_simple2" type="hidden"></span>
               </div>
               <div class="write_this">
 
@@ -3396,7 +3402,7 @@ charset=UTF-8">
 
 
       <div class="footer_up">
-  
+
         <div class="footer_inner">
           <!-- 이용약관 및 개인정보처리방침 등 -->
           <ul class="guide">
@@ -3404,19 +3410,21 @@ charset=UTF-8">
             <li><a href="">환불 및 청약철회 안내</a></li>
             <li><a href="">이용약관</a></li>
           </ul>
-  
-  
-  
-  
+
+
+
+
           <p>(주)포켓몬코리아  경기도 용인시 수지구 신수로 801, 4층</p>
           <!-- sns 계정 -->
           <ul class="sns">
-            <li><a href="https://www.instagram.com/pokemon_korea_official/"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.instagram.com/pokemon_korea_official/"><i class="fa-brands fa-instagram"></i></a>
+            </li>
             <li><a href="https://pokemonstore.co.kr/"><img src="img/picka_deco.png" alt=""></a></li>
             <li><a href="https://www.youtube.com/user/PokemonKoreaInc"><i class="fa-brands fa-youtube"></i></a></li>
-            <li><a href="https://m.facebook.com/PokemonCoKr/?locale2=fa_IR"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="https://m.facebook.com/PokemonCoKr/?locale2=fa_IR"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
           </ul>
-  
+
           <!-- 전화 -->
           <ul class="call">
             <li>
@@ -3432,19 +3440,19 @@ charset=UTF-8">
           </ul>
         </div>
       </div>
-  
-  
+
+
       <div class="footer_down">
-  
+
         <div class="footer_inner">
           <!-- 카피라이트 -->
           <p class="copyright">copyright &copy; jsh12345644@gmail.com</p>
         </div>
-  
+
       </div>
-  
+
     </footer>
-  
+
   </div>
 
 
@@ -3481,10 +3489,12 @@ charset=UTF-8">
         <p>(주)포켓몬코리아  경기도 용인시 수지구 신수로 801, 4층</p>
         <!-- sns 계정 -->
         <ul class="sns">
-          <li><a href="https://www.instagram.com/pokemon_korea_official/"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://www.instagram.com/pokemon_korea_official/"><i class="fa-brands fa-instagram"></i></a>
+          </li>
           <li><a href="https://pokemonstore.co.kr/"><img src="img/picka_deco.png" alt=""></a></li>
           <li><a href="https://www.youtube.com/user/PokemonKoreaInc"><i class="fa-brands fa-youtube"></i></a></li>
-          <li><a href="https://m.facebook.com/PokemonCoKr/?locale2=fa_IR"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="https://m.facebook.com/PokemonCoKr/?locale2=fa_IR"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
         </ul>
 
         <!-- 전화 -->
@@ -3602,7 +3612,7 @@ charset=UTF-8">
 
 
 
-  <script language="javascript" type="text/javascript">
+  <script>
     function test(value) {
       alert("This rating's value is " + value);
     }
@@ -3613,7 +3623,7 @@ charset=UTF-8">
         rating_function_name: '',//this is function name for click
         directory: '/'
       });
-      $("#rating_simple2").webwidget_rating_simple({
+      $(".rating_simple2").webwidget_rating_simple({
         rating_star_length: '5',
         rating_initial_value: '',
         rating_function_name: '',//this is function name for click

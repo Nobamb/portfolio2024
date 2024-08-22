@@ -1478,7 +1478,7 @@ $(document).ready(function () {
     $('.goods .gMenu .menu .mButton li').removeClass('on');
 
 
-    $('.goods .intro ul li').removeClass('on');
+    $('.goods .intro li').removeClass('on');
 
 
     $('.goods .gZone .gMenu .char li').removeClass('on');
@@ -1490,7 +1490,7 @@ $(document).ready(function () {
     $('.goods .gMenu .menu .mButton li:nth-child(1)').addClass('on');
 
 
-    $('.goods .intro ul li:nth-child(1)').addClass('on');
+    $('.goods .intro li:nth-child(1)').addClass('on');
 
 
     $('.goods .gZone .gMenu .char li:nth-child(1)').addClass('on');
@@ -1516,7 +1516,7 @@ $(document).ready(function () {
 
     $('.goods .gMenu .menu .mButton li').removeClass('on');
 
-    $('.goods .intro ul li').removeClass('on');
+    $('.goods .intro li').removeClass('on');
 
 
     $('.goods .gZone .gMenu .char li').removeClass('on');
@@ -1527,7 +1527,7 @@ $(document).ready(function () {
 
     $('.goods .gMenu .menu .mButton li:nth-child(2)').addClass('on');
 
-    $('.goods .intro ul li:nth-child(2)').addClass('on');
+    $('.goods .intro li:nth-child(2)').addClass('on');
 
 
     $('.goods .gZone .gMenu .char li:nth-child(2)').addClass('on');
@@ -1855,7 +1855,7 @@ $(document).ready(function () {
     if (shop >= 1) {
 
 
-      $('header .util li.shopMain a i .shop_number').css({ 'display': 'flex' });
+      $('header .util li.shopMain a .shop_number').css({ 'display': 'flex' });
 
       $('.mobile_util li .shop_number').css({ 'display': 'flex' });
 
@@ -1865,7 +1865,7 @@ $(document).ready(function () {
 
 
     // 장바구니쪽에 표시된 숫자도 변수 shop의 숫자를 반영하여 1씩 증가 
-    $('header .util li.shopMain a i .shop_number').text(shop);
+    $('header .util li.shopMain a .shop_number').text(shop);
 
     $('.mobile_util li .shop_number').text(shop);
 
@@ -2452,14 +2452,14 @@ $(document).ready(function () {
 
 
     // 장바구니 개수 표시 변경
-    $('header .util li.shopMain a i .shop_number').text(shop);
+    $('header .util li.shopMain a .shop_number').text(shop);
 
     $('.mobile_util li .shop_number').text(shop);
 
 
 
     if (shop <= 0) {
-      $('header .util li.shopMain a i .shop_number').css({ 'display': 'none' });
+      $('header .util li.shopMain a .shop_number').css({ 'display': 'none' });
       $('.mobile_util li .shop_number').css({ 'display': 'none' });
     }
 

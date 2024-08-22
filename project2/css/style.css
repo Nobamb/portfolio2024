@@ -1,15 +1,7 @@
-/* 언어설정 */
-
-
-@charset 'utf-8';
-
-
-/* 폰트설정 */
-
-
+@charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Jua&display=swap');
-
-
+/* 폰트설정 */
+/* 언어설정 */
 
 /* 폰트는 한글 jua, 영어 bangers */
 /* 사용 색깔 #E83E34, #58585B, #F5D022, #C08C5A 제품소개부분에 이브이 색깔과 맞추고자 한번만 시용) */
@@ -486,6 +478,7 @@ header .util li a {
   align-items: center;
   color: #58585B;
   font-size: 12px;
+  position: relative;
 }
 
 
@@ -583,18 +576,19 @@ header .util .login a i.login {
 
 
 
-header .util li.shopMain a i .shop_number {
+header .util li.shopMain a .shop_number {
+  width: 20px;
+  height: 20px;
   bottom: -5%;
   right: 0;
-  height: 50%;
-  aspect-ratio: 1/1;
   background-color: #F5D022;
   border-radius: 50%;
   position: absolute;
   display: none;
   justify-content: center;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
+  color: #fff;
 }
 
 
@@ -807,6 +801,15 @@ header .util li.shopMain a i .shop_number {
   align-items: center;
   border-radius: 0;
   overflow: hidden;
+}
+
+
+
+.hero h2 {
+
+  position: absolute;
+  left: 9999px;
+
 }
 
 
@@ -1178,20 +1181,16 @@ header .util li.shopMain a i .shop_number {
 .goods {}
 
 /* 소개부분(제목) */
-.goods h2 {
-  width: 100%;
-  height: 400px;
 
-}
 
-.goods .intro ul {
+.goods .intro {
   height: 100%;
-  width: 100%;
+  height: 400px;
   position: relative;
 
 }
 
-.goods .intro ul li {
+.goods .intro li {
   position: absolute;
   top: 0;
   left: 0;
@@ -1205,25 +1204,32 @@ header .util li.shopMain a i .shop_number {
 }
 
 
-.goods .intro ul li.on {
+section h2 {
+
+  color: transparent;
+
+}
+
+
+.goods .intro li.on {
 
   z-index: 5;
   opacity: 1;
 }
 
-.goods .intro ul li:nth-child(1) {
+.goods .intro li:nth-child(1) {
   background-image: url('../img/goodstitleGame.png');
 
 }
 
 
-.goods .intro ul li:nth-child(2) {
+.goods .intro li:nth-child(2) {
   background-image: url('../img/goodstitleproduct.png');
 
 }
 
 
-.goods .intro ul li img {
+.goods .intro li img {
 
   width: 100%;
   height: auto;
@@ -1412,14 +1418,14 @@ header .util li.shopMain a i .shop_number {
 
 .goods .gMenu .menu .mButtonzone .mButtonArrow {
 
-  rotate: 180deg;
+  transform: rotate(180deg);
   transition: all 0.3s;
 }
 
 
 .goods .gMenu .menu .mButtonzone .mButtonArrow.on {
 
-  rotate: 0deg;
+  transform: rotate(0deg);
 
 }
 
@@ -3128,7 +3134,7 @@ header .util li.shopMain a i .shop_number {
 
 
 .review .menu .mButtonzone .mButtonArrow {
-  rotate: 180deg;
+  transform: rotate(180deg);
   transition: all 0.3s;
 }
 
@@ -3136,7 +3142,7 @@ header .util li.shopMain a i .shop_number {
 
 .review .menu .mButtonzone .mButtonArrow.on {
 
-  rotate: 0deg;
+  transform: rotate(0deg);
 
 }
 
@@ -6825,10 +6831,10 @@ footer .footer_down .footer_inner p {
   /* 제품 헤더 설정 */
 
 
-  .goods h2,
   .years h2,
   .notices h2,
-  .review h2 {
+  .review h2,
+  .goods .intro {
 
     height: 160px;
     background-position: left center;
@@ -7729,7 +7735,7 @@ footer .footer_down .footer_inner p {
 
   .popUp .total_pay .purchase_complete {
     padding: 0 10px;
-    width:35%;
+    width: 35%;
   }
 
 
@@ -7987,7 +7993,7 @@ footer .footer_down .footer_inner p {
     font-weight: normal;
     color: #fff;
     font-size: 16px;
-  
+
   }
 
 
@@ -7996,9 +8002,9 @@ footer .footer_down .footer_inner p {
 
     color: #fff;
     font-size: 10px;
-  
+
   }
-  
+
 
 
 
@@ -8009,9 +8015,9 @@ footer .footer_down .footer_inner p {
 
     font-size: 12px;
     color: #58585B;
-  
+
   }
-  
+
 
 
 }
@@ -8588,41 +8594,41 @@ footer .footer_down .footer_inner p {
   .popUp .total_pay .txt {
     padding: 0 10px;
     font-size: 16px;
-  
+
   }
-  
-  
-  
+
+
+
   .popUp .total_pay .pay {
     padding: 0 10px;
     font-size: 20px;
     font-weight: bold;
-  
+
   }
-  
+
 
 
   .popUp .total_pay .purchase_complete {
-    
+
     width: 30%;
 
   }
-  
+
   .popUp .total_pay .purchase_complete i {
     color: #fff;
     font-size: 16px;
-  
+
   }
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   .popUp .total_pay .purchase_complete span {
     color: #fff;
     font-size: 12px;
-  
+
   }
 
 
@@ -8630,33 +8636,33 @@ footer .footer_down .footer_inner p {
 
 
 
-    /* 닫기버튼 */
+  /* 닫기버튼 */
 
-    .popUp .closed {
-      left: calc(100% - 10px);
-      width: 80px;
-      height: 40px;
-    }
-  
-  
-    .popUp .closed:hover {
-      width: 80px;
-    }
-  
-  
-  
-    .popUp .closed i {
-      transform: skew(30deg) translateX(5px);
-      font-size: 20px;
-    }
-  
-  
-    .popUp .closed:hover i {
-      transform: skew(30deg) translateX(5px);
-    }
-  
-  
-  
+  .popUp .closed {
+    left: calc(100% - 10px);
+    width: 80px;
+    height: 40px;
+  }
+
+
+  .popUp .closed:hover {
+    width: 80px;
+  }
+
+
+
+  .popUp .closed i {
+    transform: skew(30deg) translateX(5px);
+    font-size: 20px;
+  }
+
+
+  .popUp .closed:hover i {
+    transform: skew(30deg) translateX(5px);
+  }
+
+
+
 
 
 
