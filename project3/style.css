@@ -3211,7 +3211,6 @@ section.wrap article.blind {
 
   height: 100%;
 
-
 }
 
 
@@ -8117,7 +8116,7 @@ section.wrap article.blind {
   .album_vid li video {
 
     height: 100%;
-
+    transform: scale(0.8);
 
   }
 
@@ -12958,7 +12957,7 @@ section.wrap article.blind {
   .album_vid li video {
 
     height: 100%;
-
+    transform: scale(0.6);
 
   }
 
@@ -17799,7 +17798,7 @@ section.wrap article.blind {
   .album_vid li video {
 
     height: 100%;
-
+    transform: scale(0.4);
 
   }
 
