@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 
 
-
   // 로고 클릭시에
   $('h1').click(function () {
 
@@ -661,10 +660,10 @@ $(document).ready(function () {
   // 시그니쳐 사운드 카운트
   let signCount = 0;
 
-  $('.playIntro').click(function(){
+  $('.playIntro').click(function () {
 
 
-    $(this).animate({'opacity':0},300,function(){
+    $(this).animate({ 'opacity': 0 }, 300, function () {
 
       $(this).hide();
 
@@ -677,51 +676,51 @@ $(document).ready(function () {
 
       // 0.03초마다 1씩 추가
       count++;
-  
-  
+
+
       // 시그니쳐 카운트 = 카운트 수에서 25를 나눈 값
       signCount = count / 25;
-  
-  
+
+
       // 시그니쳐 사운드 수는 총 4개니까 4번 반복
       for (let sign = 0; sign < 4; sign++) {
-  
+
         // 시그니쳐 카운트가 25가 될때마다(정수가 될때만 작동함)
         if (sign === signCount) {
           // 이전 시그니쳐 사운드는 현재 화면에서 올라가서 없어지고,
           $('.signiture li').eq(sign - 1).css({ 'top': '0%' }).stop().animate({ 'top': '-100%' }), 10;
-  
+
           // 현재 시그니쳐 사운드가 밑에서 올라와서 등장함
           $('.signiture li').eq(sign).css({ 'top': '100%' }).stop().animate({ 'top': '0%' }), 10;
-  
+
         }
-  
+
       }
-  
-  
+
+
       // 0.03초마다 span에 숫자를 적어줌
       $('section.intro>.intro_area>span').text(count);
-  
-  
+
+
       // 0.03초마다 바늘이 오른쪽으로 움직임
       $('section.intro .niddle').css({ 'transform': `rotate(${(count / 100) * 98}deg)` })
-  
-  
+
+
       // 숫자가 100이 되면 off클래스를 줌
       if (count >= 100) {
-  
+
         $('section.intro>.intro_area>span').addClass('off');
-  
+
         clearInterval(persent);
-  
+
       }
-  
+
     }, 30);
-  
+
 
   })
 
- 
+
 
 
 
