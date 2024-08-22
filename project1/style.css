@@ -4539,6 +4539,23 @@ footer {
 @media (min-width: 481px) and (max-width:768px) {
 
 
+  .scaleUpTxt{
+
+    display: none;
+
+  }
+
+
+  .speakTxt{
+
+    display: none;
+
+  }
+
+
+
+
+
 
   /* 로고영역 */
   header h1 {
@@ -4560,9 +4577,11 @@ footer {
 
     height: 40px;
     width: 160px;
+    position: absolute;
+    right: 0;
 
   }
-
+/* 
   .util .btnarea .btn2 {
     height: 40px;
     width: 40px;
@@ -4573,7 +4592,18 @@ footer {
     height: 40px;
     width: 40px;
 
+  } */
+
+
+
+  .util .btnarea .btn2,
+  .util .btnarea .btn3{
+
+    
+    display: none;
+
   }
+
 
 
 
@@ -6417,11 +6447,20 @@ api 부분 여기다 집어넣기 */
 
 
 
-  .scaleUpTxt {
+ 
+  .scaleUpTxt{
 
     display: none;
 
   }
+
+
+  .speakTxt{
+
+    display: none;
+
+  }
+
 
 
   /* 로고영역 */
