@@ -1,15 +1,16 @@
-/* 언어설정 */
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-@charset 'utf-8';
+/* 언어설정 */
 
 /* 폰트 설정 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 /* 기본설정 */
 body {
 
+  overflow-x: hidden;
   font-family: "Noto Sans", "Noto Sans KR", sans-serif;
 
 }
@@ -52,6 +53,152 @@ img {
   position: relative;
 
 }
+
+
+
+
+
+
+
+
+.scaleUpTxt {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 9999;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+
+  background-image: url('img/mouse.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: none;
+
+
+
+}
+
+
+
+
+
+
+.scaleUpTxt .txt {
+
+  width: 300px;
+  transition: width, height 1s;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+
+.scaleUpTxt.on {
+
+  opacity: 1;
+
+}
+
+
+
+.scaleUpTxt .txt.scale {
+
+
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: #4797b1;
+  background-image: none;
+  background-color: #fff;
+  border-radius: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.speakTxt {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
+  border-radius: 50%;
+  border: 1px solid #dd8282;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  cursor: none;
+
+
+
+}
+
+
+
+
+
+
+.speakTxt .txt {
+
+  width: 300px;
+  transition: width, height 1s;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  top: -60px;
+  left: 100%;
+  margin-left: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+
+.speakTxt.on {
+
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -2620,7 +2767,7 @@ footer {
 나머지 섹션들은 모두 display none
 예약만 display block */
 
-.reservearea{
+.reservearea {
 
   position: absolute;
   z-index: 999;
@@ -2628,12 +2775,12 @@ footer {
   height: 1285px;
   display: none;
 
-  background-color:#a3cbd8;
+  background-color: #a3cbd8;
 
 }
 
 
-.reservearea .closed{
+.reservearea .closed {
 
   position: absolute;
   right: 0;
@@ -2656,7 +2803,7 @@ footer {
 
 
 
-.reservearea .closed:hover{
+.reservearea .closed:hover {
 
   background-color: #4797b1;
 
@@ -2665,15 +2812,15 @@ footer {
 
 
 
-.reservearea .closed span{
-  color:#4797b1;
+.reservearea .closed span {
+  color: #4797b1;
   font-weight: bold;
   font-size: 24px;
   transition: all 0.5s;
 
 }
 
-.reservearea .closed:hover span{
+.reservearea .closed:hover span {
   color: #fff;
 
 }
@@ -2681,7 +2828,7 @@ footer {
 
 
 
-.reserveMain{
+.reserveMain {
 
   width: calc(100% - 160px);
   margin: 0 80px;
@@ -2695,7 +2842,7 @@ footer {
 
 
 
-.reserveMain>div{
+.reserveMain>div {
 
   width: 47%;
   height: 100%;
@@ -2705,19 +2852,19 @@ footer {
 
 
 
-.reserveMain .reserveInfor{
+.reserveMain .reserveInfor {
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
 
 }
 
 
 
 
-.reserveMain .reserveInfor>div{
+.reserveMain .reserveInfor>div {
 
   height: 45%;
   width: 100%;
@@ -2726,7 +2873,7 @@ footer {
 
 
 
-.reserveMain .reserveInfor>.photo{
+.reserveMain .reserveInfor>.photo {
 
 
   background-size: cover;
@@ -2742,7 +2889,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone{
+.reserveMain .reserveInforZone {
 
   display: flex;
   flex-direction: column;
@@ -2752,7 +2899,7 @@ footer {
 }
 
 
-.reserveMain .reserveInforZone .inforBtn{
+.reserveMain .reserveInforZone .inforBtn {
 
   width: 100%;
   height: 20%;
@@ -2762,7 +2909,7 @@ footer {
 }
 
 
-.reserveMain .reserveInforZone .inforBtn li{
+.reserveMain .reserveInforZone .inforBtn li {
 
   display: flex;
   justify-content: center;
@@ -2779,7 +2926,7 @@ footer {
 
 }
 
-.reserveMain .reserveInforZone .inforBtn li:hover{
+.reserveMain .reserveInforZone .inforBtn li:hover {
 
   background-color: #4797b1;
   font-weight: bold;
@@ -2789,7 +2936,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforBtn li.on{
+.reserveMain .reserveInforZone .inforBtn li.on {
 
   background-color: #4797b1;
   font-weight: bold;
@@ -2798,7 +2945,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt{
+.reserveMain .reserveInforZone .inforTxt {
 
 
   width: 100%;
@@ -2810,7 +2957,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li{
+.reserveMain .reserveInforZone .inforTxt>li {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2821,7 +2968,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li.on{
+.reserveMain .reserveInforZone .inforTxt>li.on {
 
   display: flex;
   justify-content: center;
@@ -2833,14 +2980,14 @@ footer {
 
 
 /* 상세정보 */
-.reserveMain .reserveInforZone .inforTxt>li:first-child{
+.reserveMain .reserveInforZone .inforTxt>li:first-child {
 
   gap: 10px;
 
 }
 
 
-.reserveMain .reserveInforZone .inforTxt>li:first-child p{
+.reserveMain .reserveInforZone .inforTxt>li:first-child p {
 
 
   color: #666;
@@ -2859,14 +3006,10 @@ footer {
 
 /* 후기 */
 .reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) {}
 
 
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul {
 
   width: 80%;
   height: 80%;
@@ -2880,7 +3023,7 @@ footer {
 
 
 .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li {
 
   width: 100%;
   height: 45%;
@@ -2896,7 +3039,7 @@ footer {
 
 
 .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p {
 
   font-size: 16px;
   color: #666666;
@@ -2906,7 +3049,7 @@ footer {
 
 
 .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span {
 
   font-size: 12px;
   color: #666666;
@@ -2919,7 +3062,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul {
 
   width: 80%;
   height: 80%;
@@ -2932,7 +3075,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div {
 
   width: 100%;
   height: 100%;
@@ -2951,7 +3094,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer {
 
   left: 0;
   padding: 10px;
@@ -2960,7 +3103,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b {
 
   position: absolute;
   bottom: 5px;
@@ -2972,18 +3115,18 @@ footer {
 
 
 
-@keyframes answer{
+@keyframes answer {
 
 
 
-  0%{
+  0% {
 
     opacity: 0.6;
 
   }
 
 
-  100%{
+  100% {
 
     opacity: 0;
 
@@ -3009,7 +3152,7 @@ footer {
 /* 선택 프로그램 예약 스타일*/
 
 
-.reserveCheck{
+.reserveCheck {
 
   display: flex;
   flex-direction: column;
@@ -3023,7 +3166,7 @@ footer {
 
 /* 선택한 프로그램 제목 */
 
-.reserveMain h2{
+.reserveMain h2 {
 
   font-size: 32px;
   font-weight: bold;
@@ -3035,7 +3178,7 @@ footer {
 
 
 
-.reserveCheck .checkAll{
+.reserveCheck .checkAll {
 
 
   width: 100%;
@@ -3049,7 +3192,7 @@ footer {
 
 
 
-.reserveCheck .checkAll .dateZone{
+.reserveCheck .checkAll .dateZone {
 
   width: 100%;
   height: 50%;
@@ -3061,7 +3204,7 @@ footer {
 
 
 
-.reserveCheck .checkAll #datepicker{
+.reserveCheck .checkAll #datepicker {
   transform: scale(1.6);
   display: flex;
   justify-content: center;
@@ -3073,38 +3216,38 @@ footer {
 
 
 
-.reserveCheck .checkAll a.ui-state-active{
+.reserveCheck .checkAll a.ui-state-active {
 
 
   background-color: #4797b1;
   color: #fff;
-  
+
 
 }
 
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
 
   background-color: #4797b1;
 
 }
 
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover {
 
   background-color: #4797b1;
   border: none;
 
 }
 
-.ui-datepicker-title span{
+.ui-datepicker-title span {
 
   color: #fff;
 
 }
 
 
-.reserveCheck .checkAll .checkMore{
+.reserveCheck .checkAll .checkMore {
 
   width: 100%;
   height: 50%;
@@ -3113,14 +3256,14 @@ footer {
 }
 
 
-.reserveCheck .checkAll .checkMore .people{
+.reserveCheck .checkAll .checkMore .people {
   height: 25%;
   width: 100%;
   border-top: 1px dashed #000;
   border-bottom: 1px dashed #000;
 }
 
-.reserveCheck .checkAll .checkMore .total{
+.reserveCheck .checkAll .checkMore .total {
   width: 100%;
   height: 55%;
   display: flex;
@@ -3131,7 +3274,7 @@ footer {
 }
 
 
-.reserveCheck .checkAll .checkMore .total p{
+.reserveCheck .checkAll .checkMore .total p {
 
   font-size: 20px;
   color: #666;
@@ -3143,7 +3286,7 @@ footer {
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn {
   width: 100%;
   height: 20%;
   display: flex;
@@ -3152,7 +3295,7 @@ footer {
 
 
 
-.reserveCheck .checkAll .checkMore .people form{
+.reserveCheck .checkAll .checkMore .people form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -3161,7 +3304,7 @@ footer {
 }
 
 
-.reserveCheck .checkAll .checkMore .people form input{
+.reserveCheck .checkAll .checkMore .people form input {
   color: #666;
   width: 100px;
   height: 30px;
@@ -3170,16 +3313,16 @@ footer {
 }
 
 
-.reserveCheck .checkAll .checkMore .people form label{
-  
+.reserveCheck .checkAll .checkMore .people form label {
+
   text-align: center;
   color: #666;
 }
 
 
 
-.reserveCheck .checkAll .checkMore .people form p{
-  
+.reserveCheck .checkAll .checkMore .people form p {
+
   color: #666;
 
 }
@@ -3188,7 +3331,7 @@ footer {
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn li {
 
   width: 50%;
   height: 100%;
@@ -3207,7 +3350,7 @@ footer {
 
 
 /* 예약버튼 */
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn {
 
   opacity: 0.7;
   background-color: #4797b1;
@@ -3215,7 +3358,7 @@ footer {
   transition: all 0.3s;
 }
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover {
   opacity: 1;
 }
 
@@ -3223,7 +3366,7 @@ footer {
 /* 찜하기 */
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart {
   gap: 10px;
   background-color: #fff;
   color: #4797b1;
@@ -3232,14 +3375,14 @@ footer {
 }
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover {
   opacity: 1;
 }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span {
 
   width: 30px;
   aspect-ratio: 1/1;
@@ -3253,7 +3396,7 @@ footer {
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
+.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span {
 
   background-image: url('img/heart_after.png');
 
@@ -3722,7 +3865,7 @@ footer {
 
 
 
-/* 예약창 */
+  /* 예약창 */
 
 
 
@@ -3730,644 +3873,640 @@ footer {
 
 
 
-/* 예약하기 진행시
+  /* 예약하기 진행시
 나머지 섹션들은 모두 display none
 예약만 display block */
 
-.reservearea{
-
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  height: 1285px;
-  display: none;
-
-  background-color:#a3cbd8;
-
-}
-
-
-.reservearea .closed{
-
-  position: absolute;
-  right: 0;
-  top: 100px;
-  width: 150px;
-  height: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border: 1px solid #fff;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  transition: all 0.5s;
-  overflow: hidden;
-
-
-}
-
-
-
-.reservearea .closed:hover{
-
-  background-color: #4797b1;
-
-}
-
-
-
-
-.reservearea .closed span{
-  color:#4797b1;
-  font-weight: bold;
-  font-size: 20px;
-  transition: all 0.5s;
-
-}
-
-.reservearea .closed:hover span{
-  color: #fff;
-
-}
-
-
-
-
-.reserveMain{
-
-  width: calc(100% - 160px);
-  margin: 0 80px;
-  height: 1000px;
-  position: absolute;
-  bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-}
-
-
-
-.reserveMain>div{
-
-  width: 100%;
-  height: 47%;
-
-}
-
-
-
-
-.reserveMain .reserveInfor{
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-
-}
-
-
-
-
-.reserveMain .reserveInfor>div{
-
-  height: 45%;
-  width: 100%;
-
-}
-
-
-
-.reserveMain .reserveInfor>.photo{
-
-
-  background-size: cover;
-  background-position: center center;
-  border-radius: 10px;
-  transition: all 1s;
-
-}
-
-
-
-
-
-
-
-.reserveMain .reserveInforZone{
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-
-}
-
-
-.reserveMain .reserveInforZone .inforBtn{
-
-  width: 100%;
-  height: 20%;
-  background-color: blue;
-  display: flex;
-
-}
-
-
-.reserveMain .reserveInforZone .inforBtn li{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 33.3333%;
-  height: 100%;
-  background-color: #fff;
-  border: 0.2px solid #4797b1;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: normal;
-  color: #4797b1;
-  transition: all 0.5s;
-
-}
-
-.reserveMain .reserveInforZone .inforBtn li:hover{
-
-  background-color: #4797b1;
-  font-weight: bold;
-  color: #fff;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforBtn li.on{
-
-  background-color: #4797b1;
-  font-weight: bold;
-  color: #fff;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt{
-
-
-  width: 100%;
-  height: 80%;
-  background-color: #fff;
-  position: relative;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li.on{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-
-
-/* 상세정보 */
-.reserveMain .reserveInforZone .inforTxt>li:first-child{
-
-  gap: 10px;
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:first-child p{
-
-
-  color: #666;
-  font-size: 20px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* 후기 */
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
-
-
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
-
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
-
-  width: 100%;
-  height: 45%;
-  border-radius: 10px;
-  border: 1px dashed #dd8282;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
-
-  font-size: 16px;
-  color: #666666;
-  z-index: 100;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
-
-  font-size: 12px;
-  color: #666666;
-  position: absolute;
-  left: 20px;
-  top: 10px;
-}
-
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
-
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-}
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
-
-  width: 100%;
-  height: 100%;
-  background-color: #a3cbd8;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transition: all 0.5s;
-  z-index: 300;
-  color: #fff;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
-
-  left: 0;
-  padding: 10px;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
-
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  font-size: 16px;
-  color: #4797b1;
-  animation: answer 0.6s infinite alternate;
-}
-
-
-
-@keyframes answer{
-
-
-
-  0%{
-
-    opacity: 0.6;
+  .reservearea {
+
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 1285px;
+    display: none;
+
+    background-color: #a3cbd8;
 
   }
 
 
-  100%{
+  .reservearea .closed {
 
-    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 150px;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.5s;
+    overflow: hidden;
+
 
   }
 
 
 
-}
+  .reservearea .closed:hover {
 
+    background-color: #4797b1;
 
+  }
 
 
 
 
+  .reservearea .closed span {
+    color: #4797b1;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.5s;
 
+  }
 
+  .reservearea .closed:hover span {
+    color: #fff;
 
+  }
 
 
 
 
+  .reserveMain {
 
-/* 선택 프로그램 예약 스타일*/
+    width: calc(100% - 160px);
+    margin: 0 80px;
+    height: 1000px;
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
+  }
 
-.reserveCheck{
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-}
+  .reserveMain>div {
 
+    width: 100%;
+    height: 47%;
 
+  }
 
 
 
-/* 선택한 프로그램 제목 */
 
-.reserveMain h2{
+  .reserveMain .reserveInfor {
 
-  font-size: 32px;
-  font-weight: bold;
-  color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-}
 
+  }
 
 
 
 
-.reserveCheck .checkAll{
+  .reserveMain .reserveInfor>div {
 
+    height: 45%;
+    width: 100%;
 
-  width: 100%;
-  height: 90%;
-  background-color: #fff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  }
 
-}
 
 
+  .reserveMain .reserveInfor>.photo {
 
-.reserveCheck .checkAll .dateZone{
 
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    transition: all 1s;
 
-}
+  }
 
 
 
-.reserveCheck .checkAll #datepicker{
-  transform: scale(1);
-  display: flex;
-  justify-content: center;
-}
 
 
 
 
+  .reserveMain .reserveInforZone {
 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 
+  }
 
-.reserveCheck .checkAll a.ui-state-active{
 
+  .reserveMain .reserveInforZone .inforBtn {
 
-  background-color: #4797b1;
-  color: #fff;
-  
+    width: 100%;
+    height: 20%;
+    background-color: blue;
+    display: flex;
 
-}
+  }
 
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+  .reserveMain .reserveInforZone .inforBtn li {
 
-  background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3333%;
+    height: 100%;
+    background-color: #fff;
+    border: 0.2px solid #4797b1;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: normal;
+    color: #4797b1;
+    transition: all 0.5s;
 
-}
+  }
 
+  .reserveMain .reserveInforZone .inforBtn li:hover {
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+    background-color: #4797b1;
+    font-weight: bold;
+    color: #fff;
 
-  background-color: #4797b1;
-  border: none;
+  }
 
-}
 
-.ui-datepicker-title span{
 
-  color: #fff;
+  .reserveMain .reserveInforZone .inforBtn li.on {
 
-}
+    background-color: #4797b1;
+    font-weight: bold;
+    color: #fff;
+  }
 
 
-.reserveCheck .checkAll .checkMore{
 
-  width: 100%;
-  height: 50%;
-  flex-direction: column;
+  .reserveMain .reserveInforZone .inforTxt {
 
-}
 
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    position: relative;
 
-.reserveCheck .checkAll .checkMore .people{
-  height: 25%;
-  width: 100%;
-  border-top: 1px dashed #000;
-  border-bottom: 1px dashed #000;
-}
+  }
 
-.reserveCheck .checkAll .checkMore .total{
-  width: 100%;
-  height: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
 
 
-.reserveCheck .checkAll .checkMore .total p{
+  .reserveMain .reserveInforZone .inforTxt>li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
 
-  font-size: 16px;
 
-}
 
+  .reserveMain .reserveInforZone .inforTxt>li.on {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn{
-  width: 100%;
-  height: 20%;
-  display: flex;
-}
+  /* 상세정보 */
+  .reserveMain .reserveInforZone .inforTxt>li:first-child {
 
+    gap: 10px;
 
+  }
 
 
-.reserveCheck .checkAll .checkMore .people form{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+  .reserveMain .reserveInforZone .inforTxt>li:first-child p {
 
 
-.reserveCheck .checkAll .checkMore .people form input{
-  
-  width: 80px;
-  height: 25px;
-  padding-left: 5px;
-  font-size: 16px;
-}
+    color: #666;
+    font-size: 20px;
 
 
-.reserveCheck .checkAll .checkMore .people form label{
-  
-  text-align: center;
-  font-size: 12px;
+  }
 
-}
 
-.reserveCheck .checkAll .checkMore .people form p{
-  
-  color: #666;
-  font-size: 12px;
 
-}
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
 
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-  border: 0.2px solid #4797b1;
-}
 
 
 
 
+  /* 후기 */
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) {}
 
 
-/* 예약버튼 */
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul {
 
-  opacity: 0.7;
-  background-color: #4797b1;
-  color: #fff;
-  transition: all 0.3s;
-}
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
-  opacity: 1;
-}
+  }
 
 
-/* 찜하기 */
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
-  gap: 10px;
-  background-color: #fff;
-  color: #4797b1;
-  opacity: 0.7;
-  transition: all 0.3s;
-}
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li {
 
+    width: 100%;
+    height: 45%;
+    border-radius: 10px;
+    border: 1px dashed #dd8282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
-  opacity: 1;
-}
 
 
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p {
 
+    font-size: 16px;
+    color: #666666;
+    z-index: 100;
+  }
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
 
-  width: 30px;
-  aspect-ratio: 1/1;
-  background-image: url('img/heart.png');
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: all 0.3s;
-}
 
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span {
 
+    font-size: 12px;
+    color: #666666;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
 
-  background-image: url('img/heart_after.png');
 
-}
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul {
+
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div {
+
+    width: 100%;
+    height: 100%;
+    background-color: #a3cbd8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: all 0.5s;
+    z-index: 300;
+    color: #fff;
+  }
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer {
+
+    left: 0;
+    padding: 10px;
+
+  }
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b {
+
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 16px;
+    color: #4797b1;
+    animation: answer 0.6s infinite alternate;
+  }
+
+
+
+  @keyframes answer {
+
+
+
+    0% {
+
+      opacity: 0.6;
+
+    }
+
+
+    100% {
+
+      opacity: 0;
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 선택 프로그램 예약 스타일*/
+
+
+  .reserveCheck {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+
+
+
+
+  /* 선택한 프로그램 제목 */
+
+  .reserveMain h2 {
+
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+
+  }
+
+
+
+
+
+  .reserveCheck .checkAll {
+
+
+    width: 100%;
+    height: 90%;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+  .reserveCheck .checkAll .dateZone {
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+
+  .reserveCheck .checkAll #datepicker {
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+
+
+
+
+  .reserveCheck .checkAll a.ui-state-active {
+
+
+    background-color: #4797b1;
+    color: #fff;
+
+
+  }
+
+
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+
+    background-color: #4797b1;
+
+  }
+
+
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover {
+
+    background-color: #4797b1;
+    border: none;
+
+  }
+
+  .ui-datepicker-title span {
+
+    color: #fff;
+
+  }
+
+
+  .reserveCheck .checkAll .checkMore {
+
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people {
+    height: 25%;
+    width: 100%;
+    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000;
+  }
+
+  .reserveCheck .checkAll .checkMore .total {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .total p {
+
+    font-size: 16px;
+
+  }
+
+
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .people form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people form input {
+
+    width: 80px;
+    height: 25px;
+    padding-left: 5px;
+    font-size: 16px;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people form label {
+
+    text-align: center;
+    font-size: 12px;
+
+  }
+
+  .reserveCheck .checkAll .checkMore .people form p {
+
+    color: #666;
+    font-size: 12px;
+
+  }
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn li {
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    border: 0.2px solid #4797b1;
+  }
+
+
+
+
+
+
+  /* 예약버튼 */
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn {
+
+    opacity: 0.7;
+    background-color: #4797b1;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover {
+    opacity: 1;
+  }
+
+
+  /* 찜하기 */
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart {
+    gap: 10px;
+    background-color: #fff;
+    color: #4797b1;
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover {
+    opacity: 1;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span {
+
+    width: 30px;
+    aspect-ratio: 1/1;
+    background-image: url('img/heart.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span {
+
+    background-image: url('img/heart_after.png');
+
+  }
 
 
 
@@ -4400,6 +4539,7 @@ footer {
 @media (min-width: 481px) and (max-width:768px) {
 
 
+
   /* 로고영역 */
   header h1 {
     text-indent: -9999px;
@@ -4411,7 +4551,7 @@ footer {
 
 
 
-  header .util .btnarea{
+  header .util .btnarea {
     height: 60px;
     width: 280px;
   }
@@ -4436,15 +4576,15 @@ footer {
   }
 
 
-  
-.btnarea .txt {
-  color: #fff;
-  font-size: 8px;
-}
+
+  .btnarea .txt {
+    color: #fff;
+    font-size: 8px;
+  }
 
 
   /* 유틸리티 영역 */
-  header .util .searcharea{
+  header .util .searcharea {
     display: none;
 
   }
@@ -4695,7 +4835,7 @@ footer {
 
   }
 
-  
+
 
   .hallarea .listimg li div {
     backdrop-filter: blur(10px);
@@ -5567,7 +5707,7 @@ api 부분 여기다 집어넣기 */
 
 
 
-/* 예약창 */
+  /* 예약창 */
 
 
 
@@ -5575,646 +5715,642 @@ api 부분 여기다 집어넣기 */
 
 
 
-/* 예약하기 진행시
+  /* 예약하기 진행시
 나머지 섹션들은 모두 display none
 예약만 display block */
 
-.reservearea{
-
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  height: 1285px;
-  display: none;
-
-  background-color:#a3cbd8;
-
-}
-
-
-.reservearea .closed{
-
-  position: absolute;
-  right: 0;
-  top: 100px;
-  width: 100px;
-  height: 40px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border: 1px solid #fff;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  transition: all 0.5s;
-  overflow: hidden;
-
-
-}
-
-
-
-.reservearea .closed:hover{
-
-  background-color: #4797b1;
-
-}
-
-
-
-
-.reservearea .closed span{
-  color:#4797b1;
-  font-weight: bold;
-  font-size: 12px;
-  transition: all 0.5s;
-
-}
-
-.reservearea .closed:hover span{
-  color: #fff;
-
-}
-
-
-
-
-.reserveMain{
-
-  width: calc(100% - 36px);
-  margin: 0 18px;
-  height: 1000px;
-  position: absolute;
-  bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-}
-
-
-
-.reserveMain>div{
-
-  width: 100%;
-  height: 47%;
-
-}
-
-
-
-
-.reserveMain .reserveInfor{
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-
-}
-
-
-
-
-.reserveMain .reserveInfor>div{
-
-  height: 45%;
-  width: 100%;
-
-}
-
-
-
-.reserveMain .reserveInfor>.photo{
-
-
-  background-size: cover;
-  background-position: center center;
-  border-radius: 10px;
-  transition: all 1s;
-
-}
-
-
-
-
-
-
-
-.reserveMain .reserveInforZone{
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-
-}
-
-
-.reserveMain .reserveInforZone .inforBtn{
-
-  width: 100%;
-  height: 20%;
-  background-color: blue;
-  display: flex;
-
-}
-
-
-.reserveMain .reserveInforZone .inforBtn li{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 33.3333%;
-  height: 100%;
-  background-color: #fff;
-  border: 0.2px solid #4797b1;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: normal;
-  color: #4797b1;
-  transition: all 0.5s;
-
-}
-
-.reserveMain .reserveInforZone .inforBtn li:hover{
-
-  background-color: #4797b1;
-  font-weight: bold;
-  color: #fff;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforBtn li.on{
-
-  background-color: #4797b1;
-  font-weight: bold;
-  color: #fff;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt{
-
-
-  width: 100%;
-  height: 80%;
-  background-color: #fff;
-  position: relative;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li.on{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-
-
-/* 상세정보 */
-.reserveMain .reserveInforZone .inforTxt>li:first-child{
-
-  gap: 10px;
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:first-child p{
-
-
-  color: #666;
-  font-size: 12px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* 후기 */
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
-
-
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
-
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
-
-  width: 100%;
-  height: 45%;
-  border-radius: 10px;
-  border: 1px dashed #dd8282;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
-
-  padding: 10px;
-  font-size: 12px;
-  color: #666666;
-  z-index: 100;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
-
-  font-size: 10px;
-  left: 10px;
-  top: 5px;
-}
-
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
-
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-}
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
-
-  width: 100%;
-  height: 100%;
-  background-color: #a3cbd8;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transition: all 0.5s;
-  z-index: 300;
-  color: #fff;
-  font-size: 12px;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
-
-  left: 0;
-  padding: 10px;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
-
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  font-size: 16px;
-  color: #4797b1;
-  animation: answer 0.6s infinite alternate;
-}
-
-
-
-@keyframes answer{
-
-
-
-  0%{
-
-    opacity: 0.6;
+  .reservearea {
+
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 1285px;
+    display: none;
+
+    background-color: #a3cbd8;
 
   }
 
 
-  100%{
+  .reservearea .closed {
 
-    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 100px;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.5s;
+    overflow: hidden;
+
 
   }
 
 
 
-}
+  .reservearea .closed:hover {
 
+    background-color: #4797b1;
 
+  }
 
 
 
 
+  .reservearea .closed span {
+    color: #4797b1;
+    font-weight: bold;
+    font-size: 12px;
+    transition: all 0.5s;
 
+  }
 
+  .reservearea .closed:hover span {
+    color: #fff;
 
+  }
 
 
 
 
+  .reserveMain {
 
-/* 선택 프로그램 예약 스타일*/
+    width: calc(100% - 36px);
+    margin: 0 18px;
+    height: 1000px;
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
+  }
 
-.reserveCheck{
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-}
+  .reserveMain>div {
 
+    width: 100%;
+    height: 47%;
 
+  }
 
 
 
-/* 선택한 프로그램 제목 */
 
-.reserveMain h2{
+  .reserveMain .reserveInfor {
 
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-}
 
+  }
 
 
 
 
-.reserveCheck .checkAll{
+  .reserveMain .reserveInfor>div {
 
+    height: 45%;
+    width: 100%;
 
-  width: 100%;
-  height: 90%;
-  background-color: #fff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  }
 
-}
 
 
+  .reserveMain .reserveInfor>.photo {
 
-.reserveCheck .checkAll .dateZone{
 
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    transition: all 1s;
 
-}
+  }
 
 
 
-.reserveCheck .checkAll #datepicker{
-  transform: scale(1);
-  display: flex;
-  justify-content: center;
-}
 
 
 
 
+  .reserveMain .reserveInforZone {
 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 
+  }
 
-.reserveCheck .checkAll a.ui-state-active{
 
+  .reserveMain .reserveInforZone .inforBtn {
 
-  background-color: #4797b1;
-  color: #fff;
-  
+    width: 100%;
+    height: 20%;
+    background-color: blue;
+    display: flex;
 
-}
+  }
 
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+  .reserveMain .reserveInforZone .inforBtn li {
 
-  background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3333%;
+    height: 100%;
+    background-color: #fff;
+    border: 0.2px solid #4797b1;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    color: #4797b1;
+    transition: all 0.5s;
 
-}
+  }
 
+  .reserveMain .reserveInforZone .inforBtn li:hover {
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+    background-color: #4797b1;
+    font-weight: bold;
+    color: #fff;
 
-  background-color: #4797b1;
-  border: none;
+  }
 
-}
 
-.ui-datepicker-title span{
 
-  color: #fff;
+  .reserveMain .reserveInforZone .inforBtn li.on {
 
-}
+    background-color: #4797b1;
+    font-weight: bold;
+    color: #fff;
+  }
 
 
-.reserveCheck .checkAll .checkMore{
 
-  width: 100%;
-  height: 50%;
-  flex-direction: column;
+  .reserveMain .reserveInforZone .inforTxt {
 
-}
 
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    position: relative;
 
-.reserveCheck .checkAll .checkMore .people{
-  height: 25%;
-  width: 100%;
-  border-top: 1px dashed #000;
-  border-bottom: 1px dashed #000;
-}
+  }
 
-.reserveCheck .checkAll .checkMore .total{
-  width: 100%;
-  height: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
 
 
-.reserveCheck .checkAll .checkMore .total p{
+  .reserveMain .reserveInforZone .inforTxt>li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
 
-  font-size: 16px;
 
-}
 
+  .reserveMain .reserveInforZone .inforTxt>li.on {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn{
-  width: 100%;
-  height: 20%;
-  display: flex;
-}
+  /* 상세정보 */
+  .reserveMain .reserveInforZone .inforTxt>li:first-child {
 
+    gap: 10px;
 
+  }
 
 
-.reserveCheck .checkAll .checkMore .people form{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+  .reserveMain .reserveInforZone .inforTxt>li:first-child p {
 
 
-.reserveCheck .checkAll .checkMore .people form input{
-  
-  width: 80px;
-  height: 25px;
-  padding-left: 5px;
-  font-size: 16px;
-}
+    color: #666;
+    font-size: 12px;
 
 
-.reserveCheck .checkAll .checkMore .people form label{
-  
-  text-align: center;
-  font-size: 12px;
+  }
 
-}
 
-.reserveCheck .checkAll .checkMore .people form p{
-  
-  color: #666;
-  font-size: 12px;
 
-}
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
 
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  border: 0.2px solid #4797b1;
-}
 
 
+  /* 후기 */
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) {}
 
 
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul {
 
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-/* 예약버튼 */
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+  }
 
-  opacity: 0.7;
-  background-color: #4797b1;
-  color: #fff;
-  transition: all 0.3s;
-}
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
-  opacity: 1;
-}
 
 
-/* 찜하기 */
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li {
 
+    width: 100%;
+    height: 45%;
+    border-radius: 10px;
+    border: 1px dashed #dd8282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
-  gap: 10px;
-  background-color: #fff;
-  color: #4797b1;
-  opacity: 0.7;
-  transition: all 0.3s;
-}
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
-  opacity: 1;
-}
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p {
 
+    padding: 10px;
+    font-size: 12px;
+    color: #666666;
+    z-index: 100;
+  }
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span {
 
-  width: 20px;
-  aspect-ratio: 1/1;
-  background-image: url('img/heart.png');
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: all 0.3s;
-}
+    font-size: 10px;
+    left: 10px;
+    top: 5px;
+  }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
 
-  background-image: url('img/heart_after.png');
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul {
 
-}
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div {
+
+    width: 100%;
+    height: 100%;
+    background-color: #a3cbd8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: all 0.5s;
+    z-index: 300;
+    color: #fff;
+    font-size: 12px;
+  }
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer {
+
+    left: 0;
+    padding: 10px;
+
+  }
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b {
+
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 16px;
+    color: #4797b1;
+    animation: answer 0.6s infinite alternate;
+  }
+
+
+
+  @keyframes answer {
+
+
+
+    0% {
+
+      opacity: 0.6;
+
+    }
+
+
+    100% {
+
+      opacity: 0;
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 선택 프로그램 예약 스타일*/
+
+
+  .reserveCheck {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+
+
+
+
+  /* 선택한 프로그램 제목 */
+
+  .reserveMain h2 {
+
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+
+  }
+
+
+
+
+
+  .reserveCheck .checkAll {
+
+
+    width: 100%;
+    height: 90%;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+  .reserveCheck .checkAll .dateZone {
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+
+  .reserveCheck .checkAll #datepicker {
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+
+
+
+
+  .reserveCheck .checkAll a.ui-state-active {
+
+
+    background-color: #4797b1;
+    color: #fff;
+
+
+  }
+
+
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+
+    background-color: #4797b1;
+
+  }
+
+
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover {
+
+    background-color: #4797b1;
+    border: none;
+
+  }
+
+  .ui-datepicker-title span {
+
+    color: #fff;
+
+  }
+
+
+  .reserveCheck .checkAll .checkMore {
+
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people {
+    height: 25%;
+    width: 100%;
+    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000;
+  }
+
+  .reserveCheck .checkAll .checkMore .total {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .total p {
+
+    font-size: 16px;
+
+  }
+
+
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .people form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people form input {
+
+    width: 80px;
+    height: 25px;
+    padding-left: 5px;
+    font-size: 16px;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people form label {
+
+    text-align: center;
+    font-size: 12px;
+
+  }
+
+  .reserveCheck .checkAll .checkMore .people form p {
+
+    color: #666;
+    font-size: 12px;
+
+  }
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn li {
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0.2px solid #4797b1;
+  }
+
+
+
+
+
+
+  /* 예약버튼 */
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn {
+
+    opacity: 0.7;
+    background-color: #4797b1;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover {
+    opacity: 1;
+  }
+
+
+  /* 찜하기 */
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart {
+    gap: 10px;
+    background-color: #fff;
+    color: #4797b1;
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover {
+    opacity: 1;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span {
+
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-image: url('img/heart.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span {
+
+    background-image: url('img/heart_after.png');
+
+  }
 
 
 
@@ -6278,6 +6414,14 @@ api 부분 여기다 집어넣기 */
 
 /* 모바일 */
 @media (max-width:480px) {
+
+
+
+  .scaleUpTxt {
+
+    display: none;
+
+  }
 
 
   /* 로고영역 */
@@ -6787,7 +6931,7 @@ api 부분 여기다 집어넣기 */
   }
 
 
-  
+
 
 
   .hallarea .listimg li div {
@@ -7732,657 +7876,653 @@ api 부분 여기다 집어넣기 */
 
 
 
-  
-
-
-/* 예약창 */
 
 
 
+  /* 예약창 */
 
 
 
 
-/* 예약하기 진행시
+
+
+
+  /* 예약하기 진행시
 나머지 섹션들은 모두 display none
 예약만 display block */
 
-.reservearea{
-
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  height: 1285px;
-  display: none;
-
-  background-color:#a3cbd8;
-
-}
-
-
-.reservearea .closed{
-
-  position: absolute;
-  right: 0;
-  top: 100px;
-  width: 100px;
-  height: 40px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border: 1px solid #fff;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  transition: all 0.5s;
-  overflow: hidden;
-
-
-}
-
-
-
-.reservearea .closed:hover{
-
-  background-color: #4797b1;
-
-}
-
-
-
-
-.reservearea .closed span{
-  color:#4797b1;
-  font-weight: bold;
-  font-size: 12px;
-  transition: all 0.5s;
-
-}
-
-.reservearea .closed:hover span{
-  color: #fff;
-
-}
-
-
-
-
-.reserveMain{
-
-  width: calc(100% - 36px);
-  margin: 0 18px;
-  height: 1000px;
-  position: absolute;
-  bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-}
-
-
-
-.reserveMain>div{
-
-  width: 100%;
-  height: 47%;
-
-}
-
-
-
-
-.reserveMain .reserveInfor{
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-
-}
-
-
-
-
-.reserveMain .reserveInfor>div{
-
-  height: 45%;
-  width: 100%;
-
-}
-
-
-
-.reserveMain .reserveInfor>.photo{
-
-
-  background-size: cover;
-  background-position: center center;
-  border-radius: 10px;
-  transition: all 1s;
-
-}
-
-
-
-
-
-
-
-.reserveMain .reserveInforZone{
-
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-
-}
-
-
-.reserveMain .reserveInforZone .inforBtn{
-
-  width: 100%;
-  height: 20%;
-  background-color: blue;
-  display: flex;
-
-}
-
-
-.reserveMain .reserveInforZone .inforBtn li{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 33.3333%;
-  height: 100%;
-  background-color: #fff;
-  border: 0.2px solid #4797b1;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: normal;
-  color: #4797b1;
-  transition: all 0.5s;
-
-}
-
-.reserveMain .reserveInforZone .inforBtn li:hover{
-
-  background-color: #4797b1;
-  font-weight: bold;
-  color: #fff;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforBtn li.on{
-
-  background-color: #4797b1;
-  font-weight: bold;
-  color: #fff;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt{
-
-
-  width: 100%;
-  height: 80%;
-  background-color: #fff;
-  position: relative;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li.on{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-
-
-/* 상세정보 */
-.reserveMain .reserveInforZone .inforTxt>li:first-child{
-
-  gap: 10px;
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:first-child p{
-
-
-  color: #666;
-  font-size: 10px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* 후기 */
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3){
-
-
-
-}
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul{
-
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
-
-  width: 100%;
-  height: 45%;
-  border-radius: 10px;
-  border: 1px dashed #dd8282;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p{
-
-  padding: 10px;
-  font-size: 10px;
-  color: #666666;
-  z-index: 100;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span{
-
-  font-size: 8px;
-  left: 5px;
-  top: 3px;
-}
-
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul{
-
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-}
-
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div{
-
-  width: 100%;
-  height: 100%;
-  background-color: #a3cbd8;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transition: all 0.5s;
-  z-index: 300;
-  color: #fff;
-  font-size: 10px;
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer{
-
-  left: 0;
-  padding: 10px;
-
-}
-
-
-
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b{
-
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  font-size: 16px;
-  color: #4797b1;
-  animation: answer 0.6s infinite alternate;
-}
-
-
-
-@keyframes answer{
-
-
-
-  0%{
-
-    opacity: 0.6;
+  .reservearea {
+
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 1285px;
+    display: none;
+
+    background-color: #a3cbd8;
 
   }
 
 
-  100%{
+  .reservearea .closed {
 
-    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 100px;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.5s;
+    overflow: hidden;
+
 
   }
 
 
 
-}
+  .reservearea .closed:hover {
 
+    background-color: #4797b1;
 
+  }
 
 
 
 
+  .reservearea .closed span {
+    color: #4797b1;
+    font-weight: bold;
+    font-size: 12px;
+    transition: all 0.5s;
 
+  }
 
+  .reservearea .closed:hover span {
+    color: #fff;
 
+  }
 
 
 
 
+  .reserveMain {
 
-/* 선택 프로그램 예약 스타일*/
+    width: calc(100% - 36px);
+    margin: 0 18px;
+    height: 1000px;
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
+  }
 
-.reserveCheck{
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-}
+  .reserveMain>div {
 
+    width: 100%;
+    height: 47%;
 
+  }
 
 
 
-/* 선택한 프로그램 제목 */
 
-.reserveMain h2{
+  .reserveMain .reserveInfor {
 
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-}
 
+  }
 
 
 
 
-.reserveCheck .checkAll{
+  .reserveMain .reserveInfor>div {
 
+    height: 45%;
+    width: 100%;
 
-  width: 100%;
-  height: 90%;
-  background-color: #fff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  }
 
-}
 
 
+  .reserveMain .reserveInfor>.photo {
 
-.reserveCheck .checkAll .dateZone{
 
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    transition: all 1s;
 
-}
+  }
 
 
 
-.reserveCheck .checkAll #datepicker{
-  transform: scale(1);
-  display: flex;
-  justify-content: center;
-}
 
 
 
 
+  .reserveMain .reserveInforZone {
 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 
+  }
 
-.reserveCheck .checkAll a.ui-state-active{
 
+  .reserveMain .reserveInforZone .inforBtn {
 
-  background-color: #4797b1;
-  color: #fff;
-  
+    width: 100%;
+    height: 20%;
+    background-color: blue;
+    display: flex;
 
-}
+  }
 
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+  .reserveMain .reserveInforZone .inforBtn li {
 
-  background-color: #4797b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3333%;
+    height: 100%;
+    background-color: #fff;
+    border: 0.2px solid #4797b1;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    color: #4797b1;
+    transition: all 0.5s;
 
-}
+  }
 
+  .reserveMain .reserveInforZone .inforBtn li:hover {
 
-.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover{
+    background-color: #4797b1;
+    font-weight: bold;
+    color: #fff;
 
-  background-color: #4797b1;
-  border: none;
+  }
 
-}
 
-.ui-datepicker-title span{
 
-  color: #fff;
+  .reserveMain .reserveInforZone .inforBtn li.on {
 
-}
+    background-color: #4797b1;
+    font-weight: bold;
+    color: #fff;
+  }
 
 
-.reserveCheck .checkAll .checkMore{
 
-  width: 100%;
-  height: 50%;
-  flex-direction: column;
+  .reserveMain .reserveInforZone .inforTxt {
 
-}
 
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    position: relative;
 
-.reserveCheck .checkAll .checkMore .people{
-  height: 25%;
-  width: 100%;
-  border-top: 1px dashed #000;
-  border-bottom: 1px dashed #000;
-}
+  }
 
-.reserveCheck .checkAll .checkMore .total{
-  width: 100%;
-  height: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
 
 
-.reserveCheck .checkAll .checkMore .total p{
+  .reserveMain .reserveInforZone .inforTxt>li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
 
-  font-size: 12px;
 
-}
 
+  .reserveMain .reserveInforZone .inforTxt>li.on {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn{
-  width: 100%;
-  height: 20%;
-  display: flex;
-}
+  /* 상세정보 */
+  .reserveMain .reserveInforZone .inforTxt>li:first-child {
 
+    gap: 10px;
 
+  }
 
 
-.reserveCheck .checkAll .checkMore .people form{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+  .reserveMain .reserveInforZone .inforTxt>li:first-child p {
 
 
-.reserveCheck .checkAll .checkMore .people form input{
-  
-  width: 60px;
-  height: 20px;
-  padding-left: 5px;
-  font-size: 14px;
-}
+    color: #666;
+    font-size: 10px;
 
 
-.reserveCheck .checkAll .checkMore .people form label{
-  
-  text-align: center;
-  font-size: 10px;
+  }
 
-}
 
-.reserveCheck .checkAll .checkMore .people form p{
-  
-  color: #666;
-  font-size: 10px;
 
-}
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn li{
 
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  border: 0.2px solid #4797b1;
-}
 
 
+  /* 후기 */
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2),
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) {}
 
 
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul {
 
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-/* 예약버튼 */
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn{
+  }
 
-  opacity: 0.7;
-  background-color: #4797b1;
-  color: #fff;
-  transition: all 0.3s;
-}
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover{
-  opacity: 1;
-}
 
 
-/* 찜하기 */
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li {
 
+    width: 100%;
+    height: 45%;
+    border-radius: 10px;
+    border: 1px dashed #dd8282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart{
-  gap: 10px;
-  background-color: #fff;
-  color: #4797b1;
-  opacity: 0.7;
-  transition: all 0.3s;
-}
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover{
-  opacity: 1;
-}
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li p,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li p {
 
+    padding: 10px;
+    font-size: 10px;
+    color: #666666;
+    z-index: 100;
+  }
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span{
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(2) ul li span,
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li span {
 
-  width: 20px;
-  aspect-ratio: 1/1;
-  background-image: url('img/heart.png');
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: all 0.3s;
-}
+    font-size: 8px;
+    left: 5px;
+    top: 3px;
+  }
 
 
 
 
-.reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span{
 
-  background-image: url('img/heart_after.png');
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul {
 
-}
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div {
+
+    width: 100%;
+    height: 100%;
+    background-color: #a3cbd8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: all 0.5s;
+    z-index: 300;
+    color: #fff;
+    font-size: 10px;
+  }
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer {
+
+    left: 0;
+    padding: 10px;
+
+  }
+
+
+
+  .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>b {
+
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 16px;
+    color: #4797b1;
+    animation: answer 0.6s infinite alternate;
+  }
+
+
+
+  @keyframes answer {
+
+
+
+    0% {
+
+      opacity: 0.6;
+
+    }
+
+
+    100% {
+
+      opacity: 0;
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 선택 프로그램 예약 스타일*/
+
+
+  .reserveCheck {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+
+
+
+
+  /* 선택한 프로그램 제목 */
+
+  .reserveMain h2 {
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+
+  }
+
+
+
+
+
+  .reserveCheck .checkAll {
+
+
+    width: 100%;
+    height: 90%;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+  .reserveCheck .checkAll .dateZone {
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+
+  .reserveCheck .checkAll #datepicker {
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+
+
+
+
+  .reserveCheck .checkAll a.ui-state-active {
+
+
+    background-color: #4797b1;
+    color: #fff;
+
+
+  }
+
+
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+
+    background-color: #4797b1;
+
+  }
+
+
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all>a:hover {
+
+    background-color: #4797b1;
+    border: none;
+
+  }
+
+  .ui-datepicker-title span {
+
+    color: #fff;
+
+  }
+
+
+  .reserveCheck .checkAll .checkMore {
+
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people {
+    height: 25%;
+    width: 100%;
+    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000;
+  }
+
+  .reserveCheck .checkAll .checkMore .total {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .total p {
+
+    font-size: 12px;
+
+  }
+
+
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .people form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people form input {
+
+    width: 60px;
+    height: 20px;
+    padding-left: 5px;
+    font-size: 14px;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .people form label {
+
+    text-align: center;
+    font-size: 10px;
+
+  }
+
+  .reserveCheck .checkAll .checkMore .people form p {
+
+    color: #666;
+    font-size: 10px;
+
+  }
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn li {
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0.2px solid #4797b1;
+  }
+
+
+
+
+
+
+  /* 예약버튼 */
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn {
+
+    opacity: 0.7;
+    background-color: #4797b1;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .reserveBtn:hover {
+    opacity: 1;
+  }
+
+
+  /* 찜하기 */
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart {
+    gap: 10px;
+    background-color: #fff;
+    color: #4797b1;
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart:hover {
+    opacity: 1;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart span {
+
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-image: url('img/heart.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+  }
+
+
+
+
+  .reserveCheck .checkAll .checkMore .reserveAboutBtn .heart.on span {
+
+    background-image: url('img/heart_after.png');
+
+  }
 
 
 

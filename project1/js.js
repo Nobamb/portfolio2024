@@ -708,12 +708,148 @@ $(document).ready(function () {
 
 
 
+  $('.util .btnarea .btn2').click(function (e) {
+
+    e.preventDefault();
+
+    $('.scaleUpTxt').toggleClass('on');
+
+  })
+
+
+  $(window).mousemove(function (e) {
+
+
+    let x = e.pageX;
+
+    let y = e.pageY;
+
+
+
+
+    $('.scaleUpTxt').css({ 'left': -20 + x, 'top': -20 + y });
+
+    $('.speakTxt').css({ 'left': -30 + x, 'top': -30 + y });
+
+  })
 
 
 
 
 
 
+  $(window).mouseup(function () {
+
+
+    if ($('.scaleUpTxt').hasClass('on')) {
+
+      // 글자 추출
+      const selectedText = window.getSelection().toString();
+
+
+      console.log(selectedText.length);
+
+      if (selectedText.length > 0) {
+
+        $('.scaleUpTxt .txt').addClass('scale');
+
+        $('.scaleUpTxt .txt').text(selectedText);
+
+
+        setTimeout(() => {
+
+          $('.scaleUpTxt .txt').removeClass('scale');
+
+          $('.scaleUpTxt .txt').html('글자를 보고싶으시다면 드래그해주세요<br>그만 보고 싶으시다면 버튼을 다시 눌러주세요');
+        }, 3000)
+
+
+
+      }
+
+
+    }
+
+
+
+
+
+    function speak(text, opt_prop) {
+
+      window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
+
+      const prop = opt_prop || {}
+
+      const speechMsg = new SpeechSynthesisUtterance()
+      speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+      speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+      speechMsg.lang = "ko-KR"
+      speechMsg.text = text
+
+      // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+      window.speechSynthesis.speak(speechMsg)
+    }
+
+    if ($('.speakTxt').hasClass('on')) {
+
+
+
+      // 글자 추출
+      const selectedText2 = window.getSelection().toString();
+
+
+      if (selectedText2.length > 0) {
+
+
+        alert(selectedText2)
+
+        speak(selectedText2, {
+
+          rate: 1,
+          pitch: 1.2
+
+        })
+
+
+
+
+
+
+
+      }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  })
+
+
+
+
+
+
+
+
+  $('.util .btnarea .btn3').click(function (e) {
+
+    e.preventDefault();
+
+    $('.speakTxt').toggleClass('on');
+
+  })
 
 
 
