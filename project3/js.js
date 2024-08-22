@@ -1765,7 +1765,7 @@ $(document).ready(function () {
 
     // 빼야 할 픽셀 값
     // 20px(볼 가로 크기)
-    let pixels = 20;
+    let pixels = $('.album_play .play_bar_this .play_ball').width();
 
     // 새로운 너비 계산(픽셀값으로 변환한 값 - 빼야 될 픽셀값)
     // 예를 들어 360px에서 30을 빼면 330px이다.
