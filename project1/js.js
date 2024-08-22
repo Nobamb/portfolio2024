@@ -738,7 +738,7 @@ $(document).ready(function () {
 
 
 
-  $(window).mouseup(function () {
+  $(window).click(function () {
 
 
     if ($('.scaleUpTxt').hasClass('on')) {
@@ -799,9 +799,6 @@ $(document).ready(function () {
 
 
       if (selectedText2.length > 0) {
-
-
-        alert(selectedText2)
 
         speak(selectedText2, {
 
