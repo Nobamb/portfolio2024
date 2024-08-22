@@ -387,7 +387,7 @@ $(document).ready(function () {
 
     // 제목을 가져옴
 
-    const title = $('.applyTitle li.on h2 p').text();
+    const title = $('.applyTitle li.on h3').text();
 
 
 

@@ -10,489 +10,501 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
   <!-- 폰트어썸 설정 -->
   <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
+
+  <!-- 작업시간 약 40시간 -->
+
+  <script src="jquery-3.7.1.min.js"></script>
+  <!-- <script src="https//code.jquery.com/jquery-latest.js"></script> -->
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <script src="js.js"></script>
+
+  <script>
+
+
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+
+  </script>
+
+  <script>
+
+    $(document).ready(function () {
+
+
+      // 무궁화 전시관 리스트들을 올려둘시
+      $('.hallarea .titleBox li').mouseenter(function () {
+
+        // 현재 있는 title이란 변수를 선언,
+        var title = $(this).index();
+
+
+        // 리스트들 모두 on class 제거 후 
+        $('.hallarea .titleBox li').removeClass('on');
+
+        // 현재 올려둔 리스트에 on class 부여
+        $('.hallarea .titleBox li').eq(title).addClass('on');
+
+
+
+
+        // 이 상태에서 마우스를 뗄시에 
+        $('.hallarea .titleBox li').mouseleave(function () {
+
+          // 현재 on class가 지정된 리스트에 변수 titleAgain 선언
+          var titleAgain = $('.hallarea .listBox .listimg.on').index();
+
+          // 모든 on클래스를 지운 후
+          $('.hallarea .titleBox li').removeClass('on');
+
+          // on class가 지정되었던 리스트에 다시 on class 부여
+          $('.hallarea .titleBox li').eq(titleAgain).addClass('on');
+
+        })
+
+      })
+
+      // 무궁화 전시관의 각 목록들을 클릭시
+      $('.hallarea .titleBox li').click(function () {
+
+        // i를 통해 각각의 list 번수를 지정후,
+        var i = $(this).index();
+
+        // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
+        // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
+        // 그 외의 페이지일 땐 on이 꺼지게 함
+        if (i <= 0) {
+
+          $('.hallarea .listBox .left').addClass('on');
+          $('.hallarea .listBox .right').removeClass('on');
+
+        }
+        else if (i >= 4) {
+          $('.hallarea .listBox .right').addClass('on');
+          $('.hallarea .listBox .left').removeClass('on');
+
+        }
+
+        else {
+
+          $('.hallarea .listBox .left').removeClass('on');
+          $('.hallarea .listBox .right').removeClass('on');
+
+        }
+
+
+        // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
+        $('.hallarea .listBox .listimg').removeClass('on');
+
+        // 지정한 이미지에 on class를 부여하여 fadein시킴
+        $('.hallarea .listBox .listimg').eq(i).addClass('on');
+
+      })
+
+
+
+
+
+
+
+      // 무궁화 전시관의 왼쪽버튼 클릭시
+      $('.hallarea .listBox .left').click(function () {
+
+
+        // next를 통해 현재 켜져있는 리스트번호에 -1을 하여(이전화면으로 넘어가기 위함)
+        // 왼쪽 버튼의 변수를 지정후,
+        var prev = $('.listBox .listimg.on').index() - 1;
+
+        // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
+        // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
+        // 그 외의 페이지일 땐 on이 꺼지게 함
+        if (prev <= 0) {
+
+          $('.hallarea .listBox .left').addClass('on');
+          $('.hallarea .listBox .right').removeClass('on');
+
+
+        }
+        else if (prev >= 4) {
+          $('.hallarea .listBox .right').addClass('on');
+          $('.hallarea .listBox .left').removeClass('on');
+
+        }
+
+        else {
+
+          $('.hallarea .listBox .left').removeClass('on');
+          $('.hallarea .listBox .right').removeClass('on');
+
+
+        }
+
+
+        // prev가 0 이상일 때(첫번째 페이지 이후일때 작동)
+        if (prev >= 0) {
+          // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
+          $('.hallarea .listBox .listimg').removeClass('on');
+
+          // 지정한 이미지에 on class를 부여하여 fadein시킴
+          $('.hallarea .listBox .listimg').eq(prev).addClass('on');
+
+          $('.hallarea .titleBox li').removeClass('on');
+          $('.hallarea .titleBox li').eq(prev).addClass('on');
+        }
+
+
+      })
+
+
+
+
+      // 무궁화 전시관의 오른쪽버튼 클릭시
+      $('.hallarea .listBox .right').click(function () {
+
+        // next를 통해 현재 켜져있는 리스트번호에 +1을 하여(다음화면으로 넘어가기 위함)
+        // 오른쪽 버튼의 변수를 지정후,
+        var next = $('.listBox .listimg.on').index() + 1;
+
+        // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
+        // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
+        // 그 외의 페이지일 땐 on이 꺼지게 함
+        if (next <= 0) {
+
+          $('.hallarea .listBox .left').addClass('on');
+          $('.hallarea .listBox .right').removeClass('on');
+
+        }
+        else if (next >= 4) {
+
+          $('.hallarea .listBox .right').addClass('on');
+          $('.hallarea .listBox .left').removeClass('on');
+
+        }
+        else {
+
+          $('.hallarea .listBox .left').removeClass('on');
+          $('.hallarea .listBox .right').removeClass('on');
+
+
+        }
+
+        if (next <= 4) {
+          // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
+          $('.hallarea .listBox .listimg').removeClass('on');
+
+          // 지정한 이미지에 on class를 부여하여 fadein시킴
+          $('.hallarea .listBox .listimg').eq(next).addClass('on');
+
+          $('.hallarea .titleBox li').removeClass('on');
+          $('.hallarea .titleBox li').eq(next).addClass('on');
+
+        }
+
+
+
+
+
+
+
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // // 프로그램에서 각 프로그램 버튼들을 마우스에 올려둘시
+      // $('.programBox .listTitle li').mouseenter(function () {
+
+      //   // 올려둔 버튼이 활성화(on class)되고, 나머지 버튼들은 비활성화됨
+      //   var a = $(this).index();
+
+      //   $('.programBox .listTitle li').removeClass('on');
+
+      //   $('.programBox .listTitle li').eq(a).addClass('on');
+
+
+      //   // 올려둔 상태에서 마우스를 뗄 시에
+      //   $('.programBox .listTitle li').mouseleave(function () {
+
+      //     // leave 변수 제작(현재 위치해있는 직은 프로그램 사진(on 클래스)의 순번을 기준으로 회귀)
+      //     // form 부분으로 하거나 하단의 사진 영역을 기준으로 해도 괜찮음
+      //     var leave = $('.programimg .imgBox li.on').index();
+
+      //     $('.programBox .listTitle li').removeClass('on');
+
+      //     $('.programBox .listTitle li').eq(leave).addClass('on');
+
+
+      //   })
+
+
+
+      let onIndex = 0;
+
+
+      // 리스트 버튼 클릭시
+      $('.programBox .listTitle li').click(function () {
+
+
+
+
+
+        // 해당 순번에 맞는 사진들이 뜨고 다른 사진들은 사라짐
+        let b = $(this).index();
+
+
+
+
+        // 왼쪽 이미지
+        $('.programimg .imgBox li').removeClass('on');
+
+        // 하단 이미지
+        $('.programBox .gallery .imgBox li').removeClass('on');
+
+        // 폼 본문 영역
+        $('.apply .applytxt li').removeClass('on');
+
+        // 제목영역
+        $('.txtBox .apply li').removeClass('on');
+
+
+        // 오른쪽의 리스트
+
+        $('.programBox .listTitle li').removeClass('on');
+
+
+
+        $('.programimg .imgBox li').eq(b).addClass('on');
+
+        $('.programBox .gallery .imgBox li').eq(b).addClass('on');
+
+        $('.apply .applytxt li').eq(b).addClass('on');
+
+        $('.txtBox .apply li').eq(b).addClass('on');
+
+
+
+        $(this).addClass('on');
+
+
+
+
+
+        // 첫번째 페이지일때
+        if (b === 0) {
+          $('.programBox .gallery .btn.left').addClass('on');
+          $('.programBox .gallery .btn.right').removeClass('on');
+
+
+        }
+
+        // 마지막페이지일때
+        else if (b === 2) {
+
+          $('.programBox .gallery .btn.right').addClass('on');
+          $('.programBox .gallery .btn.left').removeClass('on');
+
+
+        }
+
+        // 그 외의 페이지일때
+        else {
+          $('.programBox .gallery .btn.right').removeClass('on');
+          $('.programBox .gallery .btn.left').removeClass('on');
+
+        }
+
+      })
+      // })
+
+
+
+
+      // 프로그램 하단 이미지 쪽의 왼쪽버튼 클릭시
+      $('.programBox .gallery .btn.left').click(function () {
+
+        // left 변수 생성
+        // on되어있는 부분(다른데다 해도 되지만 일단 기준을 왼쪽의 작은 이미지를 기준으로 함)
+        var left = $('.programimg .imgBox li.on').index() - 1;
+
+        // left가 0보다 작을 때(첫번째 페이지일때)
+        // left에 on class를 부여
+        if (left <= 0) {
+
+          $('.programBox .gallery .btn.left').addClass('on');
+          $('.programBox .gallery .btn.right').removeClass('on');
+
+        }
+
+        // left가 2보다 클때(마지막 페이지일때)
+        else if (left >= 2) {
+
+          $('.programBox .gallery .btn.right').addClass('on');
+          $('.programBox .gallery .btn.left').removeClass('on');
+
+        }
+
+        else {
+
+          $('.programBox .gallery .btn.right').removeClass('on');
+          $('.programBox .gallery .btn.left').removeClass('on');
+
+
+        }
+
+
+        if (left >= 0) {
+
+          // 왼쪽 이미지
+          $('.programimg .imgBox li').removeClass('on');
+
+          // 하단 이미지
+          $('.programBox .gallery .imgBox li').removeClass('on');
+
+          // 폼 본문 영역
+          $('.apply .applytxt li').removeClass('on');
+
+          // 제목영역
+          $('.txtBox .apply li').removeClass('on');
+
+
+          $('.programimg .imgBox li').eq(left).addClass('on');
+
+          $('.programBox .gallery .imgBox li').eq(left).addClass('on');
+
+          $('.apply .applytxt li').eq(left).addClass('on');
+
+          $('.txtBox .apply li').eq(left).addClass('on');
+
+
+          // 기존에 해당하던 리스트들도 변경됨
+          $('.programBox .listTitle li').removeClass('on');
+
+          $('.programBox .listTitle li').eq(left).addClass('on');
+        }
+
+
+      })
+
+
+
+      // 프로그램 하단 이미지 쪽의 오른쪽버튼 클릭시
+      $('.programBox .gallery .btn.right').click(function () {
+
+        // left 변수 생성
+        // on되어있는 부분(다른데다 해도 되지만 일단 기준을 왼쪽의 작은 이미지를 기준으로 함)
+        var left = $('.programimg .imgBox li.on').index() + 1;
+
+        // left가 0보다 작을 때(첫번째 페이지일때)
+        // left에 on class를 부여
+        if (left <= 0) {
+
+          $('.programBox .gallery .btn.left').addClass('on');
+          $('.programBox .gallery .btn.right').removeClass('on');
+
+        }
+
+        // left가 2보다 클때(마지막 페이지일때)
+        else if (left >= 2) {
+
+          $('.programBox .gallery .btn.right').addClass('on');
+          $('.programBox .gallery .btn.left').removeClass('on');
+
+        }
+
+        else {
+
+          $('.programBox .gallery .btn.right').removeClass('on');
+          $('.programBox .gallery .btn.left').removeClass('on');
+
+
+        }
+
+
+        if (left <= 2) {
+
+          // 왼쪽 이미지
+          $('.programimg .imgBox li').removeClass('on');
+
+          // 하단 이미지
+          $('.programBox .gallery .imgBox li').removeClass('on');
+
+          // 폼 본문 영역
+          $('.apply .applytxt li').removeClass('on');
+
+          // 제목영역
+          $('.txtBox .apply li').removeClass('on');
+
+
+          $('.programimg .imgBox li').eq(left).addClass('on');
+
+          $('.programBox .gallery .imgBox li').eq(left).addClass('on');
+
+          $('.apply .applytxt li').eq(left).addClass('on');
+
+          $('.txtBox .apply li').eq(left).addClass('on');
+
+          // 기존에 해당하던 리스트들도 변경됨
+          $('.programBox .listTitle li').removeClass('on');
+
+          $('.programBox .listTitle li').eq(left).addClass('on');
+
+        }
+
+
+      })
+
+
+
+      // 시설안내의 리스트를 클릭시
+      $('.guide .menuBox .menu li').click(function () {
+        // guide 변수 생성
+        var guide = $(this).index();
+
+        $('.guide .menuBox .menu li').removeClass('on');
+
+        $('.guide .menuBox .menu li').eq(guide).addClass('on');
+
+        $('.guide .menuTxt>li').removeClass('on');
+
+        $('.guide .menuTxt>li').eq(guide).addClass('on');
+
+
+      })
+
+
+
+    })
+
+  </script>
+
+
 </head>
 
 
 
 
 
-<!-- 작업시간 약 40시간 -->
-
-<script src="jquery-3.7.1.min.js"></script>
-<!-- <script src="https//code.jquery.com/jquery-latest.js"></script> -->
-<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
-<script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
-<script src="js.js"></script>
-
-<script>
-
-  $(document).ready(function () {
-
-
-    // 무궁화 전시관 리스트들을 올려둘시
-    $('.hallarea .titleBox li').mouseenter(function () {
-
-      // 현재 있는 title이란 변수를 선언,
-      var title = $(this).index();
-
-
-      // 리스트들 모두 on class 제거 후 
-      $('.hallarea .titleBox li').removeClass('on');
-
-      // 현재 올려둔 리스트에 on class 부여
-      $('.hallarea .titleBox li').eq(title).addClass('on');
-
-
-
-
-      // 이 상태에서 마우스를 뗄시에 
-      $('.hallarea .titleBox li').mouseleave(function () {
-
-        // 현재 on class가 지정된 리스트에 변수 titleAgain 선언
-        var titleAgain = $('.hallarea .listBox .listimg.on').index();
-
-        // 모든 on클래스를 지운 후
-        $('.hallarea .titleBox li').removeClass('on');
-
-        // on class가 지정되었던 리스트에 다시 on class 부여
-        $('.hallarea .titleBox li').eq(titleAgain).addClass('on');
-
-      })
-
-    })
-
-    // 무궁화 전시관의 각 목록들을 클릭시
-    $('.hallarea .titleBox li').click(function () {
-
-      // i를 통해 각각의 list 번수를 지정후,
-      var i = $(this).index();
-
-      // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
-      // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
-      // 그 외의 페이지일 땐 on이 꺼지게 함
-      if (i <= 0) {
-
-        $('.hallarea .listBox .left').addClass('on');
-        $('.hallarea .listBox .right').removeClass('on');
-
-      }
-      else if (i >= 4) {
-        $('.hallarea .listBox .right').addClass('on');
-        $('.hallarea .listBox .left').removeClass('on');
-
-      }
-
-      else {
-
-        $('.hallarea .listBox .left').removeClass('on');
-        $('.hallarea .listBox .right').removeClass('on');
-
-      }
-
-
-      // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
-      $('.hallarea .listBox .listimg').removeClass('on');
-
-      // 지정한 이미지에 on class를 부여하여 fadein시킴
-      $('.hallarea .listBox .listimg').eq(i).addClass('on');
-
-    })
-
-
-
-
-
-
-
-    // 무궁화 전시관의 왼쪽버튼 클릭시
-    $('.hallarea .listBox .left').click(function () {
-
-
-      // next를 통해 현재 켜져있는 리스트번호에 -1을 하여(이전화면으로 넘어가기 위함)
-      // 왼쪽 버튼의 변수를 지정후,
-      var prev = $('.listBox .listimg.on').index() - 1;
-
-      // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
-      // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
-      // 그 외의 페이지일 땐 on이 꺼지게 함
-      if (prev <= 0) {
-
-        $('.hallarea .listBox .left').addClass('on');
-        $('.hallarea .listBox .right').removeClass('on');
-
-
-      }
-      else if (prev >= 4) {
-        $('.hallarea .listBox .right').addClass('on');
-        $('.hallarea .listBox .left').removeClass('on');
-
-      }
-
-      else {
-
-        $('.hallarea .listBox .left').removeClass('on');
-        $('.hallarea .listBox .right').removeClass('on');
-
-
-      }
-
-
-      // prev가 0 이상일 때(첫번째 페이지 이후일때 작동)
-      if (prev >= 0) {
-        // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
-        $('.hallarea .listBox .listimg').removeClass('on');
-
-        // 지정한 이미지에 on class를 부여하여 fadein시킴
-        $('.hallarea .listBox .listimg').eq(prev).addClass('on');
-
-        $('.hallarea .titleBox li').removeClass('on');
-        $('.hallarea .titleBox li').eq(prev).addClass('on');
-      }
-
-
-    })
-
-
-
-
-    // 무궁화 전시관의 오른쪽버튼 클릭시
-    $('.hallarea .listBox .right').click(function () {
-
-      // next를 통해 현재 켜져있는 리스트번호에 +1을 하여(다음화면으로 넘어가기 위함)
-      // 오른쪽 버튼의 변수를 지정후,
-      var next = $('.listBox .listimg.on').index() + 1;
-
-      // 만약에 첫번째 페이지일때 왼쪽 버튼의 on이 켜지게 함
-      // 또는 마지막 페이지일 때 오른쪽 on이 켜지게 함
-      // 그 외의 페이지일 땐 on이 꺼지게 함
-      if (next <= 0) {
-
-        $('.hallarea .listBox .left').addClass('on');
-        $('.hallarea .listBox .right').removeClass('on');
-
-      }
-      else if (next >= 4) {
-
-        $('.hallarea .listBox .right').addClass('on');
-        $('.hallarea .listBox .left').removeClass('on');
-
-      }
-      else {
-
-        $('.hallarea .listBox .left').removeClass('on');
-        $('.hallarea .listBox .right').removeClass('on');
-
-
-      }
-
-      if (next <= 4) {
-        // 먼저 이미지들의 on class를 제거하여 fadeout시킨후
-        $('.hallarea .listBox .listimg').removeClass('on');
-
-        // 지정한 이미지에 on class를 부여하여 fadein시킴
-        $('.hallarea .listBox .listimg').eq(next).addClass('on');
-
-        $('.hallarea .titleBox li').removeClass('on');
-        $('.hallarea .titleBox li').eq(next).addClass('on');
-
-      }
-
-
-
-
-
-
-
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // // 프로그램에서 각 프로그램 버튼들을 마우스에 올려둘시
-    // $('.programBox .listTitle li').mouseenter(function () {
-
-    //   // 올려둔 버튼이 활성화(on class)되고, 나머지 버튼들은 비활성화됨
-    //   var a = $(this).index();
-
-    //   $('.programBox .listTitle li').removeClass('on');
-
-    //   $('.programBox .listTitle li').eq(a).addClass('on');
-
-
-    //   // 올려둔 상태에서 마우스를 뗄 시에
-    //   $('.programBox .listTitle li').mouseleave(function () {
-
-    //     // leave 변수 제작(현재 위치해있는 직은 프로그램 사진(on 클래스)의 순번을 기준으로 회귀)
-    //     // form 부분으로 하거나 하단의 사진 영역을 기준으로 해도 괜찮음
-    //     var leave = $('.programimg .imgBox li.on').index();
-
-    //     $('.programBox .listTitle li').removeClass('on');
-
-    //     $('.programBox .listTitle li').eq(leave).addClass('on');
-
-
-    //   })
-
-
-
-    let onIndex = 0;
-
-
-    // 리스트 버튼 클릭시
-    $('.programBox .listTitle li').click(function () {
-
-
-
-
-
-      // 해당 순번에 맞는 사진들이 뜨고 다른 사진들은 사라짐
-      let b = $(this).index();
-
-
-
-
-      // 왼쪽 이미지
-      $('.programimg .imgBox li').removeClass('on');
-
-      // 하단 이미지
-      $('.programBox .gallery .imgBox li').removeClass('on');
-
-      // 폼 본문 영역
-      $('.apply .applytxt li').removeClass('on');
-
-      // 제목영역
-      $('.txtBox .apply li').removeClass('on');
-
-
-      // 오른쪽의 리스트
-
-      $('.programBox .listTitle li').removeClass('on');
-
-
-
-      $('.programimg .imgBox li').eq(b).addClass('on');
-
-      $('.programBox .gallery .imgBox li').eq(b).addClass('on');
-
-      $('.apply .applytxt li').eq(b).addClass('on');
-
-      $('.txtBox .apply li').eq(b).addClass('on');
-
-
-
-      $(this).addClass('on');
-
-
-
-
-
-      // 첫번째 페이지일때
-      if (b === 0) {
-        $('.programBox .gallery .btn.left').addClass('on');
-        $('.programBox .gallery .btn.right').removeClass('on');
-
-
-      }
-
-      // 마지막페이지일때
-      else if (b === 2) {
-
-        $('.programBox .gallery .btn.right').addClass('on');
-        $('.programBox .gallery .btn.left').removeClass('on');
-
-
-      }
-
-      // 그 외의 페이지일때
-      else {
-        $('.programBox .gallery .btn.right').removeClass('on');
-        $('.programBox .gallery .btn.left').removeClass('on');
-
-      }
-
-    })
-    // })
-
-
-
-
-    // 프로그램 하단 이미지 쪽의 왼쪽버튼 클릭시
-    $('.programBox .gallery .btn.left').click(function () {
-
-      // left 변수 생성
-      // on되어있는 부분(다른데다 해도 되지만 일단 기준을 왼쪽의 작은 이미지를 기준으로 함)
-      var left = $('.programimg .imgBox li.on').index() - 1;
-
-      // left가 0보다 작을 때(첫번째 페이지일때)
-      // left에 on class를 부여
-      if (left <= 0) {
-
-        $('.programBox .gallery .btn.left').addClass('on');
-        $('.programBox .gallery .btn.right').removeClass('on');
-
-      }
-
-      // left가 2보다 클때(마지막 페이지일때)
-      else if (left >= 2) {
-
-        $('.programBox .gallery .btn.right').addClass('on');
-        $('.programBox .gallery .btn.left').removeClass('on');
-
-      }
-
-      else {
-
-        $('.programBox .gallery .btn.right').removeClass('on');
-        $('.programBox .gallery .btn.left').removeClass('on');
-
-
-      }
-
-
-      if (left >= 0) {
-
-        // 왼쪽 이미지
-        $('.programimg .imgBox li').removeClass('on');
-
-        // 하단 이미지
-        $('.programBox .gallery .imgBox li').removeClass('on');
-
-        // 폼 본문 영역
-        $('.apply .applytxt li').removeClass('on');
-
-        // 제목영역
-        $('.txtBox .apply li').removeClass('on');
-
-
-        $('.programimg .imgBox li').eq(left).addClass('on');
-
-        $('.programBox .gallery .imgBox li').eq(left).addClass('on');
-
-        $('.apply .applytxt li').eq(left).addClass('on');
-
-        $('.txtBox .apply li').eq(left).addClass('on');
-
-
-        // 기존에 해당하던 리스트들도 변경됨
-        $('.programBox .listTitle li').removeClass('on');
-
-        $('.programBox .listTitle li').eq(left).addClass('on');
-      }
-
-
-    })
-
-
-
-    // 프로그램 하단 이미지 쪽의 오른쪽버튼 클릭시
-    $('.programBox .gallery .btn.right').click(function () {
-
-      // left 변수 생성
-      // on되어있는 부분(다른데다 해도 되지만 일단 기준을 왼쪽의 작은 이미지를 기준으로 함)
-      var left = $('.programimg .imgBox li.on').index() + 1;
-
-      // left가 0보다 작을 때(첫번째 페이지일때)
-      // left에 on class를 부여
-      if (left <= 0) {
-
-        $('.programBox .gallery .btn.left').addClass('on');
-        $('.programBox .gallery .btn.right').removeClass('on');
-
-      }
-
-      // left가 2보다 클때(마지막 페이지일때)
-      else if (left >= 2) {
-
-        $('.programBox .gallery .btn.right').addClass('on');
-        $('.programBox .gallery .btn.left').removeClass('on');
-
-      }
-
-      else {
-
-        $('.programBox .gallery .btn.right').removeClass('on');
-        $('.programBox .gallery .btn.left').removeClass('on');
-
-
-      }
-
-
-      if (left <= 2) {
-
-        // 왼쪽 이미지
-        $('.programimg .imgBox li').removeClass('on');
-
-        // 하단 이미지
-        $('.programBox .gallery .imgBox li').removeClass('on');
-
-        // 폼 본문 영역
-        $('.apply .applytxt li').removeClass('on');
-
-        // 제목영역
-        $('.txtBox .apply li').removeClass('on');
-
-
-        $('.programimg .imgBox li').eq(left).addClass('on');
-
-        $('.programBox .gallery .imgBox li').eq(left).addClass('on');
-
-        $('.apply .applytxt li').eq(left).addClass('on');
-
-        $('.txtBox .apply li').eq(left).addClass('on');
-
-        // 기존에 해당하던 리스트들도 변경됨
-        $('.programBox .listTitle li').removeClass('on');
-
-        $('.programBox .listTitle li').eq(left).addClass('on');
-
-      }
-
-
-    })
-
-
-
-    // 시설안내의 리스트를 클릭시
-    $('.guide .menuBox .menu li').click(function () {
-      // guide 변수 생성
-      var guide = $(this).index();
-
-      $('.guide .menuBox .menu li').removeClass('on');
-
-      $('.guide .menuBox .menu li').eq(guide).addClass('on');
-
-      $('.guide .menuTxt>li').removeClass('on');
-
-      $('.guide .menuTxt>li').eq(guide).addClass('on');
-
-
-    })
-
-
-
-  })
-
-</script>
 
 
 
@@ -522,7 +534,7 @@
   <header>
     <div class="header_inner">
       <!-- 로고 -->
-      <h1><a href><img src="img/logo2.png" alt="로고"></a>무궁화전시박물관</h1>
+      <h1><a href="#"><img src="img/logo2.png" alt="로고"></a>무궁화전시박물관</h1>
       <!-- 메뉴 -->
 
       <nav>
@@ -563,10 +575,10 @@
         </div>
 
         <!-- 검색영역 -->
-        <form action="GET" class="searcharea">
+        <form action="https://www.google.com/search" method="GET" class="searcharea">
 
-          <input type="search" class="search" placeholder="검색창을 입력해주세요">
-          <button class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input name="q" type="search" class="search" placeholder="검색창을 입력해주세요">
+          <button value="search" class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
 
         </form>
 
@@ -644,6 +656,9 @@
     <!-- 히어로페이지 -->
     <section class="heroarea">
 
+
+      <h2>히어로페이지</h2>
+
       <div class="hero_inner">
 
         <ul class="heroList">
@@ -703,7 +718,7 @@
     <section class="noticearea">
       <div class="notice_inner">
         <div class="title">
-          <h1>공지사항</h1>
+          <h2>공지사항</h2>
           <div class="border"></div>
         </div>
         <!-- 여기 호버하면 천천히 크기 커지는거 한번 구현해보기 -->
@@ -774,7 +789,7 @@
     <section class="hallarea">
       <div class="hall_inner">
         <div class="title">
-          <h1>무궁화 전시관</h1>
+          <h2>무궁화 전시관</h2>
           <div class="border"></div>
         </div>
 
@@ -968,7 +983,7 @@
     <section class="proarea">
       <div class="pro_inner">
         <div class="title">
-          <h1>프로그램</h1>
+          <h2>프로그램</h2>
           <div class="border"></div>
         </div>
 
@@ -998,19 +1013,22 @@
               <div class="apply">
                 <ul class="applyTitle">
                   <li class="on">
-                    <h2><p>식재관리프로그램</p>
+                    <div>
+                      <h3>식재관리프로그램</h3>
                       <span>Planting management program</span>
-                    </h2>
+                    </div>
                   </li>
                   <li>
-                    <h2><p>체험프로그램</p>
+                    <div>
+                      <h3>체험프로그램</h3>
                       <span>Experience Program</span>
-                    </h2>
+                    </div>
                   </li>
                   <li>
-                    <h2><p>교육프로그램</p>
+                    <div>
+                      <h3>교육프로그램</h3>
                       <span>Education Program</span>
-                    </h2>
+                    </div>
                   </li>
                 </ul>
                 <!-- 신청안내 버튼 -->
@@ -1109,7 +1127,7 @@
       <div class="gallery_main">
         <div class="gallery_inner">
           <div class="title">
-            <h1>홍보갤러리</h1>
+            <h2>홍보갤러리</h2>
             <div class="border"></div>
           </div>
         </div>
@@ -1167,7 +1185,7 @@
     <section class="guide">
       <div class="guide_inner">
         <div class="title">
-          <h1>시설안내</h1>
+          <h2>시설안내</h2>
           <div class="border"></div>
         </div>
 
@@ -1298,22 +1316,21 @@
 
         <div class="effect">
           <div class="title">
-            <h1>찾아보시는 길</h1>
+            <h2>찾아보시는 길</h2>
             <div class="border"></div>
           </div>
 
 
           <div class="mainMap">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.155853029075!2d126.98309977585983!3d37.26773117211751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b43750dc8d8d9%3A0x52fde12069757aa7!2z66y06raB7ZmUIOyghOyLnCDrsJXrrLzqtIA!5e0!3m2!1sko!2skr!4v1723439246992!5m2!1sko!2skr"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.155853029075!2d126.98309977585983!3d37.26773117211751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b43750dc8d8d9%3A0x52fde12069757aa7!2z66y06raB7ZmUIOyghOyLnCDrsJXrrLzqtIA!5e0!3m2!1sko!2skr!4v1723439246992!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" 
               referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="moreMap">
               <p>경기도 수원시 권선구 서호로 89, 서울대학교 6동 교육관, 무궁화전시박물관</p>
               <p>문의 031) 295 -0001</p>
               <ul>
-                <li class="naver"><a href=""><img src="img/찾아오시는 길/2-1.png" alt="">네이버지도</a></li>
-                <li class="google"><a href=""><img src="img/찾아오시는 길/2-2.png" alt="">구글지도</a></li>
+                <li class="naver"><a href=""><img src="img/find_map/2-1.png" alt="네이버지도">네이버지도</a></li>
+                <li class="google"><a href=""><img src="img/find_map/2-2.png" alt="구글지도">구글지도</a></li>
               </ul>
             </div>
           </div>
@@ -1355,7 +1372,7 @@
       <div class="reserve_inner">
 
         <div class="title">
-          <h1>예약하기</h1>
+          <h2>예약하기</h2>
           <div class="border"></div>
         </div>
 
@@ -1414,8 +1431,12 @@
                 <!-- 후기 -->
                 <li>
                   <ul>
-                    <li><span></span><p></p></li>
-                    <li><span></span><p></p></li>
+                    <li><span></span>
+                      <p></p>
+                    </li>
+                    <li><span></span>
+                      <p></p>
+                    </li>
                   </ul>
                 </li>
 
@@ -1423,11 +1444,13 @@
                 <!--Q&A -->
                 <li>
                   <ul>
-                    <li><span></span><p></p>
+                    <li><span></span>
+                      <p></p>
                       <b>ANSWER -></b>
                       <div class="answer"></div>
                     </li>
-                    <li><span></span><p></p>
+                    <li><span></span>
+                      <p></p>
                       <b>ANSWER -></b>
                       <div class="answer"></div>
                     </li>
@@ -1458,7 +1481,7 @@
           <div class="reserveCheck">
 
             <!-- 클릭한 프로그램의 제목 그대로 받아오기 -->
-            <h2></h2>
+            <h2>.</h2>
 
             <div class="checkAll">
               <div class="dateZone">
@@ -1564,15 +1587,6 @@
 
 
 
-
-<script>
-
-
-  $(function () {
-    $("#datepicker").datepicker();
-  });
-
-</script>
 
 
 </html>

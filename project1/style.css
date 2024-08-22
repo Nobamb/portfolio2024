@@ -416,6 +416,30 @@ header .util {
 .searchbtn {
 
   box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 25%);
+  transition: all 0.3s;
+
+}
+
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.searchbtn:hover {
+
+  box-shadow: 2px 6px 4px 0 rgba(0, 0, 0, 25%);
+
+}
+
+
+
+
+
+.btn1,
+.btn2,
+.btn3,
+.searchbtn {
+
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 25%);
 
 }
 
@@ -517,6 +541,18 @@ header .util {
   height: 750px;
   background-color: #ffdede;
 }
+
+
+
+
+.heroarea h2{
+
+  position: absolute;
+  left: 9999px;
+
+}
+
+
 
 .heroarea .hero_inner {
   height: 100%;
@@ -695,7 +731,7 @@ section .title {
 }
 
 
-section h1 {
+section h2 {
 
 
   padding-left: 80px;
@@ -1406,7 +1442,7 @@ section .border {
 
 
 
-.applyTitle h2 {
+.applyTitle div {
 
 
   text-align: center;
@@ -1421,10 +1457,17 @@ section .border {
 
   flex-direction: column;
   background-color: #a3cbd8;
-  font-size: 28px;
+
 }
 
-.applyTitle h2 span {
+
+.applyTitle div h3{
+
+  font-size: 28px;
+
+}
+
+.applyTitle div span {
   display: block;
   font-size: 14px;
   letter-spacing: 2px;
@@ -2353,7 +2396,7 @@ section .border {
 
 .map_inner {
 
-  background-image: url('img/찾아오시는 길/1-1.png');
+  background-image: url('img/find_map/1-1.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -3547,7 +3590,7 @@ footer {
   }
 
 
-  section h1 {
+  section h2 {
 
     font-size: 28px;
 
@@ -4643,7 +4686,7 @@ footer {
 
 
 
-  section h1 {
+  section h2 {
 
 
     padding-left: 16px;
@@ -4954,13 +4997,13 @@ footer {
   }
 
 
-  .applyTitle h2 {
+  .applyTitle div h3{
 
     font-size: 20px;
 
   }
 
-  .applyTitle h2 span {
+  .applyTitle div span {
 
     font-size: 12px;
   }
@@ -6725,7 +6768,7 @@ api 부분 여기다 집어넣기 */
 
 
 
-  section h1 {
+  section h2 {
 
 
     padding-left: 16px;
@@ -7097,18 +7140,18 @@ api 부분 여기다 집어넣기 */
 
   /* 폼 제목 영역 */
 
-  .txtBox .apply .applyTitle {
+  .txtBox .apply .applyTitle{
     height: 80px;
   }
 
 
-  .applyTitle h2 {
+  .applyTitle div h3{
 
     font-size: 16px;
 
   }
 
-  .applyTitle h2 span {
+  .applyTitle div span {
 
     font-size: 12px;
   }
