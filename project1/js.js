@@ -738,7 +738,7 @@ $(document).ready(function () {
 
 
 
-  $(window).click(function () {
+  $(window).mouseup(function () {
 
 
     if ($('.scaleUpTxt').hasClass('on')) {
