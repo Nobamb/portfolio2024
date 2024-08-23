@@ -212,6 +212,7 @@ header {
   left: 0;
   z-index: 1000;
   height: 150px;
+  width: 100%;
 }
 
 /* header 전체영역 */
@@ -235,10 +236,10 @@ header .header_inner {
 
 /* 로고영역 */
 header h1 {
-  text-indent: -9999px;
   height: 80px;
   align-items: center;
   display: flex;
+  color: transparent;
 
 }
 
@@ -549,7 +550,8 @@ header .util {
 .heroarea h2{
 
   position: absolute;
-  left: 9999px;
+  left: 0;
+  color: transparent;
 
 }
 
@@ -4606,7 +4608,6 @@ footer {
 
   /* 로고영역 */
   header h1 {
-    text-indent: -9999px;
     height: 60px;
     align-items: center;
     display: flex;
@@ -6518,7 +6519,6 @@ api 부분 여기다 집어넣기 */
 
   /* 로고영역 */
   header h1 {
-    text-indent: -9999px;
     height: 60px;
     align-items: center;
     display: flex;
