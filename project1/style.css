@@ -324,7 +324,7 @@ header .util {
   position: absolute;
   right: 0;
   top: 0;
-  width: 1280px;
+  width: 100%;
   height: 140px;
 
 }
@@ -547,7 +547,7 @@ header .util {
 
 
 
-.heroarea h2{
+.heroarea h2 {
 
   position: absolute;
   left: 0;
@@ -1464,7 +1464,7 @@ section .border {
 }
 
 
-.applyTitle div h3{
+.applyTitle div h3 {
 
   font-size: 28px;
 
@@ -3572,6 +3572,7 @@ footer {
 /* 데스크탑 inner */
 @media (min-width:769px) and (max-width:1449px) {
 
+
   /* 내용 너비 설정 */
   .header_inner,
   .hero_inner,
@@ -3583,7 +3584,7 @@ footer {
   .footer1_inner,
   .footer2_inner,
   .map_inner,
-  .reserve_inner {
+  .reserve_inner{
 
     width: 100%;
     margin: 0 auto;
@@ -3604,6 +3605,7 @@ footer {
 
 /* 데스크탑 */
 @media (min-width: 769px) and (max-width:1279px) {
+
 
   .util .searcharea .search {
 
@@ -4608,21 +4610,21 @@ footer {
 @media (min-width: 481px) and (max-width:768px) {
 
 
-  .scaleUpTxt{
+  .scaleUpTxt {
 
     display: none;
 
   }
 
 
-  .speakTxt{
+  .speakTxt {
 
     display: none;
 
   }
 
 
-  header{
+  header {
 
     height: 100px;
 
@@ -4653,7 +4655,8 @@ footer {
     right: 0;
 
   }
-/* 
+
+  /* 
   .util .btnarea .btn2 {
     height: 40px;
     width: 40px;
@@ -4669,9 +4672,9 @@ footer {
 
 
   .util .btnarea .btn2,
-  .util .btnarea .btn3{
+  .util .btnarea .btn3 {
 
-    
+
     display: none;
 
   }
@@ -5026,7 +5029,7 @@ footer {
   }
 
 
-  .applyTitle div h3{
+  .applyTitle div h3 {
 
     font-size: 20px;
 
@@ -6519,22 +6522,22 @@ api 부분 여기다 집어넣기 */
 
 
 
- 
-  .scaleUpTxt{
+
+  .scaleUpTxt {
 
     display: none;
 
   }
 
 
-  .speakTxt{
+  .speakTxt {
 
     display: none;
 
   }
 
 
-  header{
+  header {
 
     height: 60px;
 
@@ -6732,7 +6735,7 @@ api 부분 여기다 집어넣기 */
 
     width: 100%;
     position: absolute;
-    bottom: 120px;
+    bottom: 50px;
     left: 20px;
     display: flex;
     gap: 10px;
@@ -7174,12 +7177,12 @@ api 부분 여기다 집어넣기 */
 
   /* 폼 제목 영역 */
 
-  .txtBox .apply .applyTitle{
+  .txtBox .apply .applyTitle {
     height: 80px;
   }
 
 
-  .applyTitle div h3{
+  .applyTitle div h3 {
 
     font-size: 16px;
 
