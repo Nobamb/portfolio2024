@@ -211,6 +211,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  height: 150px;
 }
 
 /* header 전체영역 */
@@ -2817,7 +2818,6 @@ footer {
   width: 100%;
   height: 1285px;
   display: none;
-
   background-color: #a3cbd8;
 
 }
@@ -4596,7 +4596,11 @@ footer {
   }
 
 
+  header{
 
+    height: 100px;
+
+  }
 
 
 
@@ -6505,6 +6509,12 @@ api 부분 여기다 집어넣기 */
   }
 
 
+  header{
+
+    height: 60px;
+
+  }
+
 
   /* 로고영역 */
   header h1 {
@@ -6557,7 +6567,7 @@ api 부분 여기다 집어넣기 */
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 9900;
   }
 
 
@@ -6632,7 +6642,7 @@ api 부분 여기다 집어넣기 */
     position: fixed;
     right: -250px;
     top: 0px;
-    z-index: 100;
+    z-index: 9800;
     background-color: #dd8282;
     display: flex;
     justify-content: center;
