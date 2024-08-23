@@ -3569,30 +3569,6 @@ footer {
 
 
 
-/* 데스크탑 inner */
-@media (min-width:769px) and (max-width:1449px) {
-
-
-  /* 내용 너비 설정 */
-  .header_inner,
-  .hero_inner,
-  .notice_inner,
-  .hall_inner,
-  .pro_inner,
-  .gallery_inner,
-  .guide_inner,
-  .footer1_inner,
-  .footer2_inner,
-  .map_inner,
-  .reserve_inner{
-
-    width: 100%;
-    margin: 0 auto;
-
-  }
-
-
-}
 
 
 
@@ -3602,10 +3578,13 @@ footer {
 
 
 
-
-/* 데스크탑 */
+/* 랩탑 */
 @media (min-width: 769px) and (max-width:1279px) {
 
+
+  header .util .btnarea {
+    width: 300px;
+  }
 
   .util .searcharea .search {
 
@@ -3613,7 +3592,7 @@ footer {
     border: 0.2px #000 solid;
     display: flex;
     height: 40px;
-    width: 40%;
+    width: 70%;
     font-size: 12px;
   }
 
