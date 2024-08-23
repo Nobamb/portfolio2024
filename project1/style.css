@@ -207,7 +207,7 @@ img {
 
 header {
   background-color: #ffdede;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
