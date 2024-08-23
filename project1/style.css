@@ -3559,6 +3559,7 @@ footer {
   .reserve_inner {
 
     width: 1440px;
+    margin: 0 auto;
 
   }
 
@@ -3568,6 +3569,29 @@ footer {
 
 
 
+/* 데스크탑 inner */
+@media (min-width:769px) and (max-width:1449px) {
+
+  /* 내용 너비 설정 */
+  .header_inner,
+  .hero_inner,
+  .notice_inner,
+  .hall_inner,
+  .pro_inner,
+  .gallery_inner,
+  .guide_inner,
+  .footer1_inner,
+  .footer2_inner,
+  .map_inner,
+  .reserve_inner {
+
+    width: 100%;
+    margin: 0 auto;
+
+  }
+
+
+}
 
 
 
