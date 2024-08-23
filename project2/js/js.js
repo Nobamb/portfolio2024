@@ -957,6 +957,12 @@ $(document).ready(function () {
 
 
 
+      // 전체메뉴
+      default:
+
+        $('.mobile_menu').toggleClass('on');
+
+
 
     }
 

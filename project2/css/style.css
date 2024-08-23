@@ -690,11 +690,46 @@ header .util li.shopMain a .shop_number {
 
 
 
+.mobile_menu{
+
+  width: 80%;
+  height: 100%;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 9000;
+  transition: all 0.5s;
+
+}
 
 
 
+.mobile_menu.on{
+
+  right: 0;
+  animation: menu 3s;
+
+}
 
 
+
+@keyframes menu {
+
+  from{
+
+    transform: scaleX(20px);
+
+  }
+
+
+  to{
+
+    transform: scaleX(0px);
+
+  }
+  
+}
 
 
 
