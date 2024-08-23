@@ -975,6 +975,11 @@ $(document).ready(function () {
 
 
 
+  $('.mobile_menu>span').click(function () {
+
+    $('.mobile_menu').removeClass('on');
+
+  })
 
 
 
@@ -984,6 +989,39 @@ $(document).ready(function () {
 
 
 
+  $('.mobile_menu.main_menu>.mobile_game').click(function (e) {
+
+
+    e.preventDefault();
+
+
+    $('header nav>ul>li').eq(0).find('a').trigger('click');
+
+
+    $('.mobile_menu').removeClass('on');
+
+
+
+  })
+
+
+
+  
+
+  $('.mobile_menu.main_menu>.mobile_product').click(function (e) {
+
+
+    e.preventDefault();
+
+
+    $('header nav>ul>li').eq(1).find('a').trigger('click');
+
+
+    $('.mobile_menu').removeClass('on');
+
+
+
+  })
 
 
 
@@ -993,7 +1031,43 @@ $(document).ready(function () {
 
 
 
+  $('.mobile_menu.main_menu>.mobile_game ul li').click(function (e) {
 
+
+    e.preventDefault();
+
+    let depthI1 = $(this).index();
+
+
+    $('header nav ul li:nth-child(1) ul li').eq(depthI1).find('a').trigger('click');
+
+
+    $('.mobile_menu').removeClass('on');
+
+
+
+  })
+
+
+
+  
+
+  $('.mobile_menu.main_menu>.mobile_product ul li').click(function (e) {
+
+
+    e.preventDefault();
+
+    let depthI2 = $(this).index();
+
+
+    $('header nav ul li:nth-child(2) ul li').eq(depthI2).find('a').trigger('click');
+
+
+    $('.mobile_menu').removeClass('on');
+
+
+
+  })
 
 
 

@@ -103,6 +103,7 @@ img {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+  font-weight: 400;
 }
 
 
@@ -117,8 +118,9 @@ img {
 
 .scaleUpTxt .txt.scale {
 
-
-  width: 300px;
+  font-weight: bold;
+  padding: 10px;
+  width: 350px;
   height: 500px;
   display: flex;
   justify-content: center;

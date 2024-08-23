@@ -71,7 +71,7 @@ $(document).ready(function () {
 
     let liI = $(this).index();
 
-    $('.heroarea .hero_inner .heroList').animate({ 'left': `${liI * -100}%` })
+    $('.heroarea .hero_inner .heroList').stop().animate({ 'left': `${liI * -100}%` })
 
 
     $('.heroarea .hero_inner .heroButton li').removeClass('on');
