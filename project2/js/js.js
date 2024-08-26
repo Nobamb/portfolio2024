@@ -718,7 +718,6 @@ $(document).ready(function () {
 
 
 
-  // 2뎁스 클릭시 상세페이지 이동
 
   $('header nav>ul>li>a').click(function (e) {
 
@@ -728,41 +727,23 @@ $(document).ready(function () {
     let navI = $(this).parents('li').index();
 
 
-    switch (navI) {
+
+    $('.goods .intro li').removeClass('on');
 
 
-      case 0:
-        $(`.goods .gList .listZone>li`).removeClass('on');
-
-        $(`.goods .gList .listZone>.gameList`).addClass('on');
-
-        $('.goods .gList .listZone>.gameList ul li').eq(0).trigger('click');
-
-        selectNum = 1;
-
-        changeNum();
-
-        changePrice();
-        break;
-
-      case 1:
-
-        $(`.goods .gList .listZone>li`).removeClass('on');
-
-        $(`.goods .gList .listZone>.proList`).addClass('on');
-
-        $('.goods .gList .listZone>.proList ul li').eq(0).trigger('click');
-
-        selectNum = 1;
-
-        changeNum();
-
-        changePrice();
-
-        break;
+    $('.goods .gZone .gMenu .char li').removeClass('on');
 
 
-    }
+    $('.goods .gMenu .menu .mList ul li').eq(navI).trigger('click');
+
+
+
+    selectNum = 1;
+
+    changeNum();
+
+    changePrice();
+
 
 
 
@@ -773,6 +754,7 @@ $(document).ready(function () {
 
 
 
+  // 2뎁스 클릭시 상세페이지 이동
 
 
   $('header nav>ul>li ul li>a').click(function (e) {
@@ -1006,7 +988,7 @@ $(document).ready(function () {
 
 
 
-  
+
 
   $('.mobile_menu.main_menu>.mobile_product').click(function (e) {
 
@@ -1050,7 +1032,7 @@ $(document).ready(function () {
 
 
 
-  
+
 
   $('.mobile_menu.main_menu>.mobile_product ul li').click(function (e) {
 
@@ -4420,6 +4402,8 @@ $(document).ready(function () {
 
     function listAppend() {
 
+
+
       // 기존 선택제품 및 리스트 삭제
 
       $('.sub .intro .infor .purchase_zone .choice .choice_goods .this_choice').remove();
@@ -5139,6 +5123,11 @@ $(document).ready(function () {
 
 
 
+    // 선택한 제품의 이름을 추출해서 팝업창 제품명에 대입
+
+
+
+    const choice_title = $('.sub .intro .infor .purchase_zone .choice .choice_goods .this_choice').text();
 
 
 
@@ -5149,6 +5138,7 @@ $(document).ready(function () {
 
 
     if (sp >= 0 && listBull) {
+
 
 
 
@@ -5171,7 +5161,7 @@ $(document).ready(function () {
 
       // 클래스 부여는 순번 - 개수 - 기존리스트외의 리스트의 순번
 
-      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="game_${gI}-${gameSp[(gI - 1)][sp]}-${sp}"><span class="ch_goods">${goodsList[sp + 1]}</span><span class="number">x${gameSp[(gI - 1)][sp]}</span><span class="price">${gameSpPrice[(gI - 1)][sp]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="game_${gI}-${gameSp[(gI - 1)][sp]}-${sp}"><span class="ch_goods">${choice_title}</span><span class="number">x${gameSp[(gI - 1)][sp]}</span><span class="price">${gameSpPrice[(gI - 1)][sp]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
 
 
       // 모든 리스트들의 합을 구함
@@ -5233,7 +5223,7 @@ $(document).ready(function () {
 
 
 
-      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="game_${gI}-${game[(gI - 1)]}"><span class="ch_goods">${goodsList[0]}</span><span class="number">x${game[(gI - 1)]}</span><span class="price">${gp[(gI - 1)]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="game_${gI}-${game[(gI - 1)]}"><span class="ch_goods">${choice_title}</span><span class="number">x${game[(gI - 1)]}</span><span class="price">${gp[(gI - 1)]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
 
 
 
@@ -5305,13 +5295,16 @@ $(document).ready(function () {
 
       // 클래스 부여는 순번 - 개수 - 기존리스트외의 리스트의 순번
 
-      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="product_${gI}-${productSp[(gI - 6)][sp]}-${sp}"><span class="ch_goods">${goodsList[sp + 1]}</span><span class="number">x${productSp[(gI - 6)][sp]}</span><span class="price">${productSpPrice[(gI - 6)][sp]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="product_${gI}-${productSp[(gI - 6)][sp]}-${sp}"><span class="ch_goods">${choice_title}</span><span class="number">x${productSp[(gI - 6)][sp]}</span><span class="price">${productSpPrice[(gI - 6)][sp]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
 
 
       // 모든 리스트들의 합을 구함
 
       fullgp = gp.reduce((acc, curr) => acc + curr, 0);
       fullpp = pp.reduce((acc, curr) => acc + curr, 0);
+
+
+
 
 
       fullgpSp1 = gameSpPrice[0];
@@ -5362,7 +5355,7 @@ $(document).ready(function () {
 
       pp[(gI - 6)] = product[(gI - 6)] * pp_origin[gI - 6];
 
-      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="product_${gI}-${product[(gI - 6)]}"><span class="ch_goods">${goodsList[0]}</span><span class="number">x${product[(gI - 6)]}</span><span class="price">${pp[(gI - 6)]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+      $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="product_${gI}-${product[(gI - 6)]}"><span class="ch_goods">${choice_title}</span><span class="number">x${product[(gI - 6)]}</span><span class="price">${pp[(gI - 6)]}원</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
 
 
 

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-
+  
 
   // 타이핑 글자
   const welcome = 'Welcome';
@@ -344,7 +344,7 @@ $(document).ready(function () {
 
   // 스테이터스 지정
 
-  const status = [60, 76, 90, 90, 90];
+  const status = [80, 85, 90, 90, 80];
 
 
 
