@@ -1084,7 +1084,7 @@ h1.intro {
 }
 
 
-.contents>.main .project .webList li:hover.sumbnail{
+.contents>.main .project .webList li:hover>.sumbnail{
 
   filter: brightness(1) contrast(1) saturate(1) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
