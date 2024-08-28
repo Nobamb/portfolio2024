@@ -442,6 +442,7 @@ h1.intro {
   align-items: center;
   opacity: 0;
   perspective: 1000px;
+  z-index: 100;
 
 }
 
@@ -476,7 +477,16 @@ h1.intro {
 
 .contents.show>.main .profile.off {
 
-  right: -100%;
+  top: 0;
+  right: -320px;
+
+}
+
+
+
+.contents.show>.main .profile.off:hover {
+
+  right: 0;
 
 }
 
@@ -557,6 +567,7 @@ h1.intro {
 
   font-size: 20px;
   font-weight: bold;
+  
 
 }
 
@@ -638,6 +649,10 @@ h1.intro {
   cursor: pointer;
   animation: ani1 infinite alternate linear 1s;
 }
+
+
+
+
 
 
 
@@ -964,7 +979,7 @@ h1.intro {
   position: relative;
   cursor: pointer;
   animation: ani1 infinite alternate linear 1s;
-
+  color: #9400D3;
 }
 
 
@@ -1169,7 +1184,7 @@ h1.intro {
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 215px;
+  right: 265px;
 }
 
 
@@ -1200,7 +1215,7 @@ color: #4797b1;
 
 .contents>.main .project .webList li .txt a{
 
-  right: 50px;
+  right: 100px;
 }
 
 .contents>.main .project .webList li .txt a .webBtn {
@@ -1275,14 +1290,13 @@ color: #4797b1;
 
 .contents>.main .profile h3:hover {
   animation-play-state: paused;
-
 }
 
 
 .contents>.main .project h4:hover .line {
 
   width: 100%;
-  background-color: #404040;
+  background-color: #9400D3;
 }
 
 .contents>.main .profile h3:hover .line {
@@ -1299,17 +1313,11 @@ color: #4797b1;
 /* 영역 활성화될 때 글자들 모두 없음처리 */
 
 
-.contents>.main .profile.on h3,
-.contents>.main .profile.off h3 {
+.contents>.main .profile.on h3 {
 
   display: none;
 
 }
-
-
-
-
-
 
 
 

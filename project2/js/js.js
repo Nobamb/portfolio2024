@@ -5449,6 +5449,7 @@ $(document).ready(function () {
 
     let otherI = $(this).index();
 
+    $('.sub .intro .infor .purchase_zone .choice .choice_goods ul li').eq(0).trigger('click');
 
     // 게임쪽일 때
 

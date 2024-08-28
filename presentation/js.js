@@ -39,6 +39,7 @@ $(document).ready(function () {
     textThis.map((ele) => typing += ele);
 
 
+    
 
     // 0.3초마다 글자가 하나씩 들어가게 되어 타이핑 효과를 냄
     setTimeout(() => {
