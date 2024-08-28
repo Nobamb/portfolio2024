@@ -1681,6 +1681,9 @@ $(document).ready(function () {
     // 현재페이지에서 이동할거이기에
     e.preventDefault();
 
+    $('.sub .intro .infor .purchase_zone .choice .choice_goods ul li').eq(0).trigger('click');
+
+
     $('html,body').scrollTop(0);
 
 
