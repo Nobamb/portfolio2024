@@ -403,6 +403,38 @@ $(document).ready(function () {
 
 
 
+  // 컨셉뷰 클릭시 컨셉뷰 화면 등장
+
+
+  $('.contents>.main .project .webList li .txt .conceptBtn').click(function(){
+
+
+    $('.concept_view').addClass('on');
+
+
+    $('.concept_view').scrollTop(0);
+
+
+    let conI = $(this).parents('li').index() + 1;
+
+
+
+    $('.concept_view img').attr('src',`img/view${conI}.png`);
+
+
+  })
+
+
+
+
+
+
+  $('.concept_view').click(function(){
+
+    $(this).removeClass('on')
+
+  })
+
 
 
 })

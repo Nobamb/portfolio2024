@@ -919,6 +919,7 @@ h1.intro {
   opacity: 0;
 
   overflow: hidden;
+  perspective: 1000px;
 }
 
 
@@ -1163,6 +1164,7 @@ h1.intro {
 
   font-weight: bold;
   font-size: 16px;
+  cursor: pointer;
 
 }
 
@@ -1327,10 +1329,93 @@ color: #4797b1;
 
 
 
+/* 컨셉뷰 영역 */
+
+.concept_view{
+
+  position: absolute;
+  left: -100%;
+  top: 0%;
+  width: calc(100% - 150px);
+  height: 100%;
+  border: 1px solid #404040;
+  background-color: #fff;
+  transition: all 1s;
+  overflow: auto;
+}
+
+
+
+.concept_view.on{
+
+  left: 0;
+
+}
+
+
+
+
+/* 스크롤바 */
+
+
+
+::-webkit-scrollbar{
+
+  background-color: #666;
+
+}
+
+
+
+::-webkit-scrollbar-button{
+
+  background-color: #fff;
+
+}
+
+
+
+::-webkit-scrollbar-corner{
+
+  background-color: #404040;
+
+}
+
+
+
+
+::-webkit-scrollbar-thumb{
+
+  background-color: #fff;
+  border: 1px solid #404040;
+
+
+}
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.concept_view img{
+
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
 
