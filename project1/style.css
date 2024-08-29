@@ -739,7 +739,7 @@ section .title {
 }
 
 
-section h2 {
+section .title>h2 {
 
 
   padding-left: 80px;
