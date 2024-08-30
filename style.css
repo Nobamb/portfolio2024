@@ -1418,3 +1418,39 @@ color: #4797b1;
   top: 0;
 }
 
+
+
+
+
+
+
+@media (max-height:700px){
+
+
+  .contents>nav ul li span {
+
+    font-size: 16px;
+
+  }
+
+
+
+  /* 세부 정보 내용 제목*/
+.contents>.main .profile>.mainProfile>div>ul>li>h4{
+
+  font-size: 32px;
+
+}
+
+
+/* 세부 정보 내용 글*/
+.contents>.main .profile>.mainProfile>div>ul>li p{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
+
+
+
+}
