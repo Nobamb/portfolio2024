@@ -18,8 +18,7 @@
 
 
 
-  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-    charset="utf-8"></script>
+  <script src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"></script>
 
 
 
@@ -33,7 +32,7 @@
   <!-- 자바스크립트 연결 -->
   <script src="js/js.js"></script>
 
-  <script type="text/javascript" src="js/rating_simple.js"></script>
+
 
   <!-- 폰트어썸 설정 -->
   <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
@@ -50,7 +49,7 @@
   <!-- <header class="on"> -->
   <header class="on">
     <div class="header_inner">
-      <h1><a href="index.html"><img src="img/logo.png" alt=""></a></h1>
+      <h1><a href="index.html"><img src="img/logo.png" alt="로고"></a></h1>
       <nav>
         <ul>
 
@@ -79,15 +78,15 @@
       </nav>
       <ul class="util">
         <li class="search">
-          <form action="">
-            <input type="search" placeholder="검색어를 입력하세요">
+          <form action="https://pokemonkorea.co.kr/search" method="get" target="_blank">
+            <input name = "sword" type="search" value = "" placeholder="검색어를 입력하세요">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </li>
         <li class="shopMain">
           <a href="">
             장바구니<i class="fa-solid fa-cart-shopping but">
-              <div class="shop_number"></div>
+              <span class="shop_number"></span>
             </i>
 
           </a>
@@ -232,7 +231,7 @@
               <button type="submit">
                 로그인
               </button>
-            </div class="login_button">
+            </div>
 
 
 
@@ -409,7 +408,7 @@
 
 
 
-  <script type="text/javascript">
+  <script>
 
 
     let naverW = $(window).width();
