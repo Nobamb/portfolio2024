@@ -836,19 +836,19 @@ section .border {
 
 .notice li:nth-child(1) .noticeImg {
 
-  background-image: url('img/공지사항/공지1.png');
+  background-image: url('img/notice/notice1.png');
 
 }
 
 .notice li:nth-child(2) .noticeImg {
 
-  background-image: url('img/공지사항/공지2.png');
+  background-image: url('img/notice/notice2.png');
 
 }
 
 .notice li:nth-child(3) .noticeImg {
 
-  background-image: url('img/공지사항/공지3.png');
+  background-image: url('img/notice/notice3.png');
 
 }
 
@@ -1174,25 +1174,25 @@ section .border {
 
 
 .hallarea .listimg:nth-child(1) li:nth-child(1) a {
-  background-image: url('img/무궁화전시관/1-1.jpeg');
+  background-image: url('img/hallarea/1-1.jpeg');
 }
 
 .hallarea .listimg:nth-child(2) li:nth-child(1) a {
-  background-image: url('img/무궁화전시관/2-1.jpeg');
+  background-image: url('img/hallarea/2-1.jpeg');
 }
 
 .hallarea .listimg:nth-child(3) li:nth-child(1) a {
-  background-image: url('img/무궁화전시관/3-1.jpeg');
+  background-image: url('img/hallarea/3-1.jpeg');
 }
 
 
 .hallarea .listimg:nth-child(4) li:nth-child(1) a {
-  background-image: url('img/무궁화전시관/4-1.jpeg');
+  background-image: url('img/hallarea/4-1.jpeg');
 }
 
 
 .hallarea .listimg:nth-child(5) li:nth-child(1) a {
-  background-image: url('img/무궁화전시관/5-1.jpeg');
+  background-image: url('img/hallarea/5-1.jpeg');
 }
 
 
@@ -1201,26 +1201,26 @@ section .border {
 
 
 .hallarea .listimg:nth-child(1) li:nth-child(2) a {
-  background-image: url('img/무궁화전시관/1-2.jpeg');
+  background-image: url('img/hallarea/1-2.jpeg');
 
 }
 
 .hallarea .listimg:nth-child(2) li:nth-child(2) a {
-  background-image: url('img/무궁화전시관/2-2.jpeg');
+  background-image: url('img/hallarea/2-2.jpeg');
 }
 
 .hallarea .listimg:nth-child(3) li:nth-child(2) a {
-  background-image: url('img/무궁화전시관/3-2.jpeg');
+  background-image: url('img/hallarea/3-2.jpeg');
 }
 
 
 .hallarea .listimg:nth-child(4) li:nth-child(2) a {
-  background-image: url('img/무궁화전시관/4-2.jpeg');
+  background-image: url('img/hallarea/4-2.jpeg');
 }
 
 
 .hallarea .listimg:nth-child(5) li:nth-child(2) a {
-  background-image: url('img/무궁화전시관/5-2.jpeg');
+  background-image: url('img/hallarea/5-2.jpeg');
 }
 
 
@@ -1399,15 +1399,15 @@ section .border {
 }
 
 .programimg .imgBox li:nth-child(1) {
-  background-image: url('img/프로그램/1-1.png');
+  background-image: url('img/program/1-1.png');
 }
 
 .programimg .imgBox li:nth-child(2) {
-  background-image: url('img/프로그램/2-1.png');
+  background-image: url('img/program/2-1.png');
 }
 
 .programimg .imgBox li:nth-child(3) {
-  background-image: url('img/프로그램/3-1.png');
+  background-image: url('img/program/3-1.png');
 }
 
 
@@ -1589,16 +1589,16 @@ section .border {
 }
 
 .programBox .gallery .imgBox li:nth-child(1) {
-  background-image: url('img/프로그램/1-2.png');
+  background-image: url('img/program/1-2.png');
 }
 
 .programBox .gallery .imgBox li:nth-child(2) {
-  background-image: url('img/프로그램/2-2.png');
+  background-image: url('img/program/2-2.png');
 }
 
 
 .programBox .gallery .imgBox li:nth-child(3) {
-  background-image: url('img/프로그램/3-2.png');
+  background-image: url('img/program/3-2.png');
 }
 
 /* 프로그램 하단 사진 안의 버튼들*/
@@ -1968,61 +1968,61 @@ section .border {
 
 .galleryarea .map li:nth-child(1) {
 
-  background-image: url('img/홍보갤러리/1-1.jpeg');
+  background-image: url('img/gallery/1-1.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(2) {
 
-  background-image: url('img/홍보갤러리/1-2.jpeg');
+  background-image: url('img/gallery/1-2.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(3) {
 
-  background-image: url('img/홍보갤러리/1-3.jpeg');
+  background-image: url('img/gallery/1-3.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(4) {
 
-  background-image: url('img/홍보갤러리/1-4.jpeg');
+  background-image: url('img/gallery/1-4.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(5) {
 
-  background-image: url('img/홍보갤러리/1-5.jpeg');
+  background-image: url('img/gallery/1-5.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(6) {
 
-  background-image: url('img/홍보갤러리/1-6.jpeg');
+  background-image: url('img/gallery/1-6.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(7) {
 
-  background-image: url('img/홍보갤러리/1-7.jpeg');
+  background-image: url('img/gallery/1-7.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(8) {
 
-  background-image: url('img/홍보갤러리/1-8.jpeg');
+  background-image: url('img/gallery/1-8.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(9) {
 
-  background-image: url('img/홍보갤러리/1-9.jpeg');
+  background-image: url('img/gallery/1-9.jpeg');
 
 }
 
 .galleryarea .map li:nth-child(10) {
 
-  background-image: url('img/홍보갤러리/1-10.jpeg');
+  background-image: url('img/gallery/1-10.jpeg');
 
 }
 
@@ -2103,7 +2103,7 @@ section .border {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  background-image: url('img/시설안내/1-1.png');
+  background-image: url('img/guide/1-1.png');
   height: 500px;
   width: 100%;
   background-size: cover;
@@ -2327,21 +2327,21 @@ section .border {
 .guide .menuTxt>li li .img1 {
   background-position: center center;
   background-size: cover;
-  background-image: url('img/시설안내/2-1.png');
+  background-image: url('img/guide/2-1.png');
 
 }
 
 .guide .menuTxt>li li .img2 {
   background-position: center center;
   background-size: cover;
-  background-image: url('img/시설안내/2-2.png');
+  background-image: url('img/guide/2-2.png');
 }
 
 .guide .menuTxt>li li .img3 {
 
   background-position: center center;
   background-size: cover;
-  background-image: url('img/시설안내/2-3.png');
+  background-image: url('img/guide/2-3.png');
 }
 
 .guide .menuTxt>li li i {
