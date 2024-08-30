@@ -8196,11 +8196,16 @@ footer .footer_down .footer_inner p {
 @media (min-width:769px) and (max-width:1280px) {
 
 
+  body{
+
+    cursor: auto;
+
+  }
+
+
   .pocketMouse {
 
     display: none;
-
-
   }
 
 
