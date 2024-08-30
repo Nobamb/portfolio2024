@@ -1539,9 +1539,6 @@ $(document).ready(function () {
 
 
 
-  $('album_vid li:nth-child(5)').volume = 2.0;
-
-
 
 
 
