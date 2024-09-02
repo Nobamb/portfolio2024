@@ -648,6 +648,7 @@ h1.intro {
   position: relative;
   cursor: pointer;
   animation: ani1 infinite alternate linear 1s;
+  text-shadow: 1px 1px 3px #fff;
 }
 
 
@@ -878,6 +879,24 @@ h1.intro {
 
 
 
+/* 퍼센트 수치*/
+.contents>.main .profile>.mainProfile>div>ul .skill li .bar>span{
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff;
+  z-index: 100;
+}
+
+
+
+
+
+
+
 /* 스킬 종류들*/
 .contents>.main .profile>.mainProfile>div>ul .skill li .mybar{
 
@@ -981,6 +1000,7 @@ h1.intro {
   cursor: pointer;
   animation: ani1 infinite alternate linear 1s;
   color: #9400D3;
+  text-shadow: 1px 1px 3px #9400D3;
 }
 
 
@@ -1449,6 +1469,22 @@ color: #4797b1;
   margin-top: 10px;
 }
 
+
+
+
+
+
+/* 퍼센트 수치*/
+.contents>.main .profile>.mainProfile>div>ul .skill li .bar>span{
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff;
+  z-index: 100;
+}
 
 
 

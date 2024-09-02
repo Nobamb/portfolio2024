@@ -312,6 +312,9 @@ $(document).ready(function () {
 
     $('.contents .main>div').removeClass('on');
     $('.contents .main>div').removeClass('off');
+
+
+    $('.contents>.main .profile>.mainProfile').fadeOut();
   })
 
 
@@ -326,6 +329,11 @@ $(document).ready(function () {
     $('.contents .main>.profile').addClass('on');
     $('.contents .main>.project').addClass('off');
 
+
+
+    $('.contents>.main .profile>.mainProfile').fadeIn();
+
+
   })
 
 
@@ -338,6 +346,10 @@ $(document).ready(function () {
     $('.contents .main>div').removeClass('off');
     $('.contents .main>.project').addClass('on');
     $('.contents .main>.profile').addClass('off');
+
+
+    
+    $('.contents>.main .profile>.mainProfile').fadeOut();
   })
 
 
@@ -362,14 +374,67 @@ $(document).ready(function () {
 
     if($('.contents>.main .profile>.mainProfile>.status').hasClass('on')){
 
-      for(let s = 0; s < status.length; s++){
+      // for(let s = 0; s < status.length; s++){
 
+      //   setTimeout(() => {
+      //     $('.contents>.main .profile>.mainProfile>div>ul .skill li').eq(s).find('.mybar').stop().animate({'width':`${status[s]}%`},800);
+          
+       
+      //   }, 300 * s);
         
-        $('.contents>.main .profile>.mainProfile>div>ul .skill li').eq(s).find('.mybar').stop().animate({'width':`${status[s]}%`},s * 500);
 
 
 
-      }
+      // }
+
+
+
+
+
+
+      status.forEach((s,i) => {
+
+        setTimeout(() => {
+          $('.contents>.main .profile>.mainProfile>div>ul .skill li').eq(i).find('.mybar').stop().animate({'width':`${s}%`},800);
+
+          $('.contents>.main .profile>.mainProfile>div>ul .skill li').find('span').show();
+
+          let count = 0;
+
+
+          let persentCount = setInterval(() => {
+
+
+            count++;
+            
+            if(count === s){
+
+              clearInterval(persentCount)
+
+            }
+
+            $('.contents>.main .profile>.mainProfile>div>ul .skill li').eq(i).find('span').text(`${count}%`);
+
+
+          }, 800 / s);
+
+
+
+
+       
+        }, 300 * i);
+
+      });
+
+
+
+
+
+
+
+
+
+
 
 
     }
@@ -384,7 +449,7 @@ $(document).ready(function () {
         $('.contents>.main .profile>.mainProfile>div>ul .skill li').eq(s).find('.mybar').stop().animate({'width':`0%`},s * 100);
 
 
-
+        $('.contents>.main .profile>.mainProfile>div>ul .skill li').find('span').hide();
       }
 
 
