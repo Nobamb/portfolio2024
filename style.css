@@ -336,7 +336,7 @@ h1.intro {
 
 /* 리스트의 글자 */
 
-.contents>nav ul li span {
+.contents>nav ul li>span {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -381,7 +381,7 @@ h1.intro {
 
 }
 
-.contents>nav ul li.on span {
+.contents>nav ul li.on>span {
 
   color: #fff;
   font-weight: bold;
@@ -399,7 +399,7 @@ h1.intro {
 
 }
 
-.contents>nav ul li:hover span {
+.contents>nav ul li:hover>span {
 
   color: #fff;
   font-weight: bold;

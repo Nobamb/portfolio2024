@@ -673,8 +673,15 @@ $(document).ready(function () {
     let navI = $(this).parents('li').index();
 
 
+    // 제품 리스트의 첫번재 리스트(게임)를 trigger로 누름
+
+    $('.goods .gMenu .menu .mList ul li').eq(navI).trigger('click');
+
     switch (navI) {
 
+
+
+      // 게임 1뎁스 클릭시 게임의 첫번째 리스트를 누른 것으로 취급
 
       case 0:
         $(`.goods .gList .listZone>li`).removeClass('on');
@@ -689,6 +696,9 @@ $(document).ready(function () {
 
         changePrice();
         break;
+
+
+      // 상품 1뎁스 클릭시 상품의 첫번째 리스트를 누른 것으로 취급
 
       case 1:
 
@@ -719,38 +729,6 @@ $(document).ready(function () {
 
 
 
-  $('header nav>ul>li>a').click(function (e) {
-
-    e.preventDefault();
-
-
-    let navI = $(this).parents('li').index();
-
-
-
-    $('.goods .intro li').removeClass('on');
-
-
-    $('.goods .gZone .gMenu .char li').removeClass('on');
-
-
-    $('.goods .gMenu .menu .mList ul li').eq(navI).trigger('click');
-
-
-
-    selectNum = 1;
-
-    changeNum();
-
-    changePrice();
-
-
-
-
-
-  })
-
-
 
 
 
@@ -763,6 +741,11 @@ $(document).ready(function () {
 
 
     let navI = $(this).parents('nav>ul>li').index();
+
+
+    // 제품 리스트의 첫번재 리스트(게임)를 trigger로 누름
+
+    $('.goods .gMenu .menu .mList ul li').eq(navI).trigger('click');
 
 
     switch (navI) {
