@@ -4702,7 +4702,7 @@ footer {
 
 
 
-  section h2 {
+  section .title>h2 { 
 
 
     padding-left: 16px;
@@ -6789,13 +6789,15 @@ api 부분 여기다 집어넣기 */
 
 
 
-  section h2 {
+  section .title>h2 { 
 
 
     padding-left: 16px;
     font-size: 20px;
 
+
   }
+
 
 
 
