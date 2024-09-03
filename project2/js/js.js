@@ -1912,10 +1912,15 @@ $(document).ready(function () {
 
 
 
-    // 장바구니쪽에 표시된 숫자도 변수 shop의 숫자를 반영하여 1씩 증가 
+    // 장바구니쪽에 표시된 숫자도 변수 shop의 숫자를 반영하여 증가 
     $('header .util li.shopMain a .shop_number').text(shop);
 
     $('.mobile_util li .shop_number').text(shop);
+
+
+
+
+
 
 
   }
@@ -2503,6 +2508,8 @@ $(document).ready(function () {
     $('header .util li.shopMain a .shop_number').text(shop);
 
     $('.mobile_util li .shop_number').text(shop);
+
+
 
 
 
@@ -5702,7 +5709,7 @@ $(document).ready(function () {
     }
 
 
-    if (winW > 728) {
+    if (winW > 768) {
       $('.sub .reviews .review_list .review_zone').stop().animate({ 'left': `${subReviewC * -50}%` }, 300);
     }
     else {
@@ -5741,7 +5748,7 @@ $(document).ready(function () {
 
 
 
-    if (winW > 728) {
+    if (winW > 768) {
       // count가 4가될때까지만 1씩 더함(최댓값 부여)
       if (subOtherC < 2) {
 
