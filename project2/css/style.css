@@ -1324,9 +1324,12 @@ header .util li.shopMain a .shop_number {
 
 
 /* 제품 영역 */
-.box2 {}
+.box2 {
 
-.goods {}
+}
+
+.goods {
+}
 
 /* 소개부분(제목) */
 
@@ -1335,13 +1338,25 @@ header .util li.shopMain a .shop_number {
   height: 100%;
   height: 400px;
   position: relative;
-
+  overflow: hidden;
 }
+
+
+
+
+.goods .intro.on {
+  left: 0%;
+}
+
+
+
+
+
+
 
 .goods .intro li {
   position: absolute;
   top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
@@ -1349,6 +1364,13 @@ header .util li.shopMain a .shop_number {
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 0.5s;
+  left: -100%;
+}
+
+
+
+.goods .intro li.fade {
+  left: 0;
 }
 
 
@@ -1458,7 +1480,6 @@ section h2 {
   padding-top: 40px;
   color: #fff;
   font-size: 40px;
-
 }
 
 
@@ -1491,8 +1512,7 @@ section h2 {
 
 
 
-
-.goods .gZone .gMenu .char li.on .charZone {
+.goods .gZone .gMenu .char li.on .charZone.on {
   transform: scale(1);
 }
 
@@ -1500,6 +1520,8 @@ section h2 {
 
 .goods .gZone .gMenu .char li .charZone img {
   width: 60%;
+
+
 }
 
 
@@ -2203,7 +2225,18 @@ section h2 {
 .years {
 
   width: 100%;
+  opacity: 0;
+  transition: all 1s;
+  position: relative;
+  top: 50px;
+}
 
+
+
+.years.on {
+
+  opacity: 1;
+  top: 0px;
 }
 
 
@@ -2698,8 +2731,17 @@ section h2 {
 .notices {
 
   width: 100%;
-
+  opacity: 0;
+  transition: all 0.5s;
 }
+
+.notices.on {
+  opacity: 1;
+}
+
+
+
+
 
 /* 제목 */
 
@@ -2833,8 +2875,17 @@ section h2 {
   flex-direction: column;
   align-items: center;
   transition: all 0.3s;
+  transform: scale(0);
 }
 
+
+
+/* 리스트 */
+.notices .noticesZone>div .listZone ul li.on {
+
+  transform: scale(1);
+
+}
 
 .notices .noticesZone>div .listZone ul li a {
   width: 100%;

@@ -813,7 +813,7 @@ $(document).ready(function () {
 
 
 
-  // 스크롤에 따른 이벤트(header + hero)
+  // 스크롤에 따른 이벤트
 
 
 
@@ -824,6 +824,139 @@ $(document).ready(function () {
 
 
   $(window).scroll(function () {
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 옵서버 이벤트(화면에 보여질 때 요소에 대한 이벤트 발생)
+
+
+
+
+
+    // 영역 높이값에 따른 이벤트
+
+
+    const goodsShowZone = $('.goods').offset().top - winH / 2;
+
+
+    if ($(window).scrollTop() >= goodsShowZone && $('#wrap').hasClass('scrollevent')) {
+
+      $('.goods .intro li').addClass('fade');
+
+    }
+
+
+
+
+    const gZoneShowZone = $('.gZone').offset().top - winH / 2;
+
+
+    if ($(window).scrollTop() >= gZoneShowZone && $('#wrap').hasClass('scrollevent')) {
+
+
+      $('.goods .gZone .gMenu .char li .charZone').addClass('on')
+
+    }
+
+
+
+
+
+
+
+
+    const yearsShow = $('.years').offset().top - winH / 2;
+
+
+    if ($(window).scrollTop() >= yearsShow && $('#wrap').hasClass('scrollevent')) {
+
+
+      $('.years').addClass('on')
+
+    }
+
+
+
+    const noticesShow = $('.notices').offset().top - winH / 2;
+
+
+    if ($(window).scrollTop() >= noticesShow && $('#wrap').hasClass('scrollevent')) {
+
+
+      $('.notices').addClass('on')
+
+    }
+
+
+
+
+
+
+    const evnetShow = $('.notices .noticesZone .event').offset().top - winH / 2;
+
+
+    const notifiedShow = $('.notices .noticesZone .notified').offset().top - winH / 2;
+
+
+    const noticeLen = $('.notices .noticesZone>div .listZone ul li').length;
+
+
+    for (let n = 0; n < noticeLen; n++) {
+
+      if ($(window).scrollTop() >= evnetShow && $('#wrap').hasClass('scrollevent')) {
+
+
+
+        setTimeout(() => {
+
+          $('.notices .noticesZone .event ul li').eq(n).addClass('on');
+
+        }, 100 * n)
+
+      }
+
+
+
+      if ($(window).scrollTop() >= notifiedShow && $('#wrap').hasClass('scrollevent')) {
+
+
+
+        setTimeout(() => {
+
+          $('.notices .noticesZone .notified ul li').eq(n).addClass('on');
+
+        }, 100 * n)
+
+
+
+
+      }
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 
