@@ -9,6 +9,185 @@ $(document).ready(function () {
 
 
 
+
+  // 영역 페이드인 이벤트
+
+
+
+
+
+  $(window).scroll(function () {
+
+
+
+    const noticeShowZone = $('.noticearea').offset().top / 2;
+
+
+
+
+    if (noticeShowZone <= $(window).scrollTop()) {
+
+
+      const nL = $('.notice li').length;
+
+
+
+      for (let n = 0; n < nL; n++) {
+
+        setTimeout(() => {
+
+
+
+
+          $('.notice li').eq(n).animate({ 'bottom': 0, 'opacity': 1 }, 500);
+
+
+        }, n * 200)
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    const hallShowZone = $('.noticearea').offset().top + ($('.noticearea').height()/2);
+
+
+
+    if (hallShowZone <= $(window).scrollTop()) {
+
+
+
+
+      const hL = $('.hallarea .listimg li').length;
+
+
+
+      for (let h = 0; h < hL; h++) {
+
+        setTimeout(() => {
+
+
+
+
+          $('.hallarea .listimg li').eq(h).addClass('on');
+
+
+
+        }, h * 200)
+
+
+
+
+
+      }
+    }
+
+
+
+
+    // 시설안내의 중간영역 값
+
+    const guideShowZone = $('.guide').offset().top - $('.guide').height()/2;
+
+    // 스크롤값이 중간영역 값에 도달했을 때
+
+    if ($(window).scrollTop() >= guideShowZone) {
+
+      $('.guide .imgEffect').addClass('on');
+
+    }
+
+
+
+
+
+
+
+    
+    const mapShowZone = $('.maparea').offset().top - $('.maparea').height()/2;
+
+
+
+    if (mapShowZone <= $(window).scrollTop()) {
+
+      $('.map_inner').addClass('on');
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   $('.mobileMenu').click(function () {
 
     $(this).find('li').toggleClass('on');
@@ -106,27 +285,6 @@ $(document).ready(function () {
   })
 
 
-
-
-  // 스크롤을 했을 때
-
-
-
-  $(window).scroll(function () {
-
-    // 시설안내의 중간영역 값
-
-    const guideTop = $('.guide').offset().top - 485;
-
-    // 스크롤값이 중간영역 값에 도달했을 때
-
-    if ($(window).scrollTop() >= guideTop) {
-
-      $('.guide .imgEffect').addClass('on');
-
-    }
-
-  })
 
 
 

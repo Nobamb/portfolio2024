@@ -786,7 +786,10 @@ section .border {
 
 .notice li {
 
+  opacity: 0;
   width: 32%;
+  position: relative;
+  bottom: -100px;
 
 }
 
@@ -1092,8 +1095,37 @@ section .border {
 }
 
 
+
+
+
+
+
+
+
+
 /* li부분은 사진1~2영역 */
-.hallarea .listimg li {}
+.hallarea .listimg li {
+
+  transform: scale(0);
+  transition: all 1s;
+  opacity: 0;
+
+}
+
+/* li부분은 사진1~2영역 */
+.hallarea .listimg li.on {
+
+  transform: scale(1);
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
 
 .hallarea .listimg a {
   transform: scale(1);
@@ -2407,7 +2439,29 @@ section .border {
   background-image: url('img/find_map/1-1.png');
   background-repeat: no-repeat;
   background-size: contain;
+  transition: all 0.7s;
+  opacity: 0;
+  position: relative;
+  bottom: -100px;
 }
+
+
+
+
+
+.map_inner.on {
+  bottom: 0px;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
 
 
 .map_inner .effect {
@@ -2422,6 +2476,10 @@ section .border {
   flex-direction: column;
   align-items: center;
 }
+
+
+
+
 
 
 
@@ -3602,11 +3660,14 @@ footer {
   }
 
 
-  section h2 {
+
+  section .title>h2{
+
 
     font-size: 28px;
 
   }
+
 
 
 
