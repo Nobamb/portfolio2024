@@ -538,7 +538,7 @@ h1.intro {
 
 /* 설명란 안의 영역*/
 
-.contents>.main .profile .infor ul{
+.contents>.main .profile .infor ul {
 
   width: 340px;
   height: 160px;
@@ -550,7 +550,7 @@ h1.intro {
 
 /* 설명란의 각 정보*/
 
-.contents>.main .profile .infor ul li{
+.contents>.main .profile .infor ul li {
 
   width: 100%;
   height: 25%;
@@ -563,11 +563,11 @@ h1.intro {
 
 /* 설명란의 각 정보*/
 
-.contents>.main .profile .infor ul li h4{
+.contents>.main .profile .infor ul li h4 {
 
   font-size: 20px;
   font-weight: bold;
-  
+
 
 }
 
@@ -576,8 +576,25 @@ h1.intro {
 
 /* 설명란의 각 정보*/
 
-.contents>.main .profile .infor ul li span{
+.contents>.main .profile .infor ul li h4>span {
+
+  position: absolute;
+  left: 100px;
+
+}
+
+
+
+
+
+
+
+/* 설명란의 각 정보*/
+
+.contents>.main .profile .infor ul li>span {
   font-size: 20px;
+  position: absolute;
+  left: 120px;
 }
 
 
@@ -659,7 +676,7 @@ h1.intro {
 
 
 /* 세부 정보 */
-.contents>.main .profile>.mainProfile{
+.contents>.main .profile>.mainProfile {
 
   width: calc(100% - 420px);
   height: 100%;
@@ -674,7 +691,7 @@ h1.intro {
 
 /* 세부 정보 목록 */
 .contents>.main .profile>.mainProfile>.status,
-.contents>.main .profile>.mainProfile>.personal{
+.contents>.main .profile>.mainProfile>.personal {
 
   width: 100%;
   height: 100%;
@@ -693,7 +710,7 @@ h1.intro {
 
 
 
-.contents>.main .profile>.mainProfile>div.on{
+.contents>.main .profile>.mainProfile>div.on {
 
   transform: rotateY(0deg);
 
@@ -703,9 +720,9 @@ h1.intro {
 
 
 /* 세부 정보 내용 영역 */
-.contents>.main .profile>.mainProfile>div>ul{
+.contents>.main .profile>.mainProfile>div>ul {
 
-  position: absolute; 
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -717,13 +734,13 @@ h1.intro {
 }
 
 
-.contents>.main .profile>.mainProfile>.status>ul{
+.contents>.main .profile>.mainProfile>.status>ul {
   justify-content: space-between;
 
 
 }
 
-.contents>.main .profile>.mainProfile>.personal>ul{
+.contents>.main .profile>.mainProfile>.personal>ul {
 
 
   justify-content: space-around;
@@ -734,7 +751,7 @@ h1.intro {
 
 
 /* 세부 정보 내용 */
-.contents>.main .profile>.mainProfile>div>ul>li{
+.contents>.main .profile>.mainProfile>div>ul>li {
 
   width: 100%;
   display: flex;
@@ -746,21 +763,52 @@ h1.intro {
 
 
 /* 세부 정보 내용 제목*/
-.contents>.main .profile>.mainProfile>div>ul>li>h4{
+.contents>.main .profile>.mainProfile>div>ul>li>h4 {
 
   font-size: 48px;
 
 }
 
 
+
+
+
+
+
+
+
+/* 세부 정보 내용 제목*/
+.contents>.main .profile>.mainProfile>div>ul>li>.under {
+
+  width: 0px;
+  height: 1px;
+  background-color: #404040;
+  margin: 5px 0;
+  transition: all 1.5s;
+}
+
+
+
+/* 세부 정보 내용 제목*/
+.contents>.main .profile>.mainProfile>div.on>ul>li>.under {
+
+  width: 400px;
+
+}
+
+
+
+
+
+
 /* 세부 정보 내용 글*/
-.contents>.main .profile>.mainProfile>div>ul>li p{
+.contents>.main .profile>.mainProfile>div>ul>li p {
   font-size: 16px;
   margin-top: 20px;
 }
 
 /* 세부 정보 내용 글*/
-.contents>.main .profile>.mainProfile>div>ul>li span{
+.contents>.main .profile>.mainProfile>div>ul>li span {
   display: block;
   margin-bottom: 10px;
 }
@@ -768,7 +816,7 @@ h1.intro {
 
 
 /* 페이지*/
-.contents>.main .profile>.mainProfile .page{
+.contents>.main .profile>.mainProfile .page {
 
   width: 0px;
   height: 0px;
@@ -777,12 +825,12 @@ h1.intro {
   right: 0;
   transition: all 0.5s;
   cursor: pointer;
-  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(115,115,115,1) 50%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(115, 115, 115, 1) 50%, rgba(255, 255, 255, 1) 100%);
 }
 
 
 /* 페이지*/
-.contents>.main .profile.on>.mainProfile .page{
+.contents>.main .profile.on>.mainProfile .page {
 
   width: 100px;
   height: 100px;
@@ -791,7 +839,7 @@ h1.intro {
 
 /* 호버 효과*/
 
-.contents>.main .profile>.mainProfile .page:hover{
+.contents>.main .profile>.mainProfile .page:hover {
 
   transform: scale(1.2);
 
@@ -799,7 +847,7 @@ h1.intro {
 
 
 /* 페이지*/
-.contents>.main .profile>.mainProfile .page span{
+.contents>.main .profile>.mainProfile .page span {
 
   position: absolute;
   bottom: 100%;
@@ -813,7 +861,7 @@ h1.intro {
 
 
 /* 페이지*/
-.contents>.main .profile.on>.mainProfile .page span{
+.contents>.main .profile.on>.mainProfile .page span {
 
   opacity: 1;
 
@@ -829,7 +877,7 @@ h1.intro {
 
 
 /* 스킬*/
-.contents>.main .profile>.mainProfile>div>ul .skill{
+.contents>.main .profile>.mainProfile>div>ul .skill {
 
   height: 50%;
   width: 100%;
@@ -841,8 +889,12 @@ h1.intro {
 
 
 
+
+
+
+
 /* 스킬 종류들*/
-.contents>.main .profile>.mainProfile>div>ul .skill li{
+.contents>.main .profile>.mainProfile>div>ul .skill li {
 
   height: 33.3333%;
   width: 50%;
@@ -851,23 +903,191 @@ h1.intro {
   justify-content: space-around;
   align-items: center;
   margin-top: 10px;
+  position: relative;
 }
 
+
+
 /* 스킬 종류들*/
-.contents>.main .profile>.mainProfile>div>ul .skill li img{
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) {
+  margin-top: 30px
+}
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(4) {
+  margin-top: 30px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li b {
+
+  position: absolute;
+  display: flex;
+  right: 100%;
+  top: 50%;
+  transform: translateY(0);
+  z-index: 1000;
+  opacity: 0;
+  padding: 5px 10px;
+  transition: all 0.5s;
+  font-size: 20px;
+  background-color: #fff;
+  border: solid #404040 1px;
+  box-shadow: 1px 1px 2px #404040;
+}
+
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:hover b {
+
+  opacity: 1;
+  transform: translateY(-50%);
+
+
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li b span {
+
+  margin: 0;
+
+}
+
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(1) b {
+  background-color: #001d34;
+  color: #30a8fe;
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(1) {
+
+  color: #ea4b1c;
+
+}
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(2) {
+
+  color: #f76e5e;
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(3) {
+
+  color: #9d56f7;
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(4) {
+
+  color: #19b6f5;
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(5) {
+
+  color: #0ac87e;
+
+}
+
+
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b {
+
+  background-color: #f35825;
+  color: #fff;
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(4) b {
+
+  background-color: #0c6fb0;
+  color: #fff;
+
+}
+
+
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(5) b {
+
+  background-color: #dfa13a;
+  color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li img {
   height: 100%;
-
+  transition: all 0.5s;
 }
 
 
 
+
 /* 스킬 종류들*/
-.contents>.main .profile>.mainProfile>div>ul .skill li .bar{
+.contents>.main .profile>.mainProfile>div>ul .skill li:hover img {
+  filter: brightness(1.3) contrast(1.1) saturate(2);
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li .bar {
 
 
   width: 60%;
   height: 70%;
-  background-color:#fff;
+  background-color: #fff;
   border: 1px solid #404040;
   border-radius: 9999px;
   position: relative;
@@ -880,8 +1100,8 @@ h1.intro {
 
 
 /* 퍼센트 수치*/
-.contents>.main .profile>.mainProfile>div>ul .skill li .bar>span{
-
+.contents>.main .profile>.mainProfile>div>ul .skill li .bar>h5 {
+  transition: all 0.5s;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -898,17 +1118,136 @@ h1.intro {
 
 
 /* 스킬 종류들*/
-.contents>.main .profile>.mainProfile>div>ul .skill li .mybar{
+.contents>.main .profile>.mainProfile>div>ul .skill li .mybar {
 
   position: absolute;
   left: 0;
   top: 0;
   width: 0;
   height: 100%;
-  background-color:#666;
+  background-color: #666;
   border-radius: 9999px;
-
+  transition: all 0.5s;
 }
+
+
+
+
+
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(1):hover .mybar {
+  background-color: #001d34;
+}
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(1):hover h5 {
+  color: #30a8fe;
+}
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2):hover .mybar {
+  background-color: #fff;
+  border: 0.2px solid #404040;
+}
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2):hover h5 {
+  color: rgb(234,75,28);
+}
+
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3):hover .mybar {
+  background-color: #f35825;
+}
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3):hover h5 {
+  color: #fff;
+}
+
+
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(4):hover .mybar {
+  background-color: #0c6fb0;
+}
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(4):hover h5 {
+  color: #fff;
+}
+
+
+
+
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(5):hover .mybar {
+  background-color: #dfa13a;
+}
+
+
+/* 스킬 종류들*/
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(5):hover h5 {
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -985,6 +1324,8 @@ h1.intro {
   transform: translateX(164px);
   font-size: 64px;
   transition: all 1s;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -1013,7 +1354,7 @@ h1.intro {
 
 
 .contents>.main .project.on>h3,
-.contents>.main .project.on>h4  {
+.contents>.main .project.on>h4 {
 
   transform: translateX(-2000px);
 
@@ -1077,6 +1418,8 @@ h1.intro {
   left: 0;
   top: 100%;
   transition: all 1.2s;
+  perspective: 1000px;
+
 }
 
 
@@ -1094,21 +1437,30 @@ h1.intro {
 /* 프로젝트 리스트 */
 
 
-.contents>.main .project .webList li{
+.contents>.main .project .webList li {
 
   width: 100%;
   height: 33.3333%;
   border: 1px solid #404040;
   display: flex;
+  position: relative;
+  transform: rotateY(270deg);
+  opacity: 0;
+  transition: all 1s;
+  transform-origin: left center;
+}
 
+
+
+.contents>.main .project .webList li.on {
+  transform: rotateY(0);
+  opacity: 1;
 }
 
 
 
 
-
-
-.contents>.main .project .webList li>.sumbnail{
+.contents>.main .project .webList li>.sumbnail {
 
   width: 30%;
   height: 100%;
@@ -1120,7 +1472,7 @@ h1.intro {
 }
 
 
-.contents>.main .project .webList li:hover>.sumbnail{
+.contents>.main .project .webList li:hover>.sumbnail {
 
   filter: brightness(1) contrast(1) saturate(1) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
@@ -1130,7 +1482,7 @@ h1.intro {
 
 
 
-.contents>.main .project .webList li .txt{
+.contents>.main .project .webList li .txt {
   width: 70%;
   height: 100%;
   position: relative;
@@ -1143,28 +1495,28 @@ h1.intro {
 }
 
 
-.contents>.main .project .webList li .txt h2{
+.contents>.main .project .webList li .txt h2 {
 
   font-size: 24px;
   transition: all 0.5s;
 }
 
 
-.contents>.main .project .webList li:nth-child(1):hover .txt h2{
+.contents>.main .project .webList li:nth-child(1):hover .txt h2 {
 
   color: #FFDEDE;
 
 }
 
 
-.contents>.main .project .webList li:nth-child(2):hover .txt h2{
+.contents>.main .project .webList li:nth-child(2):hover .txt h2 {
 
   color: #E83E34;
 
 }
 
 
-.contents>.main .project .webList li:nth-child(3):hover .txt h2{
+.contents>.main .project .webList li:nth-child(3):hover .txt h2 {
 
   color: #E4E4E6;
 }
@@ -1172,7 +1524,7 @@ h1.intro {
 
 
 
-.contents>.main .project .webList li .txt p{
+.contents>.main .project .webList li .txt p {
 
   font-size: 16px;
   font-weight: 400;
@@ -1180,7 +1532,7 @@ h1.intro {
 }
 
 
-.contents>.main .project .webList li .txt span{
+.contents>.main .project .webList li .txt span {
 
   font-weight: bold;
   font-size: 16px;
@@ -1188,7 +1540,7 @@ h1.intro {
 
 }
 
-.contents>.main .project .webList li .txt .btn{
+.contents>.main .project .webList li .txt .btn {
 
   width: 140px;
   height: 45px;
@@ -1202,7 +1554,7 @@ h1.intro {
 }
 
 
-.contents>.main .project .webList li .txt .conceptBtn{
+.contents>.main .project .webList li .txt .conceptBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1210,32 +1562,33 @@ h1.intro {
 }
 
 
-.contents>.main .project .webList li:nth-child(1) .txt .btn:hover{
+.contents>.main .project .webList li:nth-child(1) .txt .btn:hover {
 
-background-color: #ffdede;
-color: #4797b1;
+  background-color: #ffdede;
+  color: #4797b1;
 
 }
 
-.contents>.main .project .webList li:nth-child(2) .txt .btn:hover{
+.contents>.main .project .webList li:nth-child(2) .txt .btn:hover {
 
 
   background-color: #E83E34;
   color: #F5D022;
-  
+
 }
-.contents>.main .project .webList li:nth-child(3) .txt .btn:hover{
+
+.contents>.main .project .webList li:nth-child(3) .txt .btn:hover {
 
 
   background-color: #E4E4E6;
   color: #606060;
-  
+
 
 }
 
 
 
-.contents>.main .project .webList li .txt a{
+.contents>.main .project .webList li .txt a {
 
   right: 100px;
 }
@@ -1350,7 +1703,7 @@ color: #4797b1;
 
 
 /* 컨셉뷰 영역 */
-.concept_view{
+.concept_view {
 
   position: absolute;
   left: -100%;
@@ -1365,7 +1718,7 @@ color: #4797b1;
 
 
 
-.project.on .concept_view.on{
+.project.on .concept_view.on {
 
   left: 0;
 
@@ -1378,7 +1731,7 @@ color: #4797b1;
 
 
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
 
   background-color: #666;
 
@@ -1386,7 +1739,7 @@ color: #4797b1;
 
 
 
-::-webkit-scrollbar-button{
+::-webkit-scrollbar-button {
 
   background-color: #fff;
 
@@ -1394,7 +1747,7 @@ color: #4797b1;
 
 
 
-::-webkit-scrollbar-corner{
+::-webkit-scrollbar-corner {
 
   background-color: #404040;
 
@@ -1403,7 +1756,7 @@ color: #4797b1;
 
 
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
 
   background-color: #fff;
   border: 1px solid #404040;
@@ -1430,21 +1783,20 @@ color: #4797b1;
 
 
 
-.concept_view img{
+.concept_view img {
 
   position: absolute;
   width: 100%;
   left: 0;
   top: 0;
+  display: none;
 }
 
 
 
 
 
-
-
-@media (max-height:700px){
+@media (max-height:700px) {
 
 
   .contents>nav ul li span {
@@ -1456,35 +1808,35 @@ color: #4797b1;
 
 
   /* 세부 정보 내용 제목*/
-.contents>.main .profile>.mainProfile>div>ul>li>h4{
+  .contents>.main .profile>.mainProfile>div>ul>li>h4 {
 
-  font-size: 32px;
+    font-size: 32px;
 
-}
-
-
-/* 세부 정보 내용 글*/
-.contents>.main .profile>.mainProfile>div>ul>li p{
-  font-size: 12px;
-  margin-top: 10px;
-}
+  }
 
 
+  /* 세부 정보 내용 글*/
+  .contents>.main .profile>.mainProfile>div>ul>li p {
+    font-size: 12px;
+    margin-top: 10px;
+  }
 
 
 
 
-/* 퍼센트 수치*/
-.contents>.main .profile>.mainProfile>div>ul .skill li .bar>span{
 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  color: #fff;
-  z-index: 100;
-}
+
+  /* 퍼센트 수치*/
+  .contents>.main .profile>.mainProfile>div>ul .skill li .bar>span {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #fff;
+    z-index: 100;
+  }
 
 
 
