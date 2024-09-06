@@ -344,7 +344,7 @@ $(document).ready(function () {
 
 
 
-  const titleArr = ['jeong seung hoon', 'portfolio'];
+  const titleArr = ['Jeong Seung Hoon', 'Portfolio'];
 
 
 

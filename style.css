@@ -1337,12 +1337,26 @@ h1.intro {
 .contents>.main .project>h3 {
 
   transform: translateX(164px);
-  font-size: 64px;
   transition: all 1s;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 
 }
+
+.contents>.main .project>h3 span{
+
+  font-size: 64px;
+  position: relative;
+  border-bottom: 2px solid #404040;
+  padding-bottom: 10px;
+  width: fit-content;
+
+}
+
+
+
+
 
 
 /* 프로젝트 글자 */
