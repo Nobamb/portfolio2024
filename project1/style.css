@@ -3182,6 +3182,13 @@ footer {
 
 
 
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li{
+
+  cursor: pointer;
+
+}
+
+
 
 .reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li>div {
 
@@ -3202,7 +3209,7 @@ footer {
 
 
 
-.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li:hover>.answer {
+.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li.on>.answer {
 
   left: 0;
   padding: 10px;

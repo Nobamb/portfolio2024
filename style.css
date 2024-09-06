@@ -815,6 +815,21 @@ h1.intro {
 
 
 
+
+
+/* 세부 정보 내용 글*/
+.contents>.main .profile>.mainProfile>.personal>ul>li span {
+  width: 400px;
+  display: flex;
+  gap: 40px;
+}
+
+
+
+
+
+
+
 /* 페이지*/
 .contents>.main .profile>.mainProfile .page {
 

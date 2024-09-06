@@ -1011,7 +1011,12 @@ $(document).ready(function () {
 
 
 
+  $('.reserveMain .reserveInforZone .inforTxt>li:nth-child(3) ul li').click(function(){
 
+
+    $(this).toggleClass('on')
+
+  })
 
 
 
