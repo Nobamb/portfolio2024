@@ -915,11 +915,15 @@ h1.intro {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 15px;
   position: relative;
 }
+
+
+
+
 
 
 
@@ -1100,7 +1104,8 @@ h1.intro {
   background-color: #fff;
   border: 1px solid #404040;
   border-radius: 9999px;
-  position: relative;
+  position: absolute;
+  left: 60px;
   overflow: hidden;
 
 }
@@ -1864,6 +1869,17 @@ h1.intro {
     color: #fff;
     z-index: 100;
   }
+
+
+  /* 퍼센트 수치*/
+  .contents>.main .profile>.mainProfile>div>ul .skill li .bar>h5 {
+    font-size: 16px;
+  }
+
+
+
+
+
 
 
 
