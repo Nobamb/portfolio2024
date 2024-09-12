@@ -621,7 +621,7 @@ $(document).ready(function () {
 
   // 스테이터스 지정
 
-  const status = [80, 85, 90, 90, 80];
+  const status = [80, 90, 85, 90, 80];
 
 
 

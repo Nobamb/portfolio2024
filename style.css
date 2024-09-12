@@ -899,7 +899,7 @@ h1.intro {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-
+  position: relative;
 }
 
 
@@ -917,23 +917,18 @@ h1.intro {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
   position: relative;
 }
 
 
 
 /* 스킬 종류들*/
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) {
-  margin-top: 30px
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(5) {
+  position: absolute;
+  top: 100%;
+  right: 0;
 }
-
-
-/* 스킬 종류들*/
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(4) {
-  margin-top: 30px
-}
-
 
 
 
@@ -990,34 +985,34 @@ h1.intro {
 }
 
 
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(1) {
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b span:nth-child(1) {
 
   color: #ea4b1c;
 
 }
 
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(2) {
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b span:nth-child(2) {
 
   color: #f76e5e;
 
 }
 
 
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(3) {
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b span:nth-child(3) {
 
   color: #9d56f7;
 
 }
 
 
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(4) {
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b span:nth-child(4) {
 
   color: #19b6f5;
 
 }
 
 
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b span:nth-child(5) {
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b span:nth-child(5) {
 
   color: #0ac87e;
 
@@ -1026,7 +1021,7 @@ h1.intro {
 
 
 
-.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3) b {
+.contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2) b {
 
   background-color: #f35825;
   color: #fff;
@@ -1166,18 +1161,17 @@ h1.intro {
 
 
 
-
 /* 스킬 종류들*/
 .contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2):hover .mybar {
-  background-color: #fff;
-  border: 0.2px solid #404040;
+  background-color: #f35825;
 }
 
 
 /* 스킬 종류들*/
 .contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(2):hover h5 {
-  color: rgb(234,75,28);
+  color: #fff;
 }
+
 
 
 
@@ -1185,14 +1179,18 @@ h1.intro {
 
 /* 스킬 종류들*/
 .contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3):hover .mybar {
-  background-color: #f35825;
+  background-color: #fff;
+  border: 0.2px solid #404040;
 }
 
 
 /* 스킬 종류들*/
 .contents>.main .profile>.mainProfile>div>ul .skill li:nth-child(3):hover h5 {
-  color: #fff;
+  color: rgb(234,75,28);
 }
+
+
+
 
 
 
