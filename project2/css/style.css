@@ -6052,6 +6052,18 @@ section h2 {
 }
 
 
+/* 네이버 로그인버튼 서식 변경 */
+
+.login_inner .login_zone .login_this #login_infor>#naver_id_login {
+
+  border-radius: 0px;
+  overflow: visible;
+
+}
+
+
+
+
 
 .login_inner .login_zone .login_this #login_infor>div i {
   padding-left: 5%;
