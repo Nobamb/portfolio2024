@@ -165,6 +165,8 @@ $(document).ready(function () {
   $('.non_desktop_menu_list>.closed').click(function () {
 
 
+    $('.non_desktop_menu_list>ul>li>ul').removeClass('on');
+
     $(this).parents('.non_desktop_menu_list').removeClass('on');
 
 
