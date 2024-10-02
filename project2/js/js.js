@@ -1334,6 +1334,7 @@ $(document).ready(function () {
 
 
 
+
   // 이전 버튼 클릭시
   $('.hero .buttonZone .prev').click(function () {
 
