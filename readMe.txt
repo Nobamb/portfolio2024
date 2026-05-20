@@ -74,7 +74,7 @@
 
 - **참고 링크**: https://www.kgls.or.kr/
 - **작업 기간**: 40시간 (기획 및 분석, 퍼블리싱 100% 개인 작업)
-- **핵심 성과**: 외부 시안 없이 기존 사이트 구조를 분석해 레이아웃을 코드로 역설계(Component Scan)했으며, Desktop / Laptop / Tablet / Mobile 전체 마크다운 구조 최적화 완수.
+- **핵심 성과**: 외부 디자인 시안 없이도 기존 사이트 구조를 분석해 레이아웃을 코드로 역설계(Component Scan)했으며, Desktop / Laptop / Tablet / Mobile 전체 마크업 구조 최적화 완수.
 
 #### 🛠️ 사용 기술
 - **Publishing**: HTML5, CSS3 (Advanced Media Query, Keyframes Animation)
@@ -93,6 +93,8 @@
   - 메인 유틸리티 영역에 구글 맞춤 설정 검색 스키마(`action="https://www.google.com/search"`, `name="q"`) 유효 범위를 Form 태그로 다이렉트 바인딩하여 백엔드 인프라 없이도 동작하는 실용적인 검색 컴포넌트 탑재.
   - 윈도우 스크롤(`scroll()`) 위치 영역 좌표값(`offset().top`)과 브라우저 중심점 연산식을 정밀 가치 대입하여 해당 구역 진입 시 순차적으로 도장 찍히듯 등장하는 타이밍 체인형 트리거 애니메이션 구현.
 
+
+---
 
 ### ⚙️ Core Skills Summary
 * **Design & Prototyping**: Figma, Photoshop 기반의 와이어프레임 설계 및 컴포넌트 시스템 구축 가능.
