@@ -1,5 +1,4 @@
 project1 _ 무궁화전시박물관 : 기획, 제작, 디자인, 퍼블리싱 - 리뉴얼 프로젝트 https://mugunghwaedu.modoo.at/
-사이트 주소 http://website2024.dothome.co.kr/project1/
 -반응형 구현 완료
 -웹접근성 만족
 
@@ -72,7 +71,6 @@ Q&A의 경우 질문글에 마우스를 호버할경우 답변이 나옴
 
 
 project2 _ 포켓몬스터 : 디자인, 퍼블리싱 - 리뉴얼 프로젝트 https://pokemonkorea.co.kr/
-사이트 주소 http://website2024.dothome.co.kr/project2/?highlight=false
 -반응형 구현 완료
 -웹접근성 만족
 
@@ -148,7 +146,6 @@ split
 
 
 project3 _ 한요한 : 디자인, 퍼블리싱 -신규제작
-사이트 주소 http://website2024.dothome.co.kr/project3/
 -반응형 구현 완료
 -웹접근성 만족
 
