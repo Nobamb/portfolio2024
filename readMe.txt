@@ -69,6 +69,31 @@
 
 ---
 
+### 📌 Project 4. 정부법무공단 공식 웹사이트 리뉴얼
+관공서 특유의 복잡한 정보 구조(Information Architecture)를 직관적으로 재정리하고, 4개 디바이스 환경에 대응하도록 설계한 고밀도 반응형 퍼블리싱 프로젝트
+
+- **참고 링크**: https://www.kgls.or.kr/
+- **작업 기간**: 40시간 (기획 및 분석, 퍼블리싱 100% 개인 작업)
+- **핵심 성과**: 외부 시안 없이 기존 사이트 구조를 분석해 레이아웃을 코드로 역설계(Component Scan)했으며, Desktop / Laptop / Tablet / Mobile 전체 마크다운 구조 최적화 완수.
+
+#### 🛠️ 사용 기술
+- **Publishing**: HTML5, CSS3 (Advanced Media Query, Keyframes Animation)
+- **Libraries & Script**: JavaScript (ES6+), jQuery, FontAwesome API
+- **Keywords**: `setInterval`, `Switch-case`, `Scroll Animation`, `Form Search Action`
+
+#### 🌟 핵심 구현 및 기술적 접근
+* **4단 레이아웃 브레이크포인트 반응형 최적화**: 
+  - 미디어 쿼리를 사용해 `1440px` 이상(데스크톱 원본 비율 유지 보존 영역), `769px~1280px`(랩탑), `481px~768px`(태블릿), `480px 이하`(모바일)까지 세분화된 브레이크포인트를 설정하여 미려하고 끊김 없는 화면 그리드 전환 처리.
+* **제이쿼리 기반 동적 UI 콤팩트화**:
+  - **헤더 GNB**: 마우스 호버 시 엘리먼트의 가로 폭(`width()`) 및 위치 계산 로직을 스크립트로 처리하여 1뎁스 메뉴 하단을 매끄럽게 따라다니는 '동적 언더라인 바' 구현. 모바일 환경에 맞는 Full-screen 햄버거 메뉴 및 아코디언 서브메니 동시 구축.
+  - **타임 프로그레스 슬라이더**: `setInterval`을 복합적으로 조작하여 슬라이드가 전환되는 3000ms 동안 하단 진행 바(`progress_now`)의 가로 넓이가 실시간 충전되는 직관적 타임라인 인디케이터 구현. 인터럽트 에러 방지를 위해 Play/Pause 예외 처리 및 메모리 누수 원인 차단(`clearInterval`).
+* **수직 무한 루프 애니메이션 스크립트**:
+  - 키프레임(`@keyframes`)과 제이쿼리 이벤트 핸들러를 결합하여 다량의 이미지 배너가 위아래로 끊임없이 슬라이딩되는 무한 재생식 갤러리 연출 및 마우스 롤오버 시 일시정지(`paused`) 기능 부여로 가독성 및 UI 제어 편의성 향상.
+* **검색 엔진 API 연동 및 DOM 연출**:
+  - 메인 유틸리티 영역에 구글 맞춤 설정 검색 스키마(`action="https://www.google.com/search"`, `name="q"`) 유효 범위를 Form 태그로 다이렉트 바인딩하여 백엔드 인프라 없이도 동작하는 실용적인 검색 컴포넌트 탑재.
+  - 윈도우 스크롤(`scroll()`) 위치 영역 좌표값(`offset().top`)과 브라우저 중심점 연산식을 정밀 가치 대입하여 해당 구역 진입 시 순차적으로 도장 찍히듯 등장하는 타이밍 체인형 트리거 애니메이션 구현.
+
+
 ### ⚙️ Core Skills Summary
 * **Design & Prototyping**: Figma, Photoshop 기반의 와이어프레임 설계 및 컴포넌트 시스템 구축 가능.
 * **Frontend Foundations**: HTML5/CSS3 지식을 바탕으로 시맨틱 마크업 및 웹 표준, 미디어 쿼리를 활용한 완벽한 반응형 레이아웃 구현.
